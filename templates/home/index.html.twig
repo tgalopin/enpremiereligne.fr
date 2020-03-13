@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class 'full-height' %}
+
+{% block body %}
+    <div class="home">
+        <div class="home-header p-4 p-lg-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+                        <h1 class="font-weight-bold">
+                            En première ligne
+                        </h1>
+
+                        <h4 class="font-weight-normal home-header-pitch">
+                            Face à l’épidémie de Covid-19, les soignants sont en première ligne de la lutte pour
+                            sauver des vies. Soyons présents pour eux et leur famille.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-row">
+            <div class="home-row-half bg-primary text-white">
+                <div class="m-4 p-4 m-lg-5 p-lg-5">
+                    <a href="" class="home-row-half-button text-white">
+                        <div class="home-row-half-button-icon">
+                            {{ include('_icons/arrow.html.twig') }}
+                        </div>
+                        <div class="home-row-half-button-label">
+                            Je suis un soignant ayant besoin de soutien
+                        </div>
+                    </a>
+
+                    <div class="home-row-half-details mt-3 mb-4">
+                        Vous faites partie de la première ligne de la lutte contre le virus ?
+                        Demandez un soutien à des volontaires proches de chez vous
+                        pour garder vos enfants ou faire vos courses.
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="col-12 col-xl-auto">
+                            <a href="" class="btn btn-primary btn-lg border-white border mr-xl-3">
+                                Demander un soutien
+                            </a>
+                        </div>
+                        <div class="col-12 col-xl-auto">
+                            <a href="" class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
+                                Comment ca marche ?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-row-half bg-info text-white">
+                <div class="m-4 p-4 m-lg-5 p-lg-5">
+                    <a href="" class="home-row-half-button text-white">
+                        <div class="home-row-half-button-icon">
+                            {{ include('_icons/arrow.html.twig') }}
+                        </div>
+                        <div class="home-row-half-button-label">
+                            Je peux soutenir un soignant
+                        </div>
+                    </a>
+
+                    <div class="home-row-half-details mt-3 mb-4">
+                        Vous pouvez soutenir un soignant en gardant un enfant ou en faisant des courses ?
+                        Donnez votre soutien à un soignant proche de chez vous et engagez-vous dans
+                        la lutte contre l’épidémie.
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="col-12 col-xl-auto">
+                            <a href="" class="btn btn-info btn-lg border-white border mr-3">
+                                Proposer mon soutien
+                            </a>
+                        </div>
+                        <div class="col-12 col-xl-auto">
+                            <a href="" class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
+                                Comment ca marche ?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-footer p-3">
+            <a href="">
+                Qui sommes-nous ?
+            </a>
+            <a href="">
+                Politique de confidentialité
+            </a>
+            <a href="">
+                Conditions d'utilisation
+            </a>
+            <a href="">
+                Mentions légales
+            </a>
+        </div>
+    </div>
+{% endblock %}
