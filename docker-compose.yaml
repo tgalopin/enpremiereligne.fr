@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    database:
+        image: postgres:12
+        ports: [5432]
+        environment:
+            POSTGRES_USER: main
+            POSTGRES_PASSWORD: main
+            POSTGRES_DB: main
+
+    redis:
+        image: redis:5-alpine
+        ports: [6379]
+
+    rabbitmq:
+        image: rabbitmq:3.8-management-alpine
+        ports: [5672, 15672]
+        environment:
+            RABBITMQ_DEFAULT_USER: guest
+            RABBITMQ_DEFAULT_PASS: guest
