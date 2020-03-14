@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 class CompositeHelpRequestDetail
@@ -13,8 +14,6 @@ class CompositeHelpRequestDetail
     public ?string $helpType = null;
 
     /**
-     * @ORM\Column(length=10, nullable=true)
-     *
      * @Assert\Choice(callback={"App\Entity\HelpRequest", "getAgeRanges"})
      */
     public ?string $childAgeRange = null;
@@ -24,6 +23,8 @@ class CompositeHelpRequestDetail
      */
     public function validate(ExecutionContextInterface $context)
     {
-        dump($this);exit;
+        if ('babysit' === $this->helpType && !$this->childAgeRange) {
+            $context->addViolation('Vous devez renseigner l\'âge de votre enfant à garder.');
+        }
     }
 }

@@ -43,6 +43,8 @@ class CompositeHelpRequest
 
     /**
      * @var array|CompositeHelpRequestDetail[]
+     *
+     * @Assert\Valid()
      */
     public array $details = [];
 
