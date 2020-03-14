@@ -63,12 +63,14 @@
 
                     <div class="row no-gutters">
                         <div class="col-12 col-xl-auto">
-                            <a href="" class="btn btn-primary btn-lg border-white border mr-xl-3">
+                            <a href="{{ path('process_request') }}"
+                               class="btn btn-primary btn-lg border-white border mr-xl-3">
                                 Demander de l'aide
                             </a>
                         </div>
                         <div class="col-12 col-xl-auto">
-                            <a href="" class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
+                            <a href="{{ path('content_how') }}"
+                               class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
                                 Comment ca marche ?
                             </a>
                         </div>
@@ -96,12 +98,14 @@
 
                     <div class="row no-gutters">
                         <div class="col-12 col-xl-auto">
-                            <a href="" class="btn btn-info btn-lg border-white border mr-3">
+                            <a href="{{ path('process_helper') }}"
+                               class="btn btn-info btn-lg border-white border mr-3">
                                 Proposer mon aide
                             </a>
                         </div>
                         <div class="col-12 col-xl-auto">
-                            <a href="" class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
+                            <a href="{{ path('content_how') }}"
+                               class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
                                 Comment ca marche ?
                             </a>
                         </div>
@@ -110,19 +114,19 @@
             </div>
         </div>
 
-        <div class="home-footer p-3">
-            <a href="">
+        <footer class="home-footer p-3">
+            <a href="{{ path('content_who') }}">
                 Qui sommes-nous ?
             </a>
-            <a href="">
+            <a href="{{ path('content_privacy') }}">
                 Politique de confidentialité
             </a>
-            <a href="">
+            <a href="{{ path('content_conditions') }}">
                 Conditions d'utilisation
             </a>
-            <a href="">
+            <a href="{{ path('content_legalities') }}">
                 Mentions légales
             </a>
-        </div>
+        </footer>
     </div>
 {% endblock %}

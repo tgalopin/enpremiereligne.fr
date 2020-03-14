@@ -45,6 +45,7 @@ class AppFixtures extends Fixture
                 'lastName' => 'Gregory',
                 'email' => 'elizabeth.gregory@example.com',
                 'zipCode' => '75008',
+                'age' => 25,
                 'haveChildren' => false,
                 'canBabysit' => true,
                 'babysitMaxChildren' => 1,
@@ -59,6 +60,7 @@ class AppFixtures extends Fixture
             $helper->lastName = $data['lastName'];
             $helper->email = $data['email'];
             $helper->zipCode = $data['zipCode'];
+            $helper->age = $data['age'];
             $helper->haveChildren = $data['haveChildren'];
             $helper->canBabysit = $data['canBabysit'];
             $helper->babysitMaxChildren = $data['babysitMaxChildren'];

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class 'body-page' %}
+
+{% block body %}
+    <div class="container pt-5">
+        <div class="text-center mb-4">
+            <h1 class="sr-only">
+                En première ligne
+            </h1>
+
+            <a href="{{ path('homepage') }}">
+                <img src="{{ asset('res/logo.svg') }}" class="process-logo" alt="En première ligne" />
+            </a>
+
+            <div class="mt-2">
+                <a href="{{ path('homepage') }}">
+                    <small>Retour à l'accueil</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+                {% block content '' %}
+            </div>
+        </div>
+    </div>
+
+    <footer class="home-footer p-3 mt-5">
+        <a href="{{ path('content_who') }}">
+            Qui sommes-nous ?
+        </a>
+        <a href="{{ path('content_privacy') }}">
+            Politique de confidentialité
+        </a>
+        <a href="{{ path('content_conditions') }}">
+            Conditions d'utilisation
+        </a>
+        <a href="{{ path('content_legalities') }}">
+            Mentions légales
+        </a>
+    </footer>
+{% endblock %}

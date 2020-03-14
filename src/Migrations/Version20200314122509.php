@@ -5,14 +5,14 @@ namespace DoctrineMigrations;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
 
-final class Version20200314100249 extends AbstractMigration
+final class Version20200314122509 extends AbstractMigration
 {
     public function up(Schema $schema): void
     {
         $this->addSql('CREATE SEQUENCE helpers_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE admins_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE help_requests_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('CREATE TABLE helpers (id BIGINT NOT NULL, uuid UUID NOT NULL, first_name VARCHAR(100) NOT NULL, last_name VARCHAR(100) NOT NULL, email VARCHAR(200) NOT NULL, zip_code VARCHAR(10) NOT NULL, have_children BOOLEAN NOT NULL, can_babysit BOOLEAN NOT NULL, babysit_max_children SMALLINT NOT NULL, babysit_age_ranges TEXT DEFAULT NULL, can_buy_groceries BOOLEAN NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE helpers (id BIGINT NOT NULL, uuid UUID NOT NULL, first_name VARCHAR(100) NOT NULL, last_name VARCHAR(100) NOT NULL, email VARCHAR(200) NOT NULL, zip_code VARCHAR(10) NOT NULL, age SMALLINT NOT NULL, have_children BOOLEAN NOT NULL, can_babysit BOOLEAN NOT NULL, babysit_max_children SMALLINT NOT NULL, babysit_age_ranges TEXT DEFAULT NULL, can_buy_groceries BOOLEAN NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_D0E84BFCD17F50A6 ON helpers (uuid)');
         $this->addSql('COMMENT ON COLUMN helpers.uuid IS \'(DC2Type:uuid)\'');
         $this->addSql('COMMENT ON COLUMN helpers.babysit_age_ranges IS \'(DC2Type:simple_array)\'');

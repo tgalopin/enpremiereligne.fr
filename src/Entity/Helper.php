@@ -30,35 +30,45 @@ class Helper
     /**
      * @ORM\Column(length=100)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Votre prénom est requis.")
      * @Assert\Length(max=100)
      */
-    public ?string $firstName;
+    public ?string $firstName = '';
 
     /**
      * @ORM\Column(length=100)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Votre nom de famille est requis.")
      * @Assert\Length(max=100)
      */
-    public ?string $lastName;
+    public ?string $lastName = '';
 
     /**
      * @ORM\Column(length=200)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Votre adresse e-mail est requise.")
      * @Assert\Email()
      * @Assert\Length(max=200)
      */
-    public ?string $email;
+    public ?string $email = '';
 
     /**
      * @ORM\Column(length=10)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Votre code postal est requis.")
      * @Assert\Length(max=5)
+     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="Le code postal doit contenir précisément 5 chiffres.")
      */
-    public ?string $zipCode;
+    public ?string $zipCode = '';
+
+    /**
+     * @ORM\Column(type="smallint")
+     *
+     * @Assert\NotBlank(message="Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).")
+     * @Assert\GreaterThanOrEqual(18)
+     * @Assert\LessThanOrEqual(60)
+     */
+    public ?int $age = null;
 
     /**
      * @ORM\Column(type="boolean")
@@ -73,15 +83,17 @@ class Helper
     /**
      * @ORM\Column(type="smallint")
      *
-     * @Assert\GreaterThanOrEqual(0)
-     * @Assert\LessThanOrEqual(4)
+     * @Assert\GreaterThanOrEqual(1)
+     * @Assert\LessThanOrEqual(message="Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.")
      */
-    public ?int $babysitMaxChildren = 2;
+    public ?int $babysitMaxChildren = 1;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     *
+     * @Assert\All(@Assert\Choice(callback={"App\Entity\HelpRequest", "getAgeRanges"}))
      */
-    public ?array $babysitAgeRanges;
+    public ?array $babysitAgeRanges = [];
 
     /**
      * @ORM\Column(type="boolean")

@@ -4,6 +4,14 @@ html, body.full-height {
     height: 100%;
 }
 
+.body-page {
+    background: #e3e8ee;
+}
+
+.form-group {
+    margin-bottom: 0 !important;
+}
+
 .home {
     height: 100%;
     display: flex;
@@ -98,5 +106,30 @@ html, body.full-height {
                 font-weight: normal;
             }
         }
+    }
+}
+
+.process {
+    &-logo {
+        height: 40px;
+        max-width: 100%;
+    }
+
+    &-box {
+        box-shadow: 0 7px 14px 0 rgba(60,66,87, 0.12), 0 3px 6px 0 rgba(0,0,0, 0.12);
+        border-radius: 4px;
+        background: #fff;
+        display: block;
+
+        &-title {
+            margin: 0;
+            font-size: $font-size-base * 1.5;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
+
+    &-block {
+        border: 1px solid #d7d7d7;
     }
 }
