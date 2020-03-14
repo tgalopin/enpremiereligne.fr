@@ -29,7 +29,7 @@ jobs:
             - name: Prepare database
               run: symfony console doctrine:migrations:migrate -n && symfony console doctrine:fixtures:load -n
             - name: PHPUnit
-              run: bin/phpunit
+              run: symfony run phpunit
 
     release:
         runs-on: ubuntu-latest
