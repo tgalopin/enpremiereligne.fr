@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
@@ -74,12 +76,12 @@ class Helper
      * @Assert\GreaterThanOrEqual(0)
      * @Assert\LessThanOrEqual(4)
      */
-    public ?int $babysitMaxChildren = 0;
+    public ?int $babysitMaxChildren = 2;
 
     /**
-     * @ORM\Column(type="simple_array")
+     * @ORM\Column(type="simple_array", nullable=true)
      */
-    public array $babysitAgeRanges = [];
+    public ?array $babysitAgeRanges;
 
     /**
      * @ORM\Column(type="boolean")
@@ -91,10 +93,18 @@ class Helper
      */
     private \DateTime $createdAt;
 
+    /**
+     * @var Collection|HelpRequest[]
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\HelpRequest", mappedBy="matchedWith")
+     */
+    private Collection $requests;
+
     public function __construct()
     {
         $this->uuid = Uuid::uuid4();
         $this->createdAt = new \DateTime();
+        $this->requests = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -110,5 +120,13 @@ class Helper
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @return Collection|HelpRequest[]
+     */
+    public function getRequests(): Collection
+    {
+        return $this->requests;
     }
 }

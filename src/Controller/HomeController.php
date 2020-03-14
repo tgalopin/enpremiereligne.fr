@@ -12,8 +12,13 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+        $response = $this->render('home/index.html.twig');
+        $response->setCache([
+            'public' => true,
+            'max_age' => 86400, // 1 day
+            's_maxage' => 86400, // 1 day
         ]);
+
+        return $response;
     }
 }
