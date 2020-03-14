@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -16,7 +15,7 @@ class ContentController extends AbstractController
      */
     public function how()
     {
-        return new Response('TODO');
+        return $this->render('content/how.html.twig');
     }
 
     /**
@@ -24,7 +23,7 @@ class ContentController extends AbstractController
      */
     public function why()
     {
-        return new Response('TODO');
+        return $this->render('content/why.html.twig');
     }
 
     /**
@@ -32,7 +31,7 @@ class ContentController extends AbstractController
      */
     public function privacy()
     {
-        return new Response('TODO');
+        return $this->render('content/privacy.html.twig');
     }
 
     /**
@@ -40,7 +39,7 @@ class ContentController extends AbstractController
      */
     public function conditions()
     {
-        return new Response('TODO');
+        return $this->render('content/conditions.html.twig');
     }
 
     /**
@@ -48,6 +47,6 @@ class ContentController extends AbstractController
      */
     public function legalities()
     {
-        return new Response('TODO');
+        return $this->render('content/legalities.html.twig');
     }
 }
