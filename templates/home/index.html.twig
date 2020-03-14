@@ -15,24 +15,29 @@
                         <img src="{{ asset('res/logo.svg') }}" class="home-header-logo" alt="En première ligne" />
 
                         <h4 class="font-weight-normal home-header-pitch mt-4">
-                            Face à l’épidémie de Covid-19, <strong>certains d'entre nous sont en première ligne</strong>
-                            de la lutte pour sauver des vies. Soyons présents pour eux et leur famille.
+                            Face à l’épidémie de Covid-19, certains d'entre nous sont en première ligne de la
+                            lutte pour sauver des vies et assurer les fonctions vitales de notre pays.
+                            <br />
+                            <strong>Soyons présents pour eux et leur famille.</strong>
                         </h4>
 
-                        <div class="home-header-share mt-4">
-                            <span class="mr-3">Je partage l'initiative</span>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/facebook.html.twig') }}
-                            </a>
-                            <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/twitter.html.twig') }}
-                            </a>
-                            <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/telegram.html.twig') }}
-                            </a>
-                            <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/whatsapp.html.twig') }}
-                            </a>
+                        <div class="home-header-share mt-4 flex-column flex-lg-row">
+                            <span class="mr-lg-3">Je partage l'initiative</span>
+
+                            <div class="d-flex">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/facebook.html.twig') }}
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/twitter.html.twig') }}
+                                </a>
+                                <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/telegram.html.twig') }}
+                                </a>
+                                <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/whatsapp.html.twig') }}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,9 +46,9 @@
 
         <div class="home-row">
             <div class="home-row-half bg-primary text-white">
-                <div class="m-4 p-4 m-lg-5 p-lg-5">
+                <div class="m-4 p-3 m-lg-5 p-lg-5">
                     <a href="" class="home-row-half-button text-white">
-                        <div class="home-row-half-button-icon">
+                        <div class="home-row-half-button-icon d-none d-lg-block">
                             {{ include('_icons/arrow.html.twig') }}
                         </div>
                         <div class="home-row-half-button-label">
@@ -61,7 +66,7 @@
                         pour garder vos enfants ou faire vos courses.
                     </div>
 
-                    <div class="row no-gutters">
+                    <div class="row no-gutters text-center">
                         <div class="col-12 col-xl-auto">
                             <a href="{{ path('process_request') }}"
                                class="btn btn-primary btn-lg border-white border mr-xl-3">
@@ -78,9 +83,9 @@
                 </div>
             </div>
             <div class="home-row-half bg-info text-white">
-                <div class="m-4 p-4 m-lg-5 p-lg-5">
+                <div class="m-4 p-3 m-lg-5 p-lg-5">
                     <a href="" class="home-row-half-button text-white">
-                        <div class="home-row-half-button-icon">
+                        <div class="home-row-half-button-icon d-none d-lg-block">
                             {{ include('_icons/arrow.html.twig') }}
                         </div>
                         <div class="home-row-half-button-label">
@@ -92,11 +97,11 @@
                         <p>
                             Vous êtes jeune et en bonne santé ?
                         </p>
-                        Donnez votre aide à un travailleur de la première ligne proche de chez vous
-                        en gardant un enfant ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.
+                        Aidez un travailleur en première ligne vivant proche de chez vous en gardant
+                        un enfant ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.
                     </div>
 
-                    <div class="row no-gutters">
+                    <div class="row no-gutters text-center">
                         <div class="col-12 col-xl-auto">
                             <a href="{{ path('process_helper') }}"
                                class="btn btn-info btn-lg border-white border mr-3">

@@ -83,7 +83,10 @@ html, body.full-height {
                 font-size: 32px;
                 font-weight: 900;
                 display: flex;
-                margin-left: -38px;
+
+                @media (min-width: 992px) {
+                    margin-left: -38px !important;
+                }
 
                 &-icon {
                     flex-basis: 0;
