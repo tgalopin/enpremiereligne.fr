@@ -48,7 +48,40 @@ class ProcessController extends AbstractController
      */
     public function helperView(Helper $helper, Request $request)
     {
-        return new Response('TODO');
+        return $this->render('process/helper_view.html.twig', [
+            'helper' => $helper,
+            'success' => $request->query->getBoolean('success'),
+        ]);
+    }
+
+    /**
+     * @Route("/je-peux-aider/{uuid}/supprimer", name="process_helper_delete_confirm")
+     */
+    public function helperDeleteConfirm(Helper $helper)
+    {
+        return $this->render('process/helper_delete_confirm.html.twig', ['helper' => $helper]);
+    }
+
+    /**
+     * @Route("/je-peux-aider/{uuid}/supprimer/do", name="process_helper_delete_do")
+     */
+    public function helperDeleteDo(EntityManagerInterface $manager, Helper $helper, Request $request)
+    {
+        if (!$this->isCsrfTokenValid('helper_delete', $request->query->get('token'))) {
+            throw $this->createNotFoundException();
+        }
+
+        $manager->remove($helper);
+        $manager->flush();
+
+        return $this->redirectToRoute('process_helper_delete_done');
+    }
+    /**
+     * @Route("/je-peux-aider/supprimer/effectue", name="process_helper_delete_done")
+     */
+    public function helperDeleted()
+    {
+        return $this->render('process/helper_delete_done.html.twig');
     }
 
     /**

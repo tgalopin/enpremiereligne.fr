@@ -1,0 +1,67 @@
+{% extends 'page_base.html.twig' %}
+
+{% block content %}
+    <div class="process-box">
+        <div class="bg-light p-3 p-lg-4">
+            <h3 class="text-center font-weight-bold mb-4">
+                Ma proposition d'aide
+            </h3>
+
+            <div class="process-details">
+                {% if success %}
+                    <div class="alert alert-success text-center mb-4">
+                        <p>
+                            Votre proposition a bien été enregistrée. Merci !
+                        </p>
+                        <p>
+                            <strong>
+                                Gardez le lien de cette page : il vous permettra de supprimer votre
+                                proposition si nécessaire.
+                            </strong>
+                        </p>
+                        Nous vous recontacterons dès que quelqu'un a besoin d'aide à proximité de vous.
+                    </div>
+                {% endif %}
+
+                <div class="px-2 px-lg-3">
+                    <div class="mb-3">
+                        Vous avez enregistré votre proposition d'aide
+                        le {{ helper.createdAt|localizeddate('medium', 'short') }}.
+                    </div>
+
+                    <ul>
+                        <li>
+                            {% if helper.canBuyGroceries %}
+                                Vous nous avez indiqué pouvoir faire des courses pour quelqu'un et les livrer
+                                proche de chez vous.
+                            {% else %}
+                                Vous nous avez indiqué ne pas être en capacité de faire des courses.
+                            {% endif %}
+                        </li>
+                        <li>
+                            {% if helper.canBabysit %}
+                                Vous nous avez indiqué pouvoir garder un enfant proche de chez vous, avec un maximum
+                                de {{ helper.babysitMaxChildren }} enfant(s) en garde à la fois.
+                            {% else %}
+                                Vous nous avez indiqué ne pas être en capacité de faire des courses.
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <div class="text-center mt-5">
+                        <a href="{{ path('process_helper_delete_confirm', {'uuid': helper.uuid}) }}"
+                           class="btn btn-primary btn-lg">
+                            Annuler ma proposition
+                        </a>
+
+                        <div class="mt-3">
+                            <strong class="text-muted">
+                                Pour mettre à jour votre proposition,
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
