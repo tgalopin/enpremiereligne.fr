@@ -1,5 +1,12 @@
 <?php
 
+if ($_SERVER['PHP_AUTH_USER'] ?? null !== 'beta' || $_SERVER['PHP_AUTH_PW'] ?? null !== 'demo') {
+    header('WWW-Authenticate: Basic realm="EPL"');
+    header('HTTP/1.0 401 Unauthorized');
+
+    exit('Unauthorized');
+}
+
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
