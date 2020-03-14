@@ -47,7 +47,7 @@
         <div class="home-row">
             <div class="home-row-half bg-primary text-white">
                 <div class="m-4 p-3 m-lg-5 p-lg-5">
-                    <a href="" class="home-row-half-button text-white">
+                    <a href="{{ path('process_request') }}" class="home-row-half-button text-white">
                         <div class="home-row-half-button-icon d-none d-lg-block">
                             {{ include('_icons/arrow.html.twig') }}
                         </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="home-row-half bg-info text-white">
                 <div class="m-4 p-3 m-lg-5 p-lg-5">
-                    <a href="" class="home-row-half-button text-white">
+                    <a href="{{ path('process_helper') }}" class="home-row-half-button text-white">
                         <div class="home-row-half-button-icon d-none d-lg-block">
                             {{ include('_icons/arrow.html.twig') }}
                         </div>
@@ -97,8 +97,9 @@
                         <p>
                             Vous êtes jeune et en bonne santé ?
                         </p>
-                        Aidez un travailleur en première ligne vivant proche de chez vous en gardant
-                        un enfant ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.
+                        Aidez un travailleur en première ligne vivant proche de chez vous en
+                        gardant un enfant ou en faisant des courses, et engagez-vous dans la
+                        lutte contre l’épidémie.
                     </div>
 
                     <div class="row no-gutters text-center">
@@ -127,7 +128,7 @@
                 Presse
             </a>
             <a href="{{ path('content_privacy') }}">
-                Politique de confidentialité
+                Protection des données
             </a>
             <a href="{{ path('content_conditions') }}">
                 Conditions d'utilisation

@@ -148,7 +148,7 @@ const NeedsChooser = () => {
 
     return (
         <div className="row">
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 mb-3">
                 <NeedGroceriesButton needGroceries={needGroceries} onChange={setNeedGroceries} />
             </div>
             <div className="col-12 col-lg-6">
