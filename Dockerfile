@@ -56,6 +56,7 @@ RUN set -xe \
 COPY --from=0 /usr/bin/composer /usr/bin/composer
 COPY docker/php.ini /usr/local/etc/php/php.ini
 COPY docker/nginx.conf /etc/nginx/nginx.conf
+COPY docker/www.conf /usr/local/etc/php-fpm.d/www.conf
 COPY docker/supervisord.conf /usr/local/etc/supervisord.conf
 
 WORKDIR /app
