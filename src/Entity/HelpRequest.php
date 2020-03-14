@@ -101,7 +101,7 @@ class HelpRequest
     /**
      * @ORM\Column(type="boolean")
      */
-    PUBLIC ?bool $finished = false;
+    public ?bool $finished = false;
 
     /**
      * @ORM\Column(type="datetime")
@@ -153,6 +153,6 @@ class HelpRequest
 
     public function isMatched(): bool
     {
-        return $this->matchedWith !== null;
+        return null !== $this->matchedWith;
     }
 }
