@@ -21,9 +21,11 @@ html, body.full-height {
 }
 
 .home {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    @media (min-height: 900px) and (min-width: 992px) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
     &-header {
         flex-basis: 0;
