@@ -6,11 +6,12 @@ use App\Entity\Helper;
 use App\Form\CompositeHelpRequestType;
 use App\Form\HelperType;
 use App\Model\CompositeHelpRequest;
+use App\Repository\HelperRepository;
 use App\Repository\HelpRequestRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -21,7 +22,7 @@ class ProcessController extends AbstractController
     /**
      * @Route("/je-peux-aider", name="process_helper")
      */
-    public function helper(EntityManagerInterface $manager, Request $request)
+    public function helper(EntityManagerInterface $manager, HelperRepository $repository, Request $request)
     {
         $helper = new Helper();
 
@@ -29,6 +30,9 @@ class ProcessController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $helper->email = strtolower($helper->email);
+            $repository->clearOldProposal($helper->email);
+
             $manager->persist($helper);
             $manager->flush();
 
@@ -95,9 +99,9 @@ class ProcessController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Try to associate this request to previous requests, to ease requests management afterwards
-            $ownerId = $repository->findOwnerUuid($helpRequest->email);
+            $repository->clearOldOwnerRequests($helpRequest->email);
 
+            $ownerId = Uuid::uuid4();
             foreach ($helpRequest->createStandaloneRequests($ownerId) as $standaloneRequest) {
                 $manager->persist($standaloneRequest);
             }
@@ -118,8 +122,45 @@ class ProcessController extends AbstractController
     /**
      * @Route("/j-ai-besoin-d-aide/{ownerUuid}", name="process_requester_view")
      */
-    public function requesterView(Request $request, string $ownerUuid)
+    public function requesterView(HelpRequestRepository $repository, Request $request, string $ownerUuid)
     {
-        return new Response('TODO');
+        $needs = $repository->findBy(['ownerUuid' => $ownerUuid], ['createdAt' => 'DESC']);
+        if (!$needs) {
+            throw $this->createNotFoundException();
+        }
+
+        return $this->render('process/request_owner_view.html.twig', [
+            'needs' => $repository->findBy(['ownerUuid' => $ownerUuid], ['createdAt' => 'DESC']),
+            'success' => $request->query->getBoolean('success'),
+        ]);
+    }
+
+    /**
+     * @Route("/j-ai-besoin-d-aide/{ownerUuid}/supprimer", name="process_requester_delete_confirm")
+     */
+    public function requestDeleteConfirm(string $ownerUuid)
+    {
+        return $this->render('process/request_owner_delete_confirm.html.twig', ['ownerUuid' => $ownerUuid]);
+    }
+
+    /**
+     * @Route("/j-ai-besoin-d-aide/{ownerUuid}/supprimer/do", name="process_requester_delete_do")
+     */
+    public function requestDeleteDo(HelpRequestRepository $repository, Request $request, string $ownerUuid)
+    {
+        if (!$this->isCsrfTokenValid('requester_delete', $request->query->get('token'))) {
+            throw $this->createNotFoundException();
+        }
+
+        $repository->clearOwnerRequestsByUuid($ownerUuid);
+
+        return $this->redirectToRoute('process_requester_delete_done');
+    }
+    /**
+     * @Route("/j-ai-besoin-d-aide/supprimer/effectue", name="process_requester_delete_done")
+     */
+    public function requestDeleted()
+    {
+        return $this->render('process/request_owner_delete_done.html.twig');
     }
 }

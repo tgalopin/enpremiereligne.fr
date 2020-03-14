@@ -13,13 +13,10 @@
                         <p>
                             Votre proposition a bien été enregistrée. Merci !
                         </p>
-                        <p>
-                            <strong>
-                                Gardez le lien de cette page : il vous permettra de supprimer votre
-                                proposition si nécessaire.
-                            </strong>
-                        </p>
-                        Nous vous recontacterons dès que quelqu'un a besoin d'aide à proximité de vous.
+                        <strong>
+                            Gardez le lien de cette page : il vous permettra de supprimer votre
+                            proposition si nécessaire.
+                        </strong>
                     </div>
                 {% endif %}
 
@@ -27,6 +24,7 @@
                     <div class="mb-3">
                         Vous avez enregistré votre proposition d'aide
                         le {{ helper.createdAt|localizeddate('medium', 'short') }}.
+                        Nous vous recontacterons dès que quelqu'un a besoin d'aide à proximité de vous.
                     </div>
 
                     <ul>
@@ -51,12 +49,15 @@
                     <div class="text-center mt-5">
                         <a href="{{ path('process_helper_delete_confirm', {'uuid': helper.uuid}) }}"
                            class="btn btn-primary btn-lg">
-                            Annuler ma proposition
+                            Supprimer ma proposition
                         </a>
 
                         <div class="mt-3">
                             <strong class="text-muted">
-                                Pour mettre à jour votre proposition,
+                                Pour mettre à jour votre proposition, supprimer-la
+                                puis enregistrer une nouvelle proposition.
+                                <br />
+                                Vous ne pouvez avoir qu'une seule proposition à la fois.
                             </strong>
                         </div>
                     </div>

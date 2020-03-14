@@ -4,21 +4,21 @@
     <div class="process-box">
         <div class="bg-light p-3 p-lg-4">
             <h3 class="text-center font-weight-bold mb-4">
-                Ma proposition d'aide
+                Ma demande d'aide
             </h3>
 
             <div class="process-details">
                 <p>
-                    Voulez-vous vraiment supprimer votre proposition et toutes les données
+                    Voulez-vous vraiment supprimer votre demande et toutes les données
                     associées ? Cette opération est irréversible.
                 </p>
 
                 <div class="text-center mt-4">
-                    <a href="{{ path('process_helper_delete_do', {'uuid': helper.uuid, 'token': csrf_token('helper_delete')}) }}"
+                    <a href="{{ path('process_requester_delete_do', {'ownerUuid': ownerUuid, 'token': csrf_token('requester_delete')}) }}"
                        class="btn btn-danger">
                         Oui, supprimer
                     </a>
-                    <a href="{{ path('process_helper_view', {'uuid': helper.uuid}) }}"
+                    <a href="{{ path('process_requester_view', {'ownerUuid': ownerUuid}) }}"
                        class="btn btn-link">
                         Non, retour
                     </a>

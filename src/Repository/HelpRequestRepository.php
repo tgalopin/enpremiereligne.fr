@@ -5,8 +5,6 @@ namespace App\Repository;
 use App\Entity\HelpRequest;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
-use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\UuidInterface;
 
 /**
  * @method HelpRequest|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,12 +19,21 @@ class HelpRequestRepository extends ServiceEntityRepository
         parent::__construct($registry, HelpRequest::class);
     }
 
-    public function findOwnerUuid(string $email): UuidInterface
+    public function clearOldOwnerRequests(string $email)
     {
-        if ($request = $this->findOneBy(['email' => strtolower($email)])) {
-            return $request->ownerUuid;
+        foreach ($this->findBy(['email' => strtolower($email)]) as $request) {
+            $this->_em->remove($request);
         }
 
-        return Uuid::uuid4();
+        $this->_em->flush();
+    }
+
+    public function clearOwnerRequestsByUuid(string $ownerUuid)
+    {
+        foreach ($this->findBy(['ownerUuid' =>$ownerUuid]) as $request) {
+            $this->_em->remove($request);
+        }
+
+        $this->_em->flush();
     }
 }

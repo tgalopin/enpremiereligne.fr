@@ -18,4 +18,13 @@ class HelperRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Helper::class);
     }
+
+    public function clearOldProposal(string $email)
+    {
+        foreach ($this->findBy(['email' => strtolower($email)]) as $proposal) {
+            $this->_em->remove($proposal);
+        }
+
+        $this->_em->flush();
+    }
 }

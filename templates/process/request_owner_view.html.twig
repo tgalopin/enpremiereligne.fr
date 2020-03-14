@@ -1,0 +1,80 @@
+{% extends 'page_base.html.twig' %}
+
+{% block content %}
+    <div class="process-box">
+        <div class="bg-light p-3 p-lg-4">
+            <h3 class="text-center font-weight-bold mb-4">
+                Ma demande d'aide
+            </h3>
+
+            <div class="process-details">
+                {% if success %}
+                    <div class="alert alert-success text-center mb-4">
+                        <p>
+                            Votre demande a bien été enregistrée.
+                        </p>
+                        <strong>
+                            Gardez le lien de cette page : il vous permettra de supprimer votre
+                            demande si nécessaire.
+                        </strong>
+                    </div>
+                {% endif %}
+
+                <div class="px-2 px-lg-3">
+                    <div class="mb-3">
+                        Vous avez enregistré votre demande d'aide
+                        le {{ needs[0].createdAt|localizeddate('medium', 'short') }}.
+                        Nous vous recontacterons dès que quelqu'un est disponible à proximité de vous.
+                    </div>
+
+                    <p>
+                        Vous pouvez supprimer votre demande complète à tout moment si besoin.
+                        <strong>Si vous souhaitez modifier votre demande, supprimer-la puis recréez-en une à nouveau.</strong>
+                    </p>
+
+                    <p>
+                        Les lignes suivantes correspondent à vos différents besoins et pourront être adressés par
+                        différents volontaires :
+                    </p>
+
+                    {% set ageRanges = {
+                        '0-1': '0 à 1 an',
+                        '1-2': '1 à 2 ans',
+                        '3-5': '3 à 5 ans',
+                        '6-9': '6 à 9 ans',
+                        '10-12': '10 à 12 ans',
+                        '13-': '13 ans et plus',
+                    } %}
+
+                    <ul>
+                        {% for need in needs %}
+                            <li>
+                                Vous nous avez indiqué avoir besoin de quelqu'un
+                                {% if need.helpType == 'groceries' %}
+                                    pour faire vos courses et les déposer à votre domicile.
+                                {% elseif need.helpType == 'babysit' %}
+                                    pour garder votre enfant de {{ need.childAgeRange }}.
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="text-center mt-5">
+                        <a href="{{ path('process_requester_delete_confirm', {'ownerUuid': needs[0].ownerUuid}) }}"
+                           class="btn btn-primary btn-lg">
+                            Supprimer ma demande
+                        </a>
+
+                        <div class="mt-3">
+                            <strong class="text-muted">
+                                Pour mettre à jour votre demande, supprimer-la puis recréez-en une à nouveau.
+                                <br />
+                                Vous ne pouvez avoir qu'une seule demande à la fois.
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
