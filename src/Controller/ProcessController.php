@@ -80,6 +80,7 @@ class ProcessController extends AbstractController
 
         return $this->redirectToRoute('process_helper_delete_done');
     }
+
     /**
      * @Route("/je-peux-aider/supprimer/effectue", name="process_helper_delete_done")
      */
@@ -156,6 +157,7 @@ class ProcessController extends AbstractController
 
         return $this->redirectToRoute('process_requester_delete_done');
     }
+
     /**
      * @Route("/j-ai-besoin-d-aide/supprimer/effectue", name="process_requester_delete_done")
      */

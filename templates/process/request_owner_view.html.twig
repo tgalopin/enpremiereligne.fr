@@ -34,7 +34,12 @@
 
                     <p>
                         Les lignes suivantes correspondent à vos différents besoins et pourront être adressés par
-                        différents volontaires :
+                        différents volontaires. Vous serez bien sûr maître de qui vous aide ou non :
+                        enpremiereligne.fr aide simplement à la mise en relation.
+                    </p>
+
+                    <p>
+                        Vous nous avez indiqué avoir besoin de quelqu'un :
                     </p>
 
                     {% set ageRanges = {
@@ -49,11 +54,10 @@
                     <ul>
                         {% for need in needs %}
                             <li>
-                                Vous nous avez indiqué avoir besoin de quelqu'un
                                 {% if need.helpType == 'groceries' %}
-                                    pour faire vos courses et les déposer à votre domicile.
+                                    pour faire vos courses et les déposer à votre domicile
                                 {% elseif need.helpType == 'babysit' %}
-                                    pour garder votre enfant de {{ need.childAgeRange }}.
+                                    pour garder votre enfant de {{ ageRanges[need.childAgeRange] }}
                                 {% endif %}
                             </li>
                         {% endfor %}

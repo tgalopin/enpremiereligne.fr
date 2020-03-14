@@ -30,7 +30,7 @@ class HelpRequestRepository extends ServiceEntityRepository
 
     public function clearOwnerRequestsByUuid(string $ownerUuid)
     {
-        foreach ($this->findBy(['ownerUuid' =>$ownerUuid]) as $request) {
+        foreach ($this->findBy(['ownerUuid' => $ownerUuid]) as $request) {
             $this->_em->remove($request);
         }
 
