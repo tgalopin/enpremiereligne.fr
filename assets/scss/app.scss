@@ -12,6 +12,34 @@ html, body.full-height {
     &-header {
         flex-basis: 0;
         text-align: center;
+
+        &-logo {
+            height: 60px;
+            max-width: 100%;
+        }
+
+        &-share {
+            display: flex;
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                padding: 10px;
+                margin: 0 5px;
+                color: #666;
+
+                &:hover {
+                    color: #000;
+                }
+            }
+
+            svg {
+                height: 18px;
+            }
+        }
     }
 
     &-footer {
