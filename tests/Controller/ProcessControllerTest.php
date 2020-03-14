@@ -20,16 +20,16 @@ class ProcessControllerTest extends WebTestCase
         $this->assertCount(1, $button);
 
         $client->submit($button->form(), [
-            'helper_form[firstName]' => 'Titouan',
-            'helper_form[lastName]' => 'Galopin',
-            'helper_form[age]' => '25',
-            'helper_form[zipCode]' => '75008',
-            'helper_form[email]' => 'titouan.galopin@example.com',
-            'helper_form[canBuyGroceries]' => true,
-            'helper_form[canBabysit]' => true,
-            'helper_form[haveChildren]' => true,
-            'helper_form[babysitMaxChildren]' => 3,
-            'helper_form[babysitAgeRanges]' => ['0-1'],
+            'helper[firstName]' => 'Titouan',
+            'helper[lastName]' => 'Galopin',
+            'helper[age]' => '25',
+            'helper[zipCode]' => '75008',
+            'helper[email]' => 'titouan.galopin@example.com',
+            'helper[canBuyGroceries]' => true,
+            'helper[canBabysit]' => true,
+            'helper[haveChildren]' => true,
+            'helper[babysitMaxChildren]' => 3,
+            'helper[babysitAgeRanges]' => ['0-1'],
         ]);
         $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
 
