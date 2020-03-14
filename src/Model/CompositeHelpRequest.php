@@ -2,6 +2,11 @@
 
 namespace App\Model;
 
+use App\Entity\HelpRequest;
+use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+
 class CompositeHelpRequest
 {
     /**
@@ -40,4 +45,34 @@ class CompositeHelpRequest
      * @var array|CompositeHelpRequestDetail[]
      */
     public array $details = [];
+
+    /**
+     * @Assert\Callback()
+     */
+    public function validate(ExecutionContextInterface $context)
+    {
+        if (!$this->details) {
+            $context->addViolation('Vous devez renseigner au moins un besoin pour vous enregistrer.');
+        }
+    }
+
+    public function createStandaloneRequests(UuidInterface $ownerUuid)
+    {
+        $requests = [];
+        foreach ($this->details as $detail) {
+            $request = new HelpRequest();
+            $request->ownerUuid = $ownerUuid;
+            $request->firstName = $this->firstName;
+            $request->lastName = $this->lastName;
+            $request->email = strtolower($this->email);
+            $request->zipCode = $this->zipCode;
+            $request->jobType = $this->jobType;
+            $request->helpType = $detail->helpType;
+            $request->childAgeRange = $detail->childAgeRange;
+
+            $requests[] = $request;
+        }
+
+        return $requests;
+    }
 }

@@ -22,7 +22,7 @@ class CompositeHelpRequestDetailType extends AbstractType
                     'Faire les courses et les livrer' => HelpRequest::TYPE_GROCERIES,
                 ],
             ])
-            ->add('babysitAgeRanges', ChoiceType::class, [
+            ->add('childAgeRange', ChoiceType::class, [
                 'required' => false,
                 'choices' => [
                     'Entre 0 et 1 an' => HelpRequest::AGE_RANGE_01,

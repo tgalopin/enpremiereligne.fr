@@ -12,6 +12,14 @@ html, body.full-height {
     margin-bottom: 0 !important;
 }
 
+.lift {
+    transition: transform .25s ease;
+
+    &:focus, &:hover {
+        transform: translate3d(0, -3px, 0);
+    }
+}
+
 .home {
     height: 100%;
     display: flex;
@@ -134,5 +142,28 @@ html, body.full-height {
 
     &-block {
         border: 1px solid #d7d7d7;
+    }
+
+    &-needs {
+        svg {
+            height: 18px;
+        }
+
+        &-disabled {
+            opacity: 0.3;
+        }
+
+        &-button {
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        &-checkbox {
+            flex-basis: 0;
+            width: 18px;
+            min-width: 18px;
+            margin-right: 10px;
+        }
     }
 }

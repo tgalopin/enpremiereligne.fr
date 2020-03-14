@@ -6,6 +6,7 @@ use App\Entity\Helper;
 use App\Form\CompositeHelpRequestType;
 use App\Form\HelperType;
 use App\Model\CompositeHelpRequest;
+use App\Repository\HelpRequestRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,9 +44,17 @@ class ProcessController extends AbstractController
     }
 
     /**
+     * @Route("/je-peux-aider/{uuid}", name="process_helper_view")
+     */
+    public function helperView(Helper $helper, Request $request)
+    {
+        return new Response('TODO');
+    }
+
+    /**
      * @Route("/j-ai-besoin-d-aide", name="process_request")
      */
-    public function request(Request $request)
+    public function request(EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request)
     {
         $helpRequest = new CompositeHelpRequest();
 
@@ -53,10 +62,17 @@ class ProcessController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dump($helpRequest);exit;
+            // Try to associate this request to previous requests, to ease requests management afterwards
+            $ownerId = $repository->findOwnerUuid($helpRequest->email);
 
-            return $this->redirectToRoute('process_helper_view', [
-                'uuid' => $helper->getUuid()->toString(),
+            foreach ($helpRequest->createStandaloneRequests($ownerId) as $standaloneRequest) {
+                $manager->persist($standaloneRequest);
+            }
+
+            $manager->flush();
+
+            return $this->redirectToRoute('process_requester_view', [
+                'ownerUuid' => $ownerId->toString(),
                 'success' => '1',
             ]);
         }
@@ -67,9 +83,9 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}", name="process_helper_view")
+     * @Route("/j-ai-besoin-d-aide/{ownerUuid}", name="process_requester_view")
      */
-    public function helperView(Helper $helper, Request $request)
+    public function requesterView(Request $request, string $ownerUuid)
     {
         return new Response('TODO');
     }

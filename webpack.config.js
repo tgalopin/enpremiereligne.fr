@@ -9,6 +9,7 @@ Encore
     .setPublicPath('/build')
     .addStyleEntry('lib', './assets/scss/lib.scss')
     .addStyleEntry('app', './assets/scss/app.scss')
+    .addEntry('request', './assets/jsx/request.jsx')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
 
@@ -20,6 +21,7 @@ Encore
         config.corejs = 3;
     })
     .enableSassLoader()
+    .enablePreactPreset()
 ;
 
 module.exports = Encore.getWebpackConfig();

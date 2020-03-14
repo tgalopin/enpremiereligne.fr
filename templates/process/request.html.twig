@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="process-box">
-        <div class="bg-light p-4">
+        <div class="bg-light p-3 p-lg-4">
             <h3 class="text-center font-weight-bold mb-4">
                 Demander de l'aide
             </h3>
@@ -28,7 +28,9 @@
 
             {{ form_start(form) }}
 
-            <div class="process-block bg-white p-4 mb-4">
+            {{ form_errors(form) }}
+
+            <div class="process-block bg-white p-3 p-lg-4 mb-4">
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-3">
                         {{ form_row(form.firstName, {'label': 'Votre prénom (requis)'}) }}
@@ -53,10 +55,16 @@
                 {{ form_row(form.email, {'label': 'Votre adresse e-mail (requis)', 'help': 'Utilisé pour vous mettre en relation'}) }}
             </div>
 
-            <div class="process-block bg-white p-4 mb-4">
-                <strong>
-                    Quels sont vos besoins ?
-                </strong>
+            <div class="process-block bg-white p-3 p-lg-4 mb-4">
+                <div class="mb-3">
+                    <strong>
+                        Quels sont vos besoins ?
+                    </strong>
+                </div>
+
+                <div id="request-needs" class="process-needs">
+                    {{ form_widget(form.details) }}
+                </div>
             </div>
 
             <div class="text-center">
@@ -77,8 +85,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-    <script>
-
-    </script>
+    {{ encore_entry_script_tags('request') }}
 {% endblock %}
