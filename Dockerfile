@@ -27,7 +27,6 @@ RUN set -xe \
         libxslt-dev \
         postgresql-dev \
         libzip-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
         bcmath \
         exif \
@@ -67,7 +66,7 @@ ENV APP_ENV=prod \
     DATABASE_URL="postgresql://main:main@127.0.0.1:5432/main?serverVersion=12&charset=utf8" \
     SENTRY_DSN="https://xxx@sentry.io/xxx"
 
-RUN mkdir var && \
+RUN mkdir -p var && \
     composer install --prefer-dist --no-interaction --no-ansi --no-autoloader --no-scripts --no-progress --no-suggest && \
     composer clear-cache && \
     composer dump-autoload --optimize --classmap-authoritative && \
