@@ -14,7 +14,7 @@ easy_admin:
     entities:
         Helper:
             class: App\Entity\Helper
-            disabled_actions: ['show', 'new', 'edit', 'delete']
+            disabled_actions: ['show', 'new', 'edit']
             list:
                 title: Helpers
                 max_results: 100
@@ -29,7 +29,7 @@ easy_admin:
 
         HelpRequest:
             class: App\Entity\HelpRequest
-            disabled_actions: ['show', 'new', 'edit', 'delete']
+            disabled_actions: ['show', 'new', 'edit']
             list:
                 title: Help requests
                 max_results: 100
