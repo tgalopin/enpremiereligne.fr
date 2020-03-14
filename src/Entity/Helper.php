@@ -122,6 +122,11 @@ class Helper
         return $this->createdAt;
     }
 
+    public function getIncompleteName(): string
+    {
+        return $this->firstName.' '.strtoupper($this->lastName[0]).'.';
+    }
+
     /**
      * @return Collection|HelpRequest[]
      */

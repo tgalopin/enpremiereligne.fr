@@ -2,7 +2,7 @@
 
 namespace App\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\Tests\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 class LoginControllerTest extends WebTestCase
@@ -60,5 +60,20 @@ class LoginControllerTest extends WebTestCase
 
         $this->assertCount(1, $crawler->filter('button:contains("Se connecter")'));
         $this->assertCount(1, $crawler->filter('.alert-danger'));
+    }
+
+    public function testLogout()
+    {
+        $client = static::createClient();
+        $this->authenticate($client, 'tgalopin');
+
+        $client->request('GET', '/login');
+        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertTrue($client->getResponse()->isRedirect('/admin/'));
+
+        $client->request('GET', '/logout');
+        $client->request('GET', '/admin/');
+        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertTrue($client->getResponse()->isRedirect('/login'));
     }
 }

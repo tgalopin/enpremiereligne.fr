@@ -20,7 +20,7 @@ security:
                 authenticators:
                     - App\Security\AdminAuthenticator
             logout:
-                path: app_logout
+                path: security_logout
                 target: homepage
 
     access_control:

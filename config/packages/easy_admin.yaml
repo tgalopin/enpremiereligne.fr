@@ -1,4 +1,44 @@
 easy_admin:
+    site_name: En première ligne
+
+    design:
+        menu:
+            - { route: 'homepage', label: 'Back to the website', icon: 'home' }
+            - { route: 'security_logout', label: 'Log out', icon: 'sign-out' }
+
+            - { label: 'Matchings' }
+            - { route: 'admin_validate_matches', label: 'Apply matches', icon: 'check' }
+            - { entity: 'Helper', label: 'Helpers', icon: 'users' }
+            - { entity: 'HelpRequest', label: 'Help requests', icon: 'handshake-o' }
+
     entities:
-        - App\Entity\Helper
-        - App\Entity\HelpRequest
+        Helper:
+            class: App\Entity\Helper
+            disabled_actions: ['show', 'new', 'edit', 'delete']
+            list:
+                title: Helpers
+                max_results: 100
+                sort: ['createdAt', 'DESC']
+                fields:
+                    - id
+                    - zipCode
+                    - { property: 'incompleteName', label: 'Name' }
+                    - canBabysit
+                    - canBuyGroceries
+                    - createdAt
+
+        HelpRequest:
+            class: App\Entity\HelpRequest
+            disabled_actions: ['show', 'new', 'edit', 'delete']
+            list:
+                title: Help requests
+                max_results: 100
+                sort: ['createdAt', 'DESC']
+                fields:
+                    - id
+                    - zipCode
+                    - helpType
+                    - { property: 'incompleteName', label: 'Name' }
+                    - { property: 'isMatched', type: 'boolean', label: 'Has a match?' }
+                    - finished
+                    - createdAt

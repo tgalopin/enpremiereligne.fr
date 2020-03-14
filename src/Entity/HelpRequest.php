@@ -101,7 +101,7 @@ class HelpRequest
     /**
      * @ORM\Column(type="boolean")
      */
-    private ?bool $finished = false;
+    PUBLIC ?bool $finished = false;
 
     /**
      * @ORM\Column(type="datetime")
@@ -136,6 +136,11 @@ class HelpRequest
         return $this->id;
     }
 
+    public function getIncompleteName(): string
+    {
+        return $this->firstName.' '.strtoupper($this->lastName[0]).'.';
+    }
+
     public function getUuid(): ?UuidInterface
     {
         return $this->uuid;
@@ -144,5 +149,10 @@ class HelpRequest
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
+    }
+
+    public function isMatched(): bool
+    {
+        return $this->matchedWith !== null;
     }
 }
