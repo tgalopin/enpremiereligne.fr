@@ -30,3 +30,19 @@ jobs:
               run: symfony console doctrine:migrations:migrate -n && symfony console doctrine:fixtures:load -n
             - name: PHPUnit
               run: bin/phpunit
+
+    release:
+        runs-on: ubuntu-latest
+        needs: [coding-style, console-tests]
+        if: github.ref == 'refs/heads/master'
+        steps:
+            - uses: actions/checkout@master
+            - name: Build assets
+              run: yarn install && yarn build
+            - name: Build and publish production image
+              uses: elgohr/Publish-Docker-Github-Action@master
+              with:
+                  name: tgalopin/enpremiereligne.fr/website
+                  username: ${{ secrets.GITHUB_DOCKER_USERNAME }}
+                  password: ${{ secrets.GITHUB_DOCKER_PASSWORD }}
+                  registry: docker.pkg.github.com

@@ -84,7 +84,7 @@ class Helper
      * @ORM\Column(type="smallint")
      *
      * @Assert\GreaterThanOrEqual(1)
-     * @Assert\LessThanOrEqual(message="Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.")
+     * @Assert\LessThanOrEqual(4, message="Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.")
      */
     public ?int $babysitMaxChildren = 1;
 
