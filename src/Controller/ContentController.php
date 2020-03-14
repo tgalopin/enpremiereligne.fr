@@ -27,6 +27,14 @@ class ContentController extends AbstractController
     }
 
     /**
+     * @Route("/presse", name="content_press")
+     */
+    public function press()
+    {
+        return $this->render('content/press.html.twig');
+    }
+
+    /**
      * @Route("/politique-de-confidentialite", name="content_privacy")
      */
     public function privacy()
