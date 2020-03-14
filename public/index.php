@@ -22,6 +22,14 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false
 
 $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
+
+if ($request->headers->get('php_auth_user') !== 'beta' || $request->headers->get('php_auth_pw') !== 'demo') {
+    header('WWW-Authenticate: Basic realm="EPL"');
+    header('HTTP/1.0 401 Unauthorized');
+
+    exit('Unauthorized');
+}
+
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
