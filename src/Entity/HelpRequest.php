@@ -43,53 +43,34 @@ class HelpRequest
     public ?UuidInterface $ownerUuid;
 
     /**
-     * @ORM\Column(length=20)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Choice({"babysit", "groceries"})
-     */
-    public ?string $helpType;
-
-    /**
      * @ORM\Column(length=100)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Length(max=100)
      */
     public ?string $firstName;
 
     /**
      * @ORM\Column(length=100)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Length(max=100)
      */
     public ?string $lastName;
 
     /**
      * @ORM\Column(length=200)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Email()
-     * @Assert\Length(max=200)
      */
     public ?string $email;
 
     /**
      * @ORM\Column(length=10)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Length(max=5)
      */
     public ?string $zipCode;
 
     /**
      * @ORM\Column(length=50)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Choice({"health", "food", "drugs", "other"})
      */
     public ?string $jobType;
+
+    /**
+     * @ORM\Column(length=20)
+     */
+    public ?string $helpType;
 
     /**
      * @ORM\Column(length=10, nullable=true)
@@ -104,14 +85,14 @@ class HelpRequest
     public ?bool $finished = false;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    private \DateTime $createdAt;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Helper", inversedBy="requests")
      */
     public ?Helper $matchedWith;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private \DateTime $createdAt;
 
     public function __construct()
     {

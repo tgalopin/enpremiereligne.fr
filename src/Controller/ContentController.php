@@ -20,9 +20,9 @@ class ContentController extends AbstractController
     }
 
     /**
-     * @Route("/qui-sommes-nous", name="content_who")
+     * @Route("/pourquoi", name="content_why")
      */
-    public function who()
+    public function why()
     {
         return new Response('TODO');
     }
