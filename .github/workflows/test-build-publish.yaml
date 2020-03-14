@@ -25,7 +25,7 @@ jobs:
             - name: Install dependencies
               run: composer install --prefer-dist --no-interaction --no-ansi --no-progress --no-suggest
             - name: Start services
-              run: docker-compose up -d
+              run: docker-compose up -d && sleep 3
             - name: Prepare database
               run: symfony console doctrine:migrations:migrate -n && symfony console doctrine:fixtures:load -n
             - name: PHPUnit
