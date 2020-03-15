@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -22,7 +23,7 @@ class ProcessController extends AbstractController
     /**
      * @Route("/je-peux-aider", name="process_helper")
      */
-    public function helper(EntityManagerInterface $manager, HelperRepository $repository, Request $request)
+    public function helper(MailerInterface $mailer, EntityManagerInterface $manager, HelperRepository $repository, Request $request)
     {
         $helper = new Helper();
 
@@ -92,7 +93,7 @@ class ProcessController extends AbstractController
     /**
      * @Route("/j-ai-besoin-d-aide", name="process_request")
      */
-    public function request(EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request)
+    public function request(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request)
     {
         $helpRequest = new CompositeHelpRequest();
 
