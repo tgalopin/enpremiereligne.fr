@@ -46,7 +46,7 @@ class ProcessController extends AbstractController
                 ->context(['helper' => $helper])
             ;
 
-            $mailer->send($email);
+            //$mailer->send($email);
 
             return $this->redirectToRoute('process_helper_view', [
                 'uuid' => $helper->getUuid()->toString(),
