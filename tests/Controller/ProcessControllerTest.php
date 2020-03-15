@@ -3,7 +3,9 @@
 namespace App\Tests\Controller;
 
 use App\Entity\Helper;
+use App\Entity\HelpRequest;
 use App\Repository\HelperRepository;
+use App\Repository\HelpRequestRepository;
 use App\Tests\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -47,7 +49,7 @@ class ProcessControllerTest extends WebTestCase
         $this->assertSame(['0-1'], $helper->babysitAgeRanges);
     }
 
-    public function testHelperView()
+    public function testHelperViewDelete()
     {
         $client = static::createClient();
 
@@ -56,6 +58,41 @@ class ProcessControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/process/je-peux-aider/'.$helper->getUuid()->toString());
         $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
-        $this->assertCount(1, $crawler->filter('a:contains(\'Supprimer ma proposition\')'));
+        $link = $crawler->filter('a:contains(\'Supprimer ma proposition\')');
+        $this->assertCount(1, $link);
+
+        $crawler = $client->click($link->link());
+        $link = $crawler->filter('a:contains(\'Oui, supprimer\')');
+        $this->assertCount(1, $link);
+
+        $client->click($link->link());
+        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+
+        $helper = self::$container->get(HelperRepository::class)->findOneBy(['email' => 'elizabeth.gregory@example.com']);
+        $this->assertNull($helper);
+    }
+
+    public function testRequesterViewDelete()
+    {
+        $client = static::createClient();
+
+        $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'jeanne.martin@example.com']);
+        $this->assertInstanceOf(HelpRequest::class, $request);
+
+        $crawler = $client->request('GET', '/process/j-ai-besoin-d-aide/'.$request->ownerUuid->toString());
+        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+
+        $link = $crawler->filter('a:contains(\'Supprimer ma demande\')');
+        $this->assertCount(1, $link);
+
+        $crawler = $client->click($link->link());
+        $link = $crawler->filter('a:contains(\'Oui, supprimer\')');
+        $this->assertCount(1, $link);
+
+        $client->click($link->link());
+        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+
+        $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'jeanne.martin@example.com']);
+        $this->assertNull($request);
     }
 }
