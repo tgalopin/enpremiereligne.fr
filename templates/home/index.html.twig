@@ -120,22 +120,6 @@
             </div>
         </div>
 
-        <footer class="home-footer p-3">
-            <a href="{{ path('content_why') }}">
-                Pourquoi enpremiereligne.fr ?
-            </a>
-            <a href="{{ path('content_who') }}">
-                Qui sommes-nous ?
-            </a>
-            <a href="{{ path('content_privacy') }}">
-                Protection des données
-            </a>
-            <a href="{{ path('content_conditions') }}">
-                Conditions d'utilisation
-            </a>
-            <a href="{{ path('content_legalities') }}">
-                Mentions légales
-            </a>
-        </footer>
+        {{ include('_include/footer.html.twig') }}
     </div>
 {% endblock %}

@@ -67,9 +67,17 @@ html, body.full-height {
         color: #e5e5e5;
 
         a {
-            color: #e5e5e5  ;
+            color: #e5e5e5;
             margin: 0 10px;
             font-size: 13px;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        svg {
+            height: 24px;
         }
     }
 
@@ -144,6 +152,23 @@ html, body.full-height {
 
     &-block {
         border: 1px solid #d7d7d7;
+    }
+
+    &-share {
+        a {
+            display: inline-block;
+            color: #666;
+            padding: 5px;
+            margin: 0 5px;
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+        svg {
+            height: 28px;
+        }
     }
 
     &-needs {

@@ -14,41 +14,81 @@
             <div class="process-details">
                 {% if success %}
                     <div class="alert alert-success text-center mb-4">
-                        <p>
-                            Votre proposition a bien été enregistrée. Merci !
-                        </p>
-                        <strong>
-                            Gardez le lien de cette page : il vous permettra de supprimer votre
-                            proposition si nécessaire.
-                        </strong>
+                        Votre proposition a bien été enregistrée. Merci !
                     </div>
                 {% endif %}
 
                 <div class="px-2 px-lg-3">
-                    <div class="mb-3">
+                    <div class="mb-3 text-center">
+                        <p>
+                            <strong>
+                                Gardez le lien de cette page : il vous permettra de supprimer votre
+                                proposition si nécessaire.
+                            </strong>
+                        </p>
+
+                        Vous pouvez supprimer votre proposition à tout moment si besoin.
+                        <br />
+                        Si vous souhaitez modifier votre proposition, supprimer-la puis recréez-en une à nouveau.
+                    </div>
+
+                    <div class="process-block bg-white p-3 p-lg-4 mb-4">
                         Vous avez enregistré votre proposition d'aide
                         le {{ helper.createdAt|localizeddate('medium', 'short') }}.
                         Nous vous recontacterons dès que quelqu'un a besoin d'aide à proximité de vous.
                     </div>
 
-                    <ul>
-                        <li>
-                            {% if helper.canBuyGroceries %}
-                                Vous nous avez indiqué pouvoir faire des courses pour quelqu'un et les livrer
-                                proche de chez vous.
-                            {% else %}
-                                Vous nous avez indiqué ne pas être en capacité de faire des courses.
-                            {% endif %}
-                        </li>
-                        <li>
-                            {% if helper.canBabysit %}
-                                Vous nous avez indiqué pouvoir garder un enfant proche de chez vous, avec un maximum
-                                de {{ helper.babysitMaxChildren }} enfant(s) en garde à la fois.
-                            {% else %}
-                                Vous nous avez indiqué ne pas être en capacité de faire des courses.
-                            {% endif %}
-                        </li>
-                    </ul>
+                    <div class="process-block bg-white p-3 p-lg-4 mb-4">
+                        <p>
+                            Vous nous avez indiqué :
+                        </p>
+
+                        <ul>
+                            <li>
+                                {% if helper.canBuyGroceries %}
+                                    pouvoir faire des courses pour quelqu'un et les livrer
+                                    proche de chez vous.
+                                {% else %}
+                                    ne pas être en capacité de faire des courses.
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if helper.canBabysit %}
+                                    pouvoir garder un enfant proche de chez vous, avec un maximum
+                                    de {{ helper.babysitMaxChildren }} enfant(s) en garde à la fois.
+                                {% else %}
+                                    ne pas être en capacité de faire des courses.
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="process-block bg-white p-3 p-lg-4 mb-4">
+                        <div class="text-muted text-uppercase">
+                            <div class="mb-3">
+                                Partagez l'initiative sur les réseaux sociaux
+                            </div>
+
+                            <div class="process-share text-center">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}"
+                                   title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/facebook.html.twig') }}
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}"
+                                   title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/twitter.html.twig') }}
+                                </a>
+                                <a href="https://telegram.me/share/url?url={{ url('homepage') }}"
+                                   title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/telegram.html.twig') }}
+                                </a>
+                                <a href="https://wa.me/?text={{ url('homepage') }}"
+                                   title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/whatsapp.html.twig') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="text-center mt-5">
                         <a href="{{ path('process_helper_delete_confirm', {'uuid': helper.uuid}) }}"

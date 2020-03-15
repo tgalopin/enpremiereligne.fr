@@ -14,58 +14,89 @@
             <div class="process-details">
                 {% if success %}
                     <div class="alert alert-success text-center mb-4">
-                        <p>
-                            Votre demande a bien été enregistrée.
-                        </p>
-                        <strong>
-                            Gardez le lien de cette page : il vous permettra de supprimer votre
-                            demande si nécessaire.
-                        </strong>
+                        Votre demande a bien été enregistrée.
                     </div>
                 {% endif %}
 
                 <div class="px-2 px-lg-3">
-                    <div class="mb-3">
+                    <div class="mb-3 text-center">
+                        <p>
+                            <strong>
+                                Gardez le lien de cette page : il vous permettra de supprimer votre
+                                demande si nécessaire.
+                            </strong>
+                        </p>
+
+                        Vous pouvez supprimer votre demande à tout moment si besoin.
+                        <br />
+                        Si vous souhaitez modifier votre demande, supprimer-la puis recréez-en une à nouveau.
+                    </div>
+
+                    <div class="process-block bg-white p-3 p-lg-4 mb-4">
                         Vous avez enregistré votre demande d'aide
                         le {{ needs[0].createdAt|localizeddate('medium', 'short') }}.
                         Nous vous recontacterons dès que quelqu'un est disponible à proximité de vous.
                     </div>
 
-                    <p>
-                        Vous pouvez supprimer votre demande complète à tout moment si besoin.
-                        <strong>Si vous souhaitez modifier votre demande, supprimer-la puis recréez-en une à nouveau.</strong>
-                    </p>
+                    <div class="process-block bg-white p-3 p-lg-4 mb-4">
+                        <p>
+                            Les lignes suivantes correspondent à vos différents besoins et pourront être adressés par
+                            différents volontaires. Vous serez bien sûr maître de qui vous aide ou non :
+                            enpremiereligne.fr aide simplement à la mise en relation.
+                        </p>
 
-                    <p>
-                        Les lignes suivantes correspondent à vos différents besoins et pourront être adressés par
-                        différents volontaires. Vous serez bien sûr maître de qui vous aide ou non :
-                        enpremiereligne.fr aide simplement à la mise en relation.
-                    </p>
+                        <p>
+                            Vous nous avez indiqué avoir besoin de quelqu'un :
+                        </p>
 
-                    <p>
-                        Vous nous avez indiqué avoir besoin de quelqu'un :
-                    </p>
+                        {% set ageRanges = {
+                            '0-1': '0 à 1 an',
+                            '1-2': '1 à 2 ans',
+                            '3-5': '3 à 5 ans',
+                            '6-9': '6 à 9 ans',
+                            '10-12': '10 à 12 ans',
+                            '13-': '13 ans et plus',
+                        } %}
 
-                    {% set ageRanges = {
-                        '0-1': '0 à 1 an',
-                        '1-2': '1 à 2 ans',
-                        '3-5': '3 à 5 ans',
-                        '6-9': '6 à 9 ans',
-                        '10-12': '10 à 12 ans',
-                        '13-': '13 ans et plus',
-                    } %}
+                        <ul>
+                            {% for need in needs %}
+                                <li>
+                                    {% if need.helpType == 'groceries' %}
+                                        pour faire vos courses et les déposer à votre domicile
+                                    {% elseif need.helpType == 'babysit' %}
+                                        pour garder votre enfant de {{ ageRanges[need.childAgeRange] }}
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
 
-                    <ul>
-                        {% for need in needs %}
-                            <li>
-                                {% if need.helpType == 'groceries' %}
-                                    pour faire vos courses et les déposer à votre domicile
-                                {% elseif need.helpType == 'babysit' %}
-                                    pour garder votre enfant de {{ ageRanges[need.childAgeRange] }}
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    <div class="process-block bg-white p-3 p-lg-4 mb-4">
+                        <div class="text-muted text-uppercase">
+                            <div class="mb-3">
+                                Partagez l'initiative sur les réseaux sociaux
+                            </div>
+
+                            <div class="process-share text-center">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}"
+                                   title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/facebook.html.twig') }}
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}"
+                                   title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/twitter.html.twig') }}
+                                </a>
+                                <a href="https://telegram.me/share/url?url={{ url('homepage') }}"
+                                   title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/telegram.html.twig') }}
+                                </a>
+                                <a href="https://wa.me/?text={{ url('homepage') }}"
+                                   title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                                    {{ include('_icons/whatsapp.html.twig') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="text-center mt-5">
                         <a href="{{ path('process_requester_delete_confirm', {'ownerUuid': needs[0].ownerUuid}) }}"
