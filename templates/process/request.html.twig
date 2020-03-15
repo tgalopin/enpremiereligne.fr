@@ -44,7 +44,10 @@
 
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-3">
-                        {{ form_row(form.zipCode, {'label': 'Votre code postal (requis)', 'help': 'Utilisé pour trouver des personnes proches de vous'}) }}
+                        {{ form_row(form.zipCode, {
+                            'label': 'Votre code postal (français uniquement, requis)',
+                            'help': 'Utilisé pour trouver des personnes proches de vous. Nous ne travaillons que sur le territoire Français pour le moment.'
+                        }) }}
                     </div>
                     <div class="col-12 col-lg-6 mb-3">
                         {{ form_row(form.jobType, {
