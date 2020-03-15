@@ -26,6 +26,7 @@ RUN set -xe \
         icu-dev \
         libxslt-dev \
         postgresql-dev \
+        rabbitmq-c-dev \
         libzip-dev \
     && docker-php-ext-install \
         bcmath \
@@ -39,9 +40,11 @@ RUN set -xe \
     && pecl install \
         apcu-${APCU_VERSION} \
         redis-${REDIS_VERSION} \
+        amqp-1.9.4 \
 	&& docker-php-ext-enable --ini-name 05-opcache.ini opcache \
     && docker-php-ext-enable --ini-name 80-apcu.ini apcu \
 	&& docker-php-ext-enable --ini-name 85-redis.ini redis \
+	&& docker-php-ext-enable --ini-name 90-amqp.ini amqp \
     && runDeps="$( \
         scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
             | tr ',' '\n' \
