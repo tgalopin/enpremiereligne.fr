@@ -27,11 +27,11 @@ class ContentController extends AbstractController
     }
 
     /**
-     * @Route("/presse", name="content_press")
+     * @Route("/qui-sommes-nous", name="content_who")
      */
-    public function press()
+    public function who()
     {
-        return $this->render('content/press.html.twig');
+        return $this->render('content/who.html.twig');
     }
 
     /**
