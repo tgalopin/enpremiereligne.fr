@@ -20,10 +20,10 @@ Nous ne sommes pas une entreprise, nous voulons uniquement contribuer à notre n
 à la lutte contre le virus. Et quand nous l’aurons vaincu, notre site disparaitra.
 
 Si vous êtes jeune et en bonne santé, enregistrez-vous pour aider quelqu'un proche
-de chez vous. 
+de chez vous.
 
 Si vous êtes un travailleur de la première ligne et avez des difficultés logistiques,
 enregistrez-vous pour être mis en relation avec quelqu'un qui pourrait vous aider.
 
-Si vous êtes développeur ou développeuese, contribuez à ce projet pour l'améliorer et
+Si vous êtes développeur ou développeuse, contribuez à ce projet pour l'améliorer et
 aider le plus de gens possibles.
