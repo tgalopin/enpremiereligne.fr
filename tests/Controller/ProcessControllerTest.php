@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ProcessControllerTest extends WebTestCase
 {
-    public function testHelper()
+    public function testHelperCreate()
     {
         $client = static::createClient();
 
@@ -45,5 +45,17 @@ class ProcessControllerTest extends WebTestCase
         $this->assertSame(true, $helper->haveChildren);
         $this->assertSame(3, $helper->babysitMaxChildren);
         $this->assertSame(['0-1'], $helper->babysitAgeRanges);
+    }
+
+    public function testHelperView()
+    {
+        $client = static::createClient();
+
+        $helper = self::$container->get(HelperRepository::class)->findOneBy(['email' => 'elizabeth.gregory@example.com']);
+        $this->assertInstanceOf(Helper::class, $helper);
+
+        $crawler = $client->request('GET', '/process/je-peux-aider/'.$helper->getUuid()->toString());
+        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+        $this->assertCount(1, $crawler->filter('a:contains(\'Supprimer ma proposition\')'));
     }
 }
