@@ -38,7 +38,7 @@ class HelpRequestRepository extends ServiceEntityRepository
         $this->_em->flush();
     }
 
-    public function closeGroceriesFor(string $ownerUuid, ?Helper $withHelper)
+    public function closeRequestsOf(string $ownerUuid, ?Helper $withHelper, string $type)
     {
         $requestQuery = $this->createQueryBuilder('r')
             ->update()
@@ -46,7 +46,7 @@ class HelpRequestRepository extends ServiceEntityRepository
             ->where('r.ownerUuid = :ownerUuid')
             ->setParameter('ownerUuid', $ownerUuid)
             ->andWhere('r.helpType = :type')
-            ->setParameter('type', HelpRequest::TYPE_GROCERIES)
+            ->setParameter('type', $type)
         ;
 
         if ($withHelper) {

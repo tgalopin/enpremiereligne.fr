@@ -53,9 +53,9 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/match/close/{ownerUuid}/{id}", defaults={"id"=null}, name="admin_match_close_groceries")
+     * @Route("/match/close/{type}/{ownerUuid}/{id}", defaults={"id"=null}, name="admin_match_close")
      */
-    public function closeGroceries(HelpRequestRepository $repository, string $ownerUuid, ?Helper $helper, Request $request): Response
+    public function close(HelpRequestRepository $repository, string $type, string $ownerUuid, ?Helper $helper, Request $request): Response
     {
         $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => false]);
         if (!$requests) {
@@ -67,13 +67,13 @@ class AdminController extends AbstractController
                 throw $this->createNotFoundException();
             }
 
-            $repository->closeGroceriesFor($ownerUuid, $helper);
+            $repository->closeRequestsOf($ownerUuid, $helper, $type);
 
             return $this->redirectToRoute('admin_matches');
         }
 
         return $this->render('admin/confirm.html.twig', [
-            'type' => 'groceries',
+            'type' => $type,
             'requests' => $requests,
             'ownerUuid' => $ownerUuid,
             'helper' => $helper,

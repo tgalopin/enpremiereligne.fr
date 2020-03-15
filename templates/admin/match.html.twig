@@ -21,7 +21,7 @@
                     <strong>{{ requests[0].firstName }} a besoin qu'on lui achète et livre des courses</strong>
                 </div>
                 <div class="col-6">
-                    <a href="{{ path('admin_match_close_groceries', {'ownerUuid': requests[0].ownerUuid}) }}"
+                    <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': requests[0].ownerUuid}) }}"
                        class="btn btn-primary mr-2">
                         Fermer le besoin anonymement
                     </a>
@@ -53,7 +53,7 @@
                                 </small>
                             </div>
                             <div class="col-2">
-                                <a href="{{ path('admin_match_close_groceries', {'ownerUuid': requests[0].ownerUuid, 'id': match.helper.id}) }}"
+                                <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': requests[0].ownerUuid, 'id': match.helper.id}) }}"
                                    class="btn btn-primary mb-2">
                                     Fermer le besoin
                                 </a>
@@ -85,7 +85,7 @@
                     {% endfor %}
                 </div>
                 <div class="col-6">
-                    <a href=""
+                    <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': requests[0].ownerUuid}) }}"
                        class="btn btn-primary mr-2">
                         Fermer le besoin anonymement
                     </a>
@@ -126,7 +126,7 @@
                                 </small>
                             </div>
                             <div class="col-2">
-                                <a href=""
+                                <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': requests[0].ownerUuid, 'id': match.helper.id}) }}"
                                    class="btn btn-primary mb-2">
                                     Fermer le besoin
                                 </a>
