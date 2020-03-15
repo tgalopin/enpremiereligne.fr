@@ -1,0 +1,140 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'Match' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    <div class="p-3">
+        Demande de :
+        <br />
+        <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
+        <br />
+        Travail : {{ requests[0].jobType }}
+    </div>
+
+    {% if matched.groceries is not null %}
+        <hr class="m-0" />
+
+        <div class="p-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-6">
+                    <strong>{{ requests[0].firstName }} a besoin qu'on lui achète et livre des courses</strong>
+                </div>
+                <div class="col-6">
+                    <a href="{{ path('admin_match_close_groceries', {'ownerUuid': requests[0].ownerUuid}) }}"
+                       class="btn btn-primary mr-2">
+                        Fermer le besoin anonymement
+                    </a>
+                    <small>Utile si vous avez associé quelqu'un d'autre manuellement</small>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                {{ matched.groceries|length }} helpers potentiels proches trouvés pour acheter des courses :
+            </div>
+
+            <ul>
+                {% for match in matched.groceries %}
+                    <li class="mb-3">
+                        <div class="row align-items-center">
+                            <div class="col-5">
+                                <strong>{{ match.helper.firstName }} {{ match.helper.lastName }}</strong>
+                                ({{ match.helper.zipCode }})
+                                <br />
+                                Score : {{ match.score }}
+                                ({{ match.helper.canBabysit ? 'peut garder des enfants' : 'ne souhaite pas garder d\'enfants' }})
+                            </div>
+                            <div class="col-5">
+                                <small>
+                                    Match intéressant ? Contactez<br />
+                                    <strong>{{ requests[0].email }}</strong> (demandeur) et<br />
+                                    <strong>{{ match.helper.email }}</strong> (volontaire)
+                                    <br />pour les informer, puis fermez le besoin.
+                                </small>
+                            </div>
+                            <div class="col-2">
+                                <a href="{{ path('admin_match_close_groceries', {'ownerUuid': requests[0].ownerUuid, 'id': match.helper.id}) }}"
+                                   class="btn btn-primary mb-2">
+                                    Fermer le besoin
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if matched.babysit is not null %}
+        {% set childrenRequests = [] %}
+        {% for request in requests %}
+            {% set childrenRequests = childrenRequests|merge([request]) %}
+        {% endfor %}
+
+        <hr class="m-0" />
+
+        <div class="p-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-6">
+                    <div class="mb-2">
+                        <strong>{{ requests[0].firstName }} a besoin qu'on garde {{ childrenRequests|length }} enfant(s)</strong>
+                    </div>
+                    Ages :
+                    {% for request in childrenRequests %}
+                        <span class="badge badge-secondary">{{ request.childAgeRange }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-6">
+                    <a href=""
+                       class="btn btn-primary mr-2">
+                        Fermer le besoin anonymement
+                    </a>
+                    <small>Utile si vous avez associé quelqu'un d'autre manuellement</small>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                {{ matched.babysit|length }} helpers potentiels proches trouvés pour garder des enfants.
+            </div>
+
+            <ul>
+                {% for match in matched.babysit %}
+                    <li class="mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-5">
+                                <strong>{{ match.helper.firstName }} {{ match.helper.lastName }}</strong>
+                                ({{ match.helper.zipCode }})
+                                <br />
+                                Score : {{ match.score }}
+                                <br />
+                                {{ match.helper.age }} ans,
+                                {{ match.helper.haveChildren ? 'a des enfants' : 'sans enfants' }}
+                                <br />
+                                Capable de garder {{ match.helper.babysitMaxChildren }} enfants
+                                <br />
+                                Ages acceptés :
+                                {% for range in match.helper.babysitAgeRanges %}
+                                    <span class="badge badge-secondary">{{ range }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="col-5">
+                                <small>
+                                    Match intéressant ? Contactez<br />
+                                    <strong>{{ requests[0].email }}</strong> (demandeur) et<br />
+                                    <strong>{{ match.helper.email }}</strong> (volontaire)
+                                    <br />pour les informer, puis fermez le besoin.
+                                </small>
+                            </div>
+                            <div class="col-2">
+                                <a href=""
+                                   class="btn btn-primary mb-2">
+                                    Fermer le besoin
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

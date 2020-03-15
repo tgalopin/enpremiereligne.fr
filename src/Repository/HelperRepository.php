@@ -27,4 +27,19 @@ class HelperRepository extends ServiceEntityRepository
 
         $this->_em->flush();
     }
+
+    public function findClosestHelpersTo(string $zipCode)
+    {
+        $helpers = $this->createQueryBuilder('h')
+            ->select('h', 'r')
+            ->leftJoin('h.requests', 'r')
+            ->where('h.zipCode = :zipCode')
+            ->setParameter('zipCode', $zipCode)
+            ->orderBy('h.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+
+        return array_filter($helpers, fn (Helper $helper) => 0 === $helper->getRequests()->count());
+    }
 }

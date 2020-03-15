@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Helper;
 use App\Entity\HelpRequest;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -35,5 +36,23 @@ class HelpRequestRepository extends ServiceEntityRepository
         }
 
         $this->_em->flush();
+    }
+
+    public function closeGroceriesFor(string $ownerUuid, ?Helper $withHelper)
+    {
+        $requestQuery = $this->createQueryBuilder('r')
+            ->update()
+            ->set('r.finished', 'true')
+            ->where('r.ownerUuid = :ownerUuid')
+            ->setParameter('ownerUuid', $ownerUuid)
+            ->andWhere('r.helpType = :type')
+            ->setParameter('type', HelpRequest::TYPE_GROCERIES)
+        ;
+
+        if ($withHelper) {
+            $requestQuery->set('r.matchedWith', $withHelper->getId());
+        }
+
+        $requestQuery->getQuery()->execute();
     }
 }

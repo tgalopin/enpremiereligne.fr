@@ -7,7 +7,7 @@ easy_admin:
             - { route: 'security_logout', label: 'Log out', icon: 'sign-out' }
 
             - { label: 'Matchings' }
-            - { route: 'admin_validate_matches', label: 'Apply matches', icon: 'check' }
+            - { route: 'admin_matches', label: 'Matches', icon: 'check' }
             - { entity: 'Helper', label: 'Helpers', icon: 'users' }
             - { entity: 'HelpRequest', label: 'Help requests', icon: 'handshake-o' }
 
