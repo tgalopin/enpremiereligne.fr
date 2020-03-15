@@ -1,0 +1,34 @@
+<p>
+    Bonjour {{ helper.firstName }},
+</p>
+
+<p>
+    Merci de vous être porté(e) volontaire sur le réseau
+    d'entraide En Première Ligne pour aider les travailleurs
+    mobilisés contre le COVID-19 au quotidien.
+</p>
+
+<p>
+    Votre proposition d'aide a bien été enregistrée.
+    Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :
+</p>
+
+<p>
+    <a href="https://enpremiereligne.fr{{ path('process_helper_view', {'uuid': helper.uuid}) }}">
+        Gérer ma proposition d'aide
+    </a>
+</p>
+
+<p>
+    Vous serez notifié(e) par mail dès qu'un travailleur mobilisé en première ligne de
+    votre zone ayant besoin d'aide se manifestera. Vous pourrez ensuite rentrer directement
+    en contact avec le travailleur pour vous organiser.
+</p>
+
+<p>
+    Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.
+</p>
+
+<p>
+    L'équipe d'En Première Ligne
+</p>
