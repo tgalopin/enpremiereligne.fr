@@ -10,6 +10,7 @@ use App\Repository\HelperRepository;
 use App\Repository\HelpRequestRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -36,6 +37,16 @@ class ProcessController extends AbstractController
 
             $manager->persist($helper);
             $manager->flush();
+
+            $email = (new TemplatedEmail())
+                ->from('team@enpremiereligne.fr')
+                ->to($helper->email)
+                ->subject('Merci de vous être porté(e) volontaire sur En Première Ligne !')
+                ->htmlTemplate('emails/helper.html.twig')
+                ->context(['helper' => $helper])
+            ;
+
+            $mailer->send($email);
 
             return $this->redirectToRoute('process_helper_view', [
                 'uuid' => $helper->getUuid()->toString(),
@@ -109,6 +120,16 @@ class ProcessController extends AbstractController
             }
 
             $manager->flush();
+
+            $email = (new TemplatedEmail())
+                ->from('team@enpremiereligne.fr')
+                ->to($helpRequest->email)
+                ->subject('Nous avons bien reçu votre demande sur En Première Ligne')
+                ->htmlTemplate('emails/request.html.twig')
+                ->context(['request' => $helpRequest, 'ownerUuid' => $ownerId])
+            ;
+
+            $mailer->send($email);
 
             return $this->redirectToRoute('process_requester_view', [
                 'ownerUuid' => $ownerId->toString(),

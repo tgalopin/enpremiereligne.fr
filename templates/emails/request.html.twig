@@ -1,0 +1,32 @@
+<p>
+    Bonjour {{ request.firstName }},
+</p>
+
+<p>
+    Merci pour votre inscription sur le réseau d’entraide En Première Ligne et
+    pour votre engagement quotidien dans la lutte contre le COVID-19.
+</p>
+
+<p>
+    Votre demande d'aide a bien été enregistrée.
+    Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :
+</p>
+
+<p>
+    <a href="https://enpremiereligne.fr{{ path('process_requester_view', {'ownerUuid': ownerUuid}) }}">
+        Gérer ma demande d'aide
+    </a>
+</p>
+
+<p>
+    Vous serez notifié(e) par mail dès qu'un volontaire de votre zone proposera une aide correspondante
+    à vos critères. Vous pourrez ensuite rentrer directement en contact avec le volontaire pour vous organiser.
+</p>
+
+<p>
+    Bon courage pour les prochaines semaines, nous comptons sur vous !
+</p>
+
+<p>
+    L'équipe d'En Première Ligne
+</p>
