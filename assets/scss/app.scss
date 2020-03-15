@@ -88,6 +88,7 @@ html, body.full-height {
 
         @media (max-width: 992px) {
             flex-direction: column;
+            min-height: 950px;
         }
 
         &-half {
