@@ -89,6 +89,11 @@ html, body.full-height {
             min-height: 950px;
         }
 
+        @media (max-width: 360px) {
+            flex-direction: column;
+            min-height: 1400px;
+        }
+
         &-half {
             flex-basis: 0;
             flex-grow: 1;
