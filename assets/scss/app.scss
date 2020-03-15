@@ -37,12 +37,9 @@ html, body.full-height {
         }
 
         &-share {
-            display: flex;
             font-size: 14px;
             color: #666;
             text-transform: uppercase;
-            justify-content: center;
-            align-items: center;
 
             a {
                 padding: 10px;
@@ -51,6 +48,7 @@ html, body.full-height {
 
                 &:hover {
                     color: #000;
+                    text-decoration: none;
                 }
             }
 

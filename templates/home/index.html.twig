@@ -21,22 +21,25 @@
                             <strong>Soyons présents pour eux et leurs familles.</strong>
                         </h4>
 
-                        <div class="home-header-share mt-4 flex-column flex-lg-row">
-                            <span class="mr-lg-3">Je partage l'initiative</span>
-
-                            <div class="d-flex">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
-                                    {{ include('_icons/facebook.html.twig') }}
-                                </a>
-                                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
-                                    {{ include('_icons/twitter.html.twig') }}
-                                </a>
-                                <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
-                                    {{ include('_icons/telegram.html.twig') }}
-                                </a>
-                                <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
-                                    {{ include('_icons/whatsapp.html.twig') }}
-                                </a>
+                        <div class="home-header-share mt-5">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-lg-auto text-center mb-2">
+                                    Je partage l'initiative
+                                </div>
+                                <div class="col-lg-auto text-center mb-2">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                                        {{ include('_icons/facebook.html.twig') }}
+                                    </a>
+                                    <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                                        {{ include('_icons/twitter.html.twig') }}
+                                    </a>
+                                    <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                                        {{ include('_icons/telegram.html.twig') }}
+                                    </a>
+                                    <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                                        {{ include('_icons/whatsapp.html.twig') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
