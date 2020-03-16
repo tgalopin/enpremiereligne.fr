@@ -16,7 +16,7 @@ class ProcessControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/process/je-peux-aider');
-        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
 
         $button = $crawler->selectButton('Envoyer ma proposition');
         $this->assertCount(1, $button);
@@ -33,7 +33,7 @@ class ProcessControllerTest extends WebTestCase
             'helper[babysitMaxChildren]' => 3,
             'helper[babysitAgeRanges]' => ['0-1'],
         ]);
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
         $helper = self::$container->get(HelperRepository::class)->findOneBy(['email' => 'titouan.galopin@example.com']);
         $this->assertInstanceOf(Helper::class, $helper);
@@ -57,7 +57,7 @@ class ProcessControllerTest extends WebTestCase
         $this->assertInstanceOf(Helper::class, $helper);
 
         $crawler = $client->request('GET', '/process/je-peux-aider/'.$helper->getUuid()->toString());
-        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
         $link = $crawler->filter('a:contains(\'Supprimer ma proposition\')');
         $this->assertCount(1, $link);
 
@@ -66,7 +66,7 @@ class ProcessControllerTest extends WebTestCase
         $this->assertCount(1, $link);
 
         $client->click($link->link());
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
         $helper = self::$container->get(HelperRepository::class)->findOneBy(['email' => 'elizabeth.gregory@example.com']);
         $this->assertNull($helper);
@@ -80,7 +80,7 @@ class ProcessControllerTest extends WebTestCase
         $this->assertInstanceOf(HelpRequest::class, $request);
 
         $crawler = $client->request('GET', '/process/j-ai-besoin-d-aide/'.$request->ownerUuid->toString());
-        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
 
         $link = $crawler->filter('a:contains(\'Supprimer ma demande\')');
         $this->assertCount(1, $link);
@@ -90,7 +90,7 @@ class ProcessControllerTest extends WebTestCase
         $this->assertCount(1, $link);
 
         $client->click($link->link());
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
         $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'jeanne.martin@example.com']);
         $this->assertNull($request);
