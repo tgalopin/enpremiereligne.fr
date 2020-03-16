@@ -10,6 +10,8 @@
         <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
         <br />
         Travail : {{ requests[0].jobType }}
+        <br />
+        Date : {{ requests[0].createdAt|date('d/m/Y H:i') }}
     </div>
 
     {% if matched.groceries is not null %}
