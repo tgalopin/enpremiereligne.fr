@@ -25,7 +25,7 @@ class LoginControllerTest extends WebTestCase
         $form = $crawler->selectButton('Se connecter')->form();
 
         $client->submit($form, ['username' => $username, 'password' => $password]);
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
         $this->assertTrue($client->getResponse()->isRedirect('/admin/'));
 
         $client->followRedirect();
@@ -54,7 +54,7 @@ class LoginControllerTest extends WebTestCase
         $form = $crawler->selectButton('Se connecter')->form();
 
         $client->submit($form, ['username' => $email, 'password' => $password]);
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
         $this->assertTrue($client->getResponse()->isRedirect('/login'));
         $crawler = $client->followRedirect();
 
@@ -68,12 +68,12 @@ class LoginControllerTest extends WebTestCase
         $this->authenticate($client, 'tgalopin');
 
         $client->request('GET', '/login');
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
         $this->assertTrue($client->getResponse()->isRedirect('/admin/'));
 
         $client->request('GET', '/logout');
         $client->request('GET', '/admin/');
-        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
         $this->assertTrue($client->getResponse()->isRedirect('/login'));
     }
 }
