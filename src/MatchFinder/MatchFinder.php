@@ -146,7 +146,6 @@ class MatchFinder
 
     /**
      * @param HelpRequest[] $needs
-     * @return MatchedNeed|null
      */
     private function matchBabysitNeed(array $needs): ?MatchedNeed
     {
@@ -189,7 +188,6 @@ class MatchFinder
     }
 
     /**
-     * @param string $zipCode
      * @return Helper[]
      */
     private function findLocalHelpers(string $zipCode): iterable

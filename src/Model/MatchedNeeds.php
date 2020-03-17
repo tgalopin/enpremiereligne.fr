@@ -39,7 +39,7 @@ class MatchedNeeds
     public function getGroceriesNeed(): ?HelpRequest
     {
         foreach ($this->needs as $need) {
-            if ($need->helpType === HelpRequest::TYPE_GROCERIES) {
+            if (HelpRequest::TYPE_GROCERIES === $need->helpType) {
                 return $need;
             }
         }
@@ -54,7 +54,7 @@ class MatchedNeeds
     {
         $needs = [];
         foreach ($this->needs as $need) {
-            if ($need->helpType === HelpRequest::TYPE_BABYSIT) {
+            if (HelpRequest::TYPE_BABYSIT === $need->helpType) {
                 $needs[] = $need;
             }
         }
@@ -66,7 +66,7 @@ class MatchedNeeds
     {
         $ages = [];
         foreach ($this->needs as $need) {
-            if ($need->helpType === HelpRequest::TYPE_BABYSIT) {
+            if (HelpRequest::TYPE_BABYSIT === $need->helpType) {
                 $ages[] = $need->childAgeRange.' ans';
             }
         }
@@ -77,7 +77,7 @@ class MatchedNeeds
 
         $lastAge = array_shift($ages);
 
-        return implode(', ', $ages). ' et '.$lastAge;
+        return implode(', ', $ages).' et '.$lastAge;
     }
 
     public function getGroceries(): ?MatchedNeed

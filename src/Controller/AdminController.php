@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Helper;
-use App\Entity\HelpRequest;
 use App\MatchFinder\MatchFinder;
 use App\Model\MatchedNeeds;
 use App\Repository\HelpRequestRepository;
