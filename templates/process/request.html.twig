@@ -72,6 +72,14 @@
                 </div>
             </div>
 
+            <div class="process-block bg-white p-3 p-lg-4 mb-5">
+                {{ form_row(form.confirm, {
+                    'label': 'J\'ai lu et j\'accepte la Politique de confidentialité et les Conditions d\'utilisation d\'enpremiereligne.fr',
+                    'label_attr': { 'class': 'checkbox-custom' },
+                    'help': 'Il est notament très important que vous soyez vigilants à bien suivre les recommandations sanitaires à tout moment.'
+                }) }}
+            </div>
+
             <div class="text-center">
                 <button type="submit" class="btn btn-lg btn-primary">
                     Envoyer ma demande
@@ -85,6 +93,14 @@
             </div>
 
             {{ form_end(form) }}
+
+            <div class="legalities pt-5">
+                Vous disposez d'un droit d'accès, de rectification, d’effacement et de portabilité
+                de vos données ainsi que d’un droit d'opposition et d'un droit de limitation du
+                traitement des données vous concernant. Vous pouvez exercer vos droits en nous
+                contactant à l'adresse suivante :
+                <a href="mailto:titouan@enpremiereligne.fr">titouan@enpremiereligne.fr</a>.
+            </div>
         </div>
     </div>
 {% endblock %}
