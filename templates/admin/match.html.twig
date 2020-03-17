@@ -7,24 +7,24 @@
     <div class="p-3">
         Demande de :
         <br />
-        <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
+        <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong> ({{ match.requester.zipCode }})
         <br />
-        Travail : {{ requests[0].jobType }}
+        Travail : {{ match.requester.jobType }}
         <br />
-        Date : {{ requests[0].createdAt|date('d/m/Y H:i') }}
+        Date : {{ match.requester.createdAt|date('d/m/Y H:i') }}
     </div>
 
-    {% if matched.groceries is not null %}
+    {% if match.groceries is not null %}
         <hr class="m-0" />
 
         <div class="p-4">
             <div class="row align-items-center mb-5">
                 <div class="col-6">
-                    <strong>{{ requests[0].firstName }} a besoin qu'on lui achète et livre des courses</strong>
+                    <strong>{{ match.requester.firstName }} a besoin qu'on lui achète et livre des courses</strong>
                 </div>
                 <div class="col-6">
-                    <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': requests[0].ownerUuid}) }}"
-                       class="btn btn-primary mr-2">
+                    <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': match.requester.ownerUuid}) }}"
+                       class="btn btn-secondary mr-2">
                         Fermer le besoin anonymement
                     </a>
                     <small>Utile si vous avez associé quelqu'un d'autre manuellement</small>
@@ -32,34 +32,27 @@
             </div>
 
             <div class="mb-3">
-                {{ matched.groceries|length }} helpers potentiels proches trouvés pour acheter des courses :
+                {{ match.groceries|length }} helpers potentiels proches trouvés pour acheter des courses :
             </div>
 
             <ul>
-                {% for match in matched.groceries %}
+                {% for matchedHelper in match.groceries.matchedHelpers[0:20] %}
                     <li class="mb-3">
                         <div class="row align-items-center">
                             <div class="col-5">
-                                <strong>{{ match.helper.firstName }} {{ match.helper.lastName }}</strong>
-                                ({{ match.helper.zipCode }})
+                                <strong>{{ matchedHelper.helper.firstName }} {{ matchedHelper.helper.lastName }}</strong>
+                                ({{ matchedHelper.helper.zipCode }})
                                 <br />
-                                Score : {{ match.score }}
-                                ({{ match.helper.canBabysit ? 'peut garder des enfants' : 'ne souhaite pas garder d\'enfants' }})
+                                Score : {{ matchedHelper.score }}
+                                ({{ matchedHelper.helper.canBabysit ? 'peut garder des enfants' : 'ne souhaite pas garder d\'enfants' }})
                                 <br />
-                                {{ match.helper.age }} ans
-                            </div>
-                            <div class="col-5">
-                                <small>
-                                    Match intéressant ? Contactez<br />
-                                    <strong>{{ requests[0].email }}</strong> (demandeur) et<br />
-                                    <strong>{{ match.helper.email }}</strong> (volontaire)
-                                    <br />pour les informer, puis fermez le besoin.
-                                </small>
+                                {{ matchedHelper.helper.age }} ans
                             </div>
                             <div class="col-2">
-                                <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': requests[0].ownerUuid, 'id': match.helper.id}) }}"
-                                   class="btn btn-primary mb-2">
-                                    Fermer le besoin
+                                <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
+                                   class="btn btn-secondary mb-2">
+                                    <i class="fa fa-paper-plane mr-1"></i>
+                                    Envoyer l'e-mail de mise en contact et fermer le besoin
                                 </a>
                             </div>
                         </div>
@@ -69,28 +62,23 @@
         </div>
     {% endif %}
 
-    {% if matched.babysit is not null %}
-        {% set childrenRequests = [] %}
-        {% for request in requests %}
-            {% set childrenRequests = childrenRequests|merge([request]) %}
-        {% endfor %}
-
+    {% if match.babysit is not null %}
         <hr class="m-0" />
 
         <div class="p-4">
             <div class="row align-items-center mb-5">
                 <div class="col-6">
                     <div class="mb-2">
-                        <strong>{{ requests[0].firstName }} a besoin qu'on garde {{ childrenRequests|length }} enfant(s)</strong>
+                        <strong>{{ match.requester.firstName }} a besoin qu'on garde {{ match.babysitNeeds|length }} enfant(s)</strong>
                     </div>
                     Ages :
-                    {% for request in childrenRequests %}
-                        <span class="badge badge-secondary">{{ request.childAgeRange }}</span>
+                    {% for need in match.babysitNeeds %}
+                        <span class="badge badge-secondary">{{ need.childAgeRange }}</span>
                     {% endfor %}
                 </div>
                 <div class="col-6">
-                    <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': requests[0].ownerUuid}) }}"
-                       class="btn btn-primary mr-2">
+                    <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': match.requester.ownerUuid}) }}"
+                       class="btn btn-secondary mr-2">
                         Fermer le besoin anonymement
                     </a>
                     <small>Utile si vous avez associé quelqu'un d'autre manuellement</small>
@@ -98,41 +86,34 @@
             </div>
 
             <div class="mb-3">
-                {{ matched.babysit|length }} helpers potentiels proches trouvés pour garder des enfants.
+                {{ match.babysit|length }} helpers potentiels proches trouvés pour garder des enfants.
             </div>
 
             <ul>
-                {% for match in matched.babysit %}
+                {% for matchedHelper in match.babysit.matchedHelpers[0:20] %}
                     <li class="mb-4">
                         <div class="row align-items-center">
                             <div class="col-5">
-                                <strong>{{ match.helper.firstName }} {{ match.helper.lastName }}</strong>
-                                ({{ match.helper.zipCode }})
+                                <strong>{{ matchedHelper.helper.firstName }} {{ matchedHelper.helper.lastName }}</strong>
+                                ({{ matchedHelper.helper.zipCode }})
                                 <br />
-                                Score : {{ match.score }}
+                                Score : {{ matchedHelper.score }}
                                 <br />
-                                {{ match.helper.age }} ans,
-                                {{ match.helper.haveChildren ? 'a des enfants' : 'sans enfants' }}
+                                {{ matchedHelper.helper.age }} ans,
+                                {{ matchedHelper.helper.haveChildren ? 'a des enfants' : 'sans enfants' }}
                                 <br />
-                                Capable de garder {{ match.helper.babysitMaxChildren }} enfants
+                                Capable de garder {{ matchedHelper.helper.babysitMaxChildren }} enfants
                                 <br />
                                 Ages acceptés :
-                                {% for range in match.helper.babysitAgeRanges %}
+                                {% for range in matchedHelper.helper.babysitAgeRanges %}
                                     <span class="badge badge-secondary">{{ range }}</span>
                                 {% endfor %}
                             </div>
-                            <div class="col-5">
-                                <small>
-                                    Match intéressant ? Contactez<br />
-                                    <strong>{{ requests[0].email }}</strong> (demandeur) et<br />
-                                    <strong>{{ match.helper.email }}</strong> (volontaire)
-                                    <br />pour les informer, puis fermez le besoin.
-                                </small>
-                            </div>
                             <div class="col-2">
-                                <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': requests[0].ownerUuid, 'id': match.helper.id}) }}"
-                                   class="btn btn-primary mb-2">
-                                    Fermer le besoin
+                                <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
+                                   class="btn btn-secondary mb-2">
+                                    <i class="fa fa-paper-plane mr-1"></i>
+                                    Envoyer l'e-mail de mise en contact et fermer le besoin
                                 </a>
                             </div>
                         </div>

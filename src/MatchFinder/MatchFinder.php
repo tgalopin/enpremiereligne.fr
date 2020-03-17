@@ -4,48 +4,126 @@ namespace App\MatchFinder;
 
 use App\Entity\Helper;
 use App\Entity\HelpRequest;
+use App\Model\Match;
+use App\Model\MatchedNeed;
+use App\Model\MatchedNeeds;
 use App\Repository\HelperRepository;
+use App\Repository\HelpRequestRepository;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MatchFinder
 {
-    private HelperRepository $repository;
+    private HelpRequestRepository $helpRequestRepo;
+    private HelperRepository $helperRepo;
 
-    public function __construct(HelperRepository $repository)
+    private array $zipCodeCache;
+
+    public function __construct(HelpRequestRepository $helpRequestRepo, HelperRepository $helperRepo)
     {
-        $this->repository = $repository;
+        $this->helpRequestRepo = $helpRequestRepo;
+        $this->helperRepo = $helperRepo;
     }
 
     /**
-     * @param HelpRequest[] $helpRequests
+     * @return MatchedNeeds[]
      */
-    public function matchHelpersToNeeds(array $helpRequests): array
+    public function findMatchedNeeds(): array
     {
-        $groceriesNeed = null;
-        $babysitNeed = [];
+        $owners = $this->createNeedsByOwner();
 
-        foreach ($helpRequests as $helpRequest) {
-            if (HelpRequest::TYPE_GROCERIES === $helpRequest->helpType) {
-                $groceriesNeed = $helpRequest;
+        $matchedNeeds = [];
+        $scores = [];
+        $dates = [];
+
+        foreach ($owners as $ownerNeeds) {
+            $groceriesNeed = null;
+            $babysitNeeds = [];
+
+            foreach ($ownerNeeds as $need) {
+                if (HelpRequest::TYPE_GROCERIES === $need->helpType) {
+                    $groceriesNeed = $need;
+                } else {
+                    $babysitNeeds[] = $need;
+                }
+            }
+
+            $matchedGroceriesNeed = null;
+            $matchedBabysitNeed = null;
+            $score = 0;
+
+            if ($groceriesNeed) {
+                $matchedGroceriesNeed = $this->matchGroceriesNeed($groceriesNeed);
+
+                if ($matchedGroceriesNeed->getMatchedHelpers()) {
+                    $score = 1;
+                }
+            }
+
+            if ($babysitNeeds) {
+                $matchedBabysitNeed = $this->matchBabysitNeed($babysitNeeds);
+
+                if ($matchedBabysitNeed->getMatchedHelpers()) {
+                    $score = 1;
+                }
+            }
+
+            $matchedNeeds[] = new MatchedNeeds($ownerNeeds, $matchedGroceriesNeed, $matchedBabysitNeed, $score);
+            $scores[] = $score;
+            $dates[] = (float) $ownerNeeds[0]->getCreatedAt()->format('U');
+        }
+
+        array_multisort($scores, SORT_DESC, $dates, SORT_ASC, $matchedNeeds);
+
+        return array_values($matchedNeeds);
+    }
+
+    public function matchOwnerNeeds(string $ownerUuid): MatchedNeeds
+    {
+        if (!$needs = $this->helpRequestRepo->findBy(['ownerUuid' => $ownerUuid, 'finished' => false])) {
+            throw new NotFoundHttpException();
+        }
+
+        $groceriesNeed = null;
+        $babysitNeeds = [];
+
+        foreach ($needs as $need) {
+            if (HelpRequest::TYPE_GROCERIES === $need->helpType) {
+                $groceriesNeed = $need;
             } else {
-                $babysitNeed[] = $helpRequest;
+                $babysitNeeds[] = $need;
             }
         }
 
-        $localHelpers = $this->repository->findClosestHelpersTo($helpRequests[0]->zipCode);
-
-        return [
-            'groceries' => $groceriesNeed ? $this->matchGroceriesNeed($localHelpers) : null,
-            'babysit' => $babysitNeed ? $this->matchBabysitNeed($babysitNeed, $localHelpers) : null,
-        ];
+        return new MatchedNeeds(
+            $needs,
+            $groceriesNeed ? $this->matchGroceriesNeed($groceriesNeed) : null,
+            $babysitNeeds ? $this->matchBabysitNeed($babysitNeeds) : null
+        );
     }
 
     /**
-     * @param Helper[] $localHelpers
-     *
-     * @return Helper[]
+     * @return HelpRequest[][]
      */
-    private function matchGroceriesNeed(array $localHelpers): array
+    private function createNeedsByOwner(): array
     {
+        $requests = $this->helpRequestRepo->findBy(['finished' => false], ['createdAt' => 'DESC']);
+
+        $owners = [];
+        foreach ($requests as $request) {
+            if (!isset($owners[$request->ownerUuid->toString()])) {
+                $owners[$request->ownerUuid->toString()] = [];
+            }
+
+            $owners[$request->ownerUuid->toString()][] = $request;
+        }
+
+        return $owners;
+    }
+
+    private function matchGroceriesNeed(HelpRequest $need): ?MatchedNeed
+    {
+        $localHelpers = $this->findLocalHelpers($need->zipCode);
+
         $scores = [];
         $matched = [];
 
@@ -57,28 +135,26 @@ class MatchFinder
             // Prefer to match helpers only able to buy groceris to keep the other for babysit
             $score = $helper->canBabysit ? 1 : 2;
 
-            $matched[] = ['helper' => $helper, 'score' => $score];
+            $matched[] = new Match($need, $helper, $score);
             $scores[] = $score;
         }
 
         array_multisort($scores, SORT_DESC, $matched);
 
-        return array_values($matched);
+        return new MatchedNeed($need, array_values($matched));
     }
 
     /**
-     * @param HelpRequest[] $babysitRequests
-     * @param Helper[]      $localHelpers
-     *
-     * @return Helper[]
+     * @param HelpRequest[] $needs
      */
-    private function matchBabysitNeed(array $babysitRequests, array $localHelpers): array
+    private function matchBabysitNeed(array $needs): ?MatchedNeed
     {
-        $childrenCount = count($babysitRequests);
+        $localHelpers = $this->findLocalHelpers($needs[0]->zipCode);
+        $childrenCount = count($needs);
 
         $childrenAgeRange = [];
-        foreach ($babysitRequests as $request) {
-            $childrenAgeRange[] = $request->childAgeRange;
+        foreach ($needs as $need) {
+            $childrenAgeRange[] = $need->childAgeRange;
         }
 
         $scores = [];
@@ -102,12 +178,24 @@ class MatchFinder
                 $score += 2;
             }
 
-            $matched[] = ['helper' => $helper, 'score' => $score];
+            $matched[] = new Match($needs[0], $helper, $score);
             $scores[] = $score;
         }
 
         array_multisort($scores, SORT_DESC, $matched);
 
-        return array_values($matched);
+        return new MatchedNeed($needs[0], array_values($matched));
+    }
+
+    /**
+     * @return Helper[]
+     */
+    private function findLocalHelpers(string $zipCode): iterable
+    {
+        if (isset($this->zipCodeCache[$zipCode])) {
+            return $this->zipCodeCache[$zipCode];
+        }
+
+        return $this->zipCodeCache[$zipCode] = $this->helperRepo->findClosestHelpersTo($zipCode);
     }
 }

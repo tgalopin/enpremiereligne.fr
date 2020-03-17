@@ -4,10 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Helper;
 use App\MatchFinder\MatchFinder;
+use App\Model\MatchedNeeds;
 use App\Repository\HelpRequestRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -18,44 +21,27 @@ class AdminController extends AbstractController
     /**
      * @Route("/matches", name="admin_matches")
      */
-    public function matches(HelpRequestRepository $repository): Response
+    public function matches(MatchFinder $matchFinder): Response
     {
-        $requests = $repository->findBy(['finished' => false], ['createdAt' => 'DESC']);
-
-        $requesters = [];
-        foreach ($requests as $request) {
-            if (!isset($requesters[$request->ownerUuid->toString()])) {
-                $requesters[$request->ownerUuid->toString()] = [];
-            }
-
-            $requesters[$request->ownerUuid->toString()][] = $request;
-        }
-
         return $this->render('admin/matches.html.twig', [
-            'requesters' => $requesters,
+            'matches' => $matchFinder->findMatchedNeeds(),
         ]);
     }
 
     /**
      * @Route("/match/{ownerUuid}", name="admin_match")
      */
-    public function match(HelpRequestRepository $repository, MatchFinder $matchFinder, string $ownerUuid): Response
+    public function match(MatchFinder $matchFinder, string $ownerUuid): Response
     {
-        $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => false]);
-        if (!$requests) {
-            throw $this->createNotFoundException();
-        }
-
         return $this->render('admin/match.html.twig', [
-            'requests' => $requests,
-            'matched' => $matchFinder->matchHelpersToNeeds($requests),
+            'match' => $matchFinder->matchOwnerNeeds($ownerUuid),
         ]);
     }
 
     /**
      * @Route("/match/close/{type}/{ownerUuid}/{id}", defaults={"id"=null}, name="admin_match_close")
      */
-    public function close(HelpRequestRepository $repository, string $type, string $ownerUuid, ?Helper $helper, Request $request): Response
+    public function close(MailerInterface $mailer, HelpRequestRepository $repository, string $type, string $ownerUuid, ?Helper $helper, Request $request): Response
     {
         $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => false]);
         if (!$requests) {
@@ -68,6 +54,20 @@ class AdminController extends AbstractController
             }
 
             $repository->closeRequestsOf($ownerUuid, $helper, $type);
+
+            $email = (new TemplatedEmail())
+                ->from('team@enpremiereligne.fr')
+                ->to($requests[0]->email, $helper->email)
+                ->subject('[En Première Ligne] Bonne nouvelle !')
+                ->htmlTemplate('emails/match_'.$type.'.html.twig')
+                ->context([
+                    'requester' => $requests[0],
+                    'needs' => new MatchedNeeds($requests),
+                    'helper' => $helper,
+                ])
+            ;
+
+            $mailer->send($email);
 
             return $this->redirectToRoute('admin_matches');
         }

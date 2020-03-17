@@ -1,38 +1,43 @@
 {% extends '@EasyAdmin/default/layout.html.twig' %}
 
-{% block content_title 'Matches ('~ (requesters|length) ~' requests)' %}
+{% block content_title 'Matches ('~ (matches|length) ~' requests)' %}
 {% block content_footer_wrapper '' %}
 
 {% block main %}
-    {% for ownerUuid, requests in requesters %}
+    {% for match in matches %}
         <div class="p-3">
             <div class="row align-items-center">
-                <div class="col-1 text-center">
-                    {{ requests[0].zipCode }}
-                </div>
-                <div class="col-6">
-                    Demande de <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong>
-                    ({{ requests[0].jobType }})
+                <div class="col-5">
+                    Demande de <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong>
+                    ({{ match.requester.jobType }})
 
                     <ul class="m-0">
-                        {% for request in requests %}
+                        {% for need in match.needs %}
                             <li>
-                                {{ request.helpType }}
+                                {{ need.helpType }}
 
-                                {% if request.helpType == 'babysit' %}
-                                    (age range: {{ request.childAgeRange }})
+                                {% if need.helpType == 'babysit' %}
+                                    (age range: {{ need.childAgeRange }})
                                 {% endif %}
                             </li>
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="col-2 text-center">
-                    {{ requests[0].createdAt|date('d/m/Y H:i') }}
+                <div class="col-1 text-center">
+                    {{ match.requester.zipCode }}
                 </div>
-                <div class="col-3">
-                    <a href="{{ path('admin_match', {'ownerUuid': ownerUuid}) }}" class="btn btn-secondary">
-                        View matching helpers
+                <div class="col-2 text-center {{ match.score ? 'text-success' : 'text-danger' }}">
+                    <strong>
+                        {{ match.score ? 'Has helpers' : 'No helper' }}
+                    </strong>
+                </div>
+                <div class="col-2">
+                    <a href="{{ path('admin_match', {'ownerUuid': match.requester.ownerUuid}) }}" class="btn btn-secondary">
+                        View helpers
                     </a>
+                </div>
+                <div class="col-2 text-center">
+                    {{ match.requester.createdAt|date('d/m/Y H:i') }}
                 </div>
             </div>
         </div>
