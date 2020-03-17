@@ -74,6 +74,11 @@ html, body.full-height {
             }
         }
 
+        &-social {
+            a:hover {
+                text-decoration: none;
+            }
+
         svg {
             height: 24px;
         }
