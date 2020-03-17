@@ -4,12 +4,14 @@ namespace App\Form;
 
 use App\Model\CompositeHelpRequest;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class CompositeHelpRequestType extends AbstractType
 {
@@ -37,6 +39,9 @@ class CompositeHelpRequestType extends AbstractType
                 'entry_type' => CompositeHelpRequestDetailType::class,
                 'allow_add' => true,
             ])
+            ->add('confirm', CheckboxType::class, ['required' => true, 'mapped' => false, 'constraints' => [
+                new NotBlank(),
+            ]])
         ;
     }
 

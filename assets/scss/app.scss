@@ -20,6 +20,12 @@ html, body.full-height {
     }
 }
 
+.legalities, .legalities a, .legalities a:hover {
+    font-size: 12px;
+    color: #999;
+    line-height: 13px;
+}
+
 .home {
     @media (min-height: 900px) and (min-width: 992px) {
         height: 100%;
@@ -74,10 +80,9 @@ html, body.full-height {
             }
         }
 
-        &-social {
-            a:hover {
-                text-decoration: none;
-            }
+        &-social a:hover {
+            text-decoration: none;
+        }
 
         svg {
             height: 24px;

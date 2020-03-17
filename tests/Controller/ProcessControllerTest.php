@@ -32,6 +32,7 @@ class ProcessControllerTest extends WebTestCase
             'helper[haveChildren]' => true,
             'helper[babysitMaxChildren]' => 3,
             'helper[babysitAgeRanges]' => ['0-1'],
+            'helper[confirm]' => true,
         ]);
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
@@ -47,6 +48,31 @@ class ProcessControllerTest extends WebTestCase
         $this->assertSame(true, $helper->haveChildren);
         $this->assertSame(3, $helper->babysitMaxChildren);
         $this->assertSame(['0-1'], $helper->babysitAgeRanges);
+    }
+
+    public function testHelperRequiresConfirm()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/process/je-peux-aider');
+        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+
+        $button = $crawler->selectButton('Envoyer ma proposition');
+        $this->assertCount(1, $button);
+
+        $client->submit($button->form(), [
+            'helper[firstName]' => 'Titouan',
+            'helper[lastName]' => 'Galopin',
+            'helper[age]' => '25',
+            'helper[zipCode]' => '75008',
+            'helper[email]' => 'titouan.galopin@example.com',
+            'helper[canBuyGroceries]' => true,
+            'helper[canBabysit]' => true,
+            'helper[haveChildren]' => true,
+            'helper[babysitMaxChildren]' => 3,
+            'helper[babysitAgeRanges]' => ['0-1'],
+        ]);
+        $this->assertResponseIsSuccessful($client->getResponse()->getStatusCode());
     }
 
     public function testHelperViewDelete()

@@ -57,4 +57,12 @@ class ContentController extends AbstractController
     {
         return $this->render('content/legalities.html.twig');
     }
+
+    /**
+     * @Route("/informations-officielles", name="content_links")
+     */
+    public function links()
+    {
+        return $this->render('content/links.html.twig');
+    }
 }
