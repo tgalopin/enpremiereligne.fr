@@ -38,6 +38,25 @@ class HelpRequestRepository extends ServiceEntityRepository
         $this->_em->flush();
     }
 
+    /**
+     * @return HelpRequest[][]
+     */
+    public function findNeedsByOwner(array $criteria, array $orderBy = null): array
+    {
+        $requests = $this->findBy($criteria, $orderBy);
+
+        $owners = [];
+        foreach ($requests as $request) {
+            if (!isset($owners[$request->ownerUuid->toString()])) {
+                $owners[$request->ownerUuid->toString()] = [];
+            }
+
+            $owners[$request->ownerUuid->toString()][] = $request;
+        }
+
+        return $owners;
+    }
+
     public function closeRequestsOf(string $ownerUuid, ?Helper $withHelper, string $type)
     {
         $requestQuery = $this->createQueryBuilder('r')
@@ -54,5 +73,20 @@ class HelpRequestRepository extends ServiceEntityRepository
         }
 
         $requestQuery->getQuery()->execute();
+    }
+
+    public function cancelMatch(string $ownerUuid, string $type)
+    {
+        $this->createQueryBuilder('r')
+            ->update()
+            ->set('r.finished', 'false')
+            ->set('r.matchedWith', 'null')
+            ->where('r.ownerUuid = :ownerUuid')
+            ->setParameter('ownerUuid', $ownerUuid)
+            ->andWhere('r.helpType = :type')
+            ->setParameter('type', $type)
+            ->getQuery()
+            ->execute()
+        ;
     }
 }

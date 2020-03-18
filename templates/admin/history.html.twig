@@ -1,0 +1,61 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'History' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    {% for owner in owners %}
+        <div class="p-3">
+            <div class="row align-items-center">
+                <div class="col-9">
+                    Demande de <strong>{{ owner[0].firstName }} {{ owner[0].lastName }}</strong>
+                    ({{ owner[0].jobType }}, {{ owner[0].email }})
+
+                    <ul class="m-0">
+                        {% set babysitDisplayed = false %}
+                        {% for need in owner %}
+                            {% if need.helpType != 'babysit' or not babysitDisplayed %}
+                                {% if need.helpType == 'babysit' %}
+                                    {% set babysitDisplayed = true %}
+                                {% endif %}
+
+                                <li class="mt-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <strong>
+                                                {{ need.helpType }}
+                                            </strong>
+                                            <br />
+                                            {% if need.matchedWith %}
+                                                matched with
+                                                <br />
+                                                <strong>
+                                                    {{ need.matchedWith.firstName }}
+                                                    {{ need.matchedWith.lastName }}
+                                                </strong>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="{{ path('admin_match_cancel', {'ownerUuid': owner[0].ownerUuid, 'type': need.helpType}) }}"
+                                               class="btn btn-secondary">
+                                                Annuler le match
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-1 text-center">
+                    {{ owner[0].zipCode }}
+                </div>
+                <div class="col-2 text-center">
+                    {{ owner[0].createdAt|date('d/m/Y H:i') }}
+                </div>
+            </div>
+        </div>
+
+        <hr class="m-0" />
+    {% endfor %}
+{% endblock %}

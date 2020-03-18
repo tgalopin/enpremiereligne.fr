@@ -79,4 +79,41 @@ class AdminController extends AbstractController
             'helper' => $helper,
         ]);
     }
+
+    /**
+     * @Route("/history", name="admin_match_history")
+     */
+    public function history(HelpRequestRepository $repository): Response
+    {
+        return $this->render('admin/history.html.twig', [
+            'owners' => $repository->findNeedsByOwner(['finished' => true], ['createdAt' => 'DESC']),
+        ]);
+    }
+
+    /**
+     * @Route("/cancel/{ownerUuid}/{type}", name="admin_match_cancel")
+     */
+    public function cancel(HelpRequestRepository $repository, string $ownerUuid, string $type, Request $request): Response
+    {
+        $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => true]);
+        if (!$requests) {
+            throw $this->createNotFoundException();
+        }
+
+        if ($request->query->has('token')) {
+            if (!$this->isCsrfTokenValid('admin_cancel', $request->query->get('token'))) {
+                throw $this->createNotFoundException();
+            }
+
+            $repository->cancelMatch($ownerUuid, $type);
+
+            return $this->redirectToRoute('admin_match_history');
+        }
+
+        return $this->render('admin/cancel.html.twig', [
+            'type' => $type,
+            'requests' => $requests,
+            'ownerUuid' => $ownerUuid,
+        ]);
+    }
 }

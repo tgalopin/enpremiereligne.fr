@@ -8,6 +8,7 @@ easy_admin:
 
             - { label: 'Matchings' }
             - { route: 'admin_matches', label: 'Matches', icon: 'check' }
+            - { route: 'admin_match_history', label: 'History', icon: 'history' }
             - { entity: 'Helper', label: 'Helpers', icon: 'users' }
             - { entity: 'HelpRequest', label: 'Help requests', icon: 'handshake-o' }
 
