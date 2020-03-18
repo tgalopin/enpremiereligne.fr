@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block body_class 'full-height' %}
-
 {% block body %}
     <div class="home">
         <div class="home-header pt-4 pl-4 pr-4 pb-3 pt-lg-5 pl-lg-5 pr-lg-5 pb-lg-4">
@@ -121,6 +119,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="home-medias p-3 p-lg-5">
+            <img src="{{ asset('res/medias/20minutes.png') }}" />
+            <img src="{{ asset('res/medias/cnews.png') }}" />
+            <img src="{{ asset('res/medias/europe1.png') }}" />
+            <img src="{{ asset('res/medias/figaro.png') }}" />
+            <img src="{{ asset('res/medias/lci.png') }}" />
+            <img src="{{ asset('res/medias/ouest-france.png') }}" />
+            <img src="{{ asset('res/medias/cheriefm.png') }}" />
         </div>
 
         {{ include('_include/footer.html.twig') }}

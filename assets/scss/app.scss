@@ -27,14 +27,7 @@ html, body.full-height {
 }
 
 .home {
-    @media (min-height: 900px) and (min-width: 992px) {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
     &-header {
-        flex-basis: 0;
         text-align: center;
 
         &-logo {
@@ -65,7 +58,6 @@ html, body.full-height {
     }
 
     &-footer {
-        flex-basis: 0;
         text-align: center;
         background: $secondary;
         color: #e5e5e5;
@@ -90,8 +82,6 @@ html, body.full-height {
     }
 
     &-row {
-        flex-basis: 0;
-        flex-grow: 1;
         display: flex;
 
         @media (max-width: 992px) {
@@ -139,6 +129,17 @@ html, body.full-height {
                 font-size: 18px;
                 font-weight: normal;
             }
+        }
+    }
+
+    &-medias {
+        text-align: center;
+        background: #f5f5f5;
+
+        img {
+            opacity: 0.7;
+            max-height: 38px;
+            margin: 30px;
         }
     }
 }
