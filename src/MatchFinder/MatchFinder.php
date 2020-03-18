@@ -132,8 +132,17 @@ class MatchFinder
                 continue;
             }
 
+            $score = 0;
+
+            // Prefer to match helpers in the same zip code vs the closest one
+            if ($helper->zipCode === $need->zipCode) {
+                ++$score;
+            }
+
             // Prefer to match helpers only able to buy groceris to keep the other for babysit
-            $score = $helper->canBabysit ? 1 : 2;
+            if (!$helper->canBabysit) {
+                ++$score;
+            }
 
             $matched[] = new Match($need, $helper, $score);
             $scores[] = $score;
@@ -174,8 +183,14 @@ class MatchFinder
 
             $score = 0;
 
+            // Prefer to match helpers in the same zip code vs the closest one
+            if ($helper->zipCode === $needs[0]->zipCode) {
+                ++$score;
+            }
+
+            // Prefer to match helpers who are parents
             if ($helper->haveChildren) {
-                $score += 2;
+                ++$score;
             }
 
             $matched[] = new Match($needs[0], $helper, $score);
