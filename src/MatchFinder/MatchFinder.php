@@ -29,7 +29,7 @@ class MatchFinder
      */
     public function findMatchedNeeds(): array
     {
-        $owners = $this->createNeedsByOwner();
+        $owners = $this->helpRequestRepo->findNeedsByOwner(['finished' => false], ['createdAt' => 'DESC']);
 
         $matchedNeeds = [];
         $scores = [];
@@ -99,25 +99,6 @@ class MatchFinder
             $groceriesNeed ? $this->matchGroceriesNeed($groceriesNeed) : null,
             $babysitNeeds ? $this->matchBabysitNeed($babysitNeeds) : null
         );
-    }
-
-    /**
-     * @return HelpRequest[][]
-     */
-    private function createNeedsByOwner(): array
-    {
-        $requests = $this->helpRequestRepo->findBy(['finished' => false], ['createdAt' => 'DESC']);
-
-        $owners = [];
-        foreach ($requests as $request) {
-            if (!isset($owners[$request->ownerUuid->toString()])) {
-                $owners[$request->ownerUuid->toString()] = [];
-            }
-
-            $owners[$request->ownerUuid->toString()][] = $request;
-        }
-
-        return $owners;
     }
 
     private function matchGroceriesNeed(HelpRequest $need): ?MatchedNeed

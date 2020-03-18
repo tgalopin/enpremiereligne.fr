@@ -1,0 +1,29 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'Cancel' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    <div class="p-3">
+        Demande de :
+        <br />
+        <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
+        <br />
+        Travail : {{ requests[0].jobType }}
+    </div>
+
+    <div class="p-4">
+        <p>
+            Annuler la mise en relation de
+            {{ type == 'groceries' ? 'courses' : 'garde d\'enfant' }} de
+            {{ requests[0].firstName }} {{ requests[0].lastName }} ?
+        </p>
+
+        <a href="?token={{ csrf_token('admin_cancel') }}" class="btn btn-primary mr-3">
+            Oui, annuler
+        </a>
+        <a href="{{ path('admin_match_history') }}" class="btn btn-secondary">
+            Non, annuler
+        </a>
+    </div>
+{% endblock %}
