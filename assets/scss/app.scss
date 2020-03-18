@@ -141,6 +141,14 @@ html, body.full-height {
             max-height: 38px;
             margin: 30px;
         }
+
+        a:hover {
+            text-decoration: none;
+
+            img {
+                opacity: 1;
+            }
+        }
     }
 }
 
