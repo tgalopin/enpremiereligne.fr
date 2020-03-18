@@ -34,7 +34,7 @@ const NeedGroceriesButton = ({ needGroceries, onChange }) => {
                     <div>
                         Vous serez mis en relation avec un(e) volontaire qui pourra faire des courses pour vous
                         et vous les livrer à votre domicile. Cette mise en relation n'est pas un engagement
-                        mais le début d'une dicussion d'entraide.
+                        mais le début d'une discussion d'entraide.
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ const NeedBabysitButton = ({ needBabysit, onChange }) => {
 
                     <div>
                         Vous serez mis en relation avec un(e) volontaire qui pourra garder vos enfants.
-                        Cette mise en relation n'est pas un engagement mais le début d'une dicussion d'entraide.
+                        Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.
                     </div>
                 </div>
             </div>
