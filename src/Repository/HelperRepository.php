@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Helper;
+use App\MatchFinder\ZipCode;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -30,15 +31,20 @@ class HelperRepository extends ServiceEntityRepository
 
     public function findClosestHelpersTo(string $zipCode)
     {
-        $helpers = $this->createQueryBuilder('h')
+        $query = $this->createQueryBuilder('h')
             ->select('h', 'r')
             ->leftJoin('h.requests', 'r')
             ->where('h.zipCode = :zipCode')
             ->setParameter('zipCode', $zipCode)
             ->orderBy('h.createdAt', 'DESC')
-            ->getQuery()
-            ->getResult()
         ;
+
+        if ($closestZipCode = ZipCode::CLOSEST[$zipCode] ?? null) {
+            $query->orWhere('h.zipCode = :closestZipCode')
+                ->setParameter('closestZipCode', $closestZipCode);
+        }
+
+        $helpers = $query->getQuery()->getResult();
 
         return array_filter($helpers, fn (Helper $helper) => 0 === $helper->getRequests()->count());
     }

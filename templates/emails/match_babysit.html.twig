@@ -7,7 +7,8 @@
 </p>
 
 <p>
-    Vous résidez toutes les deux dans la même zone géographique (code postal : {{ requester.zipCode }}).
+    Vous résidez toutes les deux dans la même zone géographique
+    (proche du code postal {{ requester.zipCode }}).
 
     {{ requester.firstName|capitalize }} nous a indiqué avoir besoin de garder {{ needs.babysitNeeds|length }}
     enfant{{ needs.babysitNeeds|length > 1 ? 's' }} de {{ needs.babysitAgesList }},
