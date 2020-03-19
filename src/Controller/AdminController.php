@@ -7,6 +7,7 @@ use App\Entity\Helper;
 use App\MatchFinder\MatchFinder;
 use App\Model\MatchedNeeds;
 use App\Repository\HelpRequestRepository;
+use App\Statistics\StatisticsAggregator;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -21,6 +22,29 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminController extends AbstractController
 {
+    /**
+     * @Route("/statistics", name="admin_statistics")
+     */
+    public function statistics(StatisticsAggregator $aggregator): Response
+    {
+        return $this->render('admin/statistics.html.twig', [
+            'countTotalHelpers' => $aggregator->countTotalHelpers(),
+            'countMatchedHelpers' => $aggregator->countMatchedHelpers(),
+            'countTotalOwners' => $aggregator->countTotalOwners(),
+            'countUnmatchedOwners' => $aggregator->countUnmatchedOwners(),
+
+            'avgHelperAge' => $aggregator->avgHelperAge(),
+            'countHelpersByDepartment' => $aggregator->countHelpersByDepartment(),
+
+            'countGroceriesNeeds' => $aggregator->countGroceriesNeeds(),
+            'countBabysitAggregatedNeeds' => $aggregator->countBabysitAggregatedNeeds(),
+            'countBabysitTotalNeeds' => $aggregator->countBabysitTotalNeeds(),
+
+            'countOwnersByJobType' => $aggregator->countOwnersByJobType(),
+            'countOwnersByDepartment' => $aggregator->countOwnersByDepartment(),
+        ]);
+    }
+
     /**
      * @Route("/matches", name="admin_matches")
      */
