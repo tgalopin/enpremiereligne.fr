@@ -11,6 +11,7 @@ easy_admin:
             - { route: 'admin_match_history', label: 'History', icon: 'history' }
             - { entity: 'Helper', label: 'Helpers', icon: 'users' }
             - { entity: 'HelpRequest', label: 'Help requests', icon: 'handshake-o' }
+            - { entity: 'BlockedMatch', label: 'Blocked matches', icon: 'times' }
 
     entities:
         Helper:
@@ -48,4 +49,18 @@ easy_admin:
                     - email
                     - { property: 'isMatched', type: 'boolean', label: 'Has a match?' }
                     - finished
+                    - createdAt
+
+        BlockedMatch:
+            class: App\Entity\BlockedMatch
+            disabled_actions: ['show', 'new', 'edit']
+            list:
+                title: Blocked matches
+                max_results: 100
+                sort: ['createdAt', 'DESC']
+                fields:
+                    - id
+                    - owner
+                    - helper.firstName
+                    - helper.lastName
                     - createdAt

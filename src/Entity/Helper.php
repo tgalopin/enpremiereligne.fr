@@ -112,11 +112,17 @@ class Helper
      */
     private Collection $requests;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\BlockedMatch", mappedBy="helper", orphanRemoval=true)
+     */
+    private Collection $blockedMatches;
+
     public function __construct()
     {
         $this->uuid = Uuid::uuid4();
         $this->createdAt = new \DateTime();
         $this->requests = new ArrayCollection();
+        $this->blockedMatches = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -145,5 +151,13 @@ class Helper
     public function getRequests(): Collection
     {
         return $this->requests;
+    }
+
+    /**
+     * @return Collection|BlockedMatch[]
+     */
+    public function getBlockedMatches(): Collection
+    {
+        return $this->blockedMatches;
     }
 }
