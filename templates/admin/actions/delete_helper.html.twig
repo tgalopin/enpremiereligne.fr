@@ -1,0 +1,10 @@
+{% if item.requests|length == 0 %}
+    <a class="text-danger action-delete" target="_self"
+       href="{{ path('easyadmin', {'entity': 'Helper', 'action': 'delete', 'referer': path('easyadmin', {'entity': 'Helper', 'action': 'list'})|url_encode}) }}">
+        Supprimer
+    </a>
+{% else %}
+    <small class="text-muted">
+        Annulez le match
+    </small>
+{% endif %}

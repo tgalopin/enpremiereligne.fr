@@ -20,10 +20,14 @@ easy_admin:
                 title: Helpers
                 max_results: 100
                 sort: ['createdAt', 'DESC']
+                actions:
+                    - { name: 'delete', template: 'admin/actions/delete_helper.html.twig' }
                 fields:
                     - id
                     - zipCode
-                    - { property: 'incompleteName', label: 'Name' }
+                    - firstName
+                    - lastName
+                    - email
                     - canBabysit
                     - canBuyGroceries
                     - createdAt
@@ -39,7 +43,9 @@ easy_admin:
                     - id
                     - zipCode
                     - helpType
-                    - { property: 'incompleteName', label: 'Name' }
+                    - firstName
+                    - lastName
+                    - email
                     - { property: 'isMatched', type: 'boolean', label: 'Has a match?' }
                     - finished
                     - createdAt
