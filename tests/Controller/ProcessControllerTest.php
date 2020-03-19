@@ -134,13 +134,13 @@ class ProcessControllerTest extends WebTestCase
 
         $form = $button->form();
         $form->setValues([
-        'composite_help_request[firstName]' => 'Titouan',
-        'composite_help_request[lastName]' => 'Galopin',
-        'composite_help_request[zipCode]' => 75008,
-        'composite_help_request[email]' => 'titouan.galopin@example.com',
-        'composite_help_request[jobType]' => 'health',
-        'composite_help_request[confirm]' => 1,
-      ]);
+            'composite_help_request[firstName]' => 'Titouan',
+            'composite_help_request[lastName]' => 'Galopin',
+            'composite_help_request[zipCode]' => 75008,
+            'composite_help_request[email]' => 'titouan.galopin@example.com',
+            'composite_help_request[jobType]' => 'health',
+            'composite_help_request[confirm]' => 1,
+        ]);
 
         // gets the raw values
         $values = $form->getPhpValues();
@@ -148,13 +148,13 @@ class ProcessControllerTest extends WebTestCase
         // adds fields to the raw values
         // see https://symfony.com/doc/current/testing.html#adding-and-removing-forms-to-a-collection
         $values['composite_help_request']['details'] = [
-      ['helpType' => HelpRequest::TYPE_GROCERIES],
-      ['helpType' => HelpRequest::TYPE_BABYSIT, 'childAgeRange' => HelpRequest::AGE_RANGE_35],
-      ['helpType' => HelpRequest::TYPE_BABYSIT, 'childAgeRange' => HelpRequest::AGE_RANGE_69],
-      ];
+            ['helpType' => HelpRequest::TYPE_GROCERIES],
+            ['helpType' => HelpRequest::TYPE_BABYSIT, 'childAgeRange' => HelpRequest::AGE_RANGE_35],
+            ['helpType' => HelpRequest::TYPE_BABYSIT, 'childAgeRange' => HelpRequest::AGE_RANGE_69],
+        ];
 
         // submits the form with the existing and new values
-        $crawler = $client->request($form->getMethod(), $form->getUri(), $values, $form->getPhpFiles());
+        $client->request($form->getMethod(), $form->getUri(), $values, $form->getPhpFiles());
 
         $help_request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'titouan.galopin@example.com', 'childAgeRange' => HelpRequest::AGE_RANGE_35]);
         $this->assertInstanceOf(HelpRequest::class, $help_request);
