@@ -96,9 +96,9 @@ class AdminController extends AbstractController
     /**
      * @Route("/cancel/{ownerUuid}/{type}", name="admin_match_cancel")
      */
-    public function cancel(HelpRequestRepository $repository, string $ownerUuid, string $type, Request $request): Response
+    public function cancel(HelpRequestRepository $repository, EntityManagerInterface $manager, string $ownerUuid, string $type, Request $request): Response
     {
-        $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => true]);
+        $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => true, 'helpType' => $type]);
         if (!$requests) {
             throw $this->createNotFoundException();
         }
@@ -109,6 +109,9 @@ class AdminController extends AbstractController
             }
 
             $repository->cancelMatch($ownerUuid, $type);
+
+            $manager->persist(new BlockedMatch(Uuid::fromString($ownerUuid), $requests[0]->matchedWith));
+            $manager->flush();
 
             return $this->redirectToRoute('admin_match_history');
         }
