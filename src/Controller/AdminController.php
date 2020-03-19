@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\BlockedMatch;
 use App\Entity\Helper;
 use App\MatchFinder\MatchFinder;
 use App\Model\MatchedNeeds;
 use App\Repository\HelpRequestRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Ramsey\Uuid\Uuid;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -114,6 +117,29 @@ class AdminController extends AbstractController
             'type' => $type,
             'requests' => $requests,
             'ownerUuid' => $ownerUuid,
+        ]);
+    }
+
+    /**
+     * @Route("/match/block/{ownerUuid}/{id}", name="admin_match_block")
+     */
+    public function block(HelpRequestRepository $repository, EntityManagerInterface $manager, string $ownerUuid, Helper $helper, Request $request): Response
+    {
+        if ($request->query->has('token')) {
+            if (!$this->isCsrfTokenValid('admin_block', $request->query->get('token'))) {
+                throw $this->createNotFoundException();
+            }
+
+            $manager->persist(new BlockedMatch(Uuid::fromString($ownerUuid), $helper));
+            $manager->flush();
+
+            return $this->redirectToRoute('admin_match', ['ownerUuid' => $ownerUuid]);
+        }
+
+        return $this->render('admin/block.html.twig', [
+            'requests' => $repository->findBy(['ownerUuid' => $ownerUuid]),
+            'ownerUuid' => $ownerUuid,
+            'helper' => $helper,
         ]);
     }
 }

@@ -109,11 +109,16 @@
                                     <span class="badge badge-secondary">{{ range }}</span>
                                 {% endfor %}
                             </div>
-                            <div class="col-2">
+                            <div class="col-7">
                                 <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
-                                   class="btn btn-secondary mb-2">
+                                   class="btn btn-secondary mb-2 mr-4">
                                     <i class="fa fa-paper-plane mr-1"></i>
-                                    Envoyer l'e-mail de mise en contact et fermer le besoin
+                                    Envoyer la mise en contact et fermer le besoin
+                                </a>
+                                <a href="{{ path('admin_match_block', {'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
+                                   class="btn btn-link mb-2">
+                                    <i class="fa fa-times mr-1"></i>
+                                    Bloquer le match
                                 </a>
                             </div>
                         </div>

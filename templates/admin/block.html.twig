@@ -1,0 +1,27 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'Block match' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    <div class="p-3">
+        Demande de :
+        <br />
+        <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
+        <br />
+        Travail : {{ requests[0].jobType }}
+    </div>
+
+    <div class="p-4">
+        <p>
+            Bloquer le match avec le volontaire {{ helper.firstName }} {{ helper.lastName }} ?
+        </p>
+
+        <a href="?token={{ csrf_token('admin_block') }}" class="btn btn-primary mr-3">
+            Oui, fermer
+        </a>
+        <a href="{{ path('admin_match', {'ownerUuid': ownerUuid}) }}" class="btn btn-secondary">
+            Non, annuler
+        </a>
+    </div>
+{% endblock %}

@@ -7,6 +7,7 @@ use App\Entity\HelpRequest;
 use App\Model\Match;
 use App\Model\MatchedNeed;
 use App\Model\MatchedNeeds;
+use App\Repository\BlockedMatchRepository;
 use App\Repository\HelperRepository;
 use App\Repository\HelpRequestRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -15,13 +16,15 @@ class MatchFinder
 {
     private HelpRequestRepository $helpRequestRepo;
     private HelperRepository $helperRepo;
+    private BlockedMatchRepository $blockedMatchRepo;
 
     private array $zipCodeCache;
 
-    public function __construct(HelpRequestRepository $helpRequestRepo, HelperRepository $helperRepo)
+    public function __construct(HelpRequestRepository $helpRequestRepo, HelperRepository $helperRepo, BlockedMatchRepository $blockedMatchRepo)
     {
         $this->helpRequestRepo = $helpRequestRepo;
         $this->helperRepo = $helperRepo;
+        $this->blockedMatchRepo = $blockedMatchRepo;
     }
 
     /**
@@ -47,12 +50,14 @@ class MatchFinder
                 }
             }
 
+            $blockedHelpers = $this->blockedMatchRepo->findBlockedHelpersIdsFor($ownerNeeds[0]->ownerUuid->toString());
+
             $matchedGroceriesNeed = null;
             $matchedBabysitNeed = null;
             $score = 0;
 
             if ($groceriesNeed) {
-                $matchedGroceriesNeed = $this->matchGroceriesNeed($groceriesNeed);
+                $matchedGroceriesNeed = $this->matchGroceriesNeed($groceriesNeed, $blockedHelpers);
 
                 if ($matchedGroceriesNeed->getMatchedHelpers()) {
                     $score = 1;
@@ -60,7 +65,7 @@ class MatchFinder
             }
 
             if ($babysitNeeds) {
-                $matchedBabysitNeed = $this->matchBabysitNeed($babysitNeeds);
+                $matchedBabysitNeed = $this->matchBabysitNeed($babysitNeeds, $blockedHelpers);
 
                 if ($matchedBabysitNeed->getMatchedHelpers()) {
                     $score = 1;
@@ -94,14 +99,16 @@ class MatchFinder
             }
         }
 
+        $blockedHelpers = $this->blockedMatchRepo->findBlockedHelpersIdsFor($needs[0]->ownerUuid->toString());
+
         return new MatchedNeeds(
             $needs,
-            $groceriesNeed ? $this->matchGroceriesNeed($groceriesNeed) : null,
-            $babysitNeeds ? $this->matchBabysitNeed($babysitNeeds) : null
+            $groceriesNeed ? $this->matchGroceriesNeed($groceriesNeed, $blockedHelpers) : null,
+            $babysitNeeds ? $this->matchBabysitNeed($babysitNeeds, $blockedHelpers) : null
         );
     }
 
-    private function matchGroceriesNeed(HelpRequest $need): ?MatchedNeed
+    private function matchGroceriesNeed(HelpRequest $need, array $blockedHelpersIds): ?MatchedNeed
     {
         $localHelpers = $this->findLocalHelpers($need->zipCode);
 
@@ -109,7 +116,7 @@ class MatchFinder
         $matched = [];
 
         foreach ($localHelpers as $helper) {
-            if (!$helper->canBuyGroceries) {
+            if (!$helper->canBuyGroceries || in_array($helper->getId(), $blockedHelpersIds)) {
                 continue;
             }
 
@@ -137,7 +144,7 @@ class MatchFinder
     /**
      * @param HelpRequest[] $needs
      */
-    private function matchBabysitNeed(array $needs): ?MatchedNeed
+    private function matchBabysitNeed(array $needs, array $blockedHelpersIds): ?MatchedNeed
     {
         $localHelpers = $this->findLocalHelpers($needs[0]->zipCode);
         $childrenCount = count($needs);
@@ -151,7 +158,9 @@ class MatchFinder
         $matched = [];
 
         foreach ($localHelpers as $helper) {
-            if (!$helper->canBabysit || $helper->babysitMaxChildren < $childrenCount) {
+            if (!$helper->canBabysit
+                || $helper->babysitMaxChildren < $childrenCount
+                || in_array($helper->getId(), $blockedHelpersIds)) {
                 continue;
             }
 

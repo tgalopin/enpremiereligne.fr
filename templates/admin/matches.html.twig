@@ -30,6 +30,16 @@
                     <strong>
                         {{ match.score ? 'Has helpers' : 'No helper' }}
                     </strong>
+
+                    {% if match.groceries and match.groceries.matchedHelpers %}
+                        <br />
+                        Groceries max score: {{ match.groceries.matchedHelpers[0].score }}
+                    {% endif %}
+
+                    {% if match.babysit and match.babysit.matchedHelpers %}
+                        <br />
+                        Babysit max score: {{ match.babysit.matchedHelpers[0].score }}
+                    {% endif %}
                 </div>
                 <div class="col-2">
                     <a href="{{ path('admin_match', {'ownerUuid': match.requester.ownerUuid}) }}" class="btn btn-secondary">
