@@ -80,6 +80,8 @@
                 }) }}
             </div>
 
+            {{ form_widget(form.c, {'value': 'blocking bot', 'attr': {'class': 'c'}}) }}
+
             <div class="text-center">
                 <button type="submit" class="btn btn-lg btn-primary">
                     Envoyer ma demande
@@ -107,4 +109,5 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('request') }}
+    {{ encore_entry_script_tags('captcha') }}
 {% endblock %}

@@ -33,6 +33,7 @@ class ProcessControllerTest extends WebTestCase
             'helper[babysitMaxChildren]' => 3,
             'helper[babysitAgeRanges]' => ['0-1'],
             'helper[confirm]' => true,
+            'helper[c]' => '',
         ]);
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
@@ -71,6 +72,33 @@ class ProcessControllerTest extends WebTestCase
             'helper[haveChildren]' => true,
             'helper[babysitMaxChildren]' => 3,
             'helper[babysitAgeRanges]' => ['0-1'],
+        ]);
+        $this->assertResponseIsSuccessful($client->getResponse()->getStatusCode());
+    }
+
+    public function testHelperRequiresc()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/process/je-peux-aider');
+        $this->assertResponseIsSuccessful();
+
+        $button = $crawler->selectButton('Envoyer ma proposition');
+        $this->assertCount(1, $button);
+
+        $client->submit($button->form(), [
+            'helper[firstName]' => 'Titouan',
+            'helper[lastName]' => 'Galopin',
+            'helper[age]' => '25',
+            'helper[zipCode]' => '75008',
+            'helper[email]' => 'titouan.galopin@example.com',
+            'helper[canBuyGroceries]' => true,
+            'helper[canBabysit]' => true,
+            'helper[haveChildren]' => true,
+            'helper[babysitMaxChildren]' => 3,
+            'helper[babysitAgeRanges]' => ['0-1'],
+            'helper[confirm]' => true,
+            'helper[c]' => 'blocking bot',
         ]);
         $this->assertResponseIsSuccessful($client->getResponse()->getStatusCode());
     }
@@ -134,13 +162,14 @@ class ProcessControllerTest extends WebTestCase
 
         $form = $button->form();
         $form->setValues([
-            'composite_help_request[firstName]' => 'Titouan',
-            'composite_help_request[lastName]' => 'Galopin',
-            'composite_help_request[zipCode]' => 75008,
-            'composite_help_request[email]' => 'titouan.galopin@example.com',
-            'composite_help_request[jobType]' => 'health',
-            'composite_help_request[confirm]' => 1,
-        ]);
+        'composite_help_request[firstName]' => 'Titouan',
+        'composite_help_request[lastName]' => 'Galopin',
+        'composite_help_request[zipCode]' => 75008,
+        'composite_help_request[email]' => 'titouan.galopin@example.com',
+        'composite_help_request[jobType]' => 'health',
+        'composite_help_request[confirm]' => 1,
+        'composite_help_request[c]' => '',
+      ]);
 
         // gets the raw values
         $values = $form->getPhpValues();
@@ -196,6 +225,7 @@ class ProcessControllerTest extends WebTestCase
             'vulnerable_help_request[zipCode]' => 92110,
             'vulnerable_help_request[email]' => 'agnes.jean@example.com',
             'vulnerable_help_request[confirm]' => 1,
+            'vulnerable_help_request[c]' => '',
         ]);
 
         $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'agnes.jean@example.com']);
@@ -227,6 +257,7 @@ class ProcessControllerTest extends WebTestCase
             'vulnerable_help_request[zipCode]' => 92110,
             'vulnerable_help_request[email]' => 'agnes.jean@example.com',
             'vulnerable_help_request[confirm]' => 1,
+            'vulnerable_help_request[c]' => '',
         ]);
 
         $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'agnes.jean@example.com']);

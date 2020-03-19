@@ -118,6 +118,8 @@
                 </div>
             </div>
 
+            {{ form_widget(form.c, {'value': 'blocking bot', 'attr': {'class': 'c'}}) }}
+
             <div class="process-block bg-white p-3 p-lg-4 mb-5">
                 {{ form_row(form.confirm, {
                     'label': 'J\'ai lu et j\'accepte la Politique de confidentialité et les Conditions d\'utilisation d\'enpremiereligne.fr',
@@ -153,4 +155,5 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('helper') }}
+    {{ encore_entry_script_tags('captcha') }}
 {% endblock %}

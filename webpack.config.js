@@ -12,6 +12,7 @@ Encore
     .addEntry('request', './assets/jsx/request.jsx')
     .addEntry('request-vulnerable', './assets/jsx/request-vulnerable.jsx')
     .addEntry('helper', './assets/jsx/helper.jsx')
+    .addEntry('captcha', './assets/js/captcha.js')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
 
