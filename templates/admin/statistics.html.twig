@@ -1,0 +1,174 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'Statistics' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    <div class="p-4">
+        <div class="row">
+            <div class="col-3 text-center">
+                <h1>
+                    <strong>
+                        {{ countTotalHelpers|number_format(0, ',', ' ') }}
+                    </strong>
+                </h1>
+                <small class="text-uppercase">
+                    Nombre total de volontaires
+                </small>
+            </div>
+            <div class="col-3 text-center">
+                <h1>
+                    <strong>
+                        {{ countMatchedHelpers|number_format(0, ',', ' ') }}
+                    </strong>
+                    <small class="text-muted">
+                        ({{ ((countMatchedHelpers / countTotalHelpers) * 100)|number_format(2) }} %)
+                    </small>
+                </h1>
+                <small class="text-uppercase">
+                    Nombre de volontaires matchés
+                </small>
+            </div>
+            <div class="col-3 text-center">
+                <h1>
+                    <strong>
+                        {{ countTotalOwners|number_format(0, ',', ' ') }}
+                    </strong>
+                </h1>
+                <small class="text-uppercase">
+                    Nombre total de demandeurs
+                </small>
+            </div>
+            <div class="col-3 text-center">
+                <h1>
+                    <strong>
+                        {{ (countTotalOwners - countUnmatchedOwners)|number_format(0, ',', ' ') }}
+                    </strong>
+                    <small class="text-muted">
+                        ({{ (((countTotalOwners - countUnmatchedOwners) / countTotalOwners) * 100)|number_format(2) }} %)
+                    </small>
+                </h1>
+                <small class="text-uppercase">
+                    Nombre de demandeurs matchés
+                </small>
+            </div>
+        </div>
+
+        <hr class="mt-5 mb-5" />
+
+        <div class="row">
+            <div class="col-6">
+                <h3 class="p-2">
+                    Volontaires
+                </h3>
+
+                <table class="table">
+                    <tr>
+                        <td>
+                            Age moyen
+                        </td>
+                        <td>
+                            {{ avgHelperAge|number_format(1, ',', ' ') }} ans
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="p-2 mt-4">
+                    <strong>
+                        Par département
+                    </strong>
+                </div>
+
+                <table class="table">
+                    {% for row in countHelpersByDepartment %}
+                        <tr>
+                            <td>
+                                {{ row.department }}
+                            </td>
+                            <td>
+                                {{ row.nb|number_format(0, ',', ' ') }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="col-6">
+                <h3 class="p-2">
+                    Demandeurs
+                </h3>
+
+                <div class="p-2">
+                    <strong>
+                        Par type
+                    </strong>
+                </div>
+
+                <table class="table">
+                    <tr>
+                        <td>
+                            Nombre de demandes de courses
+                        </td>
+                        <td>
+                            {{ countGroceriesNeeds|number_format(0, ',', ' ') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nombre de demandes de babysitting
+                        </td>
+                        <td>
+                            {{ countBabysitAggregatedNeeds|number_format(0, ',', ' ') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nombre d'enfants concernés
+                        </td>
+                        <td>
+                            {{ countBabysitTotalNeeds|number_format(0, ',', ' ') }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="p-2 mt-4">
+                    <strong>
+                        Par emploi
+                    </strong>
+                </div>
+
+                <table class="table">
+                    {% for row in countOwnersByJobType %}
+                        <tr>
+                            <td>
+                                {{ row.job_type }}
+                            </td>
+                            <td>
+                                {{ row.nb|number_format(0, ',', ' ') }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                <div class="p-2 mt-4">
+                    <strong>
+                        Par département
+                    </strong>
+                </div>
+
+                <table class="table">
+                    {% for row in countOwnersByDepartment %}
+                        <tr>
+                            <td>
+                                {{ row.department }}
+                            </td>
+                            <td>
+                                {{ row.nb|number_format(0, ',', ' ') }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
