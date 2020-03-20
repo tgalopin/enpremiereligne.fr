@@ -48,4 +48,14 @@ class HelperRepository extends ServiceEntityRepository
 
         return array_filter($helpers, fn (Helper $helper) => 0 === $helper->getRequests()->count());
     }
+
+    public function export()
+    {
+        return $this->createQueryBuilder('h')
+            ->select('h.firstName', 'h.lastName', 'h.email')
+            ->orderBy('h.createdAt', 'DESC')
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 }

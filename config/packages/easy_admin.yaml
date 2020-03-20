@@ -13,6 +13,7 @@ easy_admin:
             - { entity: 'Helper', label: 'Helpers', icon: 'users' }
             - { entity: 'HelpRequest', label: 'Help requests', icon: 'handshake-o' }
             - { entity: 'BlockedMatch', label: 'Blocked matches', icon: 'times' }
+            - { route: 'admin_export_helpers', label: 'Export helpers', icon: 'cloud-download', target: '_blank' }
 
     entities:
         Helper:

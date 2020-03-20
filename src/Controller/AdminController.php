@@ -6,12 +6,15 @@ use App\Entity\BlockedMatch;
 use App\Entity\Helper;
 use App\MatchFinder\MatchFinder;
 use App\Model\MatchedNeeds;
+use App\Repository\HelperRepository;
 use App\Repository\HelpRequestRepository;
 use App\Statistics\StatisticsAggregator;
 use Doctrine\ORM\EntityManagerInterface;
+use League\Csv\Writer;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -43,6 +46,31 @@ class AdminController extends AbstractController
             'countOwnersByJobType' => $aggregator->countOwnersByJobType(),
             'countOwnersByDepartment' => $aggregator->countOwnersByDepartment(),
         ]);
+    }
+
+    /**
+     * @Route("/export/helpers", name="admin_export_helpers")
+     */
+    public function exportHelpers(HelperRepository $repository): Response
+    {
+        $csv = Writer::createFromString();
+        $csv->setDelimiter(',');
+        $csv->setOutputBOM(Writer::BOM_UTF8);
+        $csv->insertOne(['E-mail', 'Prénom', 'Nom']);
+
+        $helpers = $repository->export();
+        foreach ($helpers as $helper) {
+            $csv->insertOne([$helper['email'], $helper['firstName'], $helper['lastName']]);
+        }
+
+        $response = new Response($csv->getContent());
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition', HeaderUtils::makeDisposition(
+            HeaderUtils::DISPOSITION_ATTACHMENT,
+            'helpers-'.date('Y-m-d-H-i').'.csv'
+        ));
+
+        return $response;
     }
 
     /**
