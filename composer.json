@@ -9,6 +9,7 @@
         "doctrine/doctrine-migrations-bundle": "^2.1",
         "doctrine/orm": "^2.7",
         "easycorp/easyadmin-bundle": "^2.3",
+        "league/csv": "^9.6",
         "ramsey/uuid-doctrine": "^1.6",
         "sensio/framework-extra-bundle": "^5.5",
         "symfony/console": "5.0.*",
