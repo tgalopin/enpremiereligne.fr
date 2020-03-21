@@ -121,50 +121,141 @@
             </div>
         </div>
 
-        <div class="home-medias p-4 p-lg-5">
-            <div class="text-center text-uppercase text-muted">
-                Ils parlent de vous !
+        <div class="home-ecosystem p-4 p-lg-5">
+            <div class="home-ecosystem-feedbacks mb-5">
+                <h5 class="font-weight-normal mb-5 p-4">
+                    Nous sommes <strong>{{ countTotalHelpers|number_format(0, ',', ' ') }} volontaires</strong>.
+                    <br />
+                    <strong>
+                        {{ (((countTotalOwners - countUnmatchedOwners) / countTotalOwners) * 100)|number_format(2) }} %
+                    </strong>
+                    des demandes d'aide ont été résolues.
+                </h5>
+
+                <h5>
+                    Témoignages
+                </h5>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="p-3 p-lg-5">
+                            <blockquote>
+                                <div>
+                                    <p>
+                                        Mon mari et moi sommes infirmiers avec deux enfants en bas âge.
+                                        J'ai découvert En Première Ligne hier à 22h en cherchant comment
+                                        je pourrais aller faire mes courses : je me suis inscrite en quelques
+                                        clics sur mon téléphone. Le lendemain lorsque je me suis réveillée à
+                                        5h30, j'avais la bonne surprise d'avoir un mail de mise en contact avec
+                                        Thomas, qui a pu me livrer mes courses le jour même à 13h.
+                                    </p>
+
+                                    <p>
+                                        Je recommande à tous les travailleurs dans le besoin de s'inscrire,
+                                        c'est gratuit et rapide !
+                                    </p>
+
+                                    <cite>- Marion, infirmière dans l'Ain</cite>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="p-3 p-lg-5">
+                            <blockquote>
+                                <div>
+                                    <p>
+                                        J'ai commencé mon confinement le vendredi 13 mars,
+                                        avant la fermeture des bars et des lieux publics.
+                                        Travaillant dans l'informatique, j'ai pu facilement me
+                                        mettre en sécurité et arrêter toute sortie.
+                                    </p>
+
+                                    <p>
+                                        Si le personnel médical est en première ligne, pour ma part,
+                                        j'ai l'impression d'être dans un bunker. J'ai presque honte
+                                        de la chance que j'ai.
+                                    </p>
+
+                                    <p>
+                                        Je me suis inscrit sur enpremiereligne.fr car je veux aider
+                                        ceux qui en ont besoin. En m'inscrivant, j'ai été mis en
+                                        relation avec une personne qui est infirmière dans ma ville.
+                                        Pour l'instant, elle a encore des réserves de nourriture pour
+                                        plusieurs jours, mais elle sait que dans les prochains jours,
+                                        quand la crise sanitaire aura pris encore plus d'ampleur, elle
+                                        pourra compter sur moi.
+                                    </p>
+
+                                    <cite>- Alexandre, ingénieur dans le Nord</cite>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <a href="https://www.cnews.fr/france/2020-03-16/en-premiere-ligne-un-site-pour-aider-les-personnes-qui-luttent-contre-le" target="_blank">
-                <img src="{{ asset('res/medias/cnews.png') }}" />
-            </a>
+            <div class="home-ecosystem-assos mb-5 pb-5">
+                <div class="home-ecosystem-assos-title">
+                    Nous soutenons
+                </div>
 
-            <a href="https://www.20minutes.fr/sante/2742831-20200318-coronavirus-logements-courses-gardes-solidarite-envers-soignants-organise" target="_blank">
-                <img src="{{ asset('res/medias/20minutes.png') }}" />
-            </a>
+                <a href="https://www.restosducoeur.org/devenir-benevole/" target="_blank"
+                   title="Contactez votre antenne locale des Restos du Coeur">
+                    <img src="{{ asset('res/assos/restosducoeur.png') }}" />
+                </a>
 
-            <a href="https://www.elle.fr/Societe/News/Coronavirus-les-bonnes-initiatives-pour-aider-pendant-le-confinement-3862081" target="_blank">
-                <img src="{{ asset('res/medias/elle.png') }}" />
-            </a>
+                <a href="https://dondesang.efs.sante.fr/information-concernant-linfection-covid-19-coronavirus-sars-cov2-actualisation-19032020" target="_blank"
+                   title="Prévoyez d’aller donner votre sang">
+                    <img src="{{ asset('res/assos/efs.png') }}" />
+                </a>
+            </div>
 
-            <a href="https://www.europe1.fr/societe/coronavirus-4-sites-internet-pour-faciliter-la-solidarite-entre-voisins-3955966" target="_blank">
-                <img src="{{ asset('res/medias/europe1.png') }}" />
-            </a>
+            <div class="home-ecosystem-medias">
+                <div class="home-ecosystem-assos-title">
+                    Ils parlent de vous !
+                </div>
 
-            <a href="https://www.lci.fr/population/coronavirus-trois-solutions-pour-aider-le-personnel-de-sante-mobilise-2148129.html" target="_blank">
-                <img src="{{ asset('res/medias/lci.png') }}" />
-            </a>
+                <a href="https://www.cnews.fr/france/2020-03-16/en-premiere-ligne-un-site-pour-aider-les-personnes-qui-luttent-contre-le" target="_blank">
+                    <img src="{{ asset('res/medias/cnews.png') }}" />
+                </a>
 
-            <a href="https://www.ouest-france.fr/leditiondusoir/data/82936/reader/reader.html#!preferred/1/package/82936/pub/117254/page/5" target="_blank">
-                <img src="{{ asset('res/medias/ouest-france.png') }}" />
-            </a>
+                <a href="https://www.20minutes.fr/sante/2742831-20200318-coronavirus-logements-courses-gardes-solidarite-envers-soignants-organise" target="_blank">
+                    <img src="{{ asset('res/medias/20minutes.png') }}" />
+                </a>
 
-            <a href="https://www.francebleu.fr/infos/societe/coronavirus-des-initiatives-pour-aider-les-soignants-1584455310" target="_blank">
-                <img src="{{ asset('res/medias/francebleu.png') }}" />
-            </a>
+                <a href="https://www.elle.fr/Societe/News/Coronavirus-les-bonnes-initiatives-pour-aider-pendant-le-confinement-3862081" target="_blank">
+                    <img src="{{ asset('res/medias/elle.png') }}" />
+                </a>
 
-            <a href="https://www.cheriefm.fr/actus/le-reveil-cherie-du-17-mars-2020-71428894" target="_blank">
-                <img src="{{ asset('res/medias/cheriefm.png') }}" />
-            </a>
+                <a href="https://www.europe1.fr/societe/coronavirus-4-sites-internet-pour-faciliter-la-solidarite-entre-voisins-3955966" target="_blank">
+                    <img src="{{ asset('res/medias/europe1.png') }}" />
+                </a>
 
-            <a href="https://www.lefigaro.fr/flash-actu/courses-garde-d-enfants-face-au-coronavirus-les-initiatives-solidaires-se-multiplient-sur-internet-20200315" target="_blank">
-                <img src="{{ asset('res/medias/figaro.png') }}" />
-            </a>
+                <a href="https://www.lci.fr/population/coronavirus-trois-solutions-pour-aider-le-personnel-de-sante-mobilise-2148129.html" target="_blank">
+                    <img src="{{ asset('res/medias/lci.png') }}" />
+                </a>
 
-            <a href="https://www.forbes.fr/entrepreneurs/confinement-quand-linquietude-laisse-la-place-a-la-solidarite/" target="_blank">
-                <img src="{{ asset('res/medias/forbes.png') }}" />
-            </a>
+                <a href="https://www.ouest-france.fr/leditiondusoir/data/82936/reader/reader.html#!preferred/1/package/82936/pub/117254/page/5" target="_blank">
+                    <img src="{{ asset('res/medias/ouest-france.png') }}" />
+                </a>
+
+                <a href="https://www.francebleu.fr/infos/societe/coronavirus-des-initiatives-pour-aider-les-soignants-1584455310" target="_blank">
+                    <img src="{{ asset('res/medias/francebleu.png') }}" />
+                </a>
+
+                <a href="https://www.cheriefm.fr/actus/le-reveil-cherie-du-17-mars-2020-71428894" target="_blank">
+                    <img src="{{ asset('res/medias/cheriefm.png') }}" />
+                </a>
+
+                <a href="https://www.lefigaro.fr/flash-actu/courses-garde-d-enfants-face-au-coronavirus-les-initiatives-solidaires-se-multiplient-sur-internet-20200315" target="_blank">
+                    <img src="{{ asset('res/medias/figaro.png') }}" />
+                </a>
+
+                <a href="https://www.forbes.fr/entrepreneurs/confinement-quand-linquietude-laisse-la-place-a-la-solidarite/" target="_blank">
+                    <img src="{{ asset('res/medias/forbes.png') }}" />
+                </a>
+            </div>
         </div>
 
         {{ include('_include/footer.html.twig') }}
