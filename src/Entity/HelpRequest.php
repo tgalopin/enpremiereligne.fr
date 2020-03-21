@@ -58,6 +58,11 @@ class HelpRequest
     public ?string $email;
 
     /**
+     * @ORM\Column(length=200, nullable=true)
+     */
+    public ?string $ccEmail;
+
+    /**
      * @ORM\Column(length=10)
      */
     public ?string $zipCode;

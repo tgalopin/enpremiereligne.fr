@@ -101,6 +101,11 @@ class Helper
     public ?bool $canBuyGroceries = false;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    public ?bool $acceptVulnerable = false;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private \DateTime $createdAt;
