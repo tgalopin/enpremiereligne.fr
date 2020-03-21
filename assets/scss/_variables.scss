@@ -24,8 +24,8 @@ $pink:    #e83e8c !default;
 $red:     #dc3c37 !default;
 $orange:  #f0ad4e !default;
 $yellow:  #FF7518 !default;
-$green:   #3FB618 !default;
-$teal:    #20c997 !default;
+$green:   #229a16 !default;
+$teal:    #3182CE !default;
 
 $primary:       $blue !default;
 $secondary:     $gray-800 !default;
@@ -35,6 +35,8 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-200 !default;
+
+$theme-colors: ("teal": $teal);
 
 // Options
 

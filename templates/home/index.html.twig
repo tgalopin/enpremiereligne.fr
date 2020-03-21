@@ -46,51 +46,91 @@
         </div>
 
         <div class="home-row">
-            <div class="home-row-half bg-primary text-white">
-                <div class="m-4 p-3 m-lg-5 p-lg-5">
-                    <a href="{{ path('process_request') }}" class="home-row-half-button text-white">
-                        <div class="home-row-half-button-icon d-none d-lg-block">
-                            {{ include('_icons/arrow.html.twig') }}
-                        </div>
-                        <div class="home-row-half-button-label">
-                            Je travaille en première ligne et j'ai besoin d'aide
-                        </div>
-                    </a>
+            <div class="home-row-half text-white">
+                <div class="bg-primary">
+                    <div class="m-4 p-3 m-lg-5 p-lg-4">
+                        <a href="{{ path('process_request') }}" class="home-row-half-button text-white">
+                            <div class="home-row-half-button-icon d-none d-lg-block">
+                                {{ include('_icons/arrow.html.twig') }}
+                            </div>
+                            <div class="home-row-half-button-label">
+                                Je travaille en première ligne et j'ai besoin d'aide
+                            </div>
+                        </a>
 
-                    <div class="home-row-half-details mt-3 mb-4">
-                        <p>
-                            Vous faites partie de la première ligne de la lutte contre le virus
-                            (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments,
-                            matériel, ...) ?
-                        </p>
-                        Demandez de l'aide à des volontaires proches de chez vous
-                        pour garder vos enfants ou faire vos courses.
+                        <div class="home-row-half-details mt-3 mb-4">
+                            <p>
+                                Vous faites partie de la première ligne de la lutte contre le virus
+                                (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments,
+                                matériel, ...) ?
+                            </p>
+                            Demandez de l'aide à des volontaires proches de chez vous
+                            pour garder vos enfants ou faire vos courses.
+                        </div>
+
+                        <div class="row no-gutters text-center">
+                            <div class="col-12 col-xl-auto">
+                                <a href="{{ path('process_request') }}"
+                                   class="btn btn-primary btn-lg border-white border mr-xl-3">
+                                    Demander de l'aide
+                                </a>
+                            </div>
+                            <div class="col-12 col-xl-auto">
+                                <a href="{{ path('content_how') }}"
+                                   class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
+                                    Comment ça marche ?
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="row no-gutters text-center">
-                        <div class="col-12 col-xl-auto">
-                            <a href="{{ path('process_request') }}"
-                               class="btn btn-primary btn-lg border-white border mr-xl-3">
-                                Demander de l'aide
-                            </a>
+                <div class="home-isolated">
+                    <div class="m-4 p-3 m-lg-5 p-lg-4">
+                        <a href="{{ path('process_request') }}" class="home-row-half-button text-white">
+                            <div class="home-row-half-button-icon d-none d-lg-block">
+                                {{ include('_icons/arrow.html.twig') }}
+                            </div>
+                            <div class="home-row-half-button-label">
+                                Je fais partie des populations à risque ou je connais une personne dans ce cas
+                            </div>
+                        </a>
+
+                        <div class="home-row-half-details mt-3 mb-4">
+                            <p>
+                                Vous ou un de vos proches, de par l'âge, les antécédents médicaux ou les
+                                difficultés à se déplacer, a besoin d'aide pour faire les courses et faire
+                                face à l'épidémie ?
+                            </p>
+                            Demandez de l'aide à des volontaires proches de chez vous.
                         </div>
-                        <div class="col-12 col-xl-auto">
-                            <a href="{{ path('content_how') }}"
-                               class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
-                                Comment ça marche ?
-                            </a>
+
+                        <div class="row no-gutters text-center">
+                            <div class="col-12 col-xl-auto">
+                                <a href="{{ path('process_request_vulnerable') }}"
+                                   class="btn btn-teal btn-lg border-white border mr-xl-3">
+                                    Demander de l'aide
+                                </a>
+                            </div>
+                            <div class="col-12 col-xl-auto">
+                                <a href="{{ path('content_how') }}"
+                                   class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
+                                    Comment ça marche ?
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="home-row-half bg-info text-white">
-                <div class="m-4 p-3 m-lg-5 p-lg-5">
+                <div class="m-4 p-3 m-lg-5 p-lg-4">
                     <a href="{{ path('process_helper') }}" class="home-row-half-button text-white">
                         <div class="home-row-half-button-icon d-none d-lg-block">
                             {{ include('_icons/arrow.html.twig') }}
                         </div>
                         <div class="home-row-half-button-label">
-                            Je peux aider les travailleurs mobilisés en première ligne
+                            Je peux aider les travailleurs en première ligne et les personnes
+                            faisant partie des populations à risque
                         </div>
                     </a>
 
@@ -98,9 +138,9 @@
                         <p>
                             Vous êtes jeune et en bonne santé ?
                         </p>
-                        Aidez un travailleur en première ligne vivant proche de chez vous en
-                        gardant un enfant ou en faisant des courses, et engagez-vous dans la
-                        lutte contre l’épidémie.
+                        Aidez un travailleur en première ligne ou une personne faisant partie
+                        des populations à risque vivant proche de chez vous en gardant un enfant
+                        ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.
                     </div>
 
                     <div class="row no-gutters text-center">

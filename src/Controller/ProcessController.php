@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Helper;
 use App\Form\CompositeHelpRequestType;
 use App\Form\HelperType;
+use App\Form\VulnerableHelpRequestType;
 use App\Model\CompositeHelpRequest;
+use App\Model\VulnerableHelpRequest;
 use App\Repository\HelperRepository;
 use App\Repository\HelpRequestRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -138,6 +140,45 @@ class ProcessController extends AbstractController
         }
 
         return $this->render('process/request.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/j-ai-besoin-d-aide-risque", name="process_request_vulnerable")
+     */
+    public function requestVulnerable(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request)
+    {
+        $helpRequest = new VulnerableHelpRequest();
+
+        $form = $this->createForm(VulnerableHelpRequestType::class, $helpRequest);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $repository->clearOldOwnerRequests($helpRequest->email);
+
+            $ownerId = Uuid::uuid4();
+
+            $manager->persist($helpRequest->createStandaloneRequest($ownerId));
+            $manager->flush();
+
+            $email = (new TemplatedEmail())
+                ->from('team@enpremiereligne.fr')
+                ->to($helpRequest->email)
+                ->subject('Nous avons bien reçu votre demande sur En Première Ligne')
+                ->htmlTemplate('emails/request_vulnerable.html.twig')
+                ->context(['request' => $helpRequest, 'ownerUuid' => $ownerId])
+            ;
+
+            $mailer->send($email);
+
+            return $this->redirectToRoute('process_requester_view', [
+                'ownerUuid' => $ownerId->toString(),
+                'success' => '1',
+            ]);
+        }
+
+        return $this->render('process/request_vulnerable.html.twig', [
             'form' => $form->createView(),
         ]);
     }

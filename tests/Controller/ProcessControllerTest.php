@@ -179,4 +179,64 @@ class ProcessControllerTest extends WebTestCase
         $help_request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'titouan.galopin@example.com', 'helpType' => HelpRequest::TYPE_GROCERIES]);
         $this->assertInstanceOf(HelpRequest::class, $help_request);
     }
+
+    public function testRequestVulnerableSelf()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/process/j-ai-besoin-d-aide-risque');
+        $this->assertResponseIsSuccessful();
+
+        $button = $crawler->selectButton('Envoyer ma demande');
+        $this->assertCount(1, $button);
+
+        $client->submit($button->form(), [
+            'vulnerable_help_request[firstName]' => 'Agnès',
+            'vulnerable_help_request[lastName]' => 'Jean',
+            'vulnerable_help_request[zipCode]' => 92110,
+            'vulnerable_help_request[email]' => 'agnes.jean@example.com',
+            'vulnerable_help_request[confirm]' => 1,
+        ]);
+
+        $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'agnes.jean@example.com']);
+        $this->assertInstanceOf(HelpRequest::class, $request);
+        $this->assertSame('Agnès', $request->firstName);
+        $this->assertSame('Jean', $request->lastName);
+        $this->assertSame('92110', $request->zipCode);
+        $this->assertSame('agnes.jean@example.com', $request->email);
+        $this->assertNull($request->ccEmail);
+        $this->assertSame('vulnerable', $request->jobType);
+        $this->assertSame(HelpRequest::TYPE_GROCERIES, $request->helpType);
+    }
+
+    public function testRequestVulnerableOther()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/process/j-ai-besoin-d-aide-risque');
+        $this->assertResponseIsSuccessful();
+
+        $button = $crawler->selectButton('Envoyer ma demande');
+        $this->assertCount(1, $button);
+
+        $client->submit($button->form(), [
+            'vulnerable_help_request[isCloseOne]' => 1,
+            'vulnerable_help_request[ccEmail]' => 'titouan.galopin@example.com',
+            'vulnerable_help_request[firstName]' => 'Agnès',
+            'vulnerable_help_request[lastName]' => 'Jean',
+            'vulnerable_help_request[zipCode]' => 92110,
+            'vulnerable_help_request[email]' => 'agnes.jean@example.com',
+            'vulnerable_help_request[confirm]' => 1,
+        ]);
+
+        $request = self::$container->get(HelpRequestRepository::class)->findOneBy(['email' => 'agnes.jean@example.com']);
+        $this->assertInstanceOf(HelpRequest::class, $request);
+        $this->assertSame('Agnès', $request->firstName);
+        $this->assertSame('Jean', $request->lastName);
+        $this->assertSame('92110', $request->zipCode);
+        $this->assertSame('agnes.jean@example.com', $request->email);
+        $this->assertSame('titouan.galopin@example.com', $request->ccEmail);
+        $this->assertSame('vulnerable', $request->jobType);
+        $this->assertSame(HelpRequest::TYPE_GROCERIES, $request->helpType);
+    }
 }

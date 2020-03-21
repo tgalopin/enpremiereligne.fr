@@ -110,11 +110,13 @@ class AdminController extends AbstractController
 
             $repository->closeRequestsOf($ownerUuid, $helper, $type);
 
+            $template = 'vulnerable' === $requests[0]->jobType ? 'vulnerable' : $type;
+
             $email = (new TemplatedEmail())
                 ->from('team@enpremiereligne.fr')
                 ->to($requests[0]->email, $helper->email)
                 ->subject('[En Première Ligne] Bonne nouvelle !')
-                ->htmlTemplate('emails/match_'.$type.'.html.twig')
+                ->htmlTemplate('emails/match_'.$template.'.html.twig')
                 ->context([
                     'requester' => $requests[0],
                     'needs' => new MatchedNeeds($requests),

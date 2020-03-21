@@ -10,6 +10,8 @@ Encore
     .addStyleEntry('lib', './assets/scss/lib.scss')
     .addStyleEntry('app', './assets/scss/app.scss')
     .addEntry('request', './assets/jsx/request.jsx')
+    .addEntry('request-vulnerable', './assets/jsx/request-vulnerable.jsx')
+    .addEntry('helper', './assets/jsx/helper.jsx')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
 

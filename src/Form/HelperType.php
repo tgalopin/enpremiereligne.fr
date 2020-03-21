@@ -48,6 +48,7 @@ class HelperType extends AbstractType
                     '13 ans et plus' => HelpRequest::AGE_RANGE_13,
                 ],
             ])
+            ->add('acceptVulnerable', CheckboxType::class, ['required' => false])
             ->add('canBuyGroceries', CheckboxType::class, ['required' => false])
             ->add('confirm', CheckboxType::class, ['required' => true, 'mapped' => false, 'constraints' => [
                 new NotBlank(),

@@ -72,7 +72,15 @@
 
             <div class="process-block bg-white p-3 p-lg-4 mb-4">
                 {{ form_row(form.canBuyGroceries, {
-                    'label': 'Je peux aider à acheter et livrer des courses',
+                    'label': 'Je peux acheter et livrer des courses pour les travailleurs de première ligne',
+                    'label_attr': { 'class': 'checkbox-custom' },
+                    'help': 'Vous pourrez être mis en relation avec des personnes ayant besoin d\'être livrées en courses. Cette mise en relation n\'est pas un engagement mais le début d\'une discussion d\'entraide.'
+                }) }}
+            </div>
+
+            <div class="process-block bg-white p-3 p-lg-4 mb-4">
+                {{ form_row(form.acceptVulnerable, {
+                    'label': 'Je peux acheter et livrer des courses pour les personnes faisant partie des populations à risque',
                     'label_attr': { 'class': 'checkbox-custom' },
                     'help': 'Vous pourrez être mis en relation avec des personnes ayant besoin d\'être livrées en courses. Cette mise en relation n\'est pas un engagement mais le début d\'une discussion d\'entraide.'
                 }) }}
@@ -81,7 +89,7 @@
             <div class="process-block bg-white p-3 p-lg-4 mb-4">
                 <div class="mb-3">
                     {{ form_row(form.canBabysit, {
-                        'label': 'Je peux aider à garder un enfant à certaines occasions',
+                        'label': 'Je peux garder un enfant à certaines occasions',
                         'label_attr': { 'class': 'checkbox-custom' },
                         'help': 'Vous pourrez être mis en relation avec des parents ayant besoin de garder leur enfant. Cette mise en relation n\'est pas un engagement mais le début d\'une discussion d\'entraide.'
                     }) }}
@@ -141,4 +149,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('helper') }}
 {% endblock %}

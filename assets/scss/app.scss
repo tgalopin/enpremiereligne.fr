@@ -152,6 +152,11 @@ blockquote {
         }
     }
 
+    &-isolated {
+        background: $teal;
+        color: #fff;
+    }
+
     &-ecosystem {
         background: #f5f5f5;
 
