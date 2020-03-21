@@ -21,8 +21,8 @@ class HomeController extends AbstractController
 
         $response->setCache([
             'public' => true,
-            'max_age' => 10800, // 3h
-            's_maxage' => 10800, // 3h
+            'max_age' => 900, // 15min
+            's_maxage' => 900, // 15min
         ]);
 
         return $response;
