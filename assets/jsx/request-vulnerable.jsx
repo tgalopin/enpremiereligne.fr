@@ -56,4 +56,4 @@ function refresh() {
 }
 
 refresh();
-typeCheckbox.addEventListener('input', refresh);
+typeCheckbox.addEventListener('change', refresh);
