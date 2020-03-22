@@ -162,9 +162,14 @@ class ProcessController extends AbstractController
             $manager->persist($helpRequest->createStandaloneRequest($ownerId));
             $manager->flush();
 
+            $to = [$helpRequest->email];
+            if ($helpRequest->ccEmail) {
+                $to[] = $helpRequest->ccEmail;
+            }
+
             $email = (new TemplatedEmail())
                 ->from('team@enpremiereligne.fr')
-                ->to($helpRequest->email)
+                ->to(...$to)
                 ->subject('Nous avons bien reçu votre demande sur En Première Ligne')
                 ->htmlTemplate('emails/request_vulnerable.html.twig')
                 ->context(['request' => $helpRequest, 'ownerUuid' => $ownerId])
