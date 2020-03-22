@@ -33,6 +33,7 @@ easy_admin:
                     - email
                     - canBabysit
                     - canBuyGroceries
+                    - acceptVulnerable
                     - createdAt
 
         HelpRequest:
