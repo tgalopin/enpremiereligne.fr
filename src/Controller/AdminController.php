@@ -109,7 +109,7 @@ class AdminController extends AbstractController
             }
 
             $template = $type;
-            if ($requests[0]->jobType) {
+            if ($requests[0]->jobType === 'vulnerable') {
                 $template = 'vulnerable_'.($requests[0]->ccEmail ? 'other' : 'self');
             }
 
