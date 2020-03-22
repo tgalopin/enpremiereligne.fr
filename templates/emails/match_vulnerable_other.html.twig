@@ -1,5 +1,5 @@
 <p>
-    Bonjour {{ requester.firstName|capitalize }}, bonjour {{ helper.firstName|capitalize }},
+    Bonjour {{ requester.firstName|capitalize }}, bonjour {{ requester.ccFirstName|capitalize }}, bonjour {{ helper.firstName|capitalize }},
 </p>
 
 <p>
@@ -7,9 +7,12 @@
 </p>
 
 <p>
-    Vous résidez toutes les deux dans la même zone géographique
-    (proche du code postal : {{ requester.zipCode }}).
-    {{ requester.firstName|capitalize }} nous a indiqué avoir besoin de quelqu'un pour faire ses courses,
+    {{ requester.firstName|capitalize }} et {{ helper.firstName|capitalize }} résident tous
+    les deux dans la même zone géographique (proche du code postal : {{ requester.zipCode }}).
+
+    {{ requester.firstName|capitalize }} nous a indiqué (avec l'aide de {{ requester.ccFirstName|capitalize }}, l'un
+    de ses proches) avoir besoin de quelqu'un pour faire ses courses,
+
     et {{ helper.firstName|capitalize }} nous a indiqué être en capacité de le faire.
 </p>
 
@@ -18,8 +21,8 @@
 </p>
 
 <p>
-    Vous êtes tous deux en copie de cet e-mail : prenez contact entre vous pour vous organiser
-    et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à vous
+    Vous êtes tous trois en copie de cet e-mail : prenez contact entre vous pour vous organiser
+    et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à
     échanger par téléphone ou par Skype une première fois pour apprendre à vous faire confiance,
     et pour régler les détails logistiques si tout se passe bien. Comme indiqué dans l'article 4
     de nos conditions d'utilisations, les demandeurs et volontaires sont seuls responsables
@@ -120,7 +123,7 @@
     </li>
 
     <li>
-        Pour ceux qui sont en première ligne :
+        Pour les personnes aidées :
 
         <ul>
             <li>
@@ -130,7 +133,7 @@
             </li>
             <li>
                 Faites des listes de courses faciles à lire par vos aidants et envoyez leur
-                par voie numérique ;
+                par voie numérique (demandez à votre proche de vous aider si nécessaire) ;
             </li>
             <li>
                 Précisez la gamme de prix que vous voulez (basse, moyenne, haute),

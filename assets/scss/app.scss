@@ -102,23 +102,19 @@ blockquote {
     }
 
     &-row {
-        display: flex;
-
-        @media (max-width: 992px) {
-            flex-direction: column;
-            min-height: 950px;
-        }
-
-        @media (max-width: 400px) {
-            min-height: 1400px;
+        @media (min-width: 992px) {
+            display: flex;
         }
 
         &-half {
-            flex-basis: 0;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (min-width: 992px) {
+                flex-basis: 0;
+                flex-grow: 1;
+            }
 
             &-button {
                 font-size: 32px;

@@ -28,6 +28,16 @@ class VulnerableHelpRequest
     public ?string $email = '';
 
     /**
+     * @Assert\Length(max=100)
+     */
+    public ?string $ccFirstName = '';
+
+    /**
+     * @Assert\Length(max=100)
+     */
+    public ?string $ccLastName = '';
+
+    /**
      * @Assert\Email()
      * @Assert\Length(max=200)
      */
@@ -48,6 +58,8 @@ class VulnerableHelpRequest
         $request->lastName = $this->lastName;
         $request->email = strtolower($this->email);
         $request->ccEmail = $this->ccEmail ? strtolower($this->ccEmail) : null;
+        $request->ccFirstName = $this->ccFirstName;
+        $request->ccLastName = $this->ccLastName;
         $request->zipCode = $this->zipCode;
         $request->jobType = 'vulnerable';
         $request->helpType = HelpRequest::TYPE_GROCERIES;

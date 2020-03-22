@@ -29,10 +29,14 @@ function refresh() {
 
     if (checked) {
         fieldCc.style.display = 'block';
-        fieldCc.querySelector('input').required = true;
+        fieldCc.querySelectorAll('input').forEach((input) => {
+            input.required = true;
+        });
     } else {
         fieldCc.style.display = 'none';
-        fieldCc.querySelector('input').required = false;
+        fieldCc.querySelectorAll('input').forEach((input) => {
+            input.required = false;
+        });
     }
 
     for (let i in replacements) {
