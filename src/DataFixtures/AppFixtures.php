@@ -51,6 +51,20 @@ class AppFixtures extends Fixture
                 'babysitMaxChildren' => 1,
                 'babysitAgeRanges' => null,
                 'canBuyGroceries' => true,
+                'acceptVulnerable' => true,
+            ],
+            [
+                'firstName' => 'Linette',
+                'lastName' => 'Fremont',
+                'email' => 'linette.fremont@example.com',
+                'zipCode' => '66100',
+                'age' => 27,
+                'haveChildren' => false,
+                'canBabysit' => false,
+                'babysitMaxChildren' => 1,
+                'babysitAgeRanges' => null,
+                'canBuyGroceries' => true,
+                'acceptVulnerable' => true,
             ],
         ];
 
@@ -66,6 +80,7 @@ class AppFixtures extends Fixture
             $helper->babysitMaxChildren = $data['babysitMaxChildren'];
             $helper->babysitAgeRanges = $data['babysitAgeRanges'];
             $helper->canBuyGroceries = $data['canBuyGroceries'];
+            $helper->acceptVulnerable = $data['acceptVulnerable'];
 
             $manager->persist($helper);
         }
@@ -104,6 +119,19 @@ class AppFixtures extends Fixture
                 'jobType' => 'food',
                 'childAgeRange' => null,
             ],
+            [
+                'helpType' => HelpRequest::TYPE_GROCERIES,
+                'ownerUuid' => 'ec6b86d5-27d9-4a61-980a-11a87aa785dc',
+                'firstName' => 'Édith',
+                'lastName' => 'Talon',
+                'email' => 'edith.talon@example.com',
+                'zipCode' => '66100',
+                'jobType' => 'vulnerable',
+                'ccFirstName' => 'Aurélien',
+                'ccLastName' => 'Talon',
+                'ccEmail' => 'aurelien.talon@example.com',
+                'childAgeRange' => null,
+            ],
         ];
 
         foreach ($requests as $data) {
@@ -116,6 +144,9 @@ class AppFixtures extends Fixture
             $request->zipCode = $data['zipCode'];
             $request->jobType = $data['jobType'];
             $request->childAgeRange = $data['childAgeRange'];
+            $request->ccFirstName = $data['ccFirstName'] ?? null;
+            $request->ccLastName = $data['ccLastName'] ?? null;
+            $request->ccEmail = $data['ccEmail'] ?? null;
 
             $manager->persist($request);
         }

@@ -17,7 +17,9 @@ class VulnerableHelpRequestType extends AbstractType
     {
         $builder
             ->add('isCloseOne', CheckboxType::class, ['required' => false, 'mapped' => false])
-            ->add('ccEmail', TextType::class, ['required' => true])
+            ->add('ccFirstName', TextType::class, ['required' => false])
+            ->add('ccLastName', TextType::class, ['required' => false])
+            ->add('ccEmail', EmailType::class, ['required' => false])
             ->add('firstName', TextType::class, ['required' => true])
             ->add('lastName', TextType::class, ['required' => true])
             ->add('email', EmailType::class, ['required' => true])

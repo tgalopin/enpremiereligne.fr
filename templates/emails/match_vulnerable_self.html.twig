@@ -8,13 +8,9 @@
 
 <p>
     Vous résidez tous les deux dans la même zone géographique
-    (proche du code postal {{ requester.zipCode }}).
-
-    {{ requester.firstName|capitalize }} nous a indiqué avoir besoin de garder {{ needs.babysitNeeds|length }}
-    enfant{{ needs.babysitNeeds|length > 1 ? 's' }} de {{ needs.babysitAgesList }},
-
-    et {{ helper.firstName|capitalize }} nous a indiqué être en capacité de garder des enfants de cet âge.
-    {{ helper.firstName|capitalize }} a {{ helper.age }} ans{{ helper.haveChildren ? ' et est aussi parent' }}.
+    (proche du code postal : {{ requester.zipCode }}).
+    {{ requester.firstName|capitalize }} nous a indiqué avoir besoin de quelqu'un pour faire ses courses,
+    et {{ helper.firstName|capitalize }} nous a indiqué être en capacité de le faire.
 </p>
 
 <p>
@@ -38,8 +34,8 @@
 
 <p>
     Depuis le 16 Mars 2020, vous devez possédez une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
-    vous déplacer. La garde d'enfant correspond à l'exception 4. Vous retrouverez un modèle de
-    document à imprimer ou reproduire à la main à l'adresse suivante :
+    vous déplacer. L'action de faire des courses alimentaires correspond à l’exception 2.
+    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
 </p>
 
 <p>
@@ -95,6 +91,52 @@
     </li>
     <li>
         Eviter les rassemblements, limiter les déplacements et les contacts.
+    </li>
+</ul>
+
+<p>
+    Dans le cas d'entraide pour les courses :
+</p>
+
+<ul>
+    <li>
+        Pour les volontaires :
+
+        <ul>
+            <li>
+                Pour payer les courses : privilégiez le sans contact ;
+            </li>
+            <li>
+                Pour les remboursements : utiliser des applications comme
+                Lydia / Pumkin / Paylib, qui permettent le remboursement
+                avec comme seuls identifiants les numéros de téléphone ;
+            </li>
+            <li>
+                Précautions comme pour les livraisons :
+                <a href="https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas">
+                    https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas</a>.
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        Pour les personnes aidées :
+
+        <ul>
+            <li>
+                Préparez des menus pour la semaine (vous pouvez par exemple utiliser
+                <a href="https://www.marmiton.org">Marmiton</a>
+                ou <a href="https://www.la-fabrique-a-menus.fr/front/">La Fabrique des Menus</a>) ;
+            </li>
+            <li>
+                Faites des listes de courses faciles à lire par vos aidants et envoyez leur
+                par voie numérique ;
+            </li>
+            <li>
+                Précisez la gamme de prix que vous voulez (basse, moyenne, haute),
+                cela permettra à votre aidant de maîtriser votre budget au mieux.
+            </li>
+        </ul>
     </li>
 </ul>
 

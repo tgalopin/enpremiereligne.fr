@@ -108,13 +108,21 @@ class AdminController extends AbstractController
                 throw $this->createNotFoundException();
             }
 
-            $repository->closeRequestsOf($ownerUuid, $helper, $type);
+            $template = $type;
+            if ($requests[0]->jobType) {
+                $template = 'vulnerable_'.($requests[0]->ccEmail ? 'other' : 'self');
+            }
 
-            $template = 'vulnerable' === $requests[0]->jobType ? 'vulnerable' : $type;
+            $to = [$requests[0]->email, $helper->email];
+            if ($requests[0]->ccEmail) {
+                $to[] = $requests[0]->ccEmail;
+            }
+
+            $repository->closeRequestsOf($ownerUuid, $helper, $type);
 
             $email = (new TemplatedEmail())
                 ->from('team@enpremiereligne.fr')
-                ->to($requests[0]->email, $helper->email)
+                ->to(...$to)
                 ->subject('[En Première Ligne] Bonne nouvelle !')
                 ->htmlTemplate('emails/match_'.$template.'.html.twig')
                 ->context([

@@ -63,6 +63,16 @@ class HelpRequest
     public ?string $ccEmail;
 
     /**
+     * @ORM\Column(length=100, nullable=true)
+     */
+    public ?string $ccFirstName;
+
+    /**
+     * @ORM\Column(length=100, nullable=true)
+     */
+    public ?string $ccLastName;
+
+    /**
      * @ORM\Column(length=10)
      */
     public ?string $zipCode;
