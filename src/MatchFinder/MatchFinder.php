@@ -116,7 +116,7 @@ class MatchFinder
         $matched = [];
 
         foreach ($localHelpers as $helper) {
-            if (!$helper->canBuyGroceries || in_array($helper->getId(), $blockedHelpersIds)) {
+            if ((!$helper->canBuyGroceries && !$helper->acceptVulnerable) || in_array($helper->getId(), $blockedHelpersIds)) {
                 continue;
             }
 

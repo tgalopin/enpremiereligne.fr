@@ -29,14 +29,18 @@ function refresh() {
 
     if (checked) {
         fieldCc.style.display = 'block';
-        fieldCc.querySelectorAll('input').forEach((input) => {
-            input.required = true;
-        });
+
+        const inputs = fieldCc.querySelectorAll('input');
+        for (let i in inputs) {
+            inputs[i].required = true;
+        }
     } else {
         fieldCc.style.display = 'none';
-        fieldCc.querySelectorAll('input').forEach((input) => {
-            input.required = false;
-        });
+
+        const inputs = fieldCc.querySelectorAll('input');
+        for (let i in inputs) {
+            inputs[i].required = false;
+        }
     }
 
     for (let i in replacements) {

@@ -45,7 +45,7 @@
 
                         <ul>
                             <li>
-                                {% if helper.canBuyGroceries %}
+                                {% if helper.canBuyGroceries or helper.acceptVulnerable %}
                                     pouvoir faire des courses pour quelqu'un et les livrer
                                     proche de chez vous.
                                 {% else %}
