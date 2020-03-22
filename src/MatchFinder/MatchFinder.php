@@ -124,7 +124,7 @@ class MatchFinder
                 continue;
             }
 
-            if ($need->jobType === 'vulnerable' && !$helper->acceptVulnerable) {
+            if ('vulnerable' === $need->jobType && !$helper->acceptVulnerable) {
                 continue;
             }
 
