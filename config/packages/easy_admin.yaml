@@ -18,12 +18,13 @@ easy_admin:
     entities:
         Helper:
             class: App\Entity\Helper
-            disabled_actions: ['show', 'new', 'edit']
+            disabled_actions: ['show', 'new']
             list:
                 title: Helpers
                 max_results: 100
                 sort: ['createdAt', 'DESC']
                 actions:
+                    - { name: 'edit', template: 'admin/actions/edit_helper.html.twig' }
                     - { name: 'delete', template: 'admin/actions/delete_helper.html.twig' }
                 fields:
                     - id
