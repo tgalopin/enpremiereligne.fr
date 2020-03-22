@@ -8,6 +8,12 @@
         Demande de :
         <br />
         <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong> ({{ match.requester.zipCode }})
+
+        {% if match.requester.ccFirstName %}
+            <br />
+            aidé par <strong>{{ match.requester.ccFirstName }} {{ match.requester.ccLastName }}</strong>
+        {% endif %}
+
         <br />
         Travail : {{ match.requester.jobType }}
         <br />

@@ -11,6 +11,11 @@
                     Demande de <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong>
                     ({{ match.requester.jobType }})
 
+                    {% if match.requester.ccFirstName %}
+                        <br />
+                        aidé par <strong>{{ match.requester.ccFirstName }} {{ match.requester.ccLastName }}</strong>
+                    {% endif %}
+
                     <ul class="m-0">
                         {% for need in match.needs %}
                             <li>

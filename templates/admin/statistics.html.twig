@@ -62,12 +62,16 @@
                     Volontaires
                 </h3>
 
+                <canvas id="chart-helpers" style="height: 250px;"></canvas>
+
+                <hr />
+
                 <table class="table">
                     <tr>
-                        <td>
+                        <td class="border-0">
                             Age moyen
                         </td>
-                        <td>
+                        <td class="border-0">
                             {{ avgHelperAge|number_format(1, ',', ' ') }} ans
                         </td>
                     </tr>
@@ -83,7 +87,8 @@
                     {% for row in countHelpersByDepartment %}
                         <tr>
                             <td>
-                                {{ row.department }}
+                                {{ departments[row.department]|default('Département '~row.department) }}
+                                ({{ row.department }})
                             </td>
                             <td>
                                 {{ row.nb|number_format(0, ',', ' ') }}
@@ -97,6 +102,10 @@
                 <h3 class="p-2">
                     Demandeurs
                 </h3>
+
+                <canvas id="chart-requesters" style="height: 250px;"></canvas>
+
+                <hr />
 
                 <div class="p-2">
                     <strong>
@@ -160,7 +169,8 @@
                     {% for row in countOwnersByDepartment %}
                         <tr>
                             <td>
-                                {{ row.department }}
+                                {{ departments[row.department]|default('Département '~row.department) }}
+                                ({{ row.department }})
                             </td>
                             <td>
                                 {{ row.nb|number_format(0, ',', ' ') }}
@@ -171,4 +181,33 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
+    <script>
+        function buildChart(id, data) {
+            var values = [];
+            var labels = [];
+
+            for (let i in data) {
+                labels.push(data[i].day);
+                values.push(data[i].nb);
+            }
+
+            new Chart(document.getElementById(id), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Nombre par jour',
+                        backgroundColor: '#6174d1',
+                        borderColor: '#6174d1',
+                        data: values
+                    }]
+                }
+            });
+        }
+
+        buildChart('chart-helpers', JSON.parse('{{ countTotalHelpersByDay|json_encode|e('js') }}'));
+        buildChart('chart-requesters', JSON.parse('{{ countTotalOwnersByDay|json_encode|e('js') }}'));
+    </script>
 {% endblock %}

@@ -10,6 +10,10 @@
                 <div class="col-9">
                     Demande de <strong>{{ owner[0].firstName }} {{ owner[0].lastName }}</strong>
                     ({{ owner[0].jobType }}, {{ owner[0].email }})
+                    {% if owner[0].ccFirstName %}
+                        <br />
+                        aidé par <strong>{{ owner[0].ccFirstName }} {{ owner[0].ccLastName }}</strong>
+                    {% endif %}
 
                     <ul class="m-0">
                         {% set babysitDisplayed = false %}

@@ -28,9 +28,35 @@ class MatchFinder
     }
 
     /**
+     * @return MatchedNeeds[][]
+     */
+    public function findUnmatchedNeeds(): array
+    {
+        $owners = [];
+
+        foreach ($this->searchMatches() as $match) {
+            if ($match->getScore() > 0) {
+                continue;
+            }
+
+            $department = str_pad(substr($match->getRequester()->zipCode, 0, 2), 2, '0', STR_PAD_LEFT);
+
+            if (!isset($owners[$department])) {
+                $owners[$department] = [];
+            }
+
+            $owners[$department][] = $match;
+        }
+
+        array_multisort(array_map('count', $owners), SORT_DESC, $owners);
+
+        return $owners;
+    }
+
+    /**
      * @return MatchedNeeds[]
      */
-    public function findMatchedNeeds(): array
+    public function searchMatches(): array
     {
         $owners = $this->helpRequestRepo->findNeedsByOwner(['finished' => false], ['createdAt' => 'DESC']);
 

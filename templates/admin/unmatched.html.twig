@@ -1,0 +1,46 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'Unmatched needs' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    <div class="p-4">
+        <ul>
+            {% for results in unmatchedNeeds %}
+                {% set department = results[0].requester.zipCode[0:2] %}
+
+                <li class="mb-3">
+                    <strong>
+                        {{ departments[department]|default('Département '~department) }} ({{ department }})
+                    </strong>
+
+                    <br />
+
+                    {{ results|length }} personne{{ results|length > 1 ? 's' }}
+                    {{ results|length > 1 ? 'ont' : 'a' }} besoin de vous :
+
+                    <ul>
+                        {% for result in results %}
+                            <li>
+                                {{ result.requester.firstName }}
+                                (code postal : {{ result.requester.zipCode }})
+                                a besoin
+
+                                {% if result.babysitNeeds and result.groceriesNeed %}
+                                    que l'on garde
+                                    {{ result.babysitNeeds|length == 1 ? 'son enfant' : 'ses enfants' }}
+                                    et que l'on lui achète et livre des courses.
+                                {% elseif result.babysitNeeds %}
+                                    que l'on garde
+                                    {{ result.babysitNeeds|length == 1 ? 'son enfant' : 'ses enfants' }}.
+                                {% elseif result.groceriesNeed %}
+                                    que l'on lui achète et livre des courses.
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

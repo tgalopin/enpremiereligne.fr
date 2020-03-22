@@ -18,6 +18,17 @@ class StatisticsAggregator
         return $this->db->query('SELECT COUNT(*) FROM helpers')->fetchColumn();
     }
 
+    public function countTotalHelpersByDay(): array
+    {
+        return $this->db->query('
+            SELECT TO_CHAR(created_at, \'YYYY-mm-dd HH24\') AS day, COUNT(*) as nb
+            FROM helpers
+            WHERE created_at > current_date - interval \'7\' day
+            GROUP BY day
+            ORDER BY day ASC
+        ')->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function countMatchedHelpers(): int
     {
         return $this->db->query('SELECT COUNT(DISTINCT matched_with_id) FROM help_requests')->fetchColumn();
@@ -26,6 +37,17 @@ class StatisticsAggregator
     public function countTotalOwners(): int
     {
         return $this->db->query('SELECT COUNT(DISTINCT owner_uuid) FROM help_requests')->fetchColumn();
+    }
+
+    public function countTotalOwnersByDay(): array
+    {
+        return $this->db->query('
+            SELECT TO_CHAR(created_at, \'YYYY-mm-dd HH24\') AS day, COUNT(DISTINCT owner_uuid) as nb
+            FROM help_requests
+            WHERE created_at > current_date - interval \'7\' day
+            GROUP BY day
+            ORDER BY day ASC
+        ')->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function countUnmatchedOwners(): int

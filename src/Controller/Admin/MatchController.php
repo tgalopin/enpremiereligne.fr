@@ -1,20 +1,16 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\BlockedMatch;
 use App\Entity\Helper;
 use App\MatchFinder\MatchFinder;
 use App\Model\MatchedNeeds;
-use App\Repository\HelperRepository;
 use App\Repository\HelpRequestRepository;
-use App\Statistics\StatisticsAggregator;
 use Doctrine\ORM\EntityManagerInterface;
-use League\Csv\Writer;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -23,63 +19,15 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/admin")
  */
-class AdminController extends AbstractController
+class MatchController extends AbstractController
 {
-    /**
-     * @Route("/statistics", name="admin_statistics")
-     */
-    public function statistics(StatisticsAggregator $aggregator): Response
-    {
-        return $this->render('admin/statistics.html.twig', [
-            'countTotalHelpers' => $aggregator->countTotalHelpers(),
-            'countMatchedHelpers' => $aggregator->countMatchedHelpers(),
-            'countTotalOwners' => $aggregator->countTotalOwners(),
-            'countUnmatchedOwners' => $aggregator->countUnmatchedOwners(),
-
-            'avgHelperAge' => $aggregator->avgHelperAge(),
-            'countHelpersByDepartment' => $aggregator->countHelpersByDepartment(),
-
-            'countGroceriesNeeds' => $aggregator->countGroceriesNeeds(),
-            'countBabysitAggregatedNeeds' => $aggregator->countBabysitAggregatedNeeds(),
-            'countBabysitTotalNeeds' => $aggregator->countBabysitTotalNeeds(),
-
-            'countOwnersByJobType' => $aggregator->countOwnersByJobType(),
-            'countOwnersByDepartment' => $aggregator->countOwnersByDepartment(),
-        ]);
-    }
-
-    /**
-     * @Route("/export/helpers", name="admin_export_helpers")
-     */
-    public function exportHelpers(HelperRepository $repository): Response
-    {
-        $csv = Writer::createFromString();
-        $csv->setDelimiter(',');
-        $csv->setOutputBOM(Writer::BOM_UTF8);
-        $csv->insertOne(['E-mail', 'Prénom', 'Nom']);
-
-        $helpers = $repository->export();
-        foreach ($helpers as $helper) {
-            $csv->insertOne([$helper['email'], $helper['firstName'], $helper['lastName']]);
-        }
-
-        $response = new Response($csv->getContent());
-        $response->headers->set('Content-Type', 'text/csv');
-        $response->headers->set('Content-Disposition', HeaderUtils::makeDisposition(
-            HeaderUtils::DISPOSITION_ATTACHMENT,
-            'helpers-'.date('Y-m-d-H-i').'.csv'
-        ));
-
-        return $response;
-    }
-
     /**
      * @Route("/matches", name="admin_matches")
      */
     public function matches(MatchFinder $matchFinder): Response
     {
         return $this->render('admin/matches.html.twig', [
-            'matches' => $matchFinder->findMatchedNeeds(),
+            'matches' => $matchFinder->searchMatches(),
         ]);
     }
 
