@@ -39,6 +39,7 @@ class CompositeHelpRequestType extends AbstractType
                 'entry_type' => CompositeHelpRequestDetailType::class,
                 'allow_add' => true,
             ])
+            ->add('preferParents', CheckboxType::class, ['required' => false, 'mapped' => false])
             ->add('confirm', CheckboxType::class, ['required' => true, 'mapped' => false, 'constraints' => [
                 new NotBlank(),
             ]])

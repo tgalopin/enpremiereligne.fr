@@ -155,7 +155,27 @@ const NeedsChooser = () => {
                 <NeedBabysitButton needBabysit={needBabysit} onChange={setNeedBabysit} />
 
                 <div className={'p-3 '+(!needBabysit ? 'process-needs-disabled' : '')}>
-                    <div className="mb-2">
+                    <div className="form-group">
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox"
+                                   id="helper_preferParents"
+                                   name="helper[preferParents]"
+                                   className="custom-control-input" />
+
+                            <label className="checkbox-custom custom-control-label" htmlFor="helper_preferParents">
+                                Je souhaite que mes enfants soient gardés par quelqu'un déjà parent
+                            </label>
+                        </div>
+
+                        <div className="mt-2">
+                            <small id="helper_acceptVulnerable_help" className="form-text text-muted">
+                                Nous vous proposerons tout de même une solution sans ce critère si
+                                aucune autre solution n'a été trouvée après 48h d'attente.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div className="mt-4 mb-2">
                         <strong>
                             Quel âge ont vos enfants ?
                         </strong>
