@@ -40,6 +40,9 @@ class MatchFinder
             }
 
             $department = str_pad(substr($match->getRequester()->zipCode, 0, 2), 2, '0', STR_PAD_LEFT);
+            if ($department === '97') {
+                $department = substr($match->getRequester()->zipCode, 0, 3);
+            }
 
             if (!isset($owners[$department])) {
                 $owners[$department] = [];
