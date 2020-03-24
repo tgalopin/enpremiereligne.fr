@@ -19,6 +19,14 @@ class ContentController extends AbstractController
     }
 
     /**
+     * @Route("/international", name="content_international")
+     */
+    public function international()
+    {
+        return $this->render('content/international.html.twig');
+    }
+
+    /**
      * @Route("/pourquoi", name="content_why")
      */
     public function why()
