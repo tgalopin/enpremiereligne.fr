@@ -19,7 +19,21 @@
             {{ requests[0].firstName }} {{ requests[0].lastName }} ?
         </p>
 
-        <a href="?token={{ csrf_token('admin_cancel') }}" class="btn btn-primary mr-3">
+        {% if remove == 'helper' %}
+            <p>
+                <strong>
+                    Et supprimer le profil du volontaire en même temps ?
+                </strong>
+            </p>
+        {% elseif remove == 'request' %}
+            <p>
+                <strong>
+                    Et supprimer le besoin de la demande d'aide en même temps ?
+                </strong>
+            </p>
+        {% endif %}
+
+        <a href="?token={{ csrf_token('admin_cancel') }}&remove={{ remove }}" class="btn btn-primary mr-3">
             Oui, annuler
         </a>
         <a href="{{ path('admin_match_history') }}" class="btn btn-secondary">

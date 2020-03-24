@@ -118,9 +118,21 @@ class MatchController extends AbstractController
                 throw $this->createNotFoundException();
             }
 
+            $helper = $requests[0]->matchedWith;
             $repository->cancelMatch($ownerUuid, $type);
 
-            $manager->persist(new BlockedMatch(Uuid::fromString($ownerUuid), $requests[0]->matchedWith));
+            $remove = $request->query->get('remove');
+
+            if ('helper' === $remove) {
+                $manager->remove($helper);
+            } elseif ('request' === $remove) {
+                foreach ($requests as $request) {
+                    $manager->remove($request);
+                }
+            } else {
+                $manager->persist(new BlockedMatch(Uuid::fromString($ownerUuid), $requests[0]->matchedWith));
+            }
+
             $manager->flush();
 
             return $this->redirectToRoute('admin_match_history');
@@ -130,6 +142,7 @@ class MatchController extends AbstractController
             'type' => $type,
             'requests' => $requests,
             'ownerUuid' => $ownerUuid,
+            'remove' => $request->query->get('remove'),
         ]);
     }
 
