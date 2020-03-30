@@ -58,4 +58,15 @@ class HelperRepository extends ServiceEntityRepository
             ->getArrayResult()
         ;
     }
+
+    public function exportByZipCode()
+    {
+        return $this->createQueryBuilder('h')
+            ->select('h.zipCode', 'COUNT(h) AS nb')
+            ->orderBy('nb', 'DESC')
+            ->groupBy('h.zipCode')
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 }

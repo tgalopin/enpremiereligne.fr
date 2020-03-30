@@ -29,7 +29,23 @@ class ExportController extends AbstractController
             $csv->insertOne([$helper['email'], $helper['firstName'], $helper['lastName']]);
         }
 
-        return $this->createCsvResponse('helpers-'.date('Y-m-d-H-i').'.csv', $csv->getContent());
+        return $this->createCsvResponse('helpers-all-'.date('Y-m-d-H-i').'.csv', $csv->getContent());
+    }
+
+    /**
+     * @Route("/helpers/by-zip-code", name="admin_export_helpers_by_zip_code")
+     */
+    public function helpersByZipCode(HelperRepository $repository): Response
+    {
+        $csv = $this->createCsvWriter();
+        $csv->insertOne(['Code postal', 'Nombre']);
+
+        $zipCodes = $repository->exportByZipCode();
+        foreach ($zipCodes as $zipCode) {
+            $csv->insertOne([$zipCode['zipCode'], $zipCode['nb']]);
+        }
+
+        return $this->createCsvResponse('helpers-zip-codes-'.date('Y-m-d-H-i').'.csv', $csv->getContent());
     }
 
     /**
