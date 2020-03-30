@@ -1,4 +1,7 @@
 {
+    "brick/math": {
+        "version": "0.8.14"
+    },
     "clue/stream-filter": {
         "version": "v1.4.1"
     },
@@ -213,6 +216,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "3.0.3"
+    },
+    "ramsey/collection": {
+        "version": "1.0.1"
     },
     "ramsey/uuid": {
         "version": "3.9.3"
