@@ -39,9 +39,9 @@ class HelperRepository extends ServiceEntityRepository
             ->orderBy('h.createdAt', 'DESC')
         ;
 
-        if ($closestZipCode = ZipCode::CLOSEST[$zipCode] ?? null) {
-            $query->orWhere('h.zipCode = :closestZipCode')
-                ->setParameter('closestZipCode', $closestZipCode);
+        if ($closestZipCodes = ZipCode::CLOSEST[$zipCode] ?? null) {
+            $query->orWhere('h.zipCode = :closestZipCode')->setParameter('closestZipCode', $closestZipCodes[0]);
+            $query->orWhere('h.zipCode = :closestZipCode')->setParameter('closestZipCode', $closestZipCodes[1]);
         }
 
         $helpers = $query->getQuery()->getResult();
