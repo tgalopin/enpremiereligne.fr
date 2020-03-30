@@ -66,7 +66,7 @@ class Helper
      *
      * @Assert\NotBlank(message="Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).")
      * @Assert\GreaterThanOrEqual(18)
-     * @Assert\LessThanOrEqual(60)
+     * @Assert\LessThanOrEqual(70)
      */
     public ?int $age = null;
 
