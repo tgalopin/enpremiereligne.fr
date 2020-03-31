@@ -6,11 +6,11 @@
     <div class="container pt-5 pb-5">
         <div class="text-center mb-4">
             <h1 class="sr-only">
-                En première ligne
+                {% trans %}site.name{% endtrans %}
             </h1>
 
             <a href="{{ path('homepage') }}">
-                <img src="{{ asset('res/logo.svg') }}" class="process-logo" alt="En première ligne" />
+                <img src="{{ asset('res/logo.svg') }}" class="process-logo" alt="{% trans %}site.name{% endtrans %}" />
             </a>
 
             <div class="mt-2">

@@ -30,7 +30,7 @@ class Helper
     /**
      * @ORM\Column(length=100)
      *
-     * @Assert\NotBlank(message="Votre prénom est requis.")
+     * @Assert\NotBlank(message="name-first.required")
      * @Assert\Length(max=100)
      */
     public ?string $firstName = '';
@@ -38,7 +38,7 @@ class Helper
     /**
      * @ORM\Column(length=100)
      *
-     * @Assert\NotBlank(message="Votre nom de famille est requis.")
+     * @Assert\NotBlank(message="name-last.required")
      * @Assert\Length(max=100)
      */
     public ?string $lastName = '';
@@ -55,16 +55,16 @@ class Helper
     /**
      * @ORM\Column(length=10)
      *
-     * @Assert\NotBlank(message="Votre code postal est requis.")
+     * @Assert\NotBlank(message="postcode.required")
      * @Assert\Length(max=5)
-     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="Le code postal doit contenir précisément 5 chiffres.")
+     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="postcode.wrong-length")
      */
     public ?string $zipCode = '';
 
     /**
      * @ORM\Column(type="smallint")
      *
-     * @Assert\NotBlank(message="Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).")
+     * @Assert\NotBlank(message="age.required")
      * @Assert\GreaterThanOrEqual(18)
      * @Assert\LessThanOrEqual(60)
      */
