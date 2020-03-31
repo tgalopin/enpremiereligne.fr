@@ -1,35 +1,27 @@
 <p>
-    Bonjour {{ helper.firstName }},
+    {% trans with {'name': helper.firstName} %}email.greeting{% endtrans %}
 </p>
 
 <p>
-    Merci de vous être porté(e) volontaire sur le réseau
-    d'entraide En Première Ligne pour aider les travailleurs
-    mobilisés contre le COVID-19 au quotidien et les populations
-    à risque.
+    {% trans %}email.offer-thanks{% endtrans %}
 </p>
 
 <p>
-    Votre proposition d'aide a bien été enregistrée.
-    Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :
+    {% trans %}email.offer-saved{% endtrans %}
 </p>
 
 <p>
-    <a href="https://enpremiereligne.fr{{ path('process_helper_view', {'uuid': helper.uuid}) }}">
-        Gérer ma proposition d'aide
-    </a>
+    {% trans with {'url': path('process_helper_view', {'uuid': helper.uuid}) } %}email.offer-edit{% endtrans %}
 </p>
 
 <p>
-    Vous serez notifié(e) par mail dès qu'un travailleur mobilisé en première ligne ou une
-    personne faisant partie des populations à risque de votre zone se manifestera. Vous pourrez
-    ensuite entrer directement en contact avec cette personne pour vous organiser.
+    {% trans %}email.offer-notified{% endtrans %}
 </p>
 
 <p>
-    Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.
+    {% trans %}email.offer-commitment{% endtrans %}
 </p>
 
 <p>
-    L'équipe d'En Première Ligne
+    {% trans %}email.signoff{% endtrans %}
 </p>

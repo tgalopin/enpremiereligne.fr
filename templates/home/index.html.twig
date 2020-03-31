@@ -15,11 +15,11 @@
                     </div>
                     <div class="col-12 col-xl-6 text-center">
                         <h1 class="sr-only">
-                            En première ligne
+                            {% trans %}site.name{% endtrans %}
                         </h1>
 
                         <a href="{{ path('homepage') }}">
-                            <img src="{{ asset('res/logo.svg') }}" class="home-header-logo" alt="En première ligne" />
+                            <img src="{{ asset('res/logo.svg') }}" class="home-header-logo" alt="{% trans %}site.name{% endtrans %}" />
                         </a>
                     </div>
                     <div class="col-12 col-xl-3 text-center text-xl-right home-header-socials">
@@ -51,31 +51,28 @@
                                 {{ include('_icons/arrow.html.twig') }}
                             </div>
                             <div class="home-row-half-button-label">
-                                Je travaille en première ligne et j'ai besoin d'aide
+                                {% trans %}home.work-title{% endtrans %}
                             </div>
                         </a>
 
                         <div class="home-row-half-details mt-3 mb-4">
                             <p>
-                                Vous faites partie de la première ligne de la lutte contre le virus
-                                (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments,
-                                matériel, ...) ?
+                                {% trans %}home.work-intro{% endtrans %}
                             </p>
-                            Demandez de l'aide à des volontaires proches de chez vous
-                            pour garder vos enfants ou faire vos courses.
+                            {% trans %}home.work-request{% endtrans %}
                         </div>
 
                         <div class="row no-gutters text-center">
                             <div class="col-12 col-xl-auto">
                                 <a href="{{ path('process_request') }}"
                                    class="btn btn-primary btn-lg border-white border mr-xl-3">
-                                    Demander de l'aide
+                                    {% trans %}label.request-help{% endtrans %}
                                 </a>
                             </div>
                             <div class="col-12 col-xl-auto">
                                 <a href="{{ path('content_how') }}"
                                    class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
-                                    Comment ça marche ?
+                                    {% trans %}label.how-work{% endtrans %}
                                 </a>
                             </div>
                         </div>
@@ -89,30 +86,28 @@
                                 {{ include('_icons/arrow.html.twig') }}
                             </div>
                             <div class="home-row-half-button-label">
-                                Je fais partie des populations à risque ou je connais une personne dans ce cas
+                                {% trans %}home.risk-title{% endtrans %}
                             </div>
                         </a>
 
                         <div class="home-row-half-details mt-3 mb-4">
                             <p>
-                                Vous ou un de vos proches, de par l'âge, les antécédents médicaux ou les
-                                difficultés à se déplacer, a besoin d'aide pour faire les courses et faire
-                                face à l'épidémie ?
+                                {% trans %}home.risk-intro{% endtrans %}
                             </p>
-                            Demandez de l'aide à des volontaires proches de chez vous.
+                            {% trans %}home.risk-request{% endtrans %}
                         </div>
 
                         <div class="row no-gutters text-center">
                             <div class="col-12 col-xl-auto">
                                 <a href="{{ path('process_request_vulnerable') }}"
                                    class="btn btn-teal btn-lg border-white border mr-xl-3">
-                                    Demander de l'aide
+                                    {% trans %}label.request-help{% endtrans %}
                                 </a>
                             </div>
                             <div class="col-12 col-xl-auto">
                                 <a href="{{ path('content_how') }}"
                                    class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
-                                    Comment ça marche ?
+                                    {% trans %}label.how-work{% endtrans %}
                                 </a>
                             </div>
                         </div>
@@ -126,31 +121,28 @@
                             {{ include('_icons/arrow.html.twig') }}
                         </div>
                         <div class="home-row-half-button-label">
-                            Je peux aider les travailleurs en première ligne et les personnes
-                            faisant partie des populations à risque
+                            {% trans %}home.title{% endtrans %}
                         </div>
                     </a>
 
                     <div class="home-row-half-details mt-3 mb-4">
                         <p>
-                            Vous êtes jeune et en bonne santé ?
+                            {% trans %}home.young-healthy{% endtrans %}
                         </p>
-                        Aidez un travailleur en première ligne ou une personne faisant partie
-                        des populations à risque vivant proche de chez vous en gardant un enfant
-                        ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.
+                        {% trans %}home.intro{% endtrans %}
                     </div>
 
                     <div class="row no-gutters text-center">
                         <div class="col-12 col-xl-auto">
                             <a href="{{ path('process_helper') }}"
                                class="btn btn-info btn-lg border-white border mr-xl-3">
-                                Proposer mon aide
+                                {% trans %}label.offer-help{% endtrans %}
                             </a>
                         </div>
                         <div class="col-12 col-xl-auto">
                             <a href="{{ path('content_how') }}"
                                class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
-                                Comment ça marche ?
+                                {% trans %}label.how-work{% endtrans %}
                             </a>
                         </div>
                     </div>
@@ -161,35 +153,32 @@
         <div class="home-ecosystem p-4 p-lg-5">
             <div class="home-share text-center mb-5">
                 <div class="text-muted mb-2">
-                    Je partage l'initiative
+                    {% trans %}social.share-intro{% endtrans %}
                 </div>
 
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
                     {{ include('_icons/facebook.html.twig') }}
                 </a>
-                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="{% trans %}social.share-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
                     {{ include('_icons/twitter.html.twig') }}
                 </a>
-                <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
                     {{ include('_icons/telegram.html.twig') }}
                 </a>
-                <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                <a href="https://wa.me/?text={{ url('homepage') }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
                     {{ include('_icons/whatsapp.html.twig') }}
                 </a>
             </div>
 
             <div class="home-ecosystem-feedbacks mb-5">
                 <h5 class="font-weight-normal mb-5 p-4">
-                    Nous sommes <strong>{{ countTotalHelpers|number_format(0, ',', ' ') }} volontaires</strong>.
+                    {% trans with {'count' : countTotalHelpers|number_format(0, ',', ' ') } %}home.number-volunteers{% endtrans %}
                     <br />
-                    <strong>
-                        {{ (((countTotalOwners - countUnmatchedOwners) / countTotalOwners) * 100)|number_format(2) }} %
-                    </strong>
-                    des demandes d'aide ont été résolues.
+                    {% trans with {'percentage' : (((countTotalOwners - countUnmatchedOwners) / countTotalOwners) * 100)|number_format(2) } %}home.percentage-resolved{% endtrans %}
                 </h5>
 
                 <h5>
-                    Témoignages
+                    {% trans %}label.testimonials{% endtrans %}
                 </h5>
 
                 <div class="row">
@@ -198,20 +187,10 @@
                             <blockquote>
                                 <div>
                                     <p>
-                                        Mon mari et moi sommes infirmiers avec deux enfants en bas âge.
-                                        J'ai découvert En Première Ligne hier à 22h en cherchant comment
-                                        je pourrais aller faire mes courses : je me suis inscrite en quelques
-                                        clics sur mon téléphone. Le lendemain lorsque je me suis réveillée à
-                                        5h30, j'avais la bonne surprise d'avoir un mail de mise en contact avec
-                                        Thomas, qui a pu me livrer mes courses le jour même à 13h.
+                                        {% trans %}home.testimonial-one{% endtrans %}
                                     </p>
 
-                                    <p>
-                                        Je recommande à tous les travailleurs dans le besoin de s'inscrire,
-                                        c'est gratuit et rapide !
-                                    </p>
-
-                                    <cite>- Marion, infirmière dans l'Ain</cite>
+                                    <cite>{% trans %}home.testimonial-one-from{% endtrans %}</cite>
                                 </div>
                             </blockquote>
                         </div>
@@ -221,29 +200,10 @@
                             <blockquote>
                                 <div>
                                     <p>
-                                        J'ai commencé mon confinement le vendredi 13 mars,
-                                        avant la fermeture des bars et des lieux publics.
-                                        Travaillant dans l'informatique, j'ai pu facilement me
-                                        mettre en sécurité et arrêter toute sortie.
+                                        {% trans %}home.testimonial-two{% endtrans %}
                                     </p>
 
-                                    <p>
-                                        Si le personnel médical est en première ligne, pour ma part,
-                                        j'ai l'impression d'être dans un bunker. J'ai presque honte
-                                        de la chance que j'ai.
-                                    </p>
-
-                                    <p>
-                                        Je me suis inscrit sur enpremiereligne.fr car je veux aider
-                                        ceux qui en ont besoin. En m'inscrivant, j'ai été mis en
-                                        relation avec une personne qui est infirmière dans ma ville.
-                                        Pour l'instant, elle a encore des réserves de nourriture pour
-                                        plusieurs jours, mais elle sait que dans les prochains jours,
-                                        quand la crise sanitaire aura pris encore plus d'ampleur, elle
-                                        pourra compter sur moi.
-                                    </p>
-
-                                    <cite>- Alexandre, ingénieur dans le Nord</cite>
+                                    <cite>{% trans %}home.testimonial-two-from{% endtrans %}</cite>
                                 </div>
                             </blockquote>
                         </div>
@@ -251,6 +211,7 @@
                 </div>
             </div>
 
+            {# There seems no value in translating these since they are France specific - maybe an environment variable to indicate the site? #}
             <div class="row">
                 <div class="col-lg-6">
                     <div class="home-ecosystem-assos mb-5 pb-5">

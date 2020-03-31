@@ -17,6 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/process")
@@ -24,9 +25,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProcessController extends AbstractController
 {
     /**
-     * @Route("/je-peux-aider", name="process_helper")
+     * @Route({
+     *     "fr": "/je-peux-aider",
+     *     "en": "/i-can-help"
+     * }, name="process_helper")
      */
-    public function helper(MailerInterface $mailer, EntityManagerInterface $manager, HelperRepository $repository, Request $request)
+    public function helper(MailerInterface $mailer, EntityManagerInterface $manager, HelperRepository $repository, Request $request, TranslatorInterface $translator)
     {
         $helper = new Helper();
 
@@ -43,7 +47,7 @@ class ProcessController extends AbstractController
             $email = (new TemplatedEmail())
                 ->from('team@enpremiereligne.fr')
                 ->to($helper->email)
-                ->subject('Merci de vous être porté(e) volontaire sur En Première Ligne !')
+                ->subject($translator->trans('email.offer-thanks-subject'))
                 ->htmlTemplate('emails/helper.html.twig')
                 ->context(['helper' => $helper])
             ;
@@ -62,7 +66,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}", name="process_helper_view")
+     * @Route({
+     *     "fr": "/je-peux-aider/{uuid}",
+     *     "en": "/i-can-help/{uuid}"
+     * }, name="process_helper_view")
      */
     public function helperView(Helper $helper, Request $request)
     {
@@ -73,7 +80,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}/supprimer", name="process_helper_delete_confirm")
+     * @Route({
+     *     "fr": "/je-peux-aider/{uuid}/supprimer",
+     *     "en": "/i-can-help/{uuid}/remove"
+     * }, name="process_helper_delete_confirm")
      */
     public function helperDeleteConfirm(Helper $helper)
     {
@@ -81,7 +91,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}/supprimer/do", name="process_helper_delete_do")
+     * @Route({
+     *     "fr": "/je-peux-aider/{uuid}/supprimer/do",
+     *     "en": "/i-can-help/{uuid}/remove/do"
+     * }, name="process_helper_delete_do")
      */
     public function helperDeleteDo(EntityManagerInterface $manager, Helper $helper, Request $request)
     {
@@ -96,12 +109,16 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/supprimer/effectue", name="process_helper_delete_done")
+     * @Route({
+     *     "fr": "/je-peux-aider/supprimer/effectue",
+     *     "en": "/i-can-help/remove/done"
+     * }, name="process_helper_delete_done")
      */
     public function helperDeleted()
     {
         return $this->render('process/helper_delete_done.html.twig');
     }
+
 
     /**
      * @Route("/j-ai-besoin-d-aide", name="process_request")

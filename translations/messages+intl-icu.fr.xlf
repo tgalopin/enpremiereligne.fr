@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="site.name" resname="site.name">
+                <source>En première ligne</source>
+                <target>En première ligne</target>
+            </trans-unit>
+            <trans-unit id="site.title" resname="site.title">
+                <source>En première ligne | Soyons présents pour ceux en première ligne</source>
+                <target>En première ligne | Soyons présents pour ceux en première ligne</target>
+            </trans-unit>
+            <trans-unit id="footer.why" resname="footer.why">
+                <source>Pourquoi enpremiereligne.fr ?</source>
+                <target>Pourquoi enpremiereligne.fr ?</target>
+            </trans-unit>
+            <trans-unit id="footer.who" resname="footer.who">
+                <source>Qui sommes-nous ?</source>
+                <target>Qui sommes-nous ?</target>
+            </trans-unit>
+            <trans-unit id="footer.international" resname="footer.international">
+                <source>International</source>
+                <target>International</target>
+            </trans-unit>
+            <trans-unit id="footer.information" resname="footer.information">
+                <source>Informations officielles</source>
+                <target>Informations officielles</target>
+            </trans-unit>
+            <trans-unit id="footer.privacy" resname="footer.privacy">
+                <source>Protection des données</source>
+                <target>Protection des données</target>
+            </trans-unit>
+            <trans-unit id="footer.conditions" resname="footer.conditions">
+                <source>Conditions d'utilisation</source>
+                <target>Conditions d'utilisation</target>
+            </trans-unit>
+            <trans-unit id="footer.legal" resname="footer.legal">
+                <source>Mentions légales</source>
+                <target>Mentions légales</target>
+            </trans-unit>
+            <trans-unit id="footer.data-statement" resname="footer.data-statement">
+                <source><![CDATA[Vous disposez d'un droit d'accès, de rectification, d’effacement et de portabilité de vos données ainsi que d’un droit d'opposition et d'un droit de limitation du traitement des données vous concernant. Vous pouvez exercer vos droits en nous contactant à l'adresse suivante : <a href="mailto:titouan@enpremiereligne.fr">titouan@enpremiereligne.fr</a>.]]></source>
+                <target><![CDATA[Vous disposez d'un droit d'accès, de rectification, d’effacement et de portabilité de vos données ainsi que d’un droit d'opposition et d'un droit de limitation du traitement des données vous concernant. Vous pouvez exercer vos droits en nous contactant à l'adresse suivante : <a href="mailto:titouan@enpremiereligne.fr">titouan@enpremiereligne.fr</a>.]]></target>
+            </trans-unit>
+
+            <trans-unit id="social.share-intro" resname="social.share-intro">
+                <source>Je partage l'initiative</source>
+                <target>Je partage l'initiative</target>
+            </trans-unit>
+            <trans-unit id="social.share-facebook" resname="social.share-facebook">
+                <source>Partager sur Facebook</source>
+                <target>Partager sur Facebook</target>
+            </trans-unit>
+            <trans-unit id="social.share-twitter" resname="social.share-twitter">
+                <source>Partager sur Twitter</source>
+                <target>Partager sur Twitter</target>
+            </trans-unit>
+            <trans-unit id="social.share-telegram" resname="social.share-telegram">
+                <source>Partager sur Telegram</source>
+                <target>Partager sur Telegram</target>
+            </trans-unit>
+            <trans-unit id="social.share-whatsapp" resname="social.share-whatsapp">
+                <source>Partager sur Whatsapp</source>
+                <target>Partager sur Whatsapp</target>
+            </trans-unit>
+            <trans-unit id="social.find-facebook" resname="social.find-facebook">
+                <source>Nous retrouver sur Facebook</source>
+                <target>Nous retrouver sur Facebook</target>
+            </trans-unit>
+            <trans-unit id="social.find-twitter" resname="social.find-twitter">
+                <source>Nous retrouver sur Twitter</source>
+                <target>Nous retrouver sur Twitter</target>
+            </trans-unit>
+            <trans-unit id="social.find-github" resname="social.find-github">
+                <source>Nous retrouver sur Github</source>
+                <target>Nous retrouver sur Github</target>
+            </trans-unit>
+
+
+            <trans-unit id="home.byline" resname="home.byline">
+                <source>Réseau d'entraide dans la lutte contre l'épidémie de Covid-19.</source>
+                <target>Réseau d'entraide dans la lutte contre l'épidémie de Covid-19.</target>
+            </trans-unit>
+            <trans-unit id="home.work-title" resname="home.work-title">
+                <source>Je travaille en première ligne et j'ai besoin d'aide</source>
+                <target>Je travaille en première ligne et j'ai besoin d'aide</target>
+            </trans-unit>
+            <trans-unit id="home.work-intro" resname="home.work-intro">
+                <source>Vous faites partie de la première ligne de la lutte contre le virus (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...) ?</source>
+                <target>Vous faites partie de la première ligne de la lutte contre le virus (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...) ?</target>
+            </trans-unit>
+            <trans-unit id="home.work-request" resname="home.work-request">
+                <source>Demandez de l'aide à des volontaires proches de chez vous pour garder vos enfants ou faire vos courses.</source>
+                <target>Demandez de l'aide à des volontaires proches de chez vous pour garder vos enfants ou faire vos courses.</target>
+            </trans-unit>
+            <trans-unit id="home.risk-title" resname="home.risk-title">
+                <source>Je fais partie des populations à risque ou je connais une personne dans ce cas</source>
+                <target>Je fais partie des populations à risque ou je connais une personne dans ce cas</target>
+            </trans-unit>
+            <trans-unit id="home.risk-intro" resname="home.risk-intro">
+                <source>Vous ou un de vos proches, de par l'âge, les antécédents médicaux ou les difficultés à se déplacer, a besoin d'aide pour faire les courses et faire face à l'épidémie ?</source>
+                <target>Vous ou un de vos proches, de par l'âge, les antécédents médicaux ou les difficultés à se déplacer, a besoin d'aide pour faire les courses et faire face à l'épidémie ?</target>
+            </trans-unit>
+            <trans-unit id="home.risk-request" resname="home.risk-request">
+                <source>Demandez de l'aide à des volontaires proches de chez vous.</source>
+                <target>Demandez de l'aide à des volontaires proches de chez vous.</target>
+            </trans-unit>
+            <trans-unit id="home.title" resname="home.title">
+                <source>Je peux aider les travailleurs en première ligne et les personnes faisant partie des populations à risque</source>
+                <target>Je peux aider les travailleurs en première ligne et les personnes faisant partie des populations à risque</target>
+            </trans-unit>
+            <trans-unit id="home.young-healthy" resname="home.young-healthy">
+                <source>Vous êtes jeune et en bonne santé ?</source>
+                <target>Vous êtes jeune et en bonne santé ?</target>
+            </trans-unit>
+            <trans-unit id="home.intro" resname="home.intro">
+                <source>Aidez un travailleur en première ligne ou une personne faisant partie des populations à risque vivant proche de chez vous en gardant un enfant ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.</source>
+                <target>Aidez un travailleur en première ligne ou une personne faisant partie des populations à risque vivant proche de chez vous en gardant un enfant ou en faisant des courses, et engagez-vous dans la lutte contre l’épidémie.</target>
+            </trans-unit>
+            <trans-unit id="home.number-volunteers" resname="home.number-volunteers">
+                <source><![CDATA[Nous sommes <strong>{count} volontaires</strong>.]]></source>
+                <target><![CDATA[Nous sommes <strong>{count} volontaires</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="home.percentage-resolved" resname="home.percentage-resolved">
+                <source><![CDATA[<strong>{percentage} %</strong> des demandes d'aide ont été résolues.]]></source>
+                <target><![CDATA[<strong>{percentage} %</strong> des demandes d'aide ont été résolues.]]></target>
+            </trans-unit>
+            <trans-unit id="home.testimonial-one" resname="home.testimonial-one">
+                <source><![CDATA[Mon mari et moi sommes infirmiers avec deux enfants en bas âge. J'ai découvert En Première Ligne hier à 22h en cherchant comment je pourrais aller faire mes courses : je me suis inscrite en quelques clics sur mon téléphone. Le lendemain lorsque je me suis réveillée à 5h30, j'avais la bonne surprise d'avoir un mail de mise en contact avec Thomas, qui a pu me livrer mes courses le jour même à 13h.<br /><br />Je recommande à tous les travailleurs dans le besoin de s'inscrire, c'est gratuit et rapide !]]></source>
+                <target><![CDATA[Mon mari et moi sommes infirmiers avec deux enfants en bas âge. J'ai découvert En Première Ligne hier à 22h en cherchant comment je pourrais aller faire mes courses : je me suis inscrite en quelques clics sur mon téléphone. Le lendemain lorsque je me suis réveillée à 5h30, j'avais la bonne surprise d'avoir un mail de mise en contact avec Thomas, qui a pu me livrer mes courses le jour même à 13h.<br /><br />Je recommande à tous les travailleurs dans le besoin de s'inscrire, c'est gratuit et rapide !]]></target>
+            </trans-unit>
+            <trans-unit id="home.testimonial-one-from" resname="home.testimonial-one-from">
+                <source>- Marion, infirmière dans l'Ain</source>
+                <target>- Marion, infirmière dans l'Ain</target>
+            </trans-unit>
+            <trans-unit id="home.testimonial-two" resname="home.testimonial-two">
+                <source><![CDATA[J'ai commencé mon confinement le vendredi 13 mars, avant la fermeture des bars et des lieux publics. Travaillant dans l'informatique, j'ai pu facilement me mettre en sécurité et arrêter toute sortie.<br /><br />Si le personnel médical est en première ligne, pour ma part, j'ai l'impression d'être dans un bunker. J'ai presque honte de la chance que j'ai.<br /><br />Je me suis inscrit sur enpremiereligne.fr car je veux aider ceux qui en ont besoin. En m'inscrivant, j'ai été mis en relation avec une personne qui est infirmière dans ma ville. Pour l'instant, elle a encore des réserves de nourriture pour plusieurs jours, mais elle sait que dans les prochains jours, quand la crise sanitaire aura pris encore plus d'ampleur, elle pourra compter sur moi.]]></source>
+                <target><![CDATA[J'ai commencé mon confinement le vendredi 13 mars, avant la fermeture des bars et des lieux publics. Travaillant dans l'informatique, j'ai pu facilement me mettre en sécurité et arrêter toute sortie.<br /><br />Si le personnel médical est en première ligne, pour ma part, j'ai l'impression d'être dans un bunker. J'ai presque honte de la chance que j'ai.<br /><br />Je me suis inscrit sur enpremiereligne.fr car je veux aider ceux qui en ont besoin. En m'inscrivant, j'ai été mis en relation avec une personne qui est infirmière dans ma ville. Pour l'instant, elle a encore des réserves de nourriture pour plusieurs jours, mais elle sait que dans les prochains jours, quand la crise sanitaire aura pris encore plus d'ampleur, elle pourra compter sur moi.]]></target>
+            </trans-unit>
+            <trans-unit id="home.testimonial-two-from" resname="home.testimonial-two-from">
+                <source>- Alexandre, ingénieur dans le Nord</source>
+                <target>- Alexandre, ingénieur dans le Nord</target>
+            </trans-unit>
+
+            <trans-unit id="offer.intro-one" resname="offer.intro-one">
+                <source><![CDATA[Dans les prochaines semaines, de nombreuses personnes vont risquer leur santé, donner leur énergie 15h par jour pour sauver des vies et s’assurer que les fonctions vitales de notre pays sont encore assurées. <strong>Ils sont notre première ligne contre le virus.</strong>]]></source>
+                <target><![CDATA[Dans les prochaines semaines, de nombreuses personnes vont risquer leur santé, donner leur énergie 15h par jour pour sauver des vies et s’assurer que les fonctions vitales de notre pays sont encore assurées. <strong>Ils sont notre première ligne contre le virus.</strong>]]></target>
+            </trans-unit>
+            <trans-unit id="offer.intro-two" resname="offer.intro-two">
+                <source>Permettons-leur de ne pas se préoccuper de qui gardera leurs enfants ou de s'il y aura suffisamment à manger chez eux quand ils rentreront.</source>
+                <target>Permettons-leur de ne pas se préoccuper de qui gardera leurs enfants ou de s'il y aura suffisamment à manger chez eux quand ils rentreront.</target>
+            </trans-unit>
+            <trans-unit id="offer.intro-three" resname="offer.intro-three">
+                <source><![CDATA[<strong>Vous aussi, participez à la mobilisation contre l'épidémie.</strong> Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne capable d'aider. Si quelqu'un proche de chez vous a besoin d'aide, nous vous mettrons en relation par e-mail pour que vous puissiez les aider au mieux.]]></source>
+                <target><![CDATA[<strong>Vous aussi, participez à la mobilisation contre l'épidémie.</strong> Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne capable d'aider. Si quelqu'un proche de chez vous a besoin d'aide, nous vous mettrons en relation par e-mail pour que vous puissiez les aider au mieux.]]></target>
+            </trans-unit>
+            <trans-unit id="offer.intro-four" resname="offer.intro-four">
+                <source><![CDATA[Ne soyez volontaire que si vous êtes jeune (moins de 60 ans) et en bonne santé : il ne sert à rien que vous preniez des risques inutiles, quelqu'un d'autre pourra aider à votre place. Vous pouvez vérifier si vous faites partie des publics à risque <a href="https://solidarites-sante.gouv.fr/actualites/actualites-du-ministere/article/coronavirus-qui-sont-les-personnes-fragiles">sur le site du ministère de la Santé</a>.]]></source>
+                <target><![CDATA[Ne soyez volontaire que si vous êtes jeune (moins de 60 ans) et en bonne santé : il ne sert à rien que vous preniez des risques inutiles, quelqu'un d'autre pourra aider à votre place. Vous pouvez vérifier si vous faites partie des publics à risque <a href="https://solidarites-sante.gouv.fr/actualites/actualites-du-ministere/article/coronavirus-qui-sont-les-personnes-fragiles">sur le site du ministère de la Santé</a>.]]></target>
+            </trans-unit>
+
+
+            <trans-unit id="label.name-first-required" resname="label.name-first-required">
+                <source>Votre prénom (requis)</source>
+                <target>Votre prénom (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.name-first" resname="label.name-first">
+                <source>Prénom</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="label.name-last-required" resname="label.name-last-required">
+                <source>Votre nom (requis)</source>
+                <target>Votre nom (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.name-last" resname="label.name-last">
+                <source>Nom</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="label.age-required" resname="label.age-required">
+                <source>Votre âge (requis)</source>
+                <target>Votre âge (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.age" resname="label.age">
+                <source>Âge</source>
+                <target>Âge</target>
+            </trans-unit>
+            <trans-unit id="label.postcode-required" resname="label.postcode-required">
+                <source>Votre code postal (français uniquement, requis)</source>
+                <target>Votre code postal (français uniquement, requis)</target>
+            </trans-unit>
+            <trans-unit id="label.postcode" resname="label.postcode">
+                <source>Code postal</source>
+                <target>Code postal</target>
+            </trans-unit>
+            <trans-unit id="help.postcode" resname="help.postcode">
+                <source>Utilisé pour trouver des personnes proches de vous. Nous ne travaillons que sur le territoire français pour le moment.</source>
+                <target>Utilisé pour trouver des personnes proches de vous. Nous ne travaillons que sur le territoire français pour le moment.</target>
+            </trans-unit>
+            <trans-unit id="label.email-required" resname="label.email-required">
+                <source>Votre adresse e-mail (requis)</source>
+                <target>Votre adresse e-mail (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.email" resname="label.email">
+                <source>Adresse e-mail</source>
+                <target>Adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="help.email" resname="help.email">
+                <source>Utilisé pour vous mettre en relation.</source>
+                <target>Utilisé pour vous mettre en relation.</target>
+            </trans-unit>
+            <trans-unit id="label.can-buy-groceries" resname="label.can-buy-groceries">
+                <source>Je peux acheter et livrer des courses pour les travailleurs de première ligne (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...)</source>
+                <target>Je peux acheter et livrer des courses pour les travailleurs de première ligne (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...)</target>
+            </trans-unit>
+            <trans-unit id="help.can-buy-groceries" resname="help.can-buy-groceries">
+                <source>Vous pourrez être mis en relation avec des personnes ayant besoin d'être livrées en courses. Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.</source>
+                <target>Vous pourrez être mis en relation avec des personnes ayant besoin d'être livrées en courses. Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.</target>
+            </trans-unit>
+            <trans-unit id="label.accept-vulnerable" resname="label.accept-vulnerable">
+                <source>Je peux acheter et livrer des courses pour les personnes faisant partie des populations à risque (de par l'âge, les antécédents médicaux ou les difficultés à se déplacer))</source>
+                <target>Je peux acheter et livrer des courses pour les personnes faisant partie des populations à risque (de par l'âge, les antécédents médicaux ou les difficultés à se déplacer))</target>
+            </trans-unit>
+            <trans-unit id="help.accept-vulnerable" resname="help.accept-vulnerable">
+                <source>Vous pourrez être mis en relation avec des personnes ayant besoin d'être livrées en courses. Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.</source>
+                <target>Vous pourrez être mis en relation avec des personnes ayant besoin d'être livrées en courses. Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.</target>
+            </trans-unit>
+            <trans-unit id="label.can-babysit" resname="label.can-babysit">
+                <source>Je peux garder un enfant à certaines occasions</source>
+                <target>Je peux garder un enfant à certaines occasions</target>
+            </trans-unit>
+            <trans-unit id="help.can-babysit" resname="help.can-babysit">
+                <source>Vous pourrez être mis en relation avec des parents ayant besoin de garder leur enfant. Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.</source>
+                <target>Vous pourrez être mis en relation avec des parents ayant besoin de garder leur enfant. Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.</target>
+            </trans-unit>
+            <trans-unit id="label.have-children" resname="label.have-children">
+                <source>Avez-vous ou avez-vous eu des enfants vous-même ?</source>
+                <target>Avez-vous ou avez-vous eu des enfants vous-même ?</target>
+            </trans-unit>
+            <trans-unit id="help.have-children" resname="help.have-children">
+                <source>Il est plus rassurant pour des parents que vous soyez déjà parents vous-mêmes.</source>
+                <target>Il est plus rassurant pour des parents que vous soyez déjà parents vous-mêmes.</target>
+            </trans-unit>
+            <trans-unit id="label.babysit-max-children" resname="label.babysit-max-children">
+                <source>Combien d'enfants au maximum pouvez-vous garder à la fois ?</source>
+                <target>Combien d'enfants au maximum pouvez-vous garder à la fois ?</target>
+            </trans-unit>
+            <trans-unit id="label.only-one" resname="label.only-one">
+                <source>Un seul</source>
+                <target>Un seul</target>
+            </trans-unit>
+            <trans-unit id="label.up-to-two" resname="label.up-to-two">
+                <source>Jusqu'à 2</source>
+                <target>Jusqu'à 2</target>
+            </trans-unit>
+            <trans-unit id="label.up-to-three" resname="label.up-to-three">
+                <source>Jusqu'à 3</source>
+                <target>Jusqu'à 3</target>
+            </trans-unit>
+            <trans-unit id="label.up-to-four" resname="label.up-to-four">
+                <source>Jusqu'à 4</source>
+                <target>Jusqu'à 4</target>
+            </trans-unit>
+            <trans-unit id="label.babysit-ages" resname="label.babysit-ages">
+                <source>Quelle(s) tranche(s) d'âge d'enfants vous sentez-vous à l'aise de garder ?</source>
+                <target>Quelle(s) tranche(s) d'âge d'enfants vous sentez-vous à l'aise de garder ?</target>
+            </trans-unit>
+            <trans-unit id="label.between-0-1" resname="label.between-0-1">
+                <source>Entre 0 et 1 an</source>
+                <target>Entre 0 et 1 an</target>
+            </trans-unit>
+            <trans-unit id="label.between-1-2" resname="label.between-1-2">
+                <source>Entre 1 et 2 ans</source>
+                <target>Entre 1 et 2 ans</target>
+            </trans-unit>
+            <trans-unit id="label.between-3-5" resname="label.between-3-5">
+                <source>Entre 3 et 5 ans</source>
+                <target>Entre 3 et 5 ans</target>
+            </trans-unit>
+            <trans-unit id="label.between-6-9" resname="label.between-6-9">
+                <source>Entre 6 et 9 ans</source>
+                <target>Entre 6 et 9 ans</target>
+            </trans-unit>
+            <trans-unit id="label.between-10-12" resname="label.between-10-12">
+                <source>Entre 10 et 12 ans</source>
+                <target>Entre 10 et 12 ans</target>
+            </trans-unit>
+            <trans-unit id="label.13-and-over" resname="label.13-and-over">
+                <source>13 ans et plus</source>
+                <target>13 ans et plus</target>
+            </trans-unit>
+            <trans-unit id="label.confirm" resname="label.confirm">
+                <source>J'ai lu et j'accepte la Politique de confidentialité et les Conditions d'utilisation d'enpremiereligne.fr</source>
+                <target>J'ai lu et j'accepte la Politique de confidentialité et les Conditions d'utilisation d'enpremiereligne.fr</target>
+            </trans-unit>
+            <trans-unit id="help.confirm" resname="help.confirm">
+                <source>Il est notamment très important que vous soyez vigilants à bien suivre les recommandations sanitaires à tout moment.</source>
+                <target>Il est notamment très important que vous soyez vigilants à bien suivre les recommandations sanitaires à tout moment.</target>
+            </trans-unit>
+            <trans-unit id="label.send-proposal" resname="label.send-proposal">
+                <source>Envoyer ma proposition</source>
+                <target>Envoyer ma proposition</target>
+            </trans-unit>
+            <trans-unit id="label.revise-proposal" resname="label.revise-proposal">
+                <source>Vous pourrez revenir à tout moment sur votre proposition.</source>
+                <target>Vous pourrez revenir à tout moment sur votre proposition.</target>
+            </trans-unit>
+
+            <trans-unit id="label.how-platform-works" resname="label.how-platform-works">
+                <source>En savoir plus sur le fonctionnement de la plateforme</source>
+                <target>En savoir plus sur le fonctionnement de la plateforme</target>
+            </trans-unit>
+            <trans-unit id="label.request-help" resname="label.request-help">
+                <source>Demander de l'aide</source>
+                <target>Demander de l'aide</target>
+            </trans-unit>
+            <trans-unit id="label.offer-help" resname="label.offer-help">
+                <source>Proposer mon aide</source>
+                <target>Proposer mon aide</target>
+            </trans-unit>
+            <trans-unit id="label.how-work" resname="label.how-work">
+                <source>Comment ça marche ?</source>
+                <target>Comment ça marche ?</target>
+            </trans-unit>
+            <trans-unit id="label.testimonials" resname="label.testimonials">
+                <source>Témoignages</source>
+                <target>Témoignages</target>
+            </trans-unit>
+            <trans-unit id="label.home" resname="label.home">
+                <source>Retour à l'accueil</source>
+                <target>Retour à l'accueil</target>
+            </trans-unit>
+
+
+            <trans-unit id="email.greeting" resname="email.greeting">
+                <source>Bonjour {name}</source>
+                <target>Bonjour {name}</target>
+            </trans-unit>
+            <trans-unit id="email.signoff" resname="email.signoff">
+                <source>L'équipe d'En Première Ligne</source>
+                <target>L'équipe d'En Première Ligne</target>
+            </trans-unit>
+
+            <trans-unit id="email.offer-thanks-subject" resname="email.offer-thanks-subject">
+                <source>Merci de vous être porté(e) volontaire sur En Première Ligne !</source>
+                <target>Merci de vous être porté(e) volontaire sur En Première Ligne !</target>
+            </trans-unit>
+            <trans-unit id="email.offer-thanks" resname="email.offer-thanks">
+                <source>Merci de vous être porté(e) volontaire sur le réseau d'entraide En Première Ligne pour aider les travailleurs mobilisés contre le COVID-19 au quotidien et les populations à risque.</source>
+                <target>Merci de vous être porté(e) volontaire sur le réseau d'entraide En Première Ligne pour aider les travailleurs mobilisés contre le COVID-19 au quotidien et les populations à risque.</target>
+            </trans-unit>
+            <trans-unit id="email.offer-saved" resname="email.offer-saved">
+                <source>Votre proposition d'aide a bien été enregistrée. Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :</source>
+                <target>Votre proposition d'aide a bien été enregistrée. Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :</target>
+            </trans-unit>
+            <trans-unit id="email.offer-edit" resname="email.offer-edit">
+                <source><![CDATA[<a href="https://enpremiereligne.fr{url}">Gérer ma proposition d'aide</a>]]></source>
+                <target>Votre proposition d'aide a bien été enregistrée. Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :</target>
+            </trans-unit>
+            <trans-unit id="email.offer-notified" resname="email.offer-notified">
+                <source>Vous serez notifié(e) par mail dès qu'un travailleur mobilisé en première ligne ou une personne faisant partie des populations à risque de votre zone se manifestera. Vous pourrez ensuite entrer directement en contact avec cette personne pour vous organiser.</source>
+                <target>Vous serez notifié(e) par mail dès qu'un travailleur mobilisé en première ligne ou une personne faisant partie des populations à risque de votre zone se manifestera. Vous pourrez ensuite entrer directement en contact avec cette personne pour vous organiser.</target>
+            </trans-unit>
+            <trans-unit id="email.offer-commitment" resname="email.offer-commitment">
+                <source>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.</source>
+                <target>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

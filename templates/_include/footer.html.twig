@@ -1,29 +1,28 @@
 <footer class="home-footer p-3">
     <div class="mb-3 home-footer-social">
         <a href="https://www.facebook.com/enpremiere.ligne.5"
-           title="Nous retrouver sur Facebook" target="_blank" rel="noreferrer noopener">{{ include('_icons/facebook.html.twig') }}</a>
+           title="{% trans %}social.find-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">{{ include('_icons/facebook.html.twig') }}</a>
         <a href="https://twitter.com/en1ereligne"
-           title="Nous retrouver sur Twitter" target="_blank" rel="noreferrer noopener">{{ include('_icons/twitter.html.twig') }}</a>
+           title="{% trans %}social.find-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">{{ include('_icons/twitter.html.twig') }}</a>
         <a href="https://www.linkedin.com/company/enpremiereligne/"
-           title="Nous retrouver sur LinkedIn" target="_blank" rel="noreferrer noopener">
-            {{ include('_icons/linkedin.html.twig') }}</a>
+           title="Nous retrouver sur LinkedIn" target="_blank" rel="noreferrer noopener">{{ include('_icons/linkedin.html.twig') }}</a>
         <a href="https://github.com/tgalopin/enpremiereligne.fr"
-           title="Nous retrouver sur Github" target="_blank" rel="noreferrer noopener">{{ include('_icons/github.html.twig') }}</a>
+           title="{% trans %}social.find-github{% endtrans %}" target="_blank" rel="noreferrer noopener">{{ include('_icons/github.html.twig') }}</a>
     </div>
     <div>
         <a href="{{ path('content_why') }}">
-            Pourquoi enpremiereligne.fr ?</a>
+            {% trans %}footer.why{% endtrans %}</a>
         <a href="{{ path('content_who') }}">
-            Qui sommes-nous ?</a>
+            {% trans %}footer.who{% endtrans %}</a>
         <a href="{{ path('content_international') }}">
-            International</a>
+            {% trans %}footer.international{% endtrans %}</a>
         <a href="{{ path('content_links') }}">
-            Informations officielles</a>
+            {% trans %}footer.information{% endtrans %}</a>
         <a href="{{ path('content_privacy') }}">
-            Protection des données</a>
+            {% trans %}footer.privacy{% endtrans %}</a>
         <a href="{{ path('content_conditions') }}">
-            Conditions d'utilisation</a>
+            {% trans %}footer.conditions{% endtrans %}</a>
         <a href="{{ path('content_legalities') }}">
-            Mentions légales</a>
+            {% trans %}footer.legal{% endtrans %}</a>
     </div>
 </footer>
