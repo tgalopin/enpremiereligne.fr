@@ -219,38 +219,15 @@
                 <target>Votre proposition a bien été supprimée.</target>
             </trans-unit>
 
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
+            <trans-unit id="request.intro-one" resname="request.intro-one">
+                <source>Vous faites partie de la première ligne de la lutte contre le virus (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...) ?</source>
+                <target>Vous faites partie de la première ligne de la lutte contre le virus (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...) ?</target>
             </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
+            <trans-unit id="request.intro-two" resname="request.intro-two">
+                <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques. </source>
+                <target>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques. </target>
             </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
-            </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
-            </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
-            </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
-            </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
-            </trans-unit>
-            <trans-unit id="request." resname="request.">
-                <source>Votre</source>
-                <target>Votre</target>
-            </trans-unit>
+
 
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
                 <source>Votre prénom (requis)</source>
@@ -427,6 +404,66 @@
             <trans-unit id="label.no-return" resname="label.no-return">
                 <source>Non, retour</source>
                 <target>Non, retour</target>
+            </trans-unit>
+            <trans-unit id="label.field-of-work-required" resname="label.field-of-work-required">
+                <source>Dans quel domaine travaillez-vous ? (requis)</source>
+                <target>Dans quel domaine travaillez-vous ? (requis)</target>
+            </trans-unit>
+            <trans-unit id="help.field-of-work" resname="help.field-of-work">
+                <source>Dans un premier temps, nous réservons l'usage de notre plateforme aux personnes qui travaillent en première ligne contre l’épidémie</source>
+                <target>Dans un premier temps, nous réservons l'usage de notre plateforme aux personnes qui travaillent en première ligne contre l’épidémie</target>
+            </trans-unit>
+            <trans-unit id="label.work-health" resname="label.work-health">
+                <source>Le médical ou le paramédical</source>
+                <target>Le médical ou le paramédical</target>
+            </trans-unit>
+            <trans-unit id="label.work-emergency" resname="label.work-emergency">
+                <source>Un service d’urgence</source>
+                <target>Un service d’urgence</target>
+            </trans-unit>
+            <trans-unit id="label.work-care" resname="label.work-care">
+                <source>L’aide aux personnes à domicile ou en centre</source>
+                <target>L’aide aux personnes à domicile ou en centre</target>
+            </trans-unit>
+            <trans-unit id="label.work-food" resname="label.work-food">
+                <source>La production ou l’approvisionnement agroalimentaire</source>
+                <target>La production ou l’approvisionnement agroalimentaire</target>
+            </trans-unit>
+            <trans-unit id="label.work-drugs" resname="label.work-drugs">
+                <source>La production ou l’approvisionnement de médicaments</source>
+                <target>La production ou l’approvisionnement de médicaments</target>
+            </trans-unit>
+            <trans-unit id="label.work-energy" resname="label.work-energy">
+                <source>La production ou l’approvisionnement en énergie</source>
+                <target>La production ou l’approvisionnement en énergie</target>
+            </trans-unit>
+            <trans-unit id="label.work-transport" resname="label.work-transport">
+                <source>Le service minimum de transports en commun</source>
+                <target>Le service minimum de transports en commun</target>
+            </trans-unit>
+            <trans-unit id="label.work-other" resname="label.work-other">
+                <source>Une autre fonction nécessaire au maintien des secteurs vitaux de la Nation</source>
+                <target>Une autre fonction nécessaire au maintien des secteurs vitaux de la Nation</target>
+            </trans-unit>
+            <trans-unit id="label.needs" resname="label.needs">
+                <source>Quels sont vos besoins ?</source>
+                <target>Quels sont vos besoins ?</target>
+            </trans-unit>
+            <trans-unit id="label.babysitting" resname="label.babysitting">
+                <source>Garder un enfant</source>
+                <target>Garder un enfant</target>
+            </trans-unit>
+            <trans-unit id="label.shopping-and-delivery" resname="label.shopping-and-delivery">
+                <source>Faire les courses et les livrer</source>
+                <target>Faire les courses et les livrer</target>
+            </trans-unit>
+            <trans-unit id="label.send-request" resname="label.send-request">
+                <source>Envoyer ma demande</source>
+                <target>Envoyer ma demande</target>
+            </trans-unit>
+            <trans-unit id="label.can-change-request" resname="label.can-change-request">
+                <source>Vous pourrez revenir à tout moment sur votre demande.</source>
+                <target>Vous pourrez revenir à tout moment sur votre demande.</target>
             </trans-unit>
 
 

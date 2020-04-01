@@ -18,19 +18,19 @@ class CompositeHelpRequestDetailType extends AbstractType
                 'required' => true,
                 'expanded' => true,
                 'choices' => [
-                    'Garder un enfant' => HelpRequest::TYPE_BABYSIT,
-                    'Faire les courses et les livrer' => HelpRequest::TYPE_GROCERIES,
+                    'label.babysitting' => HelpRequest::TYPE_BABYSIT,
+                    'label.shopping-and-delivery' => HelpRequest::TYPE_GROCERIES,
                 ],
             ])
             ->add('childAgeRange', ChoiceType::class, [
                 'required' => false,
                 'choices' => [
-                    'Entre 0 et 1 an' => HelpRequest::AGE_RANGE_01,
-                    'Entre 1 et 2 ans' => HelpRequest::AGE_RANGE_12,
-                    'Entre 3 et 5 ans' => HelpRequest::AGE_RANGE_35,
-                    'Entre 6 et 9 ans' => HelpRequest::AGE_RANGE_69,
-                    'Entre 10 et 12 ans' => HelpRequest::AGE_RANGE_1012,
-                    '13 ans et plus' => HelpRequest::AGE_RANGE_13,
+                    'label.between-0-1' => HelpRequest::AGE_RANGE_01,
+                    'label.between-1-2' => HelpRequest::AGE_RANGE_12,
+                    'label.between-3-5' => HelpRequest::AGE_RANGE_35,
+                    'label.between-6-9' => HelpRequest::AGE_RANGE_69,
+                    'label.between-10-12' => HelpRequest::AGE_RANGE_1012,
+                    'label.13-and-over' => HelpRequest::AGE_RANGE_13,
                 ],
             ])
         ;
