@@ -46,7 +46,7 @@ class Helper
     /**
      * @ORM\Column(length=200)
      *
-     * @Assert\NotBlank(message="Votre adresse e-mail est requise.")
+     * @Assert\NotBlank(message="email.required")
      * @Assert\Email()
      * @Assert\Length(max=200)
      */
@@ -84,7 +84,7 @@ class Helper
      * @ORM\Column(type="smallint")
      *
      * @Assert\GreaterThanOrEqual(1)
-     * @Assert\LessThanOrEqual(4, message="Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.")
+     * @Assert\LessThanOrEqual(4, message="babysit.too-many")
      */
     public ?int $babysitMaxChildren = 1;
 
