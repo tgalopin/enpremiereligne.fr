@@ -210,7 +210,14 @@
                 <source><![CDATA[Pour mettre à jour votre proposition, supprimez-la puis enregistrez une nouvelle proposition.<br />Vous ne pouvez avoir qu'une seule proposition à la fois.]]></source>
                 <target><![CDATA[Pour mettre à jour votre proposition, supprimez-la puis enregistrez une nouvelle proposition.<br />Vous ne pouvez avoir qu'une seule proposition à la fois.]]></target>
             </trans-unit>
-
+            <trans-unit id="offer.remove-confirm" resname="offer.remove-confirm">
+                <source>Voulez-vous vraiment supprimer votre proposition et toutes les données associées ? Cette opération est irréversible.</source>
+                <target>Voulez-vous vraiment supprimer votre proposition et toutes les données associées ? Cette opération est irréversible.</target>
+            </trans-unit>
+            <trans-unit id="offer.removed" resname="offer.removed">
+                <source>Votre proposition a bien été supprimée.</source>
+                <target>Votre proposition a bien été supprimée.</target>
+            </trans-unit>
 
 
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
@@ -357,7 +364,6 @@
                 <source>Vous pourrez revenir à tout moment sur votre proposition.</source>
                 <target>Vous pourrez revenir à tout moment sur votre proposition.</target>
             </trans-unit>
-
             <trans-unit id="label.how-platform-works" resname="label.how-platform-works">
                 <source>En savoir plus sur le fonctionnement de la plateforme</source>
                 <target>En savoir plus sur le fonctionnement de la plateforme</target>
@@ -381,6 +387,14 @@
             <trans-unit id="label.home" resname="label.home">
                 <source>Retour à l'accueil</source>
                 <target>Retour à l'accueil</target>
+            </trans-unit>
+            <trans-unit id="label.yes-remove" resname="label.yes-remove">
+                <source>Oui, supprimer</source>
+                <target>Oui, supprimer</target>
+            </trans-unit>
+            <trans-unit id="label.no-return" resname="label.no-return">
+                <source>Non, retour</source>
+                <target>Non, retour</target>
             </trans-unit>
 
 
