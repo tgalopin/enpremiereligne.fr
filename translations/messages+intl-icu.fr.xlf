@@ -49,7 +49,7 @@
             </trans-unit>
             <trans-unit id="social.share-initiative" resname="social.share-initiative">
                 <source>Partagez l'initiative sur les réseaux sociaux</source>
-                <target>JPartagez l'initiative sur les réseaux sociaux</target>
+                <target>Partagez l'initiative sur les réseaux sociaux</target>
             </trans-unit>
             <trans-unit id="social.share-facebook" resname="social.share-facebook">
                 <source>Partager sur Facebook</source>
@@ -206,7 +206,7 @@
                 <source>Supprimer ma proposition</source>
                 <target>Supprimer ma proposition</target>
             </trans-unit>
-            <trans-unit id="offer.delete-top-update" resname="offer.delete-top-update">
+            <trans-unit id="offer.delete-to-update" resname="offer.delete-to-update">
                 <source><![CDATA[Pour mettre à jour votre proposition, supprimez-la puis enregistrez une nouvelle proposition.<br />Vous ne pouvez avoir qu'une seule proposition à la fois.]]></source>
                 <target><![CDATA[Pour mettre à jour votre proposition, supprimez-la puis enregistrez une nouvelle proposition.<br />Vous ne pouvez avoir qu'une seule proposition à la fois.]]></target>
             </trans-unit>
@@ -227,7 +227,58 @@
                 <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques. </source>
                 <target>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques. </target>
             </trans-unit>
-
+            <trans-unit id="request.my-request" resname="request.my-request">
+                <source>Ma demande d'aide</source>
+                <target>Ma demande d'aide</target>
+            </trans-unit>
+            <trans-unit id="request.registered" resname="request.registered">
+                <source>Votre demande a bien été enregistrée.</source>
+                <target>Votre demande a bien été enregistrée.</target>
+            </trans-unit>
+            <trans-unit id="request.keep-link" resname="request.keep-link">
+                <source>Gardez le lien de cette page : il vous permettra de supprimer votre demande si nécessaire.</source>
+                <target>Gardez le lien de cette page : il vous permettra de supprimer votre demande si nécessaire.</target>
+            </trans-unit>
+            <trans-unit id="request.delete-any-time" resname="request.delete-any-time">
+                <source><![CDATA[Vous pouvez supprimer votre demande à tout moment si besoin.<br />Si vous souhaitez modifier votre demande, supprimez-la puis recréez-en une à nouveau.]]></source>
+                <target><![CDATA[Vous pouvez supprimer votre demande à tout moment si besoin.<br />Si vous souhaitez modifier votre demande, supprimez-la puis recréez-en une à nouveau.]]></target>
+            </trans-unit>
+            <trans-unit id="request.registration-date" resname="request.registration-date">
+                <source>Vous avez enregistré votre demande d'aide le {when}. Nous vous recontacterons dès que quelqu'un sera disponible à proximité de vous.</source>
+                <target>Vous avez enregistré votre demande d'aide le {when}. Nous vous recontacterons dès que quelqu'un sera disponible à proximité de vous.</target>
+            </trans-unit>
+            <trans-unit id="request.details" resname="request.details">
+                <source>Les lignes suivantes correspondent à vos différents besoins et pourront être adressées par différents volontaires. Vous serez bien sûr maître de qui vous aide ou non : enpremiereligne.fr aide simplement à la mise en relation.</source>
+                <target>Les lignes suivantes correspondent à vos différents besoins et pourront être adressées par différents volontaires. Vous serez bien sûr maître de qui vous aide ou non : enpremiereligne.fr aide simplement à la mise en relation.</target>
+            </trans-unit>
+            <trans-unit id="request.told-us" resname="request.told-us">
+                <source>Vous nous avez indiqué avoir besoin de quelqu'un :</source>
+                <target>Vous nous avez indiqué avoir besoin de quelqu'un :</target>
+            </trans-unit>
+            <trans-unit id="request.shop" resname="request.shop">
+                <source>pour faire les courses et les déposer à votre domicile ou au domicile d'un proche</source>
+                <target>pour faire les courses et les déposer à votre domicile ou au domicile d'un proche</target>
+            </trans-unit>
+            <trans-unit id="request.babysit" resname="request.babysit">
+                <source>pour garder votre enfant de {age}</source>
+                <target>pour garder votre enfant de {age}</target>
+            </trans-unit>
+            <trans-unit id="request.remove" resname="request.remove">
+                <source>Supprimer ma demande</source>
+                <target>Supprimer ma demande</target>
+            </trans-unit>
+            <trans-unit id="request.delete-to-update" resname="request.delete-to-update">
+                <source><![CDATA[Pour mettre à jour votre demande, supprimez-la puis recréez-en une à nouveau.<br />Vous ne pouvez avoir qu'une seule demande à la fois.]]></source>
+                <target><![CDATA[Pour mettre à jour votre demande, supprimez-la puis recréez-en une à nouveau.<br />Vous ne pouvez avoir qu'une seule demande à la fois.]]></target>
+            </trans-unit>
+            <trans-unit id="request.remove-confirm" resname="request.remove-confirm">
+                <source>Voulez-vous vraiment supprimer votre demande et toutes les données associées ? Cette opération est irréversible.</source>
+                <target>Voulez-vous vraiment supprimer votre demande et toutes les données associées ? Cette opération est irréversible.</target>
+            </trans-unit>
+            <trans-unit id="request.removed" resname="request.removed">
+                <source>Votre demande a bien été supprimée.</source>
+                <target>Votre demande a bien été supprimée.</target>
+            </trans-unit>
 
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
                 <source>Votre prénom (requis)</source>
@@ -356,6 +407,26 @@
             <trans-unit id="label.13-and-over" resname="label.13-and-over">
                 <source>13 ans et plus</source>
                 <target>13 ans et plus</target>
+            </trans-unit>
+            <trans-unit id="label.age-0-1" resname="label.age-0-1">
+                <source>0 à 1 an</source>
+                <target>0 à 1 an</target>
+            </trans-unit>
+            <trans-unit id="label.age-1-2" resname="label.age-1-2">
+                <source>1 à 2 ans</source>
+                <target>1 à 2 ans</target>
+            </trans-unit>
+            <trans-unit id="label.age-3-5" resname="label.age-3-5">
+                <source>3 à 5 ans</source>
+                <target>3 à 5 ans</target>
+            </trans-unit>
+            <trans-unit id="label.age-6-9" resname="label.age-6-9">
+                <source>6 à 9 ans</source>
+                <target>6 à 9 ans</target>
+            </trans-unit>
+            <trans-unit id="label.age-10-12" resname="label.age-10-12">
+                <source>10 à 12 ans</source>
+                <target>10 à 12 ans</target>
             </trans-unit>
             <trans-unit id="label.confirm" resname="label.confirm">
                 <source>J'ai lu et j'accepte la Politique de confidentialité et les Conditions d'utilisation d'enpremiereligne.fr</source>
@@ -499,6 +570,11 @@
             <trans-unit id="email.offer-commitment" resname="email.offer-commitment">
                 <source>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.</source>
                 <target>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.</target>
+            </trans-unit>
+
+            <trans-unit id="email.request-subject" resname="email.request-subject">
+                <source>Nous avons bien reçu votre demande sur En Première Ligne</source>
+                <target>Nous avons bien reçu votre demande sur En Première Ligne</target>
             </trans-unit>
 
         </body>

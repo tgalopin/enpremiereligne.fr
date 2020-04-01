@@ -8,23 +8,22 @@
     <div class="process-box">
         <div class="bg-light p-3 p-lg-4">
             <h3 class="text-center font-weight-bold mb-4">
-                Ma demande d'aide
+                {% trans %}request.my-request{% endtrans %}
             </h3>
 
             <div class="process-details">
                 <p>
-                    Voulez-vous vraiment supprimer votre demande et toutes les données
-                    associées ? Cette opération est irréversible.
+                    {% trans %}request.remove-confirm{% endtrans %}
                 </p>
 
                 <div class="text-center mt-4">
                     <a href="{{ path('process_requester_delete_do', {'ownerUuid': ownerUuid, 'token': csrf_token('requester_delete')}) }}"
                        class="btn btn-danger">
-                        Oui, supprimer
+                        {% trans %}label.yes-remove{% endtrans %}
                     </a>
                     <a href="{{ path('process_requester_view', {'ownerUuid': ownerUuid}) }}"
                        class="btn btn-link">
-                        Non, retour
+                        {% trans %}label.no-return{% endtrans %}
                     </a>
                 </div>
             </div>

@@ -8,13 +8,13 @@
     <div class="process-box">
         <div class="bg-light p-3 p-lg-4">
             <h3 class="text-center font-weight-bold mb-4">
-                Ma demande d'aide
+                {% trans %}request.my-request{% endtrans %}
             </h3>
 
             <div class="process-details">
                 {% if success %}
                     <div class="alert alert-success text-center mb-4">
-                        Votre demande a bien été enregistrée.
+                        {% trans %}request.registered{% endtrans %}
                     </div>
                 {% endif %}
 
@@ -22,49 +22,42 @@
                     <div class="mb-3 text-center">
                         <p>
                             <strong>
-                                Gardez le lien de cette page : il vous permettra de supprimer votre
-                                demande si nécessaire.
+                                {% trans %}request.keep-link{% endtrans %}
                             </strong>
                         </p>
 
-                        Vous pouvez supprimer votre demande à tout moment si besoin.
-                        <br />
-                        Si vous souhaitez modifier votre demande, supprimez-la puis recréez-en une à nouveau.
+                        {% trans %}request.delete-any-time{% endtrans %}
                     </div>
 
                     <div class="process-block bg-white p-3 p-lg-4 mb-4">
-                        Vous avez enregistré votre demande d'aide
-                        le {{ needs[0].createdAt|localizeddate('medium', 'short') }}.
-                        Nous vous recontacterons dès que quelqu'un sera disponible à proximité de vous.
+                        {% trans with {'when': needs[0].createdAt|localizeddate('medium', 'short') } %}request.registration-date{% endtrans %}
                     </div>
 
                     <div class="process-block bg-white p-3 p-lg-4 mb-4">
                         <p>
-                            Les lignes suivantes correspondent à vos différents besoins et pourront être adressées
-                            par différents volontaires. Vous serez bien sûr maître de qui vous aide ou non :
-                            enpremiereligne.fr aide simplement à la mise en relation.
+                            {% trans %}request.details{% endtrans %}
                         </p>
 
                         <p>
-                            Vous nous avez indiqué avoir besoin de quelqu'un :
+                            {% trans %}request.told-us{% endtrans %}
                         </p>
 
                         {% set ageRanges = {
-                            '0-1': '0 à 1 an',
-                            '1-2': '1 à 2 ans',
-                            '3-5': '3 à 5 ans',
-                            '6-9': '6 à 9 ans',
-                            '10-12': '10 à 12 ans',
-                            '13-': '13 ans et plus',
+                            '0-1': 'label.age-0-1',
+                            '1-2': 'label.age-1-2',
+                            '3-5': 'label.age-3-5',
+                            '6-9': 'label.age-6-9',
+                            '10-12': 'label.age-10-12',
+                            '13-': 'label.13-and-over',
                         } %}
 
                         <ul>
                             {% for need in needs %}
                                 <li>
                                     {% if need.helpType == 'groceries' %}
-                                        pour faire les courses et les déposer à votre domicile ou au domicile d'un proche
+                                        {% trans %}request.shop{% endtrans %}
                                     {% elseif need.helpType == 'babysit' %}
-                                        pour garder votre enfant de {{ ageRanges[need.childAgeRange] }}
+                                        {% trans with {'age': ageRanges[need.childAgeRange]|trans } %}request.babysit{% endtrans %}
                                     {% endif %}
                                 </li>
                             {% endfor %}
@@ -74,24 +67,24 @@
                     <div class="process-block bg-white p-3 p-lg-4 mb-4">
                         <div class="text-muted text-uppercase">
                             <div class="mb-3">
-                                Partagez l'initiative sur les réseaux sociaux
+                                {% trans %}social.share-initiative{% endtrans %}
                             </div>
 
                             <div class="process-share text-center">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}"
-                                   title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/facebook.html.twig') }}
                                 </a>
                                 <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}"
-                                   title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/twitter.html.twig') }}
                                 </a>
                                 <a href="https://telegram.me/share/url?url={{ url('homepage') }}"
-                                   title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-telegram{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/telegram.html.twig') }}
                                 </a>
                                 <a href="https://wa.me/?text={{ url('homepage') }}"
-                                   title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-whatsapp{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/whatsapp.html.twig') }}
                                 </a>
                             </div>
@@ -101,14 +94,12 @@
                     <div class="text-center mt-5">
                         <a href="{{ path('process_requester_delete_confirm', {'ownerUuid': needs[0].ownerUuid}) }}"
                            class="btn btn-primary btn-lg">
-                            Supprimer ma demande
+                            {% trans %}request.remove{% endtrans %}
                         </a>
 
                         <div class="mt-3">
                             <strong class="text-muted">
-                                Pour mettre à jour votre demande, supprimez-la puis recréez-en une à nouveau.
-                                <br />
-                                Vous ne pouvez avoir qu'une seule demande à la fois.
+                                {% trans %}request.delete-to-update{% endtrans %}
                             </strong>
                         </div>
                     </div>
