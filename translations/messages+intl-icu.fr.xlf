@@ -219,6 +219,38 @@
                 <target>Votre proposition a bien été supprimée.</target>
             </trans-unit>
 
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
+            <trans-unit id="request." resname="request.">
+                <source>Votre</source>
+                <target>Votre</target>
+            </trans-unit>
 
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
                 <source>Votre prénom (requis)</source>
