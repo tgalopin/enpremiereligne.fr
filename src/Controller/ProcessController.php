@@ -82,7 +82,7 @@ class ProcessController extends AbstractController
     /**
      * @Route({
      *     "fr": "/je-peux-aider/{uuid}/supprimer",
-     *     "en": "/i-can-help/{uuid}/remove"
+     *     "en": "/i-can-help/{uuid}/delete"
      * }, name="process_helper_delete_confirm")
      */
     public function helperDeleteConfirm(Helper $helper)
@@ -93,7 +93,7 @@ class ProcessController extends AbstractController
     /**
      * @Route({
      *     "fr": "/je-peux-aider/{uuid}/supprimer/do",
-     *     "en": "/i-can-help/{uuid}/remove/do"
+     *     "en": "/i-can-help/{uuid}/delete/do"
      * }, name="process_helper_delete_do")
      */
     public function helperDeleteDo(EntityManagerInterface $manager, Helper $helper, Request $request)

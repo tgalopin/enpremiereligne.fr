@@ -47,6 +47,10 @@
                 <source>Je partage l'initiative</source>
                 <target>Je partage l'initiative</target>
             </trans-unit>
+            <trans-unit id="social.share-initiative" resname="social.share-initiative">
+                <source>Partagez l'initiative sur les réseaux sociaux</source>
+                <target>JPartagez l'initiative sur les réseaux sociaux</target>
+            </trans-unit>
             <trans-unit id="social.share-facebook" resname="social.share-facebook">
                 <source>Partager sur Facebook</source>
                 <target>Partager sur Facebook</target>
@@ -158,6 +162,55 @@
                 <source><![CDATA[Ne soyez volontaire que si vous êtes jeune (moins de 60 ans) et en bonne santé : il ne sert à rien que vous preniez des risques inutiles, quelqu'un d'autre pourra aider à votre place. Vous pouvez vérifier si vous faites partie des publics à risque <a href="https://solidarites-sante.gouv.fr/actualites/actualites-du-ministere/article/coronavirus-qui-sont-les-personnes-fragiles">sur le site du ministère de la Santé</a>.]]></source>
                 <target><![CDATA[Ne soyez volontaire que si vous êtes jeune (moins de 60 ans) et en bonne santé : il ne sert à rien que vous preniez des risques inutiles, quelqu'un d'autre pourra aider à votre place. Vous pouvez vérifier si vous faites partie des publics à risque <a href="https://solidarites-sante.gouv.fr/actualites/actualites-du-ministere/article/coronavirus-qui-sont-les-personnes-fragiles">sur le site du ministère de la Santé</a>.]]></target>
             </trans-unit>
+            <trans-unit id="offer.my-offer" resname="offer.my-offer">
+                <source>Ma proposition d'aide</source>
+                <target>Ma proposition d'aide</target>
+            </trans-unit>
+            <trans-unit id="offer.registered" resname="offer.registered">
+                <source>Votre proposition a bien été enregistrée. Merci !</source>
+                <target>Votre proposition a bien été enregistrée. Merci !</target>
+            </trans-unit>
+            <trans-unit id="offer.keep-link" resname="offer.keep-link">
+                <source>Gardez le lien de cette page : il vous permettra de supprimer votre proposition si nécessaire.</source>
+                <target>Gardez le lien de cette page : il vous permettra de supprimer votre proposition si nécessaire.</target>
+            </trans-unit>
+            <trans-unit id="offer.delete-any-time" resname="offer.delete-any-time">
+                <source><![CDATA[Vous pouvez supprimer votre proposition à tout moment si besoin.<br />Si vous souhaitez modifier votre proposition, supprimez-la puis recréez-en une à nouveau.]]></source>
+                <target><![CDATA[Vous pouvez supprimer votre proposition à tout moment si besoin.<br />Si vous souhaitez modifier votre proposition, supprimez-la puis recréez-en une à nouveau.]]></target>
+            </trans-unit>
+            <trans-unit id="offer.registration-date" resname="offer.registration-date">
+                <source>Vous avez enregistré votre proposition d'aide le {when}. Nous vous recontacterons dès que quelqu'un aura besoin d'aide à proximité de vous.</source>
+                <target>Vous avez enregistré votre proposition d'aide le {when}. Nous vous recontacterons dès que quelqu'un aura besoin d'aide à proximité de vous.</target>
+            </trans-unit>
+            <trans-unit id="offer.told-us" resname="offer.told-us">
+                <source>Vous nous avez indiqué :</source>
+                <target>Vous nous avez indiqué :</target>
+            </trans-unit>
+            <trans-unit id="offer.able-to-shop" resname="offer.able-to-shop">
+                <source>pouvoir faire des courses pour quelqu'un et les livrer proche de chez vous.</source>
+                <target>pouvoir faire des courses pour quelqu'un et les livrer proche de chez vous.</target>
+            </trans-unit>
+            <trans-unit id="offer.not-able-to-shop" resname="offer.not-able-to-shop">
+                <source>ne pas être en capacité de faire des courses.</source>
+                <target>ne pas être en capacité de faire des courses.</target>
+            </trans-unit>
+            <trans-unit id="offer.able-to-babysit" resname="offer.able-to-babysit">
+                <source>pouvoir garder un enfant proche de chez vous, avec un maximum de {max} enfant(s) en garde à la fois.</source>
+                <target>pouvoir garder un enfant proche de chez vous, avec un maximum de {max} enfant(s) en garde à la fois.</target>
+            </trans-unit>
+            <trans-unit id="offer.not-able-to-babysit" resname="offer.not-able-to-babysit">
+                <source>ne pas être en capacité de garder un enfant.</source>
+                <target>ne pas être en capacité de garder un enfant.</target>
+            </trans-unit>
+            <trans-unit id="offer.remove" resname="offer.remove">
+                <source>Supprimer ma proposition</source>
+                <target>Supprimer ma proposition</target>
+            </trans-unit>
+            <trans-unit id="offer.delete-top-update" resname="offer.delete-top-update">
+                <source><![CDATA[Pour mettre à jour votre proposition, supprimez-la puis enregistrez une nouvelle proposition.<br />Vous ne pouvez avoir qu'une seule proposition à la fois.]]></source>
+                <target><![CDATA[Pour mettre à jour votre proposition, supprimez-la puis enregistrez une nouvelle proposition.<br />Vous ne pouvez avoir qu'une seule proposition à la fois.]]></target>
+            </trans-unit>
+
 
 
             <trans-unit id="label.name-first-required" resname="label.name-first-required">

@@ -47,6 +47,10 @@
                 <source>Je partage l'initiative</source>
                 <target>Share on social media</target>
             </trans-unit>
+            <trans-unit id="social.share-initiative" resname="social.share-initiative">
+                <source>Partagez l'initiative sur les réseaux sociaux</source>
+                <target>JPartagez l'initiative sur les réseaux sociaux</target>
+            </trans-unit>
             <trans-unit id="social.share-facebook" resname="social.share-facebook">
                 <source>Partager sur Facebook</source>
                 <target>Share on Facebook</target>

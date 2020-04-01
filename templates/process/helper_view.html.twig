@@ -8,13 +8,13 @@
     <div class="process-box">
         <div class="bg-light p-3 p-lg-4">
             <h3 class="text-center font-weight-bold mb-4">
-                Ma proposition d'aide
+                {% trans %}offer.my-offer{% endtrans %}
             </h3>
 
             <div class="process-details">
                 {% if success %}
                     <div class="alert alert-success text-center mb-4">
-                        Votre proposition a bien été enregistrée. Merci !
+                        {% trans %}offer.registered{% endtrans %}
                     </div>
                 {% endif %}
 
@@ -22,42 +22,34 @@
                     <div class="mb-3 text-center">
                         <p>
                             <strong>
-                                Gardez le lien de cette page : il vous permettra de supprimer votre
-                                proposition si nécessaire.
+                                {% trans %}offer.keep-link{% endtrans %}
                             </strong>
                         </p>
-
-                        Vous pouvez supprimer votre proposition à tout moment si besoin.
-                        <br />
-                        Si vous souhaitez modifier votre proposition, supprimez-la puis recréez-en une à nouveau.
+                        {% trans %}offer.delete-any-time{% endtrans %}
                     </div>
 
                     <div class="process-block bg-white p-3 p-lg-4 mb-4">
-                        Vous avez enregistré votre proposition d'aide
-                        le {{ helper.createdAt|localizeddate('medium', 'short') }}.
-                        Nous vous recontacterons dès que quelqu'un aura besoin d'aide à proximité de vous.
+                        {% trans with {'when': helper.createdAt|localizeddate('medium', 'short') } %}offer.registration-date{% endtrans %}
                     </div>
 
                     <div class="process-block bg-white p-3 p-lg-4 mb-4">
                         <p>
-                            Vous nous avez indiqué :
+                            {% trans %}offer.told-us{% endtrans %}
                         </p>
 
                         <ul>
                             <li>
                                 {% if helper.canBuyGroceries or helper.acceptVulnerable %}
-                                    pouvoir faire des courses pour quelqu'un et les livrer
-                                    proche de chez vous.
+                                    {% trans %}offer.able-to-shop{% endtrans %}
                                 {% else %}
-                                    ne pas être en capacité de faire des courses.
+                                    {% trans %}offer.not-able-to-shop{% endtrans %}
                                 {% endif %}
                             </li>
                             <li>
                                 {% if helper.canBabysit %}
-                                    pouvoir garder un enfant proche de chez vous, avec un maximum
-                                    de {{ helper.babysitMaxChildren }} enfant(s) en garde à la fois.
+                                    {% trans with {'max': helper.babysitMaxChildren } %}offer.able-to-babysit{% endtrans %}
                                 {% else %}
-                                    ne pas être en capacité de garder un enfant.
+                                    {% trans %}offer.not-able-to-babysit{% endtrans %}
                                 {% endif %}
                             </li>
                         </ul>
@@ -66,24 +58,24 @@
                     <div class="process-block bg-white p-3 p-lg-4 mb-4">
                         <div class="text-muted text-uppercase">
                             <div class="mb-3">
-                                Partagez l'initiative sur les réseaux sociaux
+                                {% trans %}social.share-initiative{% endtrans %}
                             </div>
 
                             <div class="process-share text-center">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}"
-                                   title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/facebook.html.twig') }}
                                 </a>
                                 <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}"
-                                   title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/twitter.html.twig') }}
                                 </a>
                                 <a href="https://telegram.me/share/url?url={{ url('homepage') }}"
-                                   title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-telegram{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/telegram.html.twig') }}
                                 </a>
                                 <a href="https://wa.me/?text={{ url('homepage') }}"
-                                   title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                                   title="{% trans %}social.share-whatsapp{% endtrans %}" target="_blank" rel="noreferrer noopener">
                                     {{ include('_icons/whatsapp.html.twig') }}
                                 </a>
                             </div>
@@ -93,7 +85,7 @@
                     <div class="text-center mt-5">
                         <a href="{{ path('process_helper_delete_confirm', {'uuid': helper.uuid}) }}"
                            class="btn btn-primary btn-lg">
-                            Supprimer ma proposition
+                            {% trans %}offer.remove{% endtrans %}
                         </a>
 
                         <div class="mt-3">

@@ -15,6 +15,10 @@
                 <source>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).</source>
                 <target>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).</target>
             </trans-unit>
+            <trans-unit id="email.required" resname="email.required">
+                <source>Votre adresse e-mail est requise.</source>
+                <target>Votre adresse e-mail est requise.</target>
+            </trans-unit>
 
 
             <trans-unit id="postcode.required" resname="postcode.required">
@@ -24,6 +28,10 @@
             <trans-unit id="postcode.wrong-length" resname="postcode.wrong-length">
                 <source>Le code postal doit contenir précisément 5 chiffres.</source>
                 <target>Le code postal doit contenir précisément 5 chiffres.</target>
+            </trans-unit>
+            <trans-unit id="babysit.too-many" resname="babysit.too-many">
+                <source>Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.</source>
+                <target>Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.</target>
             </trans-unit>
 
 
