@@ -1,6 +1,10 @@
 .php_cs.cache
 docker-compose.override.yaml
 
+# IntelliJ project files:
+/.idea/
+/*.iml
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
