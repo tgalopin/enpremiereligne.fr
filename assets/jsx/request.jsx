@@ -185,16 +185,18 @@ const NeedsChooser = () => {
                         {children.map((child, key) => {
                             return (
                                 <div className="mb-2" key={key+'-'+child.age}>
-                                    <small className="text-muted text-uppercase">
+                                    <label className="text-muted text-uppercase small mb-0"
+                                           htmlFor={'child-'+key + 1}>
                                         Enfant à garder n°{key + 1}
-                                    </small>
+                                    </label>
 
                                     <div className="row no-gutters">
                                         <div className="col-10">
                                             <select className="form-control"
                                                     required={needBabysit && parseInt(key) === 0}
                                                     value={child.age}
-                                                    onChange={e => updateAge(key, e.target.value)}>
+                                                    onChange={e => updateAge(key, e.target.value)}
+                                                    id={'child-'+key + 1}>
                                                 <option value={null} />
                                                 <option value="0-1">Entre 0 et 1 an</option>
                                                 <option value="1-2">Entre 1 et 2 ans</option>
