@@ -10,6 +10,10 @@
                 <source>Soyons présents pour ceux en première ligne</source>
                 <target>Soyons présents pour ceux en première ligne</target>
             </trans-unit>
+            <trans-unit id="site.url" resname="site.url">
+                <source>https://enpremiereligne.fr</source>
+                <target>https://enpremiereligne.fr</target>
+            </trans-unit>
             <trans-unit id="footer.why" resname="footer.why">
                 <source>Pourquoi enpremiereligne.fr ?</source>
                 <target>Pourquoi enpremiereligne.fr ?</target>
@@ -666,11 +670,18 @@
                 <source>Bonjour {name}</source>
                 <target>Bonjour {name}</target>
             </trans-unit>
+            <trans-unit id="email.greeting-match" resname="email.greeting-match">
+                <source>Bonjour {requester}, bonjour {helper},</source>
+                <target>Bonjour {requester}, bonjour {helper},</target>
+            </trans-unit>
+            <trans-unit id="email.greeting-vulnerable" resname="email.greeting-vulnerable">
+                <source>Bonjour {requester}, bonjour {cc}, bonjour {helper},</source>
+                <target>Bonjour {requester}, bonjour {cc}, bonjour {helper},</target>
+            </trans-unit>
             <trans-unit id="email.signoff" resname="email.signoff">
                 <source>L'équipe d'En Première Ligne</source>
                 <target>L'équipe d'En Première Ligne</target>
             </trans-unit>
-
             <trans-unit id="email.offer-thanks-subject" resname="email.offer-thanks-subject">
                 <source>Merci de vous être porté(e) volontaire sur En Première Ligne !</source>
                 <target>Merci de vous être porté(e) volontaire sur En Première Ligne !</target>
@@ -695,6 +706,181 @@
                 <source>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.</source>
                 <target>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'épidémie.</target>
             </trans-unit>
+            <trans-unit id="email.good-news" resname="email.good-news">
+                <source>Bonne nouvelle : nous avons remarqué que vous pouviez peut-être vous entraider !</source>
+                <target>Bonne nouvelle : nous avons remarqué que vous pouviez peut-être vous entraider !</target>
+            </trans-unit>
+            <trans-unit id="email.postcode-match" resname="email.postcode-match">
+                <source>Vous résidez tous les deux dans la même zone géographique (proche du code postal { zipcode }).</source>
+                <target>Vous résidez tous les deux dans la même zone géographique (proche du code postal { zipcode }).</target>
+            </trans-unit>
+            <trans-unit id="email.postcode-match-vulnerable" resname="email.postcode-match-vulnerable">
+                <source>{ requester } et { helper } résident tous les deux dans la même zone géographique (proche du code postal : { zipcode }).</source>
+                <target>{ requester } et { helper } résident tous les deux dans la même zone géographique (proche du code postal : { zipcode }).</target>
+            </trans-unit>
+            <trans-unit id="email.baysit" resname="email.baysit">
+                <source>{count, plural, one {{requester} nous a indiqué avoir besoin de garder {count} enfant de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.} other {{requester} nous a indiqué avoir besoin de garder enfants de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.}}</source>
+                <target>{count, plural, one {{requester} nous a indiqué avoir besoin de garder {count} enfant de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.} other {{requester} nous a indiqué avoir besoin de garder enfants de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.}}</target>
+            </trans-unit>
+            <trans-unit id="email.groceries" resname="email.groceries">
+                <source>{ requester } nous a indiqué avoir besoin de quelqu'un pour faire ses courses, et { helper } nous a indiqué être en capacité de le faire.</source>
+                <target>{ requester } nous a indiqué avoir besoin de quelqu'un pour faire ses courses, et { helper } nous a indiqué être en capacité de le faire.</target>
+            </trans-unit>
+            <trans-unit id="email.groceries-vulnerable" resname="email.groceries-vulnerable">
+                <source>{ requester } nous a indiqué (avec l'aide de { cc }, l'un de ses proches) avoir besoin de quelqu'un pour faire ses courses, et { helper } nous a indiqué être en capacité de le faire.</source>
+                <target>{ requester } nous a indiqué (avec l'aide de { cc }, l'un de ses proches) avoir besoin de quelqu'un pour faire ses courses, et { helper } nous a indiqué être en capacité de le faire.</target>
+            </trans-unit>
+            <trans-unit id="email.helper-age" resname="helper-age">
+                <source>{helper} a {age} ans</source>
+                <target>{helper} a {age} ans</target>
+            </trans-unit>
+            <trans-unit id="email.also-parent" resname="email.also-parent">
+                <source>et est aussi parent</source>
+                <target>et est aussi parent</target>
+            </trans-unit>
+            <trans-unit id="email.up-to-you" resname="email.up-to-you">
+                <source>A partir de maintenant, c'est à vous de jouer !</source>
+                <target>A partir de maintenant, c'est à vous de jouer !</target>
+            </trans-unit>
+            <trans-unit id="email.at-risk" resname="email..at-risk">
+                <source><![CDATA[<strong>Attention : { requester } fait partie des populations à risques</strong>, il est donc essentiel d'être extrêmement vigilants lors de vos échanges. Assurez-vous bien de prendre <strong>toutes les précautions sanitaires possibles</strong>.]]></source>
+                <target><![CDATA[<strong>Attention : { requester } fait partie des populations à risques</strong>, il est donc essentiel d'être extrêmement vigilants lors de vos échanges. Assurez-vous bien de prendre <strong>toutes les précautions sanitaires possibles</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="email.both-copied" resname="email.both-copied">
+                <source>Vous êtes tous deux en copie de cet e-mail : prenez contact entre vous pour vous organiser et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à échanger par téléphone ou par Skype une première fois pour apprendre à vous faire confiance, et pour régler les détails logistiques si tout se passe bien. Comme indiqué dans l'article 4 de nos conditions d'utilisations, les personnes mises en relation sont seules responsables des discussions et entraides réalisées et de leurs conséquences.</source>
+                <target>Vous êtes tous deux en copie de cet e-mail : prenez contact entre vous pour vous organiser et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à échanger par téléphone ou par Skype une première fois pour apprendre à vous faire confiance, et pour régler les détails logistiques si tout se passe bien. Comme indiqué dans l'article 4 de nos conditions d'utilisations, les personnes mises en relation sont seules responsables des discussions et entraides réalisées et de leurs conséquences.</target>
+            </trans-unit>
+            <trans-unit id="email.three-copied" resname="email.three-copied">
+                <source>Vous êtes tous trois en copie de cet e-mail : prenez contact entre vous pour vous organiser et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à échanger par téléphone ou par Skype une première fois pour apprendre à vous faire confiance, et pour régler les détails logistiques si tout se passe bien. Comme indiqué dans l'article 4 de nos conditions d'utilisations, les personnes mises en relation sont seules responsables des discussions et entraides réalisées et de leurs conséquences.</source>
+                <target>Vous êtes tous trois en copie de cet e-mail : prenez contact entre vous pour vous organiser et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à échanger par téléphone ou par Skype une première fois pour apprendre à vous faire confiance, et pour régler les détails logistiques si tout se passe bien. Comme indiqué dans l'article 4 de nos conditions d'utilisations, les personnes mises en relation sont seules responsables des discussions et entraides réalisées et de leurs conséquences.</target>
+            </trans-unit>
+            <trans-unit id="email.show-id" resname="email.show-id">
+                <source>Nous vous conseillons aussi de vous montrer vos cartes d’identité par visioconférence avant de vous rencontrer, ou de vous les montrer sans contact lors de votre première rencontre pour vous assurer mutuellement de vos identités.</source>
+                <target>Nous vous conseillons aussi de vous montrer vos cartes d’identité par visioconférence avant de vous rencontrer, ou de vous les montrer sans contact lors de votre première rencontre pour vous assurer mutuellement de vos identités.</target>
+            </trans-unit>
+            <trans-unit id="email.travel-certificate" resname="email.travel-certificate">
+                <source>Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour vous déplacer. La garde d'enfant correspond à l'exception 4. Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :</source>
+                <target>Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour vous déplacer. La garde d'enfant correspond à l'exception 4. Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :</target>
+            </trans-unit>
+            <trans-unit id="email.travel-certificate-link" resname="email.travel-certificate-link">
+                <source><![CDATA[<a href="https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf">https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf</a>]]></source>
+                <target><![CDATA[<a href="https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf">https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf</a>]]></target>
+            </trans-unit>
+            <trans-unit id="email.other-things" resname="email.other-things">
+                <source>Pour la suite des choses avec nous :</source>
+                <target>Pour la suite des choses avec nous :</target>
+            </trans-unit>
+            <trans-unit id="email.please-reply" resname="email.please-reply">
+                <source>Si la mise en relation vous convient, faites-le nous savoir en répondant à cet e-mail afin que nous supprimions les données de notre côté. De plus, si cette mise en relation vous convient, vous ne pourrez aider que ces personnes afin de limiter les risques sanitaires.</source>
+                <target>Si la mise en relation vous convient, faites-le nous savoir en répondant à cet e-mail afin que nous supprimions les données de notre côté. De plus, si cette mise en relation vous convient, vous ne pourrez aider que ces personnes afin de limiter les risques sanitaires.</target>
+            </trans-unit>
+            <trans-unit id="email.no-match" resname="email.no-match">
+                <source>Si à l'inverse cette mise en relation ne vous convient pas, aucun problème ! Dans ce cas, dites-le nous là aussi en répondant à cet e-mail afin de que nous réactivions votre demande et votre proposition.</source>
+                <target>Si à l'inverse cette mise en relation ne vous convient pas, aucun problème ! Dans ce cas, dites-le nous là aussi en répondant à cet e-mail afin de que nous réactivions votre demande et votre proposition.</target>
+            </trans-unit>
+            <trans-unit id="email.healthy-carriers" resname="email.healthy-carriers">
+                <source><![CDATA[Nous vous invitons de plus à garder en tête que de nombreuses personnes sont porteur-sains du virus : si vous acceptez d'aider quelqu'un et d'être aidé, soyez d'autant plus vigilants à vos actions quotidiennes, et suivez bien les recommandations sanitaires et gouvernementales (<a href="https://www.gouvernement.fr/info-coronavirus">https://www.gouvernement.fr/info-coronavirus</a>).]]></source>
+                <target><![CDATA[Nous vous invitons de plus à garder en tête que de nombreuses personnes sont porteur-sains du virus : si vous acceptez d'aider quelqu'un et d'être aidé, soyez d'autant plus vigilants à vos actions quotidiennes, et suivez bien les recommandations sanitaires et gouvernementales (<a href="https://www.gouvernement.fr/info-coronavirus">https://www.gouvernement.fr/info-coronavirus</a>).]]></target>
+            </trans-unit>
+            <trans-unit id="email.reminders" resname="email.reminders">
+                <source>Rappel des gestes barrières :</source>
+                <target>Rappel des gestes barrières :</target>
+            </trans-unit>
+            <trans-unit id="email.wash-hands" resname="email.wash-hands">
+                <source>Se laver les mains très régulièrement ;</source>
+                <target>Se laver les mains très régulièrement ;</target>
+            </trans-unit>
+            <trans-unit id="email.cough-elbow" resname="email.cough-elbow">
+                <source>Tousser ou éternuer dans son coude ou dans un mouchoir ;</source>
+                <target>Tousser ou éternuer dans son coude ou dans un mouchoir ;</target>
+            </trans-unit>
+            <trans-unit id="email.no-shaking-hands" resname="email.no-shaking-hands">
+                <source>Saluer sans se serrer la main, éviter les embrassades;</source>
+                <target>Saluer sans se serrer la main, éviter les embrassades;</target>
+            </trans-unit>
+            <trans-unit id="email.use-tissues" resname="email.use-tissues">
+                <source>Utiliser des mouchoirs à usage unique et les jeter ;</source>
+                <target>Utiliser des mouchoirs à usage unique et les jeter ;</target>
+            </trans-unit>
+            <trans-unit id="email.avoid-gatherings" resname="email.avoid-gatherings">
+                <source>Eviter les rassemblements, limiter les déplacements et les contacts.</source>
+                <target>Eviter les rassemblements, limiter les déplacements et les contacts.</target>
+            </trans-unit>
+            <trans-unit id="email.share-link" resname="email.share-link">
+                <source>Nous vous rappelons qu'En Première Ligne est un réseau d'entraide gratuit. C'est en nous soutenant que nous vaincrons le virus ! N'hésitez pas à partager à vos proches le lien du site :</source>
+                <target>Nous vous rappelons qu'En Première Ligne est un réseau d'entraide gratuit. C'est en nous soutenant que nous vaincrons le virus ! N'hésitez pas à partager à vos proches le lien du site :</target>
+            </trans-unit>
+            <trans-unit id="email.good-luck" resname="email.good-luck">
+                <source>Bon courage pour les prochaines semaines et encore merci pour votre engagement dans la lutte contre le COVID-19.</source>
+                <target>Bon courage pour les prochaines semaines et encore merci pour votre engagement dans la lutte contre le COVID-19.</target>
+            </trans-unit>
+            <trans-unit id="email.site-helped" resname="email.site-helped">
+                <source><![CDATA[PS : si notre plateforme vous a aidé(e), n'hésitez pas à nous le dire à <a href="mailto:team@enpremiereligne.fr">team@enpremiereligne.fr</a>. Nous sommes à votre disposition !]]></source>
+                <target><![CDATA[PS : si notre plateforme vous a aidé(e), n'hésitez pas à nous le dire à <a href="mailto:team@enpremiereligne.fr">team@enpremiereligne.fr</a>. Nous sommes à votre disposition !]]></target>
+            </trans-unit>
+
+            <trans-unit id="email.avoid-contact" resname="email.avoid-contact">
+                <source><![CDATA[Dans le cas d'entraide pour les courses, <strong>la règle générale est le sans contact</strong> :]]></source>
+                <target><![CDATA[Dans le cas d'entraide pour les courses, <strong>la règle générale est le sans contact</strong> :]]></target>
+            </trans-unit>
+            <trans-unit id="email.for-volunteers" resname="email.for-volunteers">
+                <source>Pour les volontaires :</source>
+                <target>Pour les volontaires :</target>
+            </trans-unit>
+            <trans-unit id="email.use-contactless" resname="email.use-contactless">
+                <source>Pour payer les courses : privilégiez le sans contact ;</source>
+                <target>Pour payer les courses : privilégiez le sans contact ;</target>
+            </trans-unit>
+            <trans-unit id="email.repayment" resname="email.repayment">
+                <source>Pour les remboursements : utiliser des applications comme Lydia / Pumkin / Paylib, qui permettent le remboursement avec comme seuls identifiants les numéros de téléphone ;</source>
+                <target>Pour les remboursements : utiliser des applications comme Lydia / Pumkin / Paylib, qui permettent le remboursement avec comme seuls identifiants les numéros de téléphone ;</target>
+            </trans-unit>
+            <trans-unit id="email.contactless-delivery" resname="email.contactless-delivery">
+                <source>La livraison sans contact se déroule dans les conditions suivantes :</source>
+                <target>La livraison sans contact se déroule dans les conditions suivantes :</target>
+            </trans-unit>
+            <trans-unit id="email.apply-barriers" resname="email.apply-barriers">
+                <source>Les gestes barrières (se laver très régulièrement les mains, tousser ou éternuer dans son coude ou dans un mouchoir, utiliser un mouchoir à usage unique et le jeter, saluer sans se serrer la main et sans embrassades) doivent être appliqués en permanence ;</source>
+                <target>Les gestes barrières (se laver très régulièrement les mains, tousser ou éternuer dans son coude ou dans un mouchoir, utiliser un mouchoir à usage unique et le jeter, saluer sans se serrer la main et sans embrassades) doivent être appliqués en permanence ;</target>
+            </trans-unit>
+            <trans-unit id="email.shop-and-bag" resname="email.shop-and-bag">
+                <source>Le volontaire fait les courses et les place directement dans les sacs ;</source>
+                <target>Le volontaire fait les courses et les place directement dans les sacs ;</target>
+            </trans-unit>
+            <trans-unit id="email.deliver-and-advise" resname="email.deliver-and-advise">
+                <source>Lors de la livraison des courses, le volontaire dépose les sacs devant la porte et prévient la personne aidée de son arrivée (en frappant ou en sonnant avec son coude, ou en appelant avant) ;</source>
+                <target>Lors de la livraison des courses, le volontaire dépose les sacs devant la porte et prévient la personne aidée de son arrivée (en frappant ou en sonnant avec son coude, ou en appelant avant) ;</target>
+            </trans-unit>
+            <trans-unit id="email.move-away" resname="email.move-away">
+                <source>Le volontaire part immédiatement ou s'écarte d'une distance de minimum 2 mètres de la porte, avant ouverture de la porte. L'objectif est de ne pas se croiser.</source>
+                <target>Le volontaire part immédiatement ou s'écarte d'une distance de minimum 2 mètres de la porte, avant ouverture de la porte. L'objectif est de ne pas se croiser.</target>
+            </trans-unit>
+            <trans-unit id="email.online-details" resname="email.online-details">
+                <source><![CDATA[Vous pouvez lire tous les détails sur <a href="https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas">https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas</a>.]]></source>
+                <target><![CDATA[Vous pouvez lire tous les détails sur <a href="https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas">https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="email.prepare-menu" resname="email.prepare-menu">
+                <source><![CDATA[Préparez des menus pour la semaine (vous pouvez par exemple utiliser <a href="https://www.marmiton.org">Marmiton</a> ou <a href="https://www.la-fabrique-a-menus.fr/front/">La Fabrique des Menus</a>) ;]]></source>
+                <target><![CDATA[Préparez des menus pour la semaine (vous pouvez par exemple utiliser <a href="https://www.marmiton.org">Marmiton</a> ou <a href="https://www.la-fabrique-a-menus.fr/front/">La Fabrique des Menus</a>) ;]]></target>
+            </trans-unit>
+            <trans-unit id="email.make-list" resname="email.make-list">
+                <source>Faites des listes de courses faciles à lire par vos aidants et envoyez leur par voie numérique ;</source>
+                <target>Faites des listes de courses faciles à lire par vos aidants et envoyez leur par voie numérique ;</target>
+            </trans-unit>
+            <trans-unit id="email.price-range" resname="email.price-range">
+                <source>Précisez la gamme de prix que vous voulez (basse, moyenne, haute), cela permettra à votre aidant de maîtriser votre budget au mieux.</source>
+                <target>Précisez la gamme de prix que vous voulez (basse, moyenne, haute), cela permettra à votre aidant de maîtriser votre budget au mieux.</target>
+            </trans-unit>
+            <trans-unit id="email.front-line" resname="email.front-line">
+                <source>Pour ceux qui sont en première ligne :</source>
+                <target>Pour ceux qui sont en première ligne :</target>
+            </trans-unit>
+            <trans-unit id="email.needing-help" resname="email.needing-help">
+                <source>Pour les personnes aidées :</source>
+                <target>Pour les personnes aidées :</target>
+            </trans-unit>
+
+
 
             <trans-unit id="email.request-subject" resname="email.request-subject">
                 <source>Nous avons bien reçu votre demande sur En Première Ligne</source>
