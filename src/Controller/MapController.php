@@ -36,11 +36,6 @@ class MapController extends AbstractController
         $dynamicStyle = '';
         $fillColor = self::DEPARTMENT_FILL_COLOR;
         $ownerByDepartment = $statsAgg->countOwnersByDepartment();
-        // Test code to get half of the departments randomly colored on the map:
-        /*$ownerByDepartment = [];
-        for ($i = 1; $i < 96; $i+=1) {
-            array_push($ownerByDepartment, ['department' => str_pad($i,2,'0',STR_PAD_LEFT), 'nb' => $threshold - rand(0, 1)]);
-        }*/
         foreach ($ownerByDepartment as $department) {
             if ($department['nb'] >= $threshold) {
                 $dynamicStyle .= ".departement${department['department']} { fill: ${fillColor}; }";
