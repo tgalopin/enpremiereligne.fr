@@ -1,186 +1,36 @@
 <p>
-    Bonjour {{ requester.firstName|capitalize }}, bonjour {{ helper.firstName|capitalize }},
+    {% trans with {'requester': requester.firstName|capitalize, 'helper':helper.firstName|capitalize } %}email.greeting-match{% endtrans %}
 </p>
 
 <p>
-    Bonne nouvelle : nous avons remarqué que vous pouviez peut-être vous entraider !
+    {% trans %}email.good-news{% endtrans %}
 </p>
 
 <p>
-    Vous résidez tous les deux dans la même zone géographique
-    (proche du code postal : {{ requester.zipCode }}).
-    {{ requester.firstName|capitalize }} nous a indiqué avoir besoin de quelqu'un pour faire ses courses,
-    et {{ helper.firstName|capitalize }} nous a indiqué être en capacité de le faire.
+    {% trans with {'zipcode': requester.zipCode } %}email.postcode-match{% endtrans %}
+    {% trans with {'requester': requester.firstName|capitalize, 'helper': helper.firstName|capitalize, 'zipcode': requester.zipCode } %} email.groceries{% endtrans %}
 </p>
 
 <p>
-    A partir de maintenant, c'est à vous de jouer !
+    {% trans %}email.up-to-you{% endtrans %}
 </p>
 
 <p>
-    Vous êtes tous deux en copie de cet e-mail : prenez contact entre vous pour vous organiser
-    et vous assurer que cette entraide est effectivement faisable. Nous vous invitons à
-    échanger par téléphone ou par Skype une première fois pour apprendre à vous faire confiance,
-    et pour régler les détails logistiques si tout se passe bien. Comme indiqué dans l'article 4
-    de nos conditions d'utilisations, les personnes mises en relation sont seules responsables
-    des discussions et entraides réalisées et de leurs conséquences.
+    {% trans %}email.both-copied{% endtrans %}
 </p>
 
-<p>
-    Nous vous conseillons aussi de vous montrer vos cartes d’identité par visioconférence avant
-    de vous rencontrer, ou de vous les montrer sans contact lors de votre première rencontre pour
-    vous assurer mutuellement de vos identités.
-</p>
+{% include 'match_guidelines.html.twig' %}
 
 <p>
-    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
-    vous déplacer. L'action de faire des courses alimentaires correspond à l’exception 2.
-    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
-</p>
-
-<p>
-    <a href="https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf">
-        https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf
-    </a>
-</p>
-
-<p>
-    Pour la suite des choses avec nous :
+    {% trans %}email.avoid-contact{% endtrans %}
 </p>
 
 <ul>
+    {% include 'groceries-guidelines-helper.html.twig' %}
     <li>
-        Si la mise en relation vous convient, faites-le nous savoir en répondant à cet e-mail
-        afin que nous supprimions les données de notre côté. De plus, si cette mise en relation
-        vous convient, vous ne pourrez aider que ces personnes afin de limiter les risques
-        sanitaires.
-    </li>
-
-    <li>
-        Si à l'inverse cette mise en relation ne vous convient pas, aucun problème ! Dans ce cas,
-        dites-le nous là aussi en répondant à cet e-mail afin de que nous réactivions votre demande
-        et votre proposition.
+        {% trans %}email.front-line{% endtrans %}
+        {% include 'groceries-guidelines-recipient.html.twig' %}
     </li>
 </ul>
 
-<p>
-    Nous vous invitons de plus à garder en tête que de nombreuses personnes sont porteur-sains
-    du virus : si vous acceptez d'aider quelqu'un et d'être aidé, soyez d'autant plus vigilants
-    à vos actions quotidiennes, et suivez bien les recommandations sanitaires et gouvernementales
-    (<a href="https://www.gouvernement.fr/info-coronavirus">https://www.gouvernement.fr/info-coronavirus</a>).
-</p>
-
-<p>
-    Rappel des gestes barrières :
-</p>
-
-<ul>
-    <li>
-        Se laver les mains très régulièrement ;
-    </li>
-    <li>
-        Tousser ou éternuer dans son coude ou dans un mouchoir ;
-    </li>
-    <li>
-        Saluer sans se serrer la main, éviter les embrassades;
-    </li>
-    <li>
-        Utiliser des mouchoirs à usage unique et les jeter ;
-    </li>
-    <li>
-        Eviter les rassemblements, limiter les déplacements et les contacts.
-    </li>
-</ul>
-
-<p>
-    Dans le cas d'entraide pour les courses, <strong>la règle générale est le sans contact</strong> :
-</p>
-
-<ul>
-    <li>
-        Pour les volontaires :
-
-        <ul>
-            <li>
-                Pour payer les courses : privilégiez le sans contact ;
-            </li>
-            <li>
-                Pour les remboursements : utiliser des applications comme
-                Lydia / Pumkin / Paylib, qui permettent le remboursement
-                avec comme seuls identifiants les numéros de téléphone ;
-            </li>
-            <li>
-                La livraison sans contact se déroule dans les conditions suivantes :
-
-                <ul>
-                    <li>
-                        Les gestes barrières (se laver très régulièrement les mains, tousser ou
-                        éternuer dans son coude ou dans un mouchoir, utiliser un mouchoir à usage
-                        unique et le jeter, saluer sans se serrer la main et sans embrassades)
-                        doivent être appliqués en permanence ;
-                    </li>
-                    <li>
-                        Le volontaire fait les courses et les place directement dans les sacs ;
-                    </li>
-                    <li>
-                        Lors de la livraison des courses, le volontaire dépose les sacs devant
-                        la porte et prévient la personne aidée de son arrivée (en frappant ou en
-                        sonnant avec son coude, ou en appelant avant) ;
-                    </li>
-                    <li>
-                        Le volontaire part immédiatement ou s'écarte d'une distance de minimum
-                        2 mètres de la porte, avant ouverture de la porte. L'objectif est de ne
-                        pas se croiser.
-                    </li>
-                </ul>
-
-                Vous pouvez lire tous les détails sur
-                <a href="https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas">
-                    https://www.economie.gouv.fr/coronavirus-guide-des-precautions-sanitaires-livraison-repas</a>.
-            </li>
-        </ul>
-    </li>
-
-    <li>
-        Pour ceux qui sont en première ligne :
-
-        <ul>
-            <li>
-                Préparez des menus pour la semaine (vous pouvez par exemple utiliser
-                <a href="https://www.marmiton.org">Marmiton</a>
-                ou <a href="https://www.la-fabrique-a-menus.fr/front/">La Fabrique des Menus</a>) ;
-            </li>
-            <li>
-                Faites des listes de courses faciles à lire par vos aidants et envoyez leur
-                par voie numérique ;
-            </li>
-            <li>
-                Précisez la gamme de prix que vous voulez (basse, moyenne, haute),
-                cela permettra à votre aidant de maîtriser votre budget au mieux.
-            </li>
-        </ul>
-    </li>
-</ul>
-
-<p>
-    Nous vous rappelons qu'En Première Ligne est un réseau d'entraide gratuit.
-    C'est en nous soutenant que nous vaincrons le virus ! N'hésitez pas à partager
-    à vos proches le lien du site :
-</p>
-
-<p>
-    https://enpremiereligne.fr
-</p>
-
-<p>
-    Bon courage pour les prochaines semaines et encore merci pour votre engagement dans la lutte contre le COVID-19.
-</p>
-
-<p>
-    L'équipe d'En Première Ligne
-</p>
-
-<p>
-    PS : si notre plateforme vous a aidé(e), n'hésitez pas à nous le dire à
-    <a href="mailto:team@enpremiereligne.fr">team@enpremiereligne.fr</a>. Nous sommes à votre disposition !
-</p>
+{% include 'match-footer.html.twig' %}
