@@ -28,13 +28,13 @@
                             {% for result in results %}
                                 {% if result.babysitNeeds %}
                                     <li>
-                                        Garde d'enfant dans le code postal {{ result.requester.zipCode }}
+                                        {% trans with {'zipcode': result.requester.zipCode} %}admin.babysitting-in{% endtrans %}
                                     </li>
                                 {% endif %}
 
                                 {% if result.groceriesNeed %}
                                     <li>
-                                        Livraison de courses dans le code postal {{ result.requester.zipCode }}
+                                        {% trans with {'zipcode': result.requester.zipCode} %}admin.groceries-in{% endtrans %}
                                     </li>
                                 {% endif %}
                             {% endfor %}

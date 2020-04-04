@@ -301,6 +301,14 @@
                 <target>Si quelqu'un près de chez vous, ou de chez votre proche, peut aider pour faire vos courses à votre place, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques.</target>
             </trans-unit>
 
+            <trans-unit id="label.groceries" resname="label.groceries">
+                <source>courses</source>
+                <target>courses</target>
+            </trans-unit>
+            <trans-unit id="label.babysitting" resname="label.babysitting">
+                <source>garde d'enfant</source>
+                <target>garde d'enfant</target>
+            </trans-unit>
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
                 <source>Votre prénom (requis)</source>
                 <target>Votre prénom (requis)</target>
@@ -505,9 +513,21 @@
                 <source>Oui, supprimer</source>
                 <target>Oui, supprimer</target>
             </trans-unit>
+            <trans-unit id="label.yes-close" resname="label.yes-close">
+                <source>Oui, fermer</source>
+                <target>Oui, fermer</target>
+            </trans-unit>
             <trans-unit id="label.no-return" resname="label.no-return">
                 <source>Non, retour</source>
                 <target>Non, retour</target>
+            </trans-unit>
+            <trans-unit id="label.no-cancel" resname="label.no-cancel">
+                <source>Non, annuler</source>
+                <target>Non, annuler</target>
+            </trans-unit>
+            <trans-unit id="label.yes-cancel" resname="label.yes-cancel">
+                <source>Oui, annuler</source>
+                <target>Oui, annuler</target>
             </trans-unit>
             <trans-unit id="label.field-of-work-required" resname="label.field-of-work-required">
                 <source>Dans quel domaine travaillez-vous ? (requis)</source>
@@ -647,7 +667,10 @@
                 <source>Bloquer le match</source>
                 <target>Bloquer le match</target>
             </trans-unit>
-
+            <trans-unit id="admin.block-match-volunteer" resname="admin.block-match-volunteer">
+                <source>Bloquer le match avec le volontaire {given} {family}</source>
+                <target>Bloquer le match avec le volontaire {given} {family}</target>
+            </trans-unit>
             <trans-unit id="admin.needs-babysitting" resname="admin.needs-babysitting">
                 <source>{name} a besoin qu'on garde {number} enfant(s)</source>
                 <target>{name} a besoin qu'on garde {number} enfant(s)</target>
@@ -664,7 +687,78 @@
                 <source>Ages acceptés :</source>
                 <target>Ages acceptés :</target>
             </trans-unit>
-
+            <trans-unit id="admin.delete-volunteer-profile" resname="admin.delete-volunteer-profile">
+                <source>Et supprimer le profil du volontaire en même temps ?</source>
+                <target>Et supprimer le profil du volontaire en même temps ?</target>
+            </trans-unit>
+            <trans-unit id="admin.delete-request" resname="admin.delete-request">
+                <source>Et supprimer le besoin de la demande d'aide en même temps ?</source>
+                <target>Et supprimer le besoin de la demande d'aide en même temps ?</target>
+            </trans-unit>
+            <trans-unit id="admin.cancel-link" resname="admin.cancel-link">
+                <source>Annuler la mise en relation de { type } de { given } {family} ?</source>
+                <target>Annuler la mise en relation de { type } de { given } {family} ?</target>
+            </trans-unit>
+            <trans-unit id="admin.send-link" resname="admin.send-link">
+                <source>Envoyer l'email de mise en relation et fermer le besoin de { type } de { given } {family} ?</source>
+                <target>Envoyer l'email de mise en relation et fermer le besoin de { type } de { given } {family} ?</target>
+            </trans-unit>
+            <trans-unit id="admin.cancel-match" resname="admin.cancel-match">
+                <source>Annuler le match</source>
+                <target>Annuler le match</target>
+            </trans-unit>
+            <trans-unit id="admin.cancel-and-delete" resname="admin.cancel-and-delete">
+                <source>Annuler et supprimer le besoin</source>
+                <target>Annuler et supprimer le besoin</target>
+            </trans-unit>
+            <trans-unit id="admin.cancel-and-delete-volunteer" resname="admin.cancel-and-delete-volunteer">
+                <source>Annuler et supprimer le volontaire</source>
+                <target>Annuler et supprimer le volontaire</target>
+            </trans-unit>
+            <trans-unit id="admin.number-volunteers" resname="admin.number-volunteers">
+                <source>Nombre total de volontaires</source>
+                <target>Nombre total de volontaires</target>
+            </trans-unit>
+            <trans-unit id="admin.number-matches" resname="admin.number-matches">
+                <source>Nombre de volontaires matchés</source>
+                <target>Nombre de volontaires matchés</target>
+            </trans-unit>
+            <trans-unit id="admin.number-requests" resname="admin.number-requests">
+                <source>Nombre total de demandeurs</source>
+                <target>Nombre total de demandeurs</target>
+            </trans-unit>
+            <trans-unit id="admin.number-requests-matched" resname="admin.number-requests-matched">
+                <source>Nombre de demandeurs matchés</source>
+                <target>Nombre de demandeurs matchés</target>
+            </trans-unit>
+            <trans-unit id="admin.babysitting-in" resname="admin.babysitting-in">
+                <source>Garde d'enfant dans le code postal { zipcode }</source>
+                <target>Garde d'enfant dans le code postal { zipcode }</target>
+            </trans-unit>
+            <trans-unit id="admin.groceries-in" resname="admin.groceries-in">
+                <source>Livraison de courses dans le code postal { zipcode }</source>
+                <target>Livraison de courses dans le code postal { zipcode }</target>
+            </trans-unit>
+            <trans-unit id="admin.by-department" resname="admin.by-department">
+                <source>Par département</source>
+                <target>Par département</target>
+            </trans-unit>
+            <trans-unit id="admin.by-job" resname="admin.by-job">
+                <source>Par emploi</source>
+                <target>Par emploi</target>
+            </trans-unit>
+            <trans-unit id="admin.greeting" resname="admin.greeting">
+                <source>Bonjour</source>
+                <target>Bonjour</target>
+            </trans-unit>
+            <trans-unit id="admin.greeting" resname="admin.greeting">
+                <source>Bonjour</source>
+                <target>Bonjour</target>
+            </trans-unit>
+            <trans-unit id="admin.greeting" resname="admin.greeting">
+                <source>Bonjour</source>
+                <target>Bonjour</target>
+            </trans-unit>
 
             <trans-unit id="email.greeting" resname="email.greeting">
                 <source>Bonjour {name}</source>

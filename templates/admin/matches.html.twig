@@ -8,12 +8,12 @@
         <div class="p-3">
             <div class="row align-items-center">
                 <div class="col-5">
-                    Demande de <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong>
+                    {% trans %}admin.requester{% endtrans %} <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong>
                     ({{ match.requester.jobType }})
 
                     {% if match.requester.ccFirstName %}
                         <br />
-                        aidé par <strong>{{ match.requester.ccFirstName }} {{ match.requester.ccLastName }}</strong>
+                        {% trans %}admin.helped-by{% endtrans %} <strong>{{ match.requester.ccFirstName }} {{ match.requester.ccLastName }}</strong>
                     {% endif %}
 
                     <ul class="m-0">
