@@ -7,8 +7,8 @@
                 <target>En première ligne</target>
             </trans-unit>
             <trans-unit id="site.title" resname="site.title">
-                <source>En première ligne | Soyons présents pour ceux en première ligne</source>
-                <target>En première ligne | Soyons présents pour ceux en première ligne</target>
+                <source>Soyons présents pour ceux en première ligne</source>
+                <target>Soyons présents pour ceux en première ligne</target>
             </trans-unit>
             <trans-unit id="footer.why" resname="footer.why">
                 <source>Pourquoi enpremiereligne.fr ?</source>
@@ -224,8 +224,8 @@
                 <target>Vous faites partie de la première ligne de la lutte contre le virus (soignants, services d’urgence, approvisionnement en énergie, nourriture, médicaments, matériel, ...) ?</target>
             </trans-unit>
             <trans-unit id="request.intro-two" resname="request.intro-two">
-                <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques. </source>
-                <target>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques. </target>
+                <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques.</source>
+                <target>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques.</target>
             </trans-unit>
             <trans-unit id="request.my-request" resname="request.my-request">
                 <source>Ma demande d'aide</source>
@@ -280,9 +280,30 @@
                 <target>Votre demande a bien été supprimée.</target>
             </trans-unit>
 
+            <trans-unit id="request.vulnerable" resname="request.vulnerable">
+                <source>Demander de l'aide pour faire les courses</source>
+                <target>Demander de l'aide pour faire les courses</target>
+            </trans-unit>
+            <trans-unit id="request.vulnerable-intro-one" resname="request.vulnerable-intro-one">
+                <source>Vous ou un de vos proches, de par l'âge, les antécédents médicaux ou les difficultés à se déplacer, a besoin d'aide pour faire les courses et faire face à l'épidémie ?</source>
+                <target>Vous ou un de vos proches, de par l'âge, les antécédents médicaux ou les difficultés à se déplacer, a besoin d'aide pour faire les courses et faire face à l'épidémie ?</target>
+            </trans-unit>
+            <trans-unit id="request.vulnerable-intro-two" resname="request.vulnerable-intro-two">
+                <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide ou pour enregistrer l'un de vos proches.</source>
+                <target>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin d'aide ou pour enregistrer l'un de vos proches.</target>
+            </trans-unit>
+            <trans-unit id="request.vulnerable-intro-three" resname="request.vulnerable-intro-three">
+                <source>Si quelqu'un près de chez vous, ou de chez votre proche, peut aider pour faire vos courses à votre place, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques.</source>
+                <target>Si quelqu'un près de chez vous, ou de chez votre proche, peut aider pour faire vos courses à votre place, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques.</target>
+            </trans-unit>
+
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
                 <source>Votre prénom (requis)</source>
                 <target>Votre prénom (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.your-name-first-required" resname="label.your-name-first-required">
+                <source>Votre prénom à vous (requis)</source>
+                <target>Votre prénom à vous (requis)</target>
             </trans-unit>
             <trans-unit id="label.name-first" resname="label.name-first">
                 <source>Prénom</source>
@@ -291,6 +312,10 @@
             <trans-unit id="label.name-last-required" resname="label.name-last-required">
                 <source>Votre nom (requis)</source>
                 <target>Votre nom (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.your-name-last-required" resname="label.your-name-last-required">
+                <source>Votre nom à vous (requis)</source>
+                <target>Votre nom à vous (requis)</target>
             </trans-unit>
             <trans-unit id="label.name-last" resname="label.name-last">
                 <source>Nom</source>
@@ -319,6 +344,10 @@
             <trans-unit id="label.email-required" resname="label.email-required">
                 <source>Votre adresse e-mail (requis)</source>
                 <target>Votre adresse e-mail (requis)</target>
+            </trans-unit>
+            <trans-unit id="label.your-email-required" resname="label.your-email-required">
+                <source>Votre e-mail à vous (requis)</source>
+                <target>Votre e-mail à vous (requis)</target>
             </trans-unit>
             <trans-unit id="label.email" resname="label.email">
                 <source>Adresse e-mail</source>
@@ -536,6 +565,101 @@
                 <source>Vous pourrez revenir à tout moment sur votre demande.</source>
                 <target>Vous pourrez revenir à tout moment sur votre demande.</target>
             </trans-unit>
+            <trans-unit id="label.relative-entering" resname="label.relative-entering">
+                <source>Je suis un proche entrant les informations pour quelqu'un d'autre que moi</source>
+                <target>Je suis un proche entrant les informations pour quelqu'un d'autre que moi</target>
+            </trans-unit>
+            <trans-unit id="help.relative-entering" resname="help.relative-entering">
+                <source>Assurez-vous bien du consentement de la personne dont vous entrez les informations pour utiliser En Première Ligne.</source>
+                <target>Assurez-vous bien du consentement de la personne dont vous entrez les informations pour utiliser En Première Ligne.</target>
+            </trans-unit>
+            <trans-unit id="label.years" resname="label.years">
+                <source>ans</source>
+                <target>ans</target>
+            </trans-unit>
+            <trans-unit id="label.score" resname="label.score">
+                <source>Score :</source>
+                <target>Score :</target>
+            </trans-unit>
+            <trans-unit id="label.date" resname="label.date">
+                <source>Date :</source>
+                <target>Date :</target>
+            </trans-unit>
+            <trans-unit id="label.ages" resname="label.ages">
+                <source>Ages :</source>
+                <target>Ages :</target>
+            </trans-unit>
+            <trans-unit id="label.has-children" resname="label.has-children">
+                <source>a des enfants</source>
+                <target>a des enfants</target>
+            </trans-unit>
+            <trans-unit id="label.no-children" resname="label.no-children">
+                <source>sans enfants</source>
+                <target>sans enfants</target>
+            </trans-unit>
+
+
+            <trans-unit id="admin.requester" resname="admin.requester">
+                <source>Demande de :</source>
+                <target>Demande de :</target>
+            </trans-unit>
+            <trans-unit id="admin.job-type" resname="admin.job-type">
+                <source>Travail :</source>
+                <target>Travail :</target>
+            </trans-unit>
+            <trans-unit id="admin.helped-by" resname="admin.helped-by">
+                <source>aidé par</source>
+                <target>aidé par</target>
+            </trans-unit>
+            <trans-unit id="admin.needs-shopping" resname="admin.needs-shopping">
+                <source>{name} a besoin qu'on lui achète et livre des courses</source>
+                <target>{name} a besoin qu'on lui achète et livre des courses</target>
+            </trans-unit>
+            <trans-unit id="admin.close-requirement" resname="admin.close-requirement">
+                <source>Fermer le besoin anonymement</source>
+                <target>Fermer le besoin anonymement</target>
+            </trans-unit>
+            <trans-unit id="admin.close-requirement-help" resname="admin.close-requirement-help">
+                <source>Utile si vous avez associé quelqu'un d'autre manuellement</source>
+                <target>Utile si vous avez associé quelqu'un d'autre manuellement</target>
+            </trans-unit>
+            <trans-unit id="admin.count-shopping-match" resname="admin.count-shopping-match">
+                <source>{number} helpers potentiels proches trouvés pour acheter des courses.</source>
+                <target>{number} helpers potentiels proches trouvés pour acheter des courses.</target>
+            </trans-unit>
+            <trans-unit id="admin.can-babysit" resname="admin.can-babysit">
+                <source>peut garder des enfants</source>
+                <target>peut garder des enfants</target>
+            </trans-unit>
+            <trans-unit id="admin.not-babysit" resname="admin.not-babysit">
+                <source>ne souhaite pas garder d'enfants</source>
+                <target>ne souhaite pas garder d'enfants</target>
+            </trans-unit>
+            <trans-unit id="admin.send-and-close" resname="admin.send-and-close">
+                <source>Envoyer la mise en contact et fermer le besoin</source>
+                <target>Envoyer la mise en contact et fermer le besoin</target>
+            </trans-unit>
+            <trans-unit id="admin.block-match" resname="admin.block-match">
+                <source>Bloquer le match</source>
+                <target>Bloquer le match</target>
+            </trans-unit>
+
+            <trans-unit id="admin.needs-babysitting" resname="admin.needs-babysitting">
+                <source>{name} a besoin qu'on garde {number} enfant(s)</source>
+                <target>{name} a besoin qu'on garde {number} enfant(s)</target>
+            </trans-unit>
+            <trans-unit id="admin.count-babysitting-match" resname="admin.count-babysitting-match">
+                <source>{number} helpers potentiels proches trouvés pour garder des enfants.</source>
+                <target>{number} helpers potentiels proches trouvés pour garder des enfants.</target>
+            </trans-unit>
+            <trans-unit id="admin.can-babysit-count" resname="admin.can-babysit-count">
+                <source>Capable de garder {number} enfants</source>
+                <target>Capable de garder {number} enfants</target>
+            </trans-unit>
+            <trans-unit id="admin.accepts-ages" resname="admin.accepts-ages">
+                <source>Ages acceptés :</source>
+                <target>Ages acceptés :</target>
+            </trans-unit>
 
 
             <trans-unit id="email.greeting" resname="email.greeting">
@@ -561,7 +685,7 @@
             </trans-unit>
             <trans-unit id="email.offer-edit" resname="email.offer-edit">
                 <source><![CDATA[<a href="https://enpremiereligne.fr{url}">Gérer ma proposition d'aide</a>]]></source>
-                <target>Votre proposition d'aide a bien été enregistrée. Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :</target>
+                <target><![CDATA[<a href="https://enpremiereligne.fr{url}">Gérer ma proposition d'aide</a>]]></target>
             </trans-unit>
             <trans-unit id="email.offer-notified" resname="email.offer-notified">
                 <source>Vous serez notifié(e) par mail dès qu'un travailleur mobilisé en première ligne ou une personne faisant partie des populations à risque de votre zone se manifestera. Vous pourrez ensuite entrer directement en contact avec cette personne pour vous organiser.</source>
@@ -575,6 +699,47 @@
             <trans-unit id="email.request-subject" resname="email.request-subject">
                 <source>Nous avons bien reçu votre demande sur En Première Ligne</source>
                 <target>Nous avons bien reçu votre demande sur En Première Ligne</target>
+            </trans-unit>
+            <trans-unit id="email.request-thanks" resname="email.request-thanks">
+                <source>Merci pour votre inscription sur le réseau d’entraide En Première Ligne et pour votre engagement quotidien dans la lutte contre le COVID-19.</source>
+                <target>Merci pour votre inscription sur le réseau d’entraide En Première Ligne et pour votre engagement quotidien dans la lutte contre le COVID-19.</target>
+            </trans-unit>
+            <trans-unit id="email.request-saved" resname="email.request-saved">
+                <source>Votre demande d'aide a bien été enregistrée. Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :</source>
+                <target>Votre demande d'aide a bien été enregistrée. Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :</target>
+            </trans-unit>
+            <trans-unit id="email.request-edit" resname="email.request-edit">
+                <source><![CDATA[<a href="https://enpremiereligne.fr{url}">Gérer ma demande d'aide</a>]]></source>
+                <target><![CDATA[<a href="https://enpremiereligne.fr{url}">Gérer ma demande d'aide</a>]]></target>
+            </trans-unit>
+            <trans-unit id="email.request-notified" resname="email.request-notified">
+                <source>Vous serez notifié(e) par mail dès qu'un volontaire de votre zone proposera une aide correspondante à vos critères. Vous pourrez ensuite entrer directement en contact avec le volontaire pour vous organiser.</source>
+                <target>Vous serez notifié(e) par mail dès qu'un volontaire de votre zone proposera une aide correspondante à vos critères. Vous pourrez ensuite entrer directement en contact avec le volontaire pour vous organiser.</target>
+            </trans-unit>
+            <trans-unit id="email.request-commitment" resname="email.request-commitment">
+                <source>Bon courage pour les prochaines semaines, nous comptons sur vous !</source>
+                <target>Bon courage pour les prochaines semaines, nous comptons sur vous !</target>
+            </trans-unit>
+            <trans-unit id="email.request-vulnerable-thanks" resname="email.request-vulnerable-thanks">
+                <source>Merci pour votre inscription sur le réseau d’entraide En Première Ligne.</source>
+                <target>Merci pour votre inscription sur le réseau d’entraide En Première Ligne.</target>
+            </trans-unit>
+
+            <trans-unit id="error.occurred" resname="error.occurred">
+                <source>Une erreur s'est produite</source>
+                <target>Une erreur s'est produite</target>
+            </trans-unit>
+            <trans-unit id="error.not-found" resname="error.not-found">
+                <source>Page introuvable</source>
+                <target>Page introuvable</target>
+            </trans-unit>
+            <trans-unit id="error.page-not-found" resname="error.page-not-found">
+                <source>La page que vous avez demandé n'existe pas.</source>
+                <target>La page que vous avez demandé n'existe pas.</target>
+            </trans-unit>
+            <trans-unit id="error.occurred-alerted" resname="error.occurred-alerted">
+                <source>Une erreur s'est produite. Nous avons été alerté du problème et allons faire notre possible pour le résoudre.</source>
+                <target>Une erreur s'est produite. Nous avons été alerté du problème et allons faire notre possible pour le résoudre.</target>
             </trans-unit>
 
         </body>

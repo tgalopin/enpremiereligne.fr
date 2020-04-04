@@ -1,32 +1,27 @@
 <p>
-    Bonjour {{ request.firstName }},
+    {% trans with {'name': request.firstName} %}email.greeting{% endtrans %}
 </p>
 
 <p>
-    Merci pour votre inscription sur le réseau d’entraide En Première Ligne et
-    pour votre engagement quotidien dans la lutte contre le COVID-19.
+    {% trans %}email.request-thanks{% endtrans %}
 </p>
 
 <p>
-    Votre demande d'aide a bien été enregistrée.
-    Vous pouvez la consulter et la supprimer en cliquant sur le lien suivant :
+    {% trans %}email.request-saved{% endtrans %}
 </p>
 
 <p>
-    <a href="https://enpremiereligne.fr{{ path('process_requester_view', {'ownerUuid': ownerUuid}) }}">
-        Gérer ma demande d'aide
-    </a>
+    {% trans with {'url': path('process_requester_view', {'ownerUuid': ownerUuid}) } %}email.request-edit{% endtrans %}
 </p>
 
 <p>
-    Vous serez notifié(e) par mail dès qu'un volontaire de votre zone proposera une aide correspondante
-    à vos critères. Vous pourrez ensuite entrer directement en contact avec le volontaire pour vous organiser.
+    {% trans %}email.request-notified{% endtrans %}
 </p>
 
 <p>
-    Bon courage pour les prochaines semaines, nous comptons sur vous !
+    {% trans %}email.request-commitment{% endtrans %}
 </p>
 
 <p>
-    L'équipe d'En Première Ligne
+    {% trans %}email.signoff{% endtrans %}
 </p>
