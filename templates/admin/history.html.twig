@@ -8,11 +8,11 @@
         <div class="p-3">
             <div class="row align-items-center">
                 <div class="col-10">
-                    Demande de <strong>{{ owner[0].firstName }} {{ owner[0].lastName }}</strong>
+                    {% trans %}admin.requester{% endtrans %} <strong>{{ owner[0].firstName }} {{ owner[0].lastName }}</strong>
                     ({{ owner[0].zipCode }}, {{ owner[0].jobType }}, {{ owner[0].email }})
                     {% if owner[0].ccFirstName %}
                         <br />
-                        aidé par <strong>{{ owner[0].ccFirstName }} {{ owner[0].ccLastName }}</strong>
+                        {% trans %}admin.helped-by{% endtrans %} <strong>{{ owner[0].ccFirstName }} {{ owner[0].ccLastName }}</strong>
                         ({{ owner[0].ccEmail }})
                     {% endif %}
 
@@ -44,17 +44,17 @@
                                         <div class="col-2">
                                             <a href="{{ path('admin_match_cancel', {'ownerUuid': owner[0].ownerUuid, 'type': need.helpType}) }}"
                                                class="btn btn-secondary">
-                                                Annuler le match
+                                                {% trans %}admin.cancel-match{% endtrans %}
                                             </a>
                                         </div>
                                         <div class="col-2">
                                             <a href="{{ path('admin_match_cancel', {'ownerUuid': owner[0].ownerUuid, 'type': need.helpType, 'remove': 'request'}) }}"
                                                class="btn btn-secondary">
-                                                Annuler et supprimer le besoin
+                                                {% trans %}admin.cancel-and-delete{% endtrans %}
                                             </a>
                                             <a href="{{ path('admin_match_cancel', {'ownerUuid': owner[0].ownerUuid, 'type': need.helpType, 'remove': 'helper'}) }}"
                                                class="btn btn-secondary mt-2">
-                                                Annuler et supprimer le volontaire
+                                                {% trans %}admin.cancel-and-delete-volunteer{% endtrans %}
                                             </a>
                                         </div>
                                     </div>
