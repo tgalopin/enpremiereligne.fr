@@ -66,7 +66,7 @@ class Helper
      *
      * @Assert\NotBlank(message="age.required")
      * @Assert\GreaterThanOrEqual(18)
-     * @Assert\LessThanOrEqual(60)
+     * @Assert\LessThanOrEqual(70)
      */
     public ?int $age = null;
 
