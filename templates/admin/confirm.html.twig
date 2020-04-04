@@ -14,7 +14,7 @@
 
     <div class="p-4">
         <p>
-            {% trans with {'type': type == 'groceries' ? 'label.groceries'|trans : 'label.babysitting'|trans, 'given': requests[0].firstName, 'family': requests[0].lastName} %}
+            {% trans with {'type': type == 'groceries' ? 'label.groceries'|trans : 'label.babysitting'|trans|lower, 'given': requests[0].firstName, 'family': requests[0].lastName} %}
                 admin.send-link
             {% endtrans %}
         </p>

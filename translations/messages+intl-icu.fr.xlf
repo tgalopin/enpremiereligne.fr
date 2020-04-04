@@ -305,10 +305,6 @@
                 <source>courses</source>
                 <target>courses</target>
             </trans-unit>
-            <trans-unit id="label.babysitting" resname="label.babysitting">
-                <source>garde d'enfant</source>
-                <target>garde d'enfant</target>
-            </trans-unit>
             <trans-unit id="label.name-first-required" resname="label.name-first-required">
                 <source>Votre prénom (requis)</source>
                 <target>Votre prénom (requis)</target>
@@ -747,19 +743,6 @@
                 <source>Par emploi</source>
                 <target>Par emploi</target>
             </trans-unit>
-            <trans-unit id="admin.greeting" resname="admin.greeting">
-                <source>Bonjour</source>
-                <target>Bonjour</target>
-            </trans-unit>
-            <trans-unit id="admin.greeting" resname="admin.greeting">
-                <source>Bonjour</source>
-                <target>Bonjour</target>
-            </trans-unit>
-            <trans-unit id="admin.greeting" resname="admin.greeting">
-                <source>Bonjour</source>
-                <target>Bonjour</target>
-            </trans-unit>
-
             <trans-unit id="email.greeting" resname="email.greeting">
                 <source>Bonjour {name}</source>
                 <target>Bonjour {name}</target>
