@@ -107,7 +107,7 @@ class ProcessController extends AbstractController
     /**
      * @Route("/j-ai-besoin-d-aide", name="process_request")
      */
-    public function request(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request)
+    public function request(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator)
     {
         $helpRequest = new CompositeHelpRequest();
 
@@ -127,7 +127,7 @@ class ProcessController extends AbstractController
             $email = (new TemplatedEmail())
                 ->from('team@enpremiereligne.fr')
                 ->to($helpRequest->email)
-                ->subject('Nous avons bien reçu votre demande sur En Première Ligne')
+                ->subject($translator->trans('email.request-subject'))
                 ->htmlTemplate('emails/request.html.twig')
                 ->context(['request' => $helpRequest, 'ownerUuid' => $ownerId])
             ;
@@ -148,7 +148,7 @@ class ProcessController extends AbstractController
     /**
      * @Route("/j-ai-besoin-d-aide-risque", name="process_request_vulnerable")
      */
-    public function requestVulnerable(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request)
+    public function requestVulnerable(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator)
     {
         $helpRequest = new VulnerableHelpRequest();
 
@@ -171,7 +171,7 @@ class ProcessController extends AbstractController
             $email = (new TemplatedEmail())
                 ->from('team@enpremiereligne.fr')
                 ->to(...$to)
-                ->subject('Nous avons bien reçu votre demande sur En Première Ligne')
+                ->subject($translator->trans('email.request-subject'))
                 ->htmlTemplate('emails/request_vulnerable.html.twig')
                 ->context(['request' => $helpRequest, 'ownerUuid' => $ownerId])
             ;

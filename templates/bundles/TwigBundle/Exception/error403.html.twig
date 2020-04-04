@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app.request.locale}}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
-    <title>Une erreur s'est produite</title>
+    <title>{% trans %}error.occurred{% endtrans %}</title>
 
     <style>
         html, body, .wrapper {
@@ -51,16 +51,16 @@
 <div class="wrapper">
     <div class="message">
         <h1>
-            Page introuvable
+            {% trans %}error.not-found{% endtrans %}
         </h1>
 
         <p>
-            La page que vous avez demandé n'existe pas.
+            {% trans %}error.page-not-found{% endtrans %}
         </p>
 
         <p>
             <a href="/" class="btn btn-label-primary">
-                Retour à l'accueil
+                {% trans %}label.home{% endtrans %}
             </a>
         </p>
     </div>
