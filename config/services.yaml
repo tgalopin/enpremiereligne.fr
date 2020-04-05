@@ -4,6 +4,8 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+        bind:
+            $locale: '%env(resolve:LOCALE)%'
 
     App\:
         resource: '../src/*'
