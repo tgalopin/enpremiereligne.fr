@@ -10,7 +10,7 @@
                             {% trans %}site.name{% endtrans %}
                         </h1>
 
-                        <img src="{{ asset('res/logo.svg') }}" class="home-header-logo" alt="En première ligne" />
+                        <img src="{{ asset(folder ~ 'res/logo.svg') }}" class="home-header-logo" alt="{% trans %}site.name{% endtrans %}" />
 
                         <h4 class="font-weight-normal home-header-pitch mt-4">
                             {% trans %}home.byline{% endtrans %}
@@ -192,100 +192,8 @@
                 </div>
             </div>
 
-            {# There seems no value in translating these since they are France specific - maybe an environment variable to indicate the site? #}
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="home-ecosystem-assos mb-5 pb-5">
-                        <div class="home-ecosystem-assos-title">
-                            Nous soutenons
-                        </div>
+            {% include '_include/homepage_footer_' ~ app.request.locale ~ '.html.twig' %}
 
-                        <a href="https://www.restosducoeur.org/devenir-benevole/" target="_blank"
-                           title="Contactez votre antenne locale des Restos du Coeur">
-                            <img src="{{ asset('res/assos/restosducoeur.png') }}" />
-                        </a>
-
-                        <a href="https://dondesang.efs.sante.fr/information-concernant-linfection-covid-19-coronavirus-sars-cov2-actualisation-19032020" target="_blank"
-                           title="Prévoyez d’aller donner votre sang">
-                            <img src="{{ asset('res/assos/efs.png') }}" />
-                        </a>
-
-                        <a href="https://covid19.reserve-civique.gouv.fr/" target="_blank"
-                           title="Participez aux missions d'urgence et de proximité avec la Réserve civique">
-                            <img src="{{ asset('res/assos/rc.png') }}" style="max-width: 140px;" />
-                        </a>
-
-                        <a href="https://solidarite-fde.fr/" target="_blank"
-                           title="Plateforme de mise en relation pour les français bloqués à l'étranger">
-                            <img src="{{ asset('res/assos/solidarite-fde.png') }}" style="max-width: 140px;" />
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="home-ecosystem-assos mb-5 pb-5">
-                        <div class="home-ecosystem-assos-title">
-                            Soutenu par
-                        </div>
-
-                        <a href="https://www.le-frenchimpact.fr/nos-actualites/entraide/entraide-sanitaire" target="_blank"
-                           title="En Première Ligne est labellisée Entraide sanitaire French Impact">
-                            <img src="{{ asset('res/assos/frenchimpact.png') }}" style="max-height: 60px;" />
-                        </a>
-
-                        <a href="https://solidaires-handicaps.fr/action/courses-sans-contact" target="_blank"
-                           title="En Première Ligne est une action de solidarité">
-                            <img src="{{ asset('res/assos/solidarite-handicap.png') }}" style="max-height: 60px;" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="home-ecosystem-medias">
-                <div class="home-ecosystem-assos-title">
-                    Ils parlent de vous !
-                </div>
-
-                <a href="https://www.20minutes.fr/sante/2742831-20200318-coronavirus-logements-courses-gardes-solidarite-envers-soignants-organise" target="_blank">
-                    <img src="{{ asset('res/medias/20minutes.png') }}" />
-                </a>
-
-                <a href="https://twitter.com/brutofficiel/status/1240281822401105920" target="_blank">
-                    <img src="{{ asset('res/medias/brut.png') }}" />
-                </a>
-
-                <a href="https://www.europe1.fr/societe/coronavirus-4-sites-internet-pour-faciliter-la-solidarite-entre-voisins-3955966" target="_blank">
-                    <img src="{{ asset('res/medias/europe1.png') }}" />
-                </a>
-
-                <a href="https://www.lefigaro.fr/flash-actu/courses-garde-d-enfants-face-au-coronavirus-les-initiatives-solidaires-se-multiplient-sur-internet-20200315" target="_blank">
-                    <img src="{{ asset('res/medias/figaro.png') }}" />
-                </a>
-
-                <a href="https://www.francebleu.fr/infos/societe/coronavirus-des-initiatives-pour-aider-les-soignants-1584455310" target="_blank">
-                    <img src="{{ asset('res/medias/francebleu.png') }}" />
-                </a>
-
-                <a href="https://www.lci.fr/population/coronavirus-trois-solutions-pour-aider-le-personnel-de-sante-mobilise-2148129.html" target="_blank">
-                    <img src="{{ asset('res/medias/lci.png') }}" />
-                </a>
-
-                <a href="https://www.lemonde.fr/planete/article/2020/03/19/coronavirus-comment-pouvez-vous-aider-tout-en-etant-confine_6033695_3244.html" target="_blank">
-                    <img src="{{ asset('res/medias/lemonde.png') }}" />
-                </a>
-
-                <a href="https://twitter.com/en1ereligne/status/1243523242079502337" target="_blank">
-                    <img src="{{ asset('res/medias/magdelasante.png') }}" />
-                </a>
-
-                <a href="https://www.ouest-france.fr/leditiondusoir/data/82936/reader/reader.html#!preferred/1/package/82936/pub/117254/page/5" target="_blank">
-                    <img src="{{ asset('res/medias/ouest-france.png') }}" />
-                </a>
-
-                <a href="https://www.rtl.fr/actu/debats-societe/confinement-quand-des-chaines-de-solidarites-se-mettent-en-place-7800306019" target="_blank">
-                    <img src="{{ asset('res/medias/rtl.png') }}" />
-                </a>
-            </div>
         </div>
 
         {{ include('_include/footer.html.twig') }}

@@ -3,25 +3,26 @@
 namespace App\Model;
 
 use App\Entity\HelpRequest;
+use App\Validator\Constraints as EPLAssert;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class VulnerableHelpRequest
 {
     /**
-     * @Assert\NotBlank(message="Le prénom est requis.")
+     * @Assert\NotBlank(message="name-first-at-risk.required")
      * @Assert\Length(max=100)
      */
     public ?string $firstName = '';
 
     /**
-     * @Assert\NotBlank(message="Le nom de famille est requis.")
+     * @Assert\NotBlank(message="name-last-at-risk.required")
      * @Assert\Length(max=100)
      */
     public ?string $lastName = '';
 
     /**
-     * @Assert\NotBlank(message="L'adresse e-mail est requise.")
+     * @Assert\NotBlank(message="email-at-risk.required")
      * @Assert\Email()
      * @Assert\Length(max=200)
      */
@@ -44,9 +45,9 @@ class VulnerableHelpRequest
     public ?string $ccEmail = '';
 
     /**
-     * @Assert\NotBlank(message="Le code postal est requis.")
+     * @Assert\NotBlank(message="postcode-at-risk.required")
      * @Assert\Length(max=5)
-     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="Le code postal doit contenir précisément 5 chiffres.")
+     * @EPLAssert\ZipCode()
      */
     public ?string $zipCode = '';
 

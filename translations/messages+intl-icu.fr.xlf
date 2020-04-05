@@ -14,6 +14,11 @@
                 <source>https://enpremiereligne.fr</source>
                 <target>https://enpremiereligne.fr</target>
             </trans-unit>
+            <trans-unit id="site.description" resname="site.description">
+                <source>Face à l’épidémie de Covid-19, certains d\'entre nous sont en première ligne de la lutte pour sauver des vies et assurer les fonctions vitales de notre pays.</source>
+                <target>Face à l’épidémie de Covid-19, certains d\'entre nous sont en première ligne de la lutte pour sauver des vies et assurer les fonctions vitales de notre pays.</target>
+            </trans-unit>
+
             <trans-unit id="footer.why" resname="footer.why">
                 <source>Pourquoi enpremiereligne.fr ?</source>
                 <target>Pourquoi enpremiereligne.fr ?</target>
@@ -796,8 +801,8 @@
                 <target>{ requester } et { helper } résident tous les deux dans la même zone géographique (proche du code postal : { zipcode }).</target>
             </trans-unit>
             <trans-unit id="email.baysit" resname="email.baysit">
-                <source>{count, plural, one {{requester} nous a indiqué avoir besoin de garder {count} enfant de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.} other {{requester} nous a indiqué avoir besoin de garder enfants de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.}}</source>
-                <target>{count, plural, one {{requester} nous a indiqué avoir besoin de garder {count} enfant de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.} other {{requester} nous a indiqué avoir besoin de garder enfants de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.}}</target>
+                <source>{count, plural, one {{requester} nous a indiqué avoir besoin de garder un enfant de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.} other {{requester} nous a indiqué avoir besoin de garder enfants de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.}}</source>
+                <target>{count, plural, one {{requester} nous a indiqué avoir besoin de garder un enfant de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.} other {{requester} nous a indiqué avoir besoin de garder enfants de {ages}, et {helper} nous a indiqué être en capacité de garder des enfants de cet âge.}}</target>
             </trans-unit>
             <trans-unit id="email.groceries" resname="email.groceries">
                 <source>{ requester } nous a indiqué avoir besoin de quelqu'un pour faire ses courses, et { helper } nous a indiqué être en capacité de le faire.</source>

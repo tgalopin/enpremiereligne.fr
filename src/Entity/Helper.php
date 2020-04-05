@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator\Constraints as EPLAssert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\HelperRepository")
@@ -57,7 +58,7 @@ class Helper
      *
      * @Assert\NotBlank(message="postcode.required")
      * @Assert\Length(max=5)
-     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="postcode.wrong-length")
+     * @EPLAssert\ZipCode()
      */
     public ?string $zipCode = '';
 

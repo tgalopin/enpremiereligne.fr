@@ -25,9 +25,12 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class ProcessController extends AbstractController
 {
     /**
-     * @Route("/je-peux-aider", name="process_helper")
+     * @Route({
+     *     "fr": "/je-peux-aider",
+     *     "en": "/i-can-help"
+     * }, name="process_helper")
      */
-    public function helper(MailerInterface $mailer, EntityManagerInterface $manager, HelperRepository $repository, Request $request, TranslatorInterface $translator)
+    public function helper(MailerInterface $mailer, EntityManagerInterface $manager, HelperRepository $repository, Request $request, TranslatorInterface $translator, string $sender)
     {
         $helper = new Helper();
 
@@ -42,7 +45,7 @@ class ProcessController extends AbstractController
             $manager->flush();
 
             $email = (new TemplatedEmail())
-                ->from('team@enpremiereligne.fr')
+                ->from($sender)
                 ->to($helper->email)
                 ->subject($translator->trans('email.offer-thanks-subject'))
                 ->htmlTemplate('emails/helper.html.twig')
@@ -63,7 +66,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}", name="process_helper_view")
+     * @Route({
+     *     "fr": "/je-peux-aider/{uuid}",
+     *     "en": "/i-can-help/{uuid}"
+     * }, name="process_helper_view")
      */
     public function helperView(Helper $helper, Request $request)
     {
@@ -74,7 +80,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}/supprimer", name="process_helper_delete_confirm")
+     * @Route({
+     *     "fr": "/je-peux-aider/{uuid}/supprimer",
+     *     "en": "/i-can-help/{uuid}/remove"
+     * }, name="process_helper_delete_confirm")
      */
     public function helperDeleteConfirm(Helper $helper)
     {
@@ -82,7 +91,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/{uuid}/supprimer/do", name="process_helper_delete_do")
+     * @Route({
+     *     "fr": "/je-peux-aider/{uuid}/supprimer/do",
+     *     "en": "/i-can-help/{uuid}/remove/process"
+     * }, name="process_helper_delete_do")
      */
     public function helperDeleteDo(EntityManagerInterface $manager, Helper $helper, Request $request)
     {
@@ -97,7 +109,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/je-peux-aider/supprimer/effectue", name="process_helper_delete_done")
+     * @Route({
+     *     "fr": "/je-peux-aider/supprimer/effectue",
+     *     "en": "/i-can-help/remove/done"
+     * }, name="process_helper_delete_done")
      */
     public function helperDeleted()
     {
@@ -105,9 +120,12 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/j-ai-besoin-d-aide", name="process_request")
+     * @Route({
+     *     "fr": "/j-ai-besoin-d-aide",
+     *     "en": "/i-need-help"
+     * }, name="process_request")
      */
-    public function request(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator)
+    public function request(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator, string $sender)
     {
         $helpRequest = new CompositeHelpRequest();
 
@@ -125,7 +143,7 @@ class ProcessController extends AbstractController
             $manager->flush();
 
             $email = (new TemplatedEmail())
-                ->from('team@enpremiereligne.fr')
+                ->from($sender)
                 ->to($helpRequest->email)
                 ->subject($translator->trans('email.request-subject'))
                 ->htmlTemplate('emails/request.html.twig')
@@ -146,9 +164,12 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/j-ai-besoin-d-aide-risque", name="process_request_vulnerable")
+     * @Route({
+     *     "fr": "/j-ai-besoin-d-aide-risque",
+     *     "en": "/at-risk-need-help"
+     * }, name="process_request_vulnerable")
      */
-    public function requestVulnerable(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator)
+    public function requestVulnerable(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator, string $sender)
     {
         $helpRequest = new VulnerableHelpRequest();
 
@@ -169,7 +190,7 @@ class ProcessController extends AbstractController
             }
 
             $email = (new TemplatedEmail())
-                ->from('team@enpremiereligne.fr')
+                ->from($sender)
                 ->to(...$to)
                 ->subject($translator->trans('email.request-subject'))
                 ->htmlTemplate('emails/request_vulnerable.html.twig')
@@ -190,7 +211,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/j-ai-besoin-d-aide/{ownerUuid}", name="process_requester_view")
+     * @Route({
+     *     "fr": "/j-ai-besoin-d-aide/{ownerUuid}",
+     *     "en": "/i-need-help/{ownerUuid}"
+     * }, name="process_requester_view")
      */
     public function requesterView(HelpRequestRepository $repository, Request $request, string $ownerUuid)
     {
@@ -206,7 +230,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/j-ai-besoin-d-aide/{ownerUuid}/supprimer", name="process_requester_delete_confirm")
+     * @Route({
+     *     "fr": "/j-ai-besoin-d-aide/{ownerUuid}/supprimer",
+     *     "en": "/i-need-help/{ownerUuid}/remove"
+     * }, name="process_requester_delete_confirm")
      */
     public function requestDeleteConfirm(string $ownerUuid)
     {
@@ -214,7 +241,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/j-ai-besoin-d-aide/{ownerUuid}/supprimer/do", name="process_requester_delete_do")
+     * @Route({
+     *     "fr": "/j-ai-besoin-d-aide/{ownerUuid}/supprimer/do",
+     *     "en": "/i-need-help/{ownerUuid}/remove/process"
+     * }, name="process_requester_delete_do")
      */
     public function requestDeleteDo(HelpRequestRepository $repository, Request $request, string $ownerUuid)
     {
@@ -228,7 +258,10 @@ class ProcessController extends AbstractController
     }
 
     /**
-     * @Route("/j-ai-besoin-d-aide/supprimer/effectue", name="process_requester_delete_done")
+     * @Route({
+     *     "fr": "/j-ai-besoin-d-aide/supprimer/effectue",
+     *     "en": "/i-need-help/{ownerUuid}/remove/done"
+     * }, name="process_requester_delete_done")
      */
     public function requestDeleted()
     {
