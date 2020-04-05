@@ -1,5 +1,6 @@
 {% set current_route = app.request.attributes.get('_route') %}
 {% set current_route_params = app.request.attributes.get('_route_params') %}
+{% set folder = 'fr' == app.request.locale ? '' : 'en_NZ/' %}
 
 <!DOCTYPE html>
 <html lang="{{ app.request.locale}}">
@@ -20,11 +21,11 @@
     <link rel="canonical" href="{% block meta_canonical current_route ? url(current_route, current_route_params) : '' %}" />
     <meta name="description" content="{% block meta_description 'Face à l’épidémie de Covid-19, certains d\'entre nous sont en première ligne de la lutte pour sauver des vies et assurer les fonctions vitales de notre pays.' %}" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset(folder ~ 'apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset(folder ~ 'favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset(folder ~ 'favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset(folder ~ 'site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset(folder ~ 'safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#0077cc">
     <meta name="theme-color" content="#0077cc">
 

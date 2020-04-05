@@ -1,0 +1,19 @@
+{
+    "name": "The Community Wave",
+    "short_name": "The Community Wave",
+    "icons": [
+        {
+            "src": "/en_NZ/android-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/en_NZ/android-icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#dc3c37",
+    "background_color": "#dc3c37",
+    "display": "standalone"
+}
