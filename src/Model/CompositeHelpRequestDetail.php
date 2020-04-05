@@ -24,7 +24,7 @@ class CompositeHelpRequestDetail
     public function validate(ExecutionContextInterface $context)
     {
         if ('babysit' === $this->helpType && !$this->childAgeRange) {
-            $context->addViolation('Vous devez renseigner l\'âge de votre enfant à garder.');
+            $context->addViolation('babysit.need-ages');
         }
     }
 }

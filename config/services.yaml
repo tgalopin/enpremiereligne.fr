@@ -5,7 +5,8 @@ services:
         autowire: true
         autoconfigure: true
         bind:
-            $locale: '%env(resolve:LOCALE)%'
+            $locale: '%env(LOCALE)%'
+            $sender: '%env(SENDER_ADDRESS)%'
 
     App\:
         resource: '../src/*'

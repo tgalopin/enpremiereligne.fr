@@ -19,7 +19,7 @@
     {{ encore_entry_link_tags('app') }}
 
     <link rel="canonical" href="{% block meta_canonical current_route ? url(current_route, current_route_params) : '' %}" />
-    <meta name="description" content="{% block meta_description 'Face à l’épidémie de Covid-19, certains d\'entre nous sont en première ligne de la lutte pour sauver des vies et assurer les fonctions vitales de notre pays.' %}" />
+    <meta name="description" content="{% block meta_description 'site.description'|trans %}" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset(folder ~ 'apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset(folder ~ 'favicon-32x32.png') }}">
@@ -34,7 +34,7 @@
     <meta property="og:url" content="{{ block('meta_canonical') }}" />
     <meta property="og:title" content="{{ block('title') }}" />
     <meta property="og:description" content="{{ block('meta_description') }}" />
-    <meta property="og:image" content="{% block meta_image (url('homepage')|trim('/')) ~ asset('res/sharer-v3.jpg') %}" />
+    <meta property="og:image" content="{% block meta_image (url('homepage')|trim('/')) ~ asset(folder ~ 'res/sharer-v3.jpg') %}" />
     <meta property="og:image:width" content="{% block meta_image_width 2400 %}" />
     <meta property="og:image:height" content="{% block meta_image_height 1260 %}" />
     {% block metas '' %}
@@ -49,8 +49,8 @@
             "@context": "http://schema.org",
             "@type": "Organization",
             "url": "{{ block('meta_canonical') }}",
-            "name": "En première ligne",
-            "logo": "{{ (url('homepage')|trim('/')) ~ asset('res/logo.svg') }}",
+            "name": "{% trans %}site.name{% endtrans %}",
+            "logo": "{{ (url('homepage')|trim('/')) ~ asset(folder ~ 'res/logo.svg') }}",
             "description": "{{ block('meta_description') }}"
         }
     </script>

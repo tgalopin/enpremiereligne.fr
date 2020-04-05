@@ -1,3 +1,5 @@
+// import { useTranslation } from 'react-i18next';
+// const { t, i18n } = useTranslation();
 import { h, render } from 'preact';
 import {useState} from 'preact/hooks';
 
@@ -28,7 +30,7 @@ const NeedGroceriesButton = ({ needGroceries, onChange }) => {
 
                 <div>
                     <h4>
-                        J'ai besoin d'aide pour effectuer mes courses
+                        J'ai besoin d'aide pour effectuer mes courses (foo)
                     </h4>
 
                     <div>
