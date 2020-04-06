@@ -30,7 +30,7 @@ const NeedGroceriesButton = ({ needGroceries, onChange }) => {
 
                 <div>
                     <h4>
-                        J'ai besoin d'aide pour effectuer mes courses (foo)
+                        J'ai besoin d'aide pour effectuer mes courses
                     </h4>
 
                     <div>
