@@ -6,7 +6,7 @@
                 <source>Votre prénom est requis.</source>
                 <target>Your first name is required.</target>
             </trans-unit>
-            <trans-unit id="name-last-at-risk.required" resname="name-last-at-risk.required">
+            <trans-unit id="name-first-at-risk.required" resname="name-first-at-risk.required">
                 <source>Le prénom est requis.</source>
                 <target>The first name of te person at risk is required.</target>
             </trans-unit>
