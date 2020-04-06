@@ -18,13 +18,16 @@ class MatchFinder
     private HelperRepository $helperRepo;
     private BlockedMatchRepository $blockedMatchRepo;
 
+    private string $locale;
+
     private array $zipCodeCache;
 
-    public function __construct(HelpRequestRepository $helpRequestRepo, HelperRepository $helperRepo, BlockedMatchRepository $blockedMatchRepo)
+    public function __construct(HelpRequestRepository $helpRequestRepo, HelperRepository $helperRepo, BlockedMatchRepository $blockedMatchRepo, string $locale)
     {
         $this->helpRequestRepo = $helpRequestRepo;
         $this->helperRepo = $helperRepo;
         $this->blockedMatchRepo = $blockedMatchRepo;
+        $this->locale = $locale;
     }
 
     /**
@@ -40,7 +43,7 @@ class MatchFinder
             }
 
             $department = str_pad(substr($match->getRequester()->zipCode, 0, 2), 2, '0', STR_PAD_LEFT);
-            if ('97' === $department) {
+            if ('97' === $department && 'fr' === $this->locale) {
                 $department = substr($match->getRequester()->zipCode, 0, 3);
             }
 

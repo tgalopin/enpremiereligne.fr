@@ -306,6 +306,10 @@
                 <target>Si quelqu'un près de chez vous, ou de chez votre proche, peut aider pour faire vos courses à votre place, nous vous mettrons en relation par e-mail pour que vous puissiez échanger et régler les détails logistiques.</target>
             </trans-unit>
 
+            <trans-unit id="label.need" resname="label.need">
+                <source>Besoin</source>
+                <target>Besoin</target>
+            </trans-unit>
             <trans-unit id="label.groceries" resname="label.groceries">
                 <source>courses</source>
                 <target>courses</target>
@@ -716,6 +720,10 @@
                 <source>Annuler et supprimer le volontaire</source>
                 <target>Annuler et supprimer le volontaire</target>
             </trans-unit>
+            <trans-unit id="admin.number" resname="admin.number">
+                <source>Nombre</source>
+                <target>Nombre</target>
+            </trans-unit>
             <trans-unit id="admin.number-volunteers" resname="admin.number-volunteers">
                 <source>Nombre total de volontaires</source>
                 <target>Nombre total de volontaires</target>
@@ -744,9 +752,17 @@
                 <source>Par département</source>
                 <target>Par département</target>
             </trans-unit>
+            <trans-unit id="admin.department" resname="admin.department">
+                <source>Département</source>
+                <target>Département</target>
+            </trans-unit>
             <trans-unit id="admin.by-job" resname="admin.by-job">
                 <source>Par emploi</source>
                 <target>Par emploi</target>
+            </trans-unit>
+            <trans-unit id="admin.by-job" resname="admin.by-job">
+                <source>Garde d'un enfant de {ages} ans</source>
+                <target>Garde d'un enfant de {ages} ans</target>
             </trans-unit>
             <trans-unit id="email.greeting" resname="email.greeting">
                 <source>Bonjour {name}</source>

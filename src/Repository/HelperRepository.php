@@ -15,8 +15,11 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  */
 class HelperRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    protected string $locale;
+
+    public function __construct(ManagerRegistry $registry, string $locale)
     {
+        $this->locale = $locale;
         parent::__construct($registry, Helper::class);
     }
 
@@ -39,7 +42,7 @@ class HelperRepository extends ServiceEntityRepository
             ->orderBy('h.createdAt', 'DESC')
         ;
 
-        if ($closestZipCodes = ZipCode::CLOSEST[$zipCode] ?? null) {
+        if ($closestZipCodes = ZipCode::CLOSEST[$this->locale][$zipCode] ?? null) {
             $query->orWhere('h.zipCode = :closestZipCode')->setParameter('closestZipCode', $closestZipCodes[0]);
             $query->orWhere('h.zipCode = :closestZipCode')->setParameter('closestZipCode', $closestZipCodes[1]);
         }

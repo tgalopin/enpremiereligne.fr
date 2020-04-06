@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/admin/export")
@@ -19,10 +20,14 @@ class ExportController extends AbstractController
     /**
      * @Route("/helpers", name="admin_export_helpers")
      */
-    public function helpers(HelperRepository $repository): Response
+    public function helpers(HelperRepository $repository, TranslatorInterface $translator): Response
     {
         $csv = $this->createCsvWriter();
-        $csv->insertOne(['E-mail', 'Prénom', 'Nom']);
+        $csv->insertOne([
+            'E-mail',
+            $translator->trans('label.name-first'),
+            $translator->trans('label.name-last'),
+        ]);
 
         $helpers = $repository->exportAll();
         foreach ($helpers as $helper) {
@@ -35,10 +40,13 @@ class ExportController extends AbstractController
     /**
      * @Route("/helpers/by-zip-code", name="admin_export_helpers_by_zip_code")
      */
-    public function helpersByZipCode(HelperRepository $repository): Response
+    public function helpersByZipCode(HelperRepository $repository, TranslatorInterface $translator): Response
     {
         $csv = $this->createCsvWriter();
-        $csv->insertOne(['Code postal', 'Nombre']);
+        $csv->insertOne([
+            $translator->trans('label.postcode'),
+            $translator->trans('admin.number'),
+        ]);
 
         $zipCodes = $repository->exportByZipCode();
         foreach ($zipCodes as $zipCode) {
@@ -51,30 +59,36 @@ class ExportController extends AbstractController
     /**
      * @Route("/unmatched", name="admin_export_unmatched")
      */
-    public function unmatched(MatchFinder $matchFinder): Response
+    public function unmatched(MatchFinder $matchFinder, TranslatorInterface $translator, string $locale): Response
     {
         $csv = $this->createCsvWriter();
-        $csv->insertOne(['ID', 'Département', 'Prénom', 'Code postal', 'Besoin']);
+        $csv->insertOne([
+            'ID',
+            $translator->trans('admin.department'),
+            $translator->trans('label.name-first'),
+            $translator->trans('label.postcode'),
+            $translator->trans('label.need'),
+        ]);
 
         foreach ($matchFinder->findUnmatchedNeeds() as $matches) {
             foreach ($matches as $match) {
                 if ($need = $match->getGroceriesNeed()) {
                     $csv->insertOne([
                         $need->getId(),
-                        ZipCode::DEPARTMENTS[substr($need->zipCode, 0, 2)] ?? '',
+                        ZipCode::DEPARTMENTS[$locale][substr($need->zipCode, 0, 2)] ?? '',
                         $need->firstName,
                         str_pad($need->zipCode, 5, ' ', STR_PAD_LEFT),
-                        'Courses',
+                        ucfirst($translator->trans('label.groceries')),
                     ]);
                 }
 
                 foreach ($match->getBabysitNeeds() as $need) {
                     $csv->insertOne([
                         $need->getId(),
-                        ZipCode::DEPARTMENTS[substr($need->zipCode, 0, 2)] ?? '',
+                        ZipCode::DEPARTMENTS[$locale][substr($need->zipCode, 0, 2)] ?? '',
                         $need->firstName,
                         str_pad($need->zipCode, 5, ' ', STR_PAD_LEFT),
-                        'Garde d\'un enfant de '.$need->childAgeRange.' ans',
+                        $translator->trans('label.need', ['ages' => $need->childAgeRange]),
                     ]);
                 }
             }
