@@ -208,7 +208,7 @@ class ZipCode
             '97' => 'Southland',
             '98' => 'Southland',
             '99' => '',
-        ]
+        ],
     ];
 
     public const CLOSEST = [
