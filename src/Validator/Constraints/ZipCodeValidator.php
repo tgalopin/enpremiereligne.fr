@@ -6,7 +6,6 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-
 class ZipCodeValidator extends ConstraintValidator
 {
     /** @var int */
@@ -17,8 +16,8 @@ class ZipCodeValidator extends ConstraintValidator
      */
     public function __construct(string $locale)
     {
-        if('en_NZ' === $locale) {
-            $this->length =  4;
+        if ('en_NZ' === $locale) {
+            $this->length = 4;
         }
     }
 
@@ -32,7 +31,7 @@ class ZipCodeValidator extends ConstraintValidator
             return;
         }
 
-        $pattern = '/^[0-9]{' . $this->length . '}$/';
+        $pattern = '/^[0-9]{'.$this->length.'}$/';
         if (!preg_match($pattern, $value, $matches)) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ string }}', $value)
