@@ -627,7 +627,22 @@
                 <target>sans enfants</target>
             </trans-unit>
 
-
+            <trans-unit id="admin.login" resname="admin.login">
+                <source>Se connecter</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="admin.username" resname="admin.username">
+                <source>Nom d'utilisateur</source>
+                <target>Nom d'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="admin.password" resname="admin.password">
+                <source>Mot de passe</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="admin.return" resname="admin.return">
+                <source>Retour</source>
+                <target>Retour</target>
+            </trans-unit>
             <trans-unit id="admin.requester" resname="admin.requester">
                 <source>Demande de :</source>
                 <target>Demande de :</target>
@@ -760,7 +775,7 @@
                 <source>Par emploi</source>
                 <target>Par emploi</target>
             </trans-unit>
-            <trans-unit id="admin.by-job" resname="admin.by-job">
+            <trans-unit id="admin.export-babysit" resname="admin.export-babysit">
                 <source>Garde d'un enfant de {ages} ans</source>
                 <target>Garde d'un enfant de {ages} ans</target>
             </trans-unit>

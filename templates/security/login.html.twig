@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-9 col-lg-6 col-xl-4">
                 <h1 class="h3 mb-3 font-weight-bold">
-                    Se connecter
+                    {% trans %}admin.login{% endtrans %}
                 </h1>
 
                 <form method="post">
@@ -18,22 +18,22 @@
                     {% endif %}
 
                     <div class="mb-3">
-                        <label for="inputUsername">Nom d'utilisateur</label>
+                        <label for="inputUsername">{% trans %}admin.username{% endtrans %}</label>
                         <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputPassword">Mot de passe</label>
+                        <label for="inputPassword">{% trans %}admin.password{% endtrans %}</label>
                         <input type="password" name="password" id="inputPassword" class="form-control" required>
                     </div>
 
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                     <button class="btn btn-lg btn-primary" type="submit">
-                        Se connecter
+                        {% trans %}admin.login{% endtrans %}
                     </button>
                     <a href="{{ path('homepage') }}" class="btn btn-lg btn-link">
-                        Retour
+                        {% trans %}admin.return{% endtrans %}
                     </a>
                 </form>
             </div>
