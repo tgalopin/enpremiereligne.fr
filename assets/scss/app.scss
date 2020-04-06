@@ -48,20 +48,27 @@ blockquote {
 
 .home {
     &-header {
-        text-align: center;
-
         &-logo {
-            height: 60px;
+            height: 70px;
             max-width: 100%;
         }
 
-        &-share {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-
+        &-menu {
             a {
-                padding: 10px;
+                font-size: 14px;
+                margin: 0 10px;
+                color: #666;
+
+                &:hover {
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &-socials {
+            a {
+                padding: 5px;
                 margin: 0 5px;
                 color: #666;
 
@@ -72,7 +79,7 @@ blockquote {
             }
 
             svg {
-                height: 18px;
+                height: 26px;
             }
         }
     }
@@ -153,6 +160,27 @@ blockquote {
         color: #fff;
     }
 
+    &-share {
+        font-size: 14px;
+        color: #666;
+        text-transform: uppercase;
+
+        a {
+            padding: 10px;
+            margin: 0 5px;
+            color: #666;
+
+            &:hover {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+
+        svg {
+            height: 18px;
+        }
+    }
+
     &-ecosystem {
         background: #f5f5f5;
 
@@ -211,7 +239,7 @@ blockquote {
 
 .process {
     &-logo {
-        height: 40px;
+        height: 60px;
         max-width: 100%;
     }
 

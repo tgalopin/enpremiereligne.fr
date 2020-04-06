@@ -2,40 +2,40 @@
 
 {% block body %}
     <div class="home">
-        <div class="home-header pt-4 pl-4 pr-4 pb-3 pt-lg-5 pl-lg-5 pr-lg-5 pb-lg-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+        <div class="container-fluid">
+            <div class="home-header p-2 p-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-12 col-xl-3 home-header-menu d-none d-xl-block">
+                        <a href="{{ path('content_international') }}">
+                            International
+                        </a>
+                        <a href="mailto:team@enpremiereligne.fr">
+                            Nous contacter
+                        </a>
+                    </div>
+                    <div class="col-12 col-xl-6 text-center">
                         <h1 class="sr-only">
                             En première ligne
                         </h1>
 
-                        <img src="{{ asset('res/logo.svg') }}" class="home-header-logo" alt="En première ligne" />
-
-                        <h4 class="font-weight-normal home-header-pitch mt-4">
-                            Réseau d'entraide dans la lutte contre l'épidémie de Covid-19.
-                        </h4>
-
-                        <div class="home-header-share mt-5">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-lg-auto text-center mb-2">
-                                    Je partage l'initiative
-                                </div>
-                                <div class="col-lg-auto text-center mb-2">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/facebook.html.twig') }}
-                                    </a>
-                                    <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/twitter.html.twig') }}
-                                    </a>
-                                    <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/telegram.html.twig') }}
-                                    </a>
-                                    <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/whatsapp.html.twig') }}
-                                    </a>
-                                </div>
-                            </div>
+                        <a href="{{ path('homepage') }}">
+                            <img src="{{ asset('res/logo.svg') }}" class="home-header-logo" alt="En première ligne" />
+                        </a>
+                    </div>
+                    <div class="col-12 col-xl-3 text-center text-xl-right home-header-socials">
+                        <div class="mt-3 mb-4 mt-lg-4 mb-lg-0 mt-xl-0 mb-xl-0">
+                            <a href="https://www.facebook.com/en1ereligne"
+                               title="Nous retrouver sur Facebook" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/facebook.html.twig') }}
+                            </a>
+                            <a href="https://twitter.com/en1ereligne"
+                               title="Nous retrouver sur Twitter" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/twitter.html.twig') }}
+                            </a>
+                            <a href="https://www.linkedin.com/company/enpremiereligne/"
+                               title="Nous retrouver sur LinkedIn" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/linkedin.html.twig') }}
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -159,6 +159,25 @@
         </div>
 
         <div class="home-ecosystem p-4 p-lg-5">
+            <div class="home-share text-center mb-5">
+                <div class="text-muted mb-2">
+                    Je partage l'initiative
+                </div>
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="Partager sur Facebook" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/facebook.html.twig') }}
+                </a>
+                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="Partager sur Twitter" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/twitter.html.twig') }}
+                </a>
+                <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="Partager sur Telegram" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/telegram.html.twig') }}
+                </a>
+                <a href="https://wa.me/?text={{ url('homepage') }}" title="Partager sur Whatsapp" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/whatsapp.html.twig') }}
+                </a>
+            </div>
+
             <div class="home-ecosystem-feedbacks mb-5">
                 <h5 class="font-weight-normal mb-5 p-4">
                     Nous sommes <strong>{{ countTotalHelpers|number_format(0, ',', ' ') }} volontaires</strong>.
