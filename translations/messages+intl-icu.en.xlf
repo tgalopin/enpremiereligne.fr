@@ -248,7 +248,7 @@
       </trans-unit>
       <trans-unit id="request.told-us" resname="request.told-us">
         <source>Vous nous avez indiqu&#xE9; avoir besoin de quelqu'un :</source>
-        <target>Yous told us you needed help :</target>
+        <target>You told us you needed help:</target>
       </trans-unit>
       <trans-unit id="request.shop" resname="request.shop">
         <source>pour faire les courses et les d&#xE9;poser &#xE0; votre domicile ou au domicile d'un proche</source>
@@ -256,7 +256,7 @@
       </trans-unit>
       <trans-unit id="request.babysit" resname="request.babysit">
         <source>pour garder votre enfant de {age}</source>
-        <target>to look after you child of {age}</target>
+        <target>to look after your child aged {age}</target>
       </trans-unit>
       <trans-unit id="request.remove" resname="request.remove">
         <source>Supprimer ma demande</source>
@@ -428,27 +428,27 @@
       </trans-unit>
       <trans-unit id="label.13-and-over" resname="label.13-and-over">
         <source>13 ans et plus</source>
-        <target>13 yo and above</target>
+        <target>13 years and above</target>
       </trans-unit>
       <trans-unit id="label.age-0-1" resname="label.age-0-1">
         <source>0 &#xE0; 1 an</source>
-        <target>0 to 1 yo</target>
+        <target>0 to 1 years</target>
       </trans-unit>
       <trans-unit id="label.age-1-2" resname="label.age-1-2">
         <source>1 &#xE0; 2 ans</source>
-        <target>1 to 2 yo</target>
+        <target>1 to 2 years</target>
       </trans-unit>
       <trans-unit id="label.age-3-5" resname="label.age-3-5">
         <source>3 &#xE0; 5 ans</source>
-        <target>3 to 5 yo</target>
+        <target>3 to 5 years</target>
       </trans-unit>
       <trans-unit id="label.age-6-9" resname="label.age-6-9">
         <source>6 &#xE0; 9 ans</source>
-        <target>6 to 9 yo</target>
+        <target>6 to 9 years</target>
       </trans-unit>
       <trans-unit id="label.age-10-12" resname="label.age-10-12">
         <source>10 &#xE0; 12 ans</source>
-        <target>10 to 12 yo</target>
+        <target>10 to 12 years</target>
       </trans-unit>
       <trans-unit id="label.confirm" resname="label.confirm">
         <source>J'ai lu et j'accepte la Politique de confidentialit&#xE9; et les Conditions d'utilisation d'enpremiereligne.fr</source>
@@ -807,8 +807,8 @@
         <target>By region</target>
       </trans-unit>
       <trans-unit id="admin.by-job" resname="admin.by-job">
-        <source>Garde d'un enfant de {ages} ans</source>
-        <target>By jobtype</target>
+        <source>Par emploi</source>
+        <target>By job type</target>
       </trans-unit>
       <trans-unit id="email.greeting-match" resname="email.greeting-match">
         <source>Bonjour {requester}, bonjour {helper},</source>
@@ -1005,6 +1005,26 @@
       <trans-unit id="admin.department" resname="admin.department">
         <source>D&#xE9;partement</source>
         <target>Region</target>
+      </trans-unit>
+      <trans-unit id="admin.export-babysit" resname="admin.export-babysit">
+        <source>Garde d'un enfant de {ages} ans</source>
+        <target>Babysit children aged {ages} years</target>
+      </trans-unit>
+      <trans-unit id="admin.login" resname="admin.login">
+        <source>Se connecter</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="admin.username" resname="admin.username">
+        <source>Nom d'utilisateur</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="admin.password" resname="admin.password">
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="admin.return" resname="admin.return">
+        <source>Retour</source>
+        <target>Return</target>
       </trans-unit>
     </body>
   </file>

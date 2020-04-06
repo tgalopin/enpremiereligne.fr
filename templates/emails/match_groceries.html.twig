@@ -19,18 +19,18 @@
     {% trans %}email.both-copied{% endtrans %}
 </p>
 
-{% include 'match_guidelines.html.twig' %}
+{% include 'emails/match_guidelines.html.twig' %}
 
 <p>
     {% trans %}email.avoid-contact{% endtrans %}
 </p>
 
 <ul>
-    {% include 'groceries-guidelines-helper.html.twig' %}
+    {% include 'emails/groceries-guidelines-helper.html.twig' %}
     <li>
         {% trans %}email.front-line{% endtrans %}
-        {% include 'groceries-guidelines-recipient.html.twig' %}
+        {% include 'emails/groceries-guidelines-recipient.html.twig' %}
     </li>
 </ul>
 
-{% include 'match-footer.html.twig' %}
+{% include 'emails/match-footer.html.twig' %}

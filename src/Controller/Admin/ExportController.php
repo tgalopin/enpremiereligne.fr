@@ -88,7 +88,7 @@ class ExportController extends AbstractController
                         ZipCode::DEPARTMENTS[$locale][substr($need->zipCode, 0, 2)] ?? '',
                         $need->firstName,
                         str_pad($need->zipCode, 5, ' ', STR_PAD_LEFT),
-                        $translator->trans('label.need', ['ages' => $need->childAgeRange]),
+                        $translator->trans('admin.export-babysit', ['ages' => $need->childAgeRange]),
                     ]);
                 }
             }
