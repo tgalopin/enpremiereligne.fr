@@ -19,6 +19,15 @@
                 <target>Face à l’épidémie de Covid-19, certains d\'entre nous sont en première ligne de la lutte pour sauver des vies et assurer les fonctions vitales de notre pays.</target>
             </trans-unit>
 
+            <trans-unit id="header.international" resname="header.international">
+                <source>International</source>
+                <target>International</target>
+            </trans-unit>
+            <trans-unit id="header.contact_us" resname="header.contact_us">
+                <source>Nous contacter</source>
+                <target>Nous contacter</target>
+            </trans-unit>
+
             <trans-unit id="footer.why" resname="footer.why">
                 <source>Pourquoi enpremiereligne.fr ?</source>
                 <target>Pourquoi enpremiereligne.fr ?</target>
@@ -83,6 +92,10 @@
             <trans-unit id="social.find-twitter" resname="social.find-twitter">
                 <source>Nous retrouver sur Twitter</source>
                 <target>Nous retrouver sur Twitter</target>
+            </trans-unit>
+            <trans-unit id="social.find-linkedin" resname="social.find-linkedin">
+                <source>Nous retrouver sur LinkedIn</source>
+                <target>Nous retrouver sur LinkedIn</target>
             </trans-unit>
             <trans-unit id="social.find-github" resname="social.find-github">
                 <source>Nous retrouver sur Github</source>

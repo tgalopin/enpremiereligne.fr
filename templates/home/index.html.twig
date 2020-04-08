@@ -7,10 +7,10 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-xl-3 home-header-menu d-none d-xl-block">
                         <a href="{{ path('content_international') }}">
-                            International
+                            {% trans %}header.international{% endtrans %}
                         </a>
                         <a href="mailto:team@enpremiereligne.fr">
-                            Nous contacter
+                            {% trans %}header.contact_us{% endtrans %}
                         </a>
                     </div>
                     <div class="col-12 col-xl-6 text-center">
@@ -25,17 +25,14 @@
                     <div class="col-12 col-xl-3 text-center text-xl-right home-header-socials">
                         <div class="mt-3 mb-4 mt-lg-4 mb-lg-0 mt-xl-0 mb-xl-0">
                             <a href="https://www.facebook.com/en1ereligne"
-                               title="Nous retrouver sur Facebook" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/facebook.html.twig') }}
-                            </a>
+                               title="{% trans %}social.find-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/facebook.html.twig') }}</a>
                             <a href="https://twitter.com/en1ereligne"
-                               title="Nous retrouver sur Twitter" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/twitter.html.twig') }}
-                            </a>
+                               title="{% trans %}social.find-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/twitter.html.twig') }}</a>
                             <a href="https://www.linkedin.com/company/enpremiereligne/"
-                               title="Nous retrouver sur LinkedIn" target="_blank" rel="noreferrer noopener">
-                                {{ include('_icons/linkedin.html.twig') }}
-                            </a>
+                               title="{% trans %}social.find-linkedin{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/linkedin.html.twig') }}</a>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,16 @@
         <source>Soyons pr&#xE9;sents pour ceux en premi&#xE8;re ligne</source>
         <target>Let's stop the spread together!</target>
       </trans-unit>
+
+            <trans-unit id="header.international" resname="header.international">
+                <source>International</source>
+                <target>International</target>
+            </trans-unit>
+            <trans-unit id="header.contact_us" resname="header.contact_us">
+                <source>Nous contacter</source>
+                <target>Contact us</target>
+            </trans-unit>
+
       <trans-unit id="footer.why" resname="footer.why">
         <source>Pourquoi enpremiereligne.fr&#xA0;?</source>
         <target>Why thecommunitywave.nz?</target>
@@ -73,6 +83,10 @@
       <trans-unit id="social.find-twitter" resname="social.find-twitter">
         <source>Nous retrouver sur Twitter</source>
         <target>Find us on Twitter</target>
+      </trans-unit>
+      <trans-unit id="social.find-linkedin" resname="social.find-linkedin">
+        <source>Nous retrouver sur LinkedIn</source>
+        <target>Nous retrouver sur LinkedIn</target>
       </trans-unit>
       <trans-unit id="social.find-github" resname="social.find-github">
         <source>Nous retrouver sur Github</source>
