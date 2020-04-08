@@ -14,7 +14,6 @@
         "core-js": "^3.0.0",
         "node-sass": "^4.13.1",
         "preact": "^10.3.4",
-        "react-i18next": "^11.3.4",
         "regenerator-runtime": "^0.13.2",
         "sass-loader": "^7.0.1"
     }

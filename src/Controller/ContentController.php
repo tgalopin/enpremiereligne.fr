@@ -10,18 +10,17 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ContentController extends AbstractController
 {
-    /** @var string */
-    protected $folder;
+    private string $folder;
 
     public function __construct(string $locale)
     {
-        $this->folder = 'fr' === $locale ? '' : $locale.'/';
+        $this->folder = $locale.'/';
     }
 
     /**
      * @Route({
-     *     "fr": "/comment-ca-marche",
-     *     "en": "/how-this-works"
+     *     "fr_FR": "/comment-ca-marche",
+     *     "en_NZ": "/how-this-works"
      * }, name="content_how")
      */
     public function how()
@@ -39,8 +38,8 @@ class ContentController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/pourquoi",
-     *     "en": "/why"
+     *     "fr_FR": "/pourquoi",
+     *     "en_NZ": "/why"
      * }, name="content_why")
      */
     public function why()
@@ -50,8 +49,8 @@ class ContentController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/qui-sommes-nous",
-     *     "en": "/who-are-we"
+     *     "fr_FR": "/qui-sommes-nous",
+     *     "en_NZ": "/who-are-we"
      * }, name="content_who")
      */
     public function who()
@@ -61,8 +60,8 @@ class ContentController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/politique-de-confidentialite",
-     *     "en": "/privacy-policy"
+     *     "fr_FR": "/politique-de-confidentialite",
+     *     "en_NZ": "/privacy-policy"
      * }, name="content_privacy")
      */
     public function privacy()
@@ -72,8 +71,8 @@ class ContentController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/conditions-d-utilisation",
-     *     "en": "/terms-of-use"
+     *     "fr_FR": "/conditions-d-utilisation",
+     *     "en_NZ": "/terms-of-use"
      * }, name="content_conditions")
      */
     public function conditions()
@@ -83,8 +82,8 @@ class ContentController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/mentions-legales",
-     *     "en": "/legal-statement"
+     *     "fr_FR": "/mentions-legales",
+     *     "en_NZ": "/legal-statement"
      * }, name="content_legalities")
      */
     public function legalities()
@@ -94,8 +93,8 @@ class ContentController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/informations-officielles",
-     *     "en": "/official-information"
+     *     "fr_FR": "/informations-officielles",
+     *     "en_NZ": "/official-information"
      * }, name="content_links")
      */
     public function links()
