@@ -18,5 +18,17 @@
     "request.babysit.ages.3-5": "Entre 3 et 5 ans",
     "request.babysit.ages.6-9": "Entre 6 et 9 ans",
     "request.babysit.ages.10-12": "Entre 10 et 12 ans",
-    "request.babysit.ages.13": "13 ans et plus"
+    "request.babysit.ages.13": "13 ans et plus",
+
+    "request.vulnerable.firstname.self": "Votre prénom (requis)",
+    "request.vulnerable.firstname.other": "Prénom de la personne concernée (requis)",
+
+    "request.vulnerable.lastname.self": "Votre nom (requis)",
+    "request.vulnerable.lastname.other": "Nom de la personne concernée (requis)",
+
+    "request.vulnerable.zipcode.self": "Votre code postal (français uniquement, requis)",
+    "request.vulnerable.zipcode.other": "Le code postal de la personne concernée (français uniquement, requis)",
+
+    "request.vulnerable.email.self": "Votre adresse e-mail (requis)",
+    "request.vulnerable.email.other": "Adresse e-mail de la personne concernée (requis)"
 }

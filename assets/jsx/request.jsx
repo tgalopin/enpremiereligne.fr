@@ -1,5 +1,3 @@
-// import { useTranslation } from 'react-i18next';
-// const { t, i18n } = useTranslation();
 import { h, render } from 'preact';
 import {useState} from 'preact/hooks';
 import {trans} from './translator';
