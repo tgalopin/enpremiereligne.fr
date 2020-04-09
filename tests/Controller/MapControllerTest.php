@@ -6,10 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class MapControllerTest extends WebTestCase
 {
-    public function testMapSvg()
+    public function testNeedsMap()
     {
         $client = static::createClient();
-        $client->request('GET', '/map');
+        $client->request('GET', '/needs-map');
 
         $this->assertResponseIsSuccessful();
     }

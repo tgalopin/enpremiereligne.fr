@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class MapController extends AbstractController
 {
     /**
-     * @Route("/map")
+     * @Route("/needs-map", name="needs_map")
      */
-    public function svg(StatisticsAggregator $statsAgg, Request $request)
+    public function needsMap(StatisticsAggregator $statsAgg, Request $request)
     {
         $ownerByDepartment = $statsAgg->countOwnersByDepartment();
 
