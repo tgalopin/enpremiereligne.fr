@@ -16,6 +16,7 @@ easy_admin:
             - { label: 'Monitoring' }
             - { route: 'admin_statistics', label: 'Statistics', icon: 'chart-bar' }
             - { route: 'admin_unmatched_list', label: 'Unmatched needs', icon: 'search' }
+            - { route: 'needs_map', label: 'Needs map', icon: 'map-o', target: '_blank' }
 
             - { label: 'Export' }
             - { route: 'admin_export_helpers', label: 'Export helpers', icon: 'cloud-download', target: '_blank' }
