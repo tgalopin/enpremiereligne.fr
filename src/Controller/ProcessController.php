@@ -39,7 +39,7 @@ class ProcessController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $helper->email = strtolower($helper->email);
-            $repository->clearOldProposal($helper->email);
+            $repository->removeHelpProposal($helper->email);
 
             $manager->persist($helper);
             $manager->flush();
@@ -96,14 +96,13 @@ class ProcessController extends AbstractController
      *     "en_NZ": "/i-can-help/{uuid}/remove/process"
      * }, name="process_helper_delete_do")
      */
-    public function helperDeleteDo(EntityManagerInterface $manager, Helper $helper, Request $request)
+    public function helperDeleteDo(HelperRepository $repository, Helper $helper, Request $request)
     {
         if (!$this->isCsrfTokenValid('helper_delete', $request->query->get('token'))) {
             throw $this->createNotFoundException();
         }
 
-        $manager->remove($helper);
-        $manager->flush();
+        $repository->removeHelpProposal($helper->email);
 
         return $this->redirectToRoute('process_helper_delete_done');
     }

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Helper;
+use App\Entity\HelpRequest;
 use App\MatchFinder\ZipCode;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -19,13 +20,24 @@ class HelperRepository extends ServiceEntityRepository
 
     public function __construct(ManagerRegistry $registry, string $locale)
     {
-        $this->locale = $locale;
         parent::__construct($registry, Helper::class);
+
+        $this->locale = $locale;
     }
 
-    public function clearOldProposal(string $email)
+    public function removeHelpProposal(string $email)
     {
         foreach ($this->findBy(['email' => strtolower($email)]) as $proposal) {
+            $this->_em->createQueryBuilder()
+                ->update()
+                ->from(HelpRequest::class, 'r')
+                ->set('r.matchedWith', 'NULL')
+                ->where('r.matchedWith = :matchedWith')
+                ->setParameter('matchedWith', $proposal->getId())
+                ->getQuery()
+                ->execute()
+            ;
+
             $this->_em->remove($proposal);
         }
 
