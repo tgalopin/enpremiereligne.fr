@@ -19,8 +19,11 @@
                 <target>The last name of te person at risk is required.</target>
             </trans-unit>
             <trans-unit id="age.required" resname="age.required">
-                <source>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).</source>
-                <target>Your age is required (you must be of legal age and not be part of the population at risk).</target>
+                <source>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à
+                    risque).
+                </source>
+                <target>Your age is required (you must be of legal age and not be part of the population at risk).
+                </target>
             </trans-unit>
             <trans-unit id="email.required" resname="email.required">
                 <source>Votre adresse e-mail est requise.</source>

@@ -19,8 +19,12 @@
                 <target>Le nom de famille est requis.</target>
             </trans-unit>
             <trans-unit id="age.required" resname="age.required">
-                <source>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).</source>
-                <target>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).</target>
+                <source>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à
+                    risque).
+                </source>
+                <target>Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à
+                    risque).
+                </target>
             </trans-unit>
             <trans-unit id="email.required" resname="email.required">
                 <source>Votre adresse e-mail est requise.</source>
@@ -55,7 +59,6 @@
                 <source>Vous devez renseigner au moins un besoin pour vous enregistrer.</source>
                 <target>Vous devez renseigner au moins un besoin pour vous enregistrer.</target>
             </trans-unit>
-
 
 
         </body>

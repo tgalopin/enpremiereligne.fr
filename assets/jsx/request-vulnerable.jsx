@@ -34,18 +34,26 @@ function refresh() {
 
         const inputs = fieldCc.querySelectorAll('input');
         for (let i in inputs) {
-            inputs[i].required = true;
+            if (inputs.hasOwnProperty(i)) {
+                inputs[i].required = true;
+            }
         }
     } else {
         fieldCc.style.display = 'none';
 
         const inputs = fieldCc.querySelectorAll('input');
         for (let i in inputs) {
-            inputs[i].required = false;
+            if (inputs.hasOwnProperty(i)) {
+                inputs[i].required = false;
+            }
         }
     }
 
     for (let i in replacements) {
+        if (!replacements.hasOwnProperty(i)) {
+            continue;
+        }
+
         const r = replacements[i];
         const label = document.getElementById(r.id).querySelector('label');
 
