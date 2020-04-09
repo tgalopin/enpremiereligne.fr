@@ -5,25 +5,25 @@
 
 {% block main %}
     <div class="p-3">
-        Demande de :
+        {% trans %}admin.requester{% endtrans %}
         <br />
         <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
         <br />
-        Travail : {{ requests[0].jobType }}
+        {% trans %}admin.job-type{% endtrans %} {{ requests[0].jobType }}
     </div>
 
     <div class="p-4">
         <p>
-            Envoyer l'email de mise en relation et fermer le besoin de
-            {{ type == 'groceries' ? 'courses' : 'garde d\'enfant' }} de
-            {{ requests[0].firstName }} {{ requests[0].lastName }} ?
+            {% trans with {'type': type == 'groceries' ? 'label.groceries'|trans : 'label.babysitting'|trans|lower, 'given': requests[0].firstName, 'family': requests[0].lastName} %}
+                admin.send-link
+            {% endtrans %}
         </p>
 
         <a href="?token={{ csrf_token('admin_confirm') }}" class="btn btn-primary mr-3">
-            Oui, fermer
+            {% trans %}label.yes-close{% endtrans %}
         </a>
         <a href="{{ path('admin_match', {'ownerUuid': ownerUuid}) }}" class="btn btn-secondary">
-            Non, annuler
+            {% trans %}label.no-cancel{% endtrans %}
         </a>
     </div>
 {% endblock %}

@@ -1,30 +1,25 @@
 {% extends 'page_base.html.twig' %}
 
-{% block title 'Demander de l\'aide | En première ligne' %}
+{% block title %}{% trans %}label.request-help{% endtrans %} | {% trans %}site.title{% endtrans %}{% endblock %}
 
 {% block content %}
     <div class="process-box">
         <div class="bg-light p-3 p-lg-4">
             <h3 class="text-center font-weight-bold mb-4">
-                Demander de l'aide
+                {% trans %}label.request-help{% endtrans %}
             </h3>
 
             <div class="process-details mb-4 pb-3">
                 <p>
-                    Vous faites partie de la première ligne de la lutte contre le virus
-                    (soignants, services d’urgence, approvisionnement en énergie, nourriture,
-                    médicaments, matériel, ...) ?
+                    {% trans %}request.intro-one{% endtrans %}
                 </p>
 
                 <p>
-                    Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne
-                    ayant besoin d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type
-                    de besoin que vous avez exprimé, nous vous mettrons en relation par e-mail pour
-                    que vous puissiez échanger et régler les détails logistiques.
+                    {% trans %}request.intro-two{% endtrans %}
                 </p>
 
                 <a href="{{ path('content_how') }}">
-                    En savoir plus sur le fonctionnement de la plateforme
+                    {% trans %}label.how-platform-works{% endtrans %}
                 </a>
             </div>
 
@@ -35,59 +30,60 @@
             <div class="process-block bg-white p-3 p-lg-4 mb-4">
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-3">
-                        {{ form_row(form.firstName, {'label': 'Votre prénom (requis)'}) }}
+                        {{ form_row(form.firstName, {'label': 'label.name-first-required'}) }}
                     </div>
                     <div class="col-12 col-lg-6 mb-3">
-                        {{ form_row(form.lastName, {'label': 'Votre nom (requis)'}) }}
+                        {{ form_row(form.lastName, {'label': 'label.name-last-required'}) }}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-3">
                         {{ form_row(form.zipCode, {
-                            'label': 'Votre code postal (français uniquement, requis)',
-                            'help': 'Utilisé pour trouver des personnes proches de vous. Nous ne travaillons que sur le territoire français pour le moment.'
+                            'label': 'label.postcode-required',
+                            'help': 'help.postcode'
                         }) }}
                     </div>
                     <div class="col-12 col-lg-6 mb-3">
                         {{ form_row(form.jobType, {
-                            'label': 'Dans quel domaine travaillez-vous ? (requis)',
-                            'help': 'Dans un premier temps, nous réservons l\'usage de notre plateforme aux personnes qui travaillent en première ligne contre l’épidémie'
+                            'label': 'label.field-of-work-required',
+                            'help': 'help.field-of-work'
                         }) }}
                     </div>
                 </div>
 
-                {{ form_row(form.email, {'label': 'Votre adresse e-mail (requis)', 'help': 'Utilisé pour vous mettre en relation'}) }}
+                {{ form_row(form.email, {'label': 'label.email-required', 'help': 'help.email'}) }}
             </div>
 
             <div class="process-block bg-white p-3 p-lg-4 mb-4">
                 <div class="mb-3">
                     <strong>
-                        Quels sont vos besoins ?
+                        {% trans %}label.needs{% endtrans %}
                     </strong>
                 </div>
 
                 <div id="request-needs" class="process-needs">
                     {{ form_widget(form.details) }}
+                    {{ form_widget(form.preferParents) }}
                 </div>
             </div>
 
             <div class="process-block bg-white p-3 p-lg-4 mb-5">
                 {{ form_row(form.confirm, {
-                    'label': 'J\'ai lu et j\'accepte la Politique de confidentialité et les Conditions d\'utilisation d\'enpremiereligne.fr',
+                    'label': 'label.confirm',
                     'label_attr': { 'class': 'checkbox-custom' },
-                    'help': 'Il est notamment très important que vous soyez vigilants à bien suivre les recommandations sanitaires à tout moment.'
+                    'help': 'help.confirm'
                 }) }}
             </div>
 
             <div class="text-center">
                 <button type="submit" class="btn btn-lg btn-primary">
-                    Envoyer ma demande
+                    {% trans %}label.send-request{% endtrans %}
                 </button>
 
                 <div class="mt-3">
                     <strong class="text-muted">
-                        Vous pourrez revenir à tout moment sur votre demande.
+                        {% trans %}label.can-change-request{% endtrans %}
                     </strong>
                 </div>
             </div>
@@ -95,11 +91,7 @@
             {{ form_end(form) }}
 
             <div class="legalities pt-5">
-                Vous disposez d'un droit d'accès, de rectification, d’effacement et de portabilité
-                de vos données ainsi que d’un droit d'opposition et d'un droit de limitation du
-                traitement des données vous concernant. Vous pouvez exercer vos droits en nous
-                contactant à l'adresse suivante :
-                <a href="mailto:titouan@enpremiereligne.fr">titouan@enpremiereligne.fr</a>.
+                {% trans %}footer.data-statement{% endtrans %}
             </div>
         </div>
     </div>

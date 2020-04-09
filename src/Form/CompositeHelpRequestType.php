@@ -25,14 +25,14 @@ class CompositeHelpRequestType extends AbstractType
             ->add('jobType', ChoiceType::class, [
                 'required' => true,
                 'choices' => [
-                    'Le médical ou le paramédical' => 'health',
-                    'Un service d’urgence' => 'emergency',
-                    'L’aide aux personnes à domicile ou en centre' => 'care',
-                    'La production ou l’approvisionnement agroalimentaire' => 'food',
-                    'La production ou l’approvisionnement de médicaments' => 'drugs',
-                    'La production ou l’approvisionnement en énergie' => 'energy',
-                    'Le service minimum de transports en commun' => 'transports',
-                    'Une autre fonction nécessaire au maintien des secteurs vitaux de la Nation' => 'other',
+                    'label.work-health' => 'health',
+                    'label.work-emergency' => 'emergency',
+                    'label.work-care' => 'care',
+                    'label.work-food' => 'food',
+                    'label.work-drugs' => 'drugs',
+                    'label.work-energy' => 'energy',
+                    'label.work-transport' => 'transports',
+                    'label.work-other' => 'other',
                 ],
             ])
             ->add('details', CollectionType::class, [

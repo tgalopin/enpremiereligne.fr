@@ -1,0 +1,34 @@
+{
+    "request.groceries.label": "I need help with my shopping",
+    "request.groceries.help": "You'll be put in contact with a volunteer who will go shopping for you and deliver groceries to your home. This connection is not a commitment but the beginning of a discussion.",
+
+    "request.babysit.label": "I need help looking after one or more children",
+    "request.babysit.help": "You will be put in contact with a volunteer who can look after your children. This connection is not a commitment but the beginning of a discussion.",
+
+    "request.babysit.already_parent.label": "I want my children to be looked after by someone who is a parent",
+    "request.babysit.already_parent.help": "We may still offer you a connection to someone who isn't a parent if no other options have been found after 48 hours.",
+
+    "request.babysit.ages.label": "How old are your children",
+    "request.babysit.ages.child": "Child to mind no ",
+    "request.babysit.ages.add": "Add another child",
+    "request.babysit.ages.help": "This will allow a connection with someone able to look after them.",
+
+    "request.babysit.ages.0-1": "Between 0 and 1",
+    "request.babysit.ages.1-2": "Between 1 and 2",
+    "request.babysit.ages.3-5": "Between 3 and 5",
+    "request.babysit.ages.6-9": "Between 6 and 9",
+    "request.babysit.ages.10-12": "Between 10 and 12",
+    "request.babysit.ages.13": "13 and over",
+
+    "request.vulnerable.firstname.self": "Your first name (required)",
+    "request.vulnerable.firstname.other": "First name of the person concerned (required)",
+
+    "request.vulnerable.lastname.self": "Your surname (required)",
+    "request.vulnerable.lastname.other": "Surname of the person concerned (required)",
+
+    "request.vulnerable.zipcode.self": "Your postcode (required)",
+    "request.vulnerable.zipcode.other": "Postcode of the person concerned (required)",
+
+    "request.vulnerable.email.self": "Your email address (required)",
+    "request.vulnerable.email.other": "Email address of the person concerned (required)"
+}

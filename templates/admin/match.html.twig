@@ -5,19 +5,19 @@
 
 {% block main %}
     <div class="p-3">
-        Demande de :
+        {% trans %}admin.requester{% endtrans %}
         <br />
         <strong>{{ match.requester.firstName }} {{ match.requester.lastName }}</strong> ({{ match.requester.zipCode }})
 
         {% if match.requester.ccFirstName %}
             <br />
-            aidé par <strong>{{ match.requester.ccFirstName }} {{ match.requester.ccLastName }}</strong>
+            {% trans %}admin.helped-by{% endtrans %}aidé par <strong>{{ match.requester.ccFirstName }} {{ match.requester.ccLastName }}</strong>
         {% endif %}
 
         <br />
-        Travail : {{ match.requester.jobType }}
+        {% trans %}admin.job-type{% endtrans %} {{ match.requester.jobType }}
         <br />
-        Date : {{ match.requester.createdAt|date('d/m/Y H:i') }}
+        {% trans %}label.date{% endtrans %} {{ match.requester.createdAt|date('d/m/Y H:i') }}
     </div>
 
     {% if match.groceries is not null %}
@@ -26,19 +26,19 @@
         <div class="p-4">
             <div class="row align-items-center mb-5">
                 <div class="col-6">
-                    <strong>{{ match.requester.firstName }} a besoin qu'on lui achète et livre des courses</strong>
+                    <strong>{% trans with{'name': match.requester.firstName } %}admin.needs-shopping{% endtrans %}</strong>
                 </div>
                 <div class="col-6">
                     <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': match.requester.ownerUuid}) }}"
                        class="btn btn-secondary mr-2">
-                        Fermer le besoin anonymement
+                        {% trans %}admin.close-requirement{% endtrans %}
                     </a>
-                    <small>Utile si vous avez associé quelqu'un d'autre manuellement</small>
+                    <small>{% trans %}admin.close-requirement-help{% endtrans %}</small>
                 </div>
             </div>
 
             <div class="mb-3">
-                {{ match.groceries|length }} helpers potentiels proches trouvés pour acheter des courses :
+                {% trans with{'number': match.groceries|length } %}admin.count-shopping-match{% endtrans %}
             </div>
 
             <ul>
@@ -49,21 +49,21 @@
                                 <strong>{{ matchedHelper.helper.firstName }} {{ matchedHelper.helper.lastName }}</strong>
                                 ({{ matchedHelper.helper.zipCode }})
                                 <br />
-                                Score : {{ matchedHelper.score }}
-                                ({{ matchedHelper.helper.canBabysit ? 'peut garder des enfants' : 'ne souhaite pas garder d\'enfants' }})
+                                {% trans %}label.score{% endtrans %} {{ matchedHelper.score }}
+                                ({{ matchedHelper.helper.canBabysit ? 'admin.can-babysit'|trans : 'admin.not-babysit'|trans }})
                                 <br />
-                                {{ matchedHelper.helper.age }} ans
+                                {{ matchedHelper.helper.age }} {% trans %}label.years{% endtrans %}
                             </div>
                             <div class="col-7">
                                 <a href="{{ path('admin_match_close', {'type': 'groceries', 'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
                                    class="btn btn-secondary mb-2 mr-4">
                                     <i class="fa fa-paper-plane mr-1"></i>
-                                    Envoyer la mise en contact et fermer le besoin
+                                    {% trans %}admin.send-and-close{% endtrans %}
                                 </a>
                                 <a href="{{ path('admin_match_block', {'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
                                    class="btn btn-link mb-2">
                                     <i class="fa fa-times mr-1"></i>
-                                    Bloquer le match
+                                    {% trans %}admin.block-match{% endtrans %}
                                 </a>
                             </div>
                         </div>
@@ -80,9 +80,9 @@
             <div class="row align-items-center mb-5">
                 <div class="col-6">
                     <div class="mb-2">
-                        <strong>{{ match.requester.firstName }} a besoin qu'on garde {{ match.babysitNeeds|length }} enfant(s)</strong>
+                        <strong>{% trans with {'name': match.requester.firstName, 'number': match.babysitNeeds|length } %}admin.needs-babysitting{% endtrans %}</strong>
                     </div>
-                    Ages :
+                    {% trans %}label.ages{% endtrans %}
                     {% for need in match.babysitNeeds %}
                         <span class="badge badge-secondary">{{ need.childAgeRange }}</span>
                     {% endfor %}
@@ -90,14 +90,14 @@
                 <div class="col-6">
                     <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': match.requester.ownerUuid}) }}"
                        class="btn btn-secondary mr-2">
-                        Fermer le besoin anonymement
+                        {% trans %}admin.close-requirement{% endtrans %}
                     </a>
-                    <small>Utile si vous avez associé quelqu'un d'autre manuellement</small>
+                    <small>{% trans %}admin.close-requirement-help{% endtrans %}</small>
                 </div>
             </div>
 
             <div class="mb-3">
-                {{ match.babysit|length }} helpers potentiels proches trouvés pour garder des enfants.
+                {% trans with{'number': match.babysit|length } %}admin.count-babysitting-match{% endtrans %}
             </div>
 
             <ul>
@@ -108,14 +108,14 @@
                                 <strong>{{ matchedHelper.helper.firstName }} {{ matchedHelper.helper.lastName }}</strong>
                                 ({{ matchedHelper.helper.zipCode }})
                                 <br />
-                                Score : {{ matchedHelper.score }}
+                                {% trans %}label.score{% endtrans %} {{ matchedHelper.score }}
                                 <br />
-                                {{ matchedHelper.helper.age }} ans,
-                                {{ matchedHelper.helper.haveChildren ? 'a des enfants' : 'sans enfants' }}
+                                {{ matchedHelper.helper.age }} {% trans %}label.years{% endtrans %},
+                                {{ matchedHelper.helper.haveChildren ? 'label.has-children'|trans : 'label.no-children'|trans }}
                                 <br />
-                                Capable de garder {{ matchedHelper.helper.babysitMaxChildren }} enfants
+                                {% trans with {'number': matchedHelper.helper.babysitMaxChildren } %}admin.can-babysit-count{% endtrans %}
                                 <br />
-                                Ages acceptés :
+                                {% trans %}admin.accepts-ages{% endtrans %}
                                 {% for range in matchedHelper.helper.babysitAgeRanges %}
                                     <span class="badge badge-secondary">{{ range }}</span>
                                 {% endfor %}
@@ -124,12 +124,12 @@
                                 <a href="{{ path('admin_match_close', {'type': 'babysit', 'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
                                    class="btn btn-secondary mb-2 mr-4">
                                     <i class="fa fa-paper-plane mr-1"></i>
-                                    Envoyer la mise en contact et fermer le besoin
+                                    {% trans %}admin.send-and-close{% endtrans %}
                                 </a>
                                 <a href="{{ path('admin_match_block', {'ownerUuid': match.requester.ownerUuid, 'id': matchedHelper.helper.id}) }}"
                                    class="btn btn-link mb-2">
                                     <i class="fa fa-times mr-1"></i>
-                                    Bloquer le match
+                                    {% trans %}admin.block-match{% endtrans %}
                                 </a>
                             </div>
                         </div>

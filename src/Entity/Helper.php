@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Validator\Constraints as EPLAssert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -30,7 +31,7 @@ class Helper
     /**
      * @ORM\Column(length=100)
      *
-     * @Assert\NotBlank(message="Votre prénom est requis.")
+     * @Assert\NotBlank(message="name-first.required")
      * @Assert\Length(max=100)
      */
     public ?string $firstName = '';
@@ -38,7 +39,7 @@ class Helper
     /**
      * @ORM\Column(length=100)
      *
-     * @Assert\NotBlank(message="Votre nom de famille est requis.")
+     * @Assert\NotBlank(message="name-last.required")
      * @Assert\Length(max=100)
      */
     public ?string $lastName = '';
@@ -46,7 +47,7 @@ class Helper
     /**
      * @ORM\Column(length=200)
      *
-     * @Assert\NotBlank(message="Votre adresse e-mail est requise.")
+     * @Assert\NotBlank(message="email.required")
      * @Assert\Email()
      * @Assert\Length(max=200)
      */
@@ -55,16 +56,16 @@ class Helper
     /**
      * @ORM\Column(length=10)
      *
-     * @Assert\NotBlank(message="Votre code postal est requis.")
+     * @Assert\NotBlank(message="postcode.required")
      * @Assert\Length(max=5)
-     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="Le code postal doit contenir précisément 5 chiffres.")
+     * @EPLAssert\ZipCode()
      */
     public ?string $zipCode = '';
 
     /**
      * @ORM\Column(type="smallint")
      *
-     * @Assert\NotBlank(message="Votre âge est requis (vous devez être majeur et ne pas faire partie de la population à risque).")
+     * @Assert\NotBlank(message="age.required")
      * @Assert\GreaterThanOrEqual(18)
      * @Assert\LessThanOrEqual(70)
      */
@@ -84,7 +85,7 @@ class Helper
      * @ORM\Column(type="smallint")
      *
      * @Assert\GreaterThanOrEqual(1)
-     * @Assert\LessThanOrEqual(4, message="Vous ne pouvez pas effectuer la garde de plus de 4 enfants à la fois.")
+     * @Assert\LessThanOrEqual(4, message="babysit.too-many")
      */
     public ?int $babysitMaxChildren = 1;
 

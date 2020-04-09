@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: En première ligne
+    site_name: '%env(SITE_NAME)%'
 
     design:
         menu:
@@ -20,7 +20,7 @@ easy_admin:
             - { label: 'Export' }
             - { route: 'admin_export_helpers', label: 'Export helpers', icon: 'cloud-download', target: '_blank' }
             - { route: 'admin_export_helpers_by_zip_code', label: 'Export zip codes', icon: 'cloud-download', target: '_blank' }
-            - { route: 'admin_export_unmatched', label: 'Export unmtached', icon: 'cloud-download', target: '_blank' }
+            - { route: 'admin_export_unmatched', label: 'Export unmatched', icon: 'cloud-download', target: '_blank' }
 
     entities:
         Helper:

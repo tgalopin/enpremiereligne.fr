@@ -1,0 +1,34 @@
+{
+    "request.groceries.label": "J'ai besoin d'aide pour effectuer mes courses",
+    "request.groceries.help": "Vous serez mis en relation avec un(e) volontaire qui pourra faire des courses pour vous et vous les livrer à votre domicile. Cette mise en relation n'est pas un engagement mais le début d'une discussion.",
+
+    "request.babysit.label": "J'ai besoin d'aide pour garder un ou plusieurs enfants",
+    "request.babysit.help": "Vous serez mis en relation avec un(e) volontaire qui pourra garder vos enfants. Cette mise en relation n'est pas un engagement mais le début d'une discussion.",
+
+    "request.babysit.already_parent.label": "Je souhaite que mes enfants soient gardés par quelqu'un déjà parent",
+    "request.babysit.already_parent.help": "Nous vous proposerons tout de même une solution sans ce critère si aucune autre solution n'a été trouvée après 48h d'attente.",
+
+    "request.babysit.ages.label": "Quel âge ont vos enfants ?",
+    "request.babysit.ages.child": "Enfant à garder n°",
+    "request.babysit.ages.add": "Ajouter un enfant à garder",
+    "request.babysit.ages.help": "Cela permettra une mise en relation avec quelqu'un capable de les garder.",
+
+    "request.babysit.ages.0-1": "Entre 0 et 1 an",
+    "request.babysit.ages.1-2": "Entre 1 et 2 ans",
+    "request.babysit.ages.3-5": "Entre 3 et 5 ans",
+    "request.babysit.ages.6-9": "Entre 6 et 9 ans",
+    "request.babysit.ages.10-12": "Entre 10 et 12 ans",
+    "request.babysit.ages.13": "13 ans et plus",
+
+    "request.vulnerable.firstname.self": "Votre prénom (requis)",
+    "request.vulnerable.firstname.other": "Prénom de la personne concernée (requis)",
+
+    "request.vulnerable.lastname.self": "Votre nom (requis)",
+    "request.vulnerable.lastname.other": "Nom de la personne concernée (requis)",
+
+    "request.vulnerable.zipcode.self": "Votre code postal (français uniquement, requis)",
+    "request.vulnerable.zipcode.other": "Le code postal de la personne concernée (français uniquement, requis)",
+
+    "request.vulnerable.email.self": "Votre adresse e-mail (requis)",
+    "request.vulnerable.email.other": "Adresse e-mail de la personne concernée (requis)"
+}

@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Entity\HelpRequest;
+use App\Validator\Constraints as EPLAssert;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
@@ -10,28 +11,28 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 class CompositeHelpRequest
 {
     /**
-     * @Assert\NotBlank(message="Votre prénom est requis.")
+     * @Assert\NotBlank(message="name-first.required")
      * @Assert\Length(max=100)
      */
     public ?string $firstName = '';
 
     /**
-     * @Assert\NotBlank(message="Votre nom de famille est requis.")
+     * @Assert\NotBlank(message="name-last.required")
      * @Assert\Length(max=100)
      */
     public ?string $lastName = '';
 
     /**
-     * @Assert\NotBlank(message="Votre adresse e-mail est requise.")
+     * @Assert\NotBlank(message="email.required")
      * @Assert\Email()
      * @Assert\Length(max=200)
      */
     public ?string $email = '';
 
     /**
-     * @Assert\NotBlank(message="Votre code postal est requis.")
+     * @Assert\NotBlank(message="postcode.required")
      * @Assert\Length(max=5)
-     * @Assert\Regex("/^[0-9]{5}$/", htmlPattern="^[0-9]{5}$", message="Le code postal doit contenir précisément 5 chiffres.")
+     * @EPLAssert\ZipCode()
      */
     public ?string $zipCode = '';
 
@@ -54,7 +55,7 @@ class CompositeHelpRequest
     public function validate(ExecutionContextInterface $context)
     {
         if (!$this->details) {
-            $context->addViolation('Vous devez renseigner au moins un besoin pour vous enregistrer.');
+            $context->addViolation('needs.at-least-one');
         }
     }
 

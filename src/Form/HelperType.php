@@ -29,10 +29,10 @@ class HelperType extends AbstractType
             ->add('babysitMaxChildren', ChoiceType::class, [
                 'required' => true,
                 'choices' => [
-                    'Un seul' => 1,
-                    'Jusqu\'à 2' => 2,
-                    'Jusqu\'à 3' => 3,
-                    'Jusqu\'à 4' => 4,
+                    'label.only-one' => 1,
+                    'label.up-to-two' => 2,
+                    'label.up-to-three' => 3,
+                    'label.up-to-four' => 4,
                 ],
             ])
             ->add('babysitAgeRanges', ChoiceType::class, [
@@ -40,12 +40,12 @@ class HelperType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
                 'choices' => [
-                    'Entre 0 et 1 an' => HelpRequest::AGE_RANGE_01,
-                    'Entre 1 et 2 ans' => HelpRequest::AGE_RANGE_12,
-                    'Entre 3 et 5 ans' => HelpRequest::AGE_RANGE_35,
-                    'Entre 6 et 9 ans' => HelpRequest::AGE_RANGE_69,
-                    'Entre 10 et 12 ans' => HelpRequest::AGE_RANGE_1012,
-                    '13 ans et plus' => HelpRequest::AGE_RANGE_13,
+                    'label.between-0-1' => HelpRequest::AGE_RANGE_01,
+                    'label.between-1-2' => HelpRequest::AGE_RANGE_12,
+                    'label.between-3-5' => HelpRequest::AGE_RANGE_35,
+                    'label.between-6-9' => HelpRequest::AGE_RANGE_69,
+                    'label.between-10-12' => HelpRequest::AGE_RANGE_1012,
+                    'label.13-and-over' => HelpRequest::AGE_RANGE_13,
                 ],
             ])
             ->add('acceptVulnerable', CheckboxType::class, ['required' => false])

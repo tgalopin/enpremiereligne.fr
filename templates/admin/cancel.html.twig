@@ -5,39 +5,39 @@
 
 {% block main %}
     <div class="p-3">
-        Demande de :
+        {% trans %}admin.requester{% endtrans %}
         <br />
         <strong>{{ requests[0].firstName }} {{ requests[0].lastName }}</strong> ({{ requests[0].zipCode }})
         <br />
-        Travail : {{ requests[0].jobType }}
+        {% trans %}admin.job-type{% endtrans %} {{ requests[0].jobType }}
     </div>
 
     <div class="p-4">
         <p>
-            Annuler la mise en relation de
-            {{ type == 'groceries' ? 'courses' : 'garde d\'enfant' }} de
-            {{ requests[0].firstName }} {{ requests[0].lastName }} ?
+            {% trans with {'type': type == 'groceries' ? 'label.groceries'|trans : 'label.babysitting'|trans|lower, 'given': requests[0].firstName, 'family': requests[0].lastName} %}
+                admin.cancel-link
+            {% endtrans %}
         </p>
 
         {% if remove == 'helper' %}
             <p>
                 <strong>
-                    Et supprimer le profil du volontaire en même temps ?
+                    {% trans %}admin.delete-volunteer-profile{% endtrans %}
                 </strong>
             </p>
         {% elseif remove == 'request' %}
             <p>
                 <strong>
-                    Et supprimer le besoin de la demande d'aide en même temps ?
+                    {% trans %}admin.delete-request{% endtrans %}
                 </strong>
             </p>
         {% endif %}
 
         <a href="?token={{ csrf_token('admin_cancel') }}&remove={{ remove }}" class="btn btn-primary mr-3">
-            Oui, annuler
+            {% trans %}label.yes-cancel{% endtrans %}
         </a>
         <a href="{{ path('admin_match_history') }}" class="btn btn-secondary">
-            Non, annuler
+            {% trans %}label.no-cancel{% endtrans %}
         </a>
     </div>
 {% endblock %}

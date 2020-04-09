@@ -1,23 +1,25 @@
+import {trans} from './translator';
+
 const replacements = [
     {
         id: 'field-firstname',
-        self: 'Votre prénom (requis)',
-        other: 'Prénom de la personne concernée (requis)',
+        self: trans('request.vulnerable.firstname.self'),
+        other: trans('request.vulnerable.firstname.other'),
     },
     {
         id: 'field-lastname',
-        self: 'Votre nom (requis)',
-        other: 'Nom de la personne concernée (requis)',
+        self: trans('request.vulnerable.lastname.self'),
+        other: trans('request.vulnerable.lastname.other'),
     },
     {
         id: 'field-zipcode',
-        self: 'Votre code postal (français uniquement, requis)',
-        other: 'Le code postal de la personne concernée (français uniquement, requis)',
+        self: trans('request.vulnerable.zipcode.self'),
+        other: trans('request.vulnerable.zipcode.other'),
     },
     {
         id: 'field-email',
-        self: 'Votre adresse e-mail (requis)',
-        other: 'Adresse e-mail de la personne concernée (requis)',
+        self: trans('request.vulnerable.email.self'),
+        other: trans('request.vulnerable.email.other'),
     },
 ];
 
@@ -32,18 +34,26 @@ function refresh() {
 
         const inputs = fieldCc.querySelectorAll('input');
         for (let i in inputs) {
-            inputs[i].required = true;
+            if (inputs.hasOwnProperty(i)) {
+                inputs[i].required = true;
+            }
         }
     } else {
         fieldCc.style.display = 'none';
 
         const inputs = fieldCc.querySelectorAll('input');
         for (let i in inputs) {
-            inputs[i].required = false;
+            if (inputs.hasOwnProperty(i)) {
+                inputs[i].required = false;
+            }
         }
     }
 
     for (let i in replacements) {
+        if (!replacements.hasOwnProperty(i)) {
+            continue;
+        }
+
         const r = replacements[i];
         const label = document.getElementById(r.id).querySelector('label');
 
