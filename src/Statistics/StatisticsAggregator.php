@@ -95,7 +95,8 @@ class StatisticsAggregator
         // Note: les 2 départements Corse (2A & 2B) sont considérés comme formant un unique département "20"
         return $this->db->query('
             SELECT SUBSTRING(zip_code FROM 1 FOR 2) AS department, COUNT(DISTINCT owner_uuid) as nb 
-            FROM help_requests 
+            FROM help_requests r
+            WHERE r.matched_with_id IS NULL
             GROUP BY department 
             ORDER BY nb DESC
         ')->fetchAll();
