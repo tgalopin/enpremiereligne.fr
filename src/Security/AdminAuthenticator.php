@@ -64,7 +64,7 @@ class AdminAuthenticator extends AbstractFormLoginAuthenticator implements Passw
 
         $user = $this->entityManager->getRepository(Admin::class)->findOneBy(['username' => $credentials['username']]);
         if (!$user) {
-            throw new CustomUserMessageAuthenticationException('Identifiants invalides.');
+            throw new CustomUserMessageAuthenticationException('Invalid credentials.');
         }
 
         return $user;

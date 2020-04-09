@@ -2,6 +2,7 @@
 // const { t, i18n } = useTranslation();
 import { h, render } from 'preact';
 import {useState} from 'preact/hooks';
+import {trans} from './translator';
 
 const NeedGroceriesButton = ({ needGroceries, onChange }) => {
     return (
@@ -30,13 +31,11 @@ const NeedGroceriesButton = ({ needGroceries, onChange }) => {
 
                 <div>
                     <h4>
-                        J'ai besoin d'aide pour effectuer mes courses
+                        {trans('request.groceries.label')}
                     </h4>
 
                     <div>
-                        Vous serez mis en relation avec un(e) volontaire qui pourra faire des courses pour vous
-                        et vous les livrer à votre domicile. Cette mise en relation n'est pas un engagement
-                        mais le début d'une discussion d'entraide.
+                        {trans('request.groceries.help')}
                     </div>
                 </div>
             </div>
@@ -71,12 +70,11 @@ const NeedBabysitButton = ({ needBabysit, onChange }) => {
 
                 <div>
                     <h4>
-                        J'ai besoin d'aide pour garder un ou plusieurs enfants
+                        {trans('request.babysit.label')}
                     </h4>
 
                     <div>
-                        Vous serez mis en relation avec un(e) volontaire qui pourra garder vos enfants.
-                        Cette mise en relation n'est pas un engagement mais le début d'une discussion d'entraide.
+                        {trans('request.babysit.help')}
                     </div>
                 </div>
             </div>
@@ -165,21 +163,20 @@ const NeedsChooser = () => {
                                    className="custom-control-input" />
 
                             <label className="checkbox-custom custom-control-label" htmlFor="helper_preferParents">
-                                Je souhaite que mes enfants soient gardés par quelqu'un déjà parent
+                                {trans('request.babysit.already_parent.label')}
                             </label>
                         </div>
 
                         <div className="mt-2">
                             <small id="helper_acceptVulnerable_help" className="form-text text-muted">
-                                Nous vous proposerons tout de même une solution sans ce critère si
-                                aucune autre solution n'a été trouvée après 48h d'attente.
+                                {trans('request.babysit.already_parent.help')}
                             </small>
                         </div>
                     </div>
 
                     <div className="mt-4 mb-2">
                         <strong>
-                            Quel âge ont vos enfants ?
+                            {trans('request.babysit.ages.label')}
                         </strong>
                     </div>
 
@@ -188,7 +185,7 @@ const NeedsChooser = () => {
                             return (
                                 <div className="mb-2" key={key+'-'+child.age}>
                                     <small className="text-muted text-uppercase">
-                                        Enfant à garder n°{key + 1}
+                                        {trans('request.babysit.ages.child') + (key + 1)}
                                     </small>
 
                                     <div className="row no-gutters">
@@ -198,12 +195,12 @@ const NeedsChooser = () => {
                                                     value={child.age}
                                                     onChange={e => updateAge(key, e.target.value)}>
                                                 <option value={null} />
-                                                <option value="0-1">Entre 0 et 1 an</option>
-                                                <option value="1-2">Entre 1 et 2 ans</option>
-                                                <option value="3-5">Entre 3 et 5 ans</option>
-                                                <option value="6-9">Entre 6 et 9 ans</option>
-                                                <option value="10-12">Entre 10 et 12 ans</option>
-                                                <option value="13-">13 ans et plus</option>
+                                                <option value="0-1">{trans('request.babysit.ages.0-1')}</option>
+                                                <option value="1-2">{trans('request.babysit.ages.1-2')}</option>
+                                                <option value="3-5">{trans('request.babysit.ages.3-5')}</option>
+                                                <option value="6-9">{trans('request.babysit.ages.6-9')}</option>
+                                                <option value="10-12">{trans('request.babysit.ages.10-12')}</option>
+                                                <option value="13-">{trans('request.babysit.ages.13')}</option>
                                             </select>
                                         </div>
                                         <div className="col-2 text-center">
@@ -223,13 +220,13 @@ const NeedsChooser = () => {
                         <div className={'text-right mt-3 '+(children.length >= 4 ? 'd-none' : '')}>
                             <button type="button" className="btn btn-sm btn-link"
                                     onClick={() => setChildren(old => [...old, { age: null }])}>
-                                Ajouter un enfant à garder
+                                {trans('request.babysit.ages.add')}
                             </button>
                         </div>
 
                         <div className="text-muted">
                             <small>
-                                Cela permettra une mise en relation avec quelqu'un capable de les garder.
+                                {trans('request.babysit.ages.help')}
                             </small>
                         </div>
                     </div>

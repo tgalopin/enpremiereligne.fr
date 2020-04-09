@@ -1,9 +1,9 @@
 {% set current_route = app.request.attributes.get('_route') %}
 {% set current_route_params = app.request.attributes.get('_route_params') %}
-{% set folder = 'fr' == app.request.locale ? '' : 'en_NZ/' %}
+{% set localized_assets_folder = app.request.locale ~ '/' %}
 
 <!DOCTYPE html>
-<html lang="{{ app.request.locale}}">
+<html lang="{{ app.request.locale }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,11 +21,11 @@
     <link rel="canonical" href="{% block meta_canonical current_route ? url(current_route, current_route_params) : '' %}" />
     <meta name="description" content="{% block meta_description 'site.description'|trans %}" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset(folder ~ 'apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset(folder ~ 'favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset(folder ~ 'favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset(folder ~ 'site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset(folder ~ 'safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset(localized_assets_folder ~ 'apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset(localized_assets_folder ~ 'favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset(localized_assets_folder ~ 'favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset(localized_assets_folder ~ 'site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset(localized_assets_folder ~ 'safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#0077cc">
     <meta name="theme-color" content="#0077cc">
 
@@ -34,7 +34,7 @@
     <meta property="og:url" content="{{ block('meta_canonical') }}" />
     <meta property="og:title" content="{{ block('title') }}" />
     <meta property="og:description" content="{{ block('meta_description') }}" />
-    <meta property="og:image" content="{% block meta_image (url('homepage')|trim('/')) ~ asset(folder ~ 'res/sharer-v3.jpg') %}" />
+    <meta property="og:image" content="{% block meta_image (url('homepage')|trim('/')) ~ asset(localized_assets_folder ~ 'res/sharer-v3.jpg') %}" />
     <meta property="og:image:width" content="{% block meta_image_width 2400 %}" />
     <meta property="og:image:height" content="{% block meta_image_height 1260 %}" />
     {% block metas '' %}
@@ -50,12 +50,12 @@
             "@type": "Organization",
             "url": "{{ block('meta_canonical') }}",
             "name": "{% trans %}site.name{% endtrans %}",
-            "logo": "{{ (url('homepage')|trim('/')) ~ asset(folder ~ 'res/logo.svg') }}",
+            "logo": "{{ (url('homepage')|trim('/')) ~ asset(localized_assets_folder ~ 'res/logo.svg') }}",
             "description": "{{ block('meta_description') }}"
         }
     </script>
 </head>
-<body class="{% block body_class '' %}">
+<body class="{% block body_class '' %}" data-locale="{{ app.request.locale }}">
     {% block body '' %}
 
     {% block javascripts '' %}

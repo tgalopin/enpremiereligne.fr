@@ -2,40 +2,37 @@
 
 {% block body %}
     <div class="home">
-        <div class="home-header pt-4 pl-4 pr-4 pb-3 pt-lg-5 pl-lg-5 pr-lg-5 pb-lg-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+        <div class="container-fluid">
+            <div class="home-header p-2 p-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-12 col-xl-3 home-header-menu d-none d-xl-block">
+                        <a href="{{ path('content_international') }}">
+                            {% trans %}header.international{% endtrans %}
+                        </a>
+                        <a href="mailto:team@enpremiereligne.fr">
+                            {% trans %}header.contact_us{% endtrans %}
+                        </a>
+                    </div>
+                    <div class="col-12 col-xl-6 text-center">
                         <h1 class="sr-only">
                             {% trans %}site.name{% endtrans %}
                         </h1>
 
-                        <img src="{{ asset(folder ~ 'res/logo.svg') }}" class="home-header-logo" alt="{% trans %}site.name{% endtrans %}" />
-
-                        <h4 class="font-weight-normal home-header-pitch mt-4">
-                            {% trans %}home.byline{% endtrans %}
-                        </h4>
-
-                        <div class="home-header-share mt-5">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-lg-auto text-center mb-2">
-                                    {% trans %}social.share-intro{% endtrans %}
-                                </div>
-                                <div class="col-lg-auto text-center mb-2">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/facebook.html.twig') }}
-                                    </a>
-                                    <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="{% trans %}social.share-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/twitter.html.twig') }}
-                                    </a>
-                                    <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/telegram.html.twig') }}
-                                    </a>
-                                    <a href="https://wa.me/?text={{ url('homepage') }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
-                                        {{ include('_icons/whatsapp.html.twig') }}
-                                    </a>
-                                </div>
-                            </div>
+                        <a href="{{ path('homepage') }}">
+                            <img src="{{ asset(localized_assets_folder ~ 'res/logo.svg') }}" class="home-header-logo" alt="{% trans %}site.name{% endtrans %}" />
+                        </a>
+                    </div>
+                    <div class="col-12 col-xl-3 text-center text-xl-right home-header-socials">
+                        <div class="mt-3 mb-4 mt-lg-4 mb-lg-0 mt-xl-0 mb-xl-0">
+                            <a href="https://www.facebook.com/en1ereligne"
+                               title="{% trans %}social.find-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/facebook.html.twig') }}</a>
+                            <a href="https://twitter.com/en1ereligne"
+                               title="{% trans %}social.find-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/twitter.html.twig') }}</a>
+                            <a href="https://www.linkedin.com/company/enpremiereligne/"
+                               title="{% trans %}social.find-linkedin{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                                {{ include('_icons/linkedin.html.twig') }}</a>
                         </div>
                     </div>
                 </div>
@@ -151,6 +148,25 @@
         </div>
 
         <div class="home-ecosystem p-4 p-lg-5">
+            <div class="home-share text-center mb-5">
+                <div class="text-muted mb-2">
+                    {% trans %}social.share-intro{% endtrans %}
+                </div>
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('homepage')|url_encode }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/facebook.html.twig') }}
+                </a>
+                <a href="https://twitter.com/intent/tweet?text={{ url('homepage') }}" title="{% trans %}social.share-twitter{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/twitter.html.twig') }}
+                </a>
+                <a href="https://telegram.me/share/url?url={{ url('homepage') }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/telegram.html.twig') }}
+                </a>
+                <a href="https://wa.me/?text={{ url('homepage') }}" title="{% trans %}social.share-facebook{% endtrans %}" target="_blank" rel="noreferrer noopener">
+                    {{ include('_icons/whatsapp.html.twig') }}
+                </a>
+            </div>
+
             <div class="home-ecosystem-feedbacks mb-5">
                 <h5 class="font-weight-normal mb-5 p-4">
                     {% trans with {'count' : countTotalHelpers|number_format(0, ',', ' ') } %}home.number-volunteers{% endtrans %}

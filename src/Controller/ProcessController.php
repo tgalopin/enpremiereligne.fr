@@ -26,8 +26,8 @@ class ProcessController extends AbstractController
 {
     /**
      * @Route({
-     *     "fr": "/je-peux-aider",
-     *     "en": "/i-can-help"
+     *     "fr_FR": "/je-peux-aider",
+     *     "en_NZ": "/i-can-help"
      * }, name="process_helper")
      */
     public function helper(MailerInterface $mailer, EntityManagerInterface $manager, HelperRepository $repository, Request $request, TranslatorInterface $translator, string $sender)
@@ -67,8 +67,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/je-peux-aider/{uuid}",
-     *     "en": "/i-can-help/{uuid}"
+     *     "fr_FR": "/je-peux-aider/{uuid}",
+     *     "en_NZ": "/i-can-help/{uuid}"
      * }, name="process_helper_view")
      */
     public function helperView(Helper $helper, Request $request)
@@ -81,8 +81,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/je-peux-aider/{uuid}/supprimer",
-     *     "en": "/i-can-help/{uuid}/remove"
+     *     "fr_FR": "/je-peux-aider/{uuid}/supprimer",
+     *     "en_NZ": "/i-can-help/{uuid}/remove"
      * }, name="process_helper_delete_confirm")
      */
     public function helperDeleteConfirm(Helper $helper)
@@ -92,8 +92,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/je-peux-aider/{uuid}/supprimer/do",
-     *     "en": "/i-can-help/{uuid}/remove/process"
+     *     "fr_FR": "/je-peux-aider/{uuid}/supprimer/do",
+     *     "en_NZ": "/i-can-help/{uuid}/remove/process"
      * }, name="process_helper_delete_do")
      */
     public function helperDeleteDo(EntityManagerInterface $manager, Helper $helper, Request $request)
@@ -110,8 +110,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/je-peux-aider/supprimer/effectue",
-     *     "en": "/i-can-help/remove/done"
+     *     "fr_FR": "/je-peux-aider/supprimer/effectue",
+     *     "en_NZ": "/i-can-help/remove/done"
      * }, name="process_helper_delete_done")
      */
     public function helperDeleted()
@@ -121,8 +121,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/j-ai-besoin-d-aide",
-     *     "en": "/i-need-help"
+     *     "fr_FR": "/j-ai-besoin-d-aide",
+     *     "en_NZ": "/i-need-help"
      * }, name="process_request")
      */
     public function request(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator, string $sender)
@@ -165,8 +165,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/j-ai-besoin-d-aide-risque",
-     *     "en": "/at-risk-need-help"
+     *     "fr_FR": "/j-ai-besoin-d-aide-risque",
+     *     "en_NZ": "/at-risk-need-help"
      * }, name="process_request_vulnerable")
      */
     public function requestVulnerable(MailerInterface $mailer, EntityManagerInterface $manager, HelpRequestRepository $repository, Request $request, TranslatorInterface $translator, string $sender)
@@ -212,8 +212,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/j-ai-besoin-d-aide/{ownerUuid}",
-     *     "en": "/i-need-help/{ownerUuid}"
+     *     "fr_FR": "/j-ai-besoin-d-aide/{ownerUuid}",
+     *     "en_NZ": "/i-need-help/{ownerUuid}"
      * }, name="process_requester_view")
      */
     public function requesterView(HelpRequestRepository $repository, Request $request, string $ownerUuid)
@@ -231,8 +231,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/j-ai-besoin-d-aide/{ownerUuid}/supprimer",
-     *     "en": "/i-need-help/{ownerUuid}/remove"
+     *     "fr_FR": "/j-ai-besoin-d-aide/{ownerUuid}/supprimer",
+     *     "en_NZ": "/i-need-help/{ownerUuid}/remove"
      * }, name="process_requester_delete_confirm")
      */
     public function requestDeleteConfirm(string $ownerUuid)
@@ -242,8 +242,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/j-ai-besoin-d-aide/{ownerUuid}/supprimer/do",
-     *     "en": "/i-need-help/{ownerUuid}/remove/process"
+     *     "fr_FR": "/j-ai-besoin-d-aide/{ownerUuid}/supprimer/do",
+     *     "en_NZ": "/i-need-help/{ownerUuid}/remove/process"
      * }, name="process_requester_delete_do")
      */
     public function requestDeleteDo(HelpRequestRepository $repository, Request $request, string $ownerUuid)
@@ -259,8 +259,8 @@ class ProcessController extends AbstractController
 
     /**
      * @Route({
-     *     "fr": "/j-ai-besoin-d-aide/supprimer/effectue",
-     *     "en": "/i-need-help/{ownerUuid}/remove/done"
+     *     "fr_FR": "/j-ai-besoin-d-aide/supprimer/effectue",
+     *     "en_NZ": "/i-need-help/{ownerUuid}/remove/done"
      * }, name="process_requester_delete_done")
      */
     public function requestDeleted()
