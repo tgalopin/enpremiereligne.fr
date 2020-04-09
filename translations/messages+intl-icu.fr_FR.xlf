@@ -1056,7 +1056,7 @@
                 <source>A partir de maintenant, c'est à vous de jouer !</source>
                 <target>A partir de maintenant, c'est à vous de jouer !</target>
             </trans-unit>
-            <trans-unit id="email.at-risk" resname="email..at-risk">
+            <trans-unit id="email.at-risk" resname="email.at-risk">
                 <source>
                     <![CDATA[<strong>Attention : { requester } fait partie des populations à risques</strong>, il est donc essentiel d'être extrêmement vigilants lors de vos échanges. Assurez-vous bien de prendre <strong>toutes les précautions sanitaires possibles</strong>.]]></source>
                 <target>
