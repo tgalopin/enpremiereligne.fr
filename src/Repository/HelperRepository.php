@@ -85,4 +85,35 @@ class HelperRepository extends ServiceEntityRepository
             ->getArrayResult()
         ;
     }
+
+    /**
+     * @return array
+     */
+    public function findAssoEntourage()
+    {
+        $qb = $this->createQueryBuilder('h');
+
+        $matchedIds = $this->_em->createQueryBuilder()
+            ->select('h.id')
+            ->from(HelpRequest::class, 'r')
+            ->leftJoin('r.matchedWith', 'h')
+            ->where('r.matchedWith IS NOT NULL')
+            ->getQuery()
+            ->getArrayResult()
+        ;
+
+        return $qb
+            ->select('h.firstName', 'h.email')
+            ->where('h.age >= 50')
+            ->andWhere($qb->expr()->orX(
+                $qb->expr()->in('h.zipCode', ['35000', '35200', '35700', '59000', '59160', '59260', '59777', '59800']),
+                'h.zipCode LIKE \'75%\'',
+                'h.zipCode LIKE \'92%\'',
+                'h.zipCode LIKE \'6900%\''
+            ))
+            ->andWhere($qb->expr()->notIn('h.id', array_column($matchedIds, 'id')))
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 }
