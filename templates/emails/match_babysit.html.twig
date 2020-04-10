@@ -9,7 +9,7 @@
 <p>
     {% trans with {'zipcode': requester.zipCode } %}email.postcode-match{% endtrans %}
     {% trans with {'count': needs.babysitNeeds, 'requester': requester.firstName|capitalize, 'ages': needs.babysitAgesList, 'helper': helper.firstName|capitalize } %}email.baysit{% endtrans %}
-    {% trans with {'helper': helper.firstName|capitalize, 'age': helper.age } %}email.postcode-match{% endtrans %} {% if helper.haveChildren %}{% trans %}email.also-parent{% endtrans %}{% endif %}.
+    {% trans with {'helper': helper.firstName|capitalize, 'age': helper.age } %}email.helper-age{% endtrans %}{% if helper.haveChildren %}{% trans %}email.also-parent{% endtrans %}{% endif %}.
 </p>
 
 <p>

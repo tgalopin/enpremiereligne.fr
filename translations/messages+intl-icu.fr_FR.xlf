@@ -1049,8 +1049,8 @@
                 <target>{helper} a {age} ans</target>
             </trans-unit>
             <trans-unit id="email.also-parent" resname="email.also-parent">
-                <source>et est aussi parent</source>
-                <target>et est aussi parent</target>
+                <source> et est aussi parent</source>
+                <target> et est aussi parent</target>
             </trans-unit>
             <trans-unit id="email.up-to-you" resname="email.up-to-you">
                 <source>A partir de maintenant, c'est à vous de jouer !</source>
