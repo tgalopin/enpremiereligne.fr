@@ -5,7 +5,7 @@ namespace App\MatchFinder;
 class ZipCode
 {
     public const DEPARTMENTS = [
-        'fr' => [
+        'fr_FR' => [
             '01' => 'Ain',
             '02' => 'Aisne',
             '03' => 'Allier',
@@ -212,7 +212,7 @@ class ZipCode
     ];
 
     public const CLOSEST = [
-        'fr' => [
+        'fr_FR' => [
             '01400' => ['01990', '01540'],
             '01640' => ['01160', '01450'],
             '01500' => ['01150', '01640'],
