@@ -32,6 +32,7 @@ class HelperRepository extends ServiceEntityRepository
                 ->update()
                 ->from(HelpRequest::class, 'r')
                 ->set('r.matchedWith', 'NULL')
+                ->set('r.finished', 'false')
                 ->where('r.matchedWith = :matchedWith')
                 ->setParameter('matchedWith', $proposal->getId())
                 ->getQuery()
