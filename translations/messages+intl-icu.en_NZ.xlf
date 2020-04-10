@@ -10,16 +10,6 @@
                 <source>Soyons pr&#xE9;sents pour ceux en premi&#xE8;re ligne</source>
                 <target>Let's stop the spread together!</target>
             </trans-unit>
-
-            <trans-unit id="header.international" resname="header.international">
-                <source>International</source>
-                <target>International</target>
-            </trans-unit>
-            <trans-unit id="header.contact_us" resname="header.contact_us">
-                <source>Nous contacter</source>
-                <target>Contact us</target>
-            </trans-unit>
-
             <trans-unit id="footer.why" resname="footer.why">
                 <source>Pourquoi enpremiereligne.fr&#xA0;?</source>
                 <target>Why thecommunitywave.nz?</target>
@@ -56,7 +46,7 @@
                 </source>
                 <target>You have access, rectification, deletion and portability rights on your data, as well as the
                     right to oppose or limit the use of your personal data. You can exercise your rights by contacting
-                    us at the following address : &lt;a href="mailto:titouan@enpremiereligne.fr"&gt;titouan@enpremiereligne.fr&lt;/a&gt;.
+                    us at the following address : &lt;a href="mailto:emmanuel@thecommunitywave.nz"&gt;emmanuel@thecommunitywave.nz&lt;/a&gt;.
                 </target>
             </trans-unit>
             <trans-unit id="social.share-intro" resname="social.share-intro">
@@ -91,10 +81,6 @@
                 <source>Nous retrouver sur Twitter</source>
                 <target>Find us on Twitter</target>
             </trans-unit>
-            <trans-unit id="social.find-linkedin" resname="social.find-linkedin">
-                <source>Nous retrouver sur LinkedIn</source>
-                <target>Nous retrouver sur LinkedIn</target>
-            </trans-unit>
             <trans-unit id="social.find-github" resname="social.find-github">
                 <source>Nous retrouver sur Github</source>
                 <target>Find us on Github</target>
@@ -108,16 +94,18 @@
                 <target>I am an essential worker and I need help</target>
             </trans-unit>
             <trans-unit id="home.work-intro" resname="home.work-intro">
-                <source>Vous faites partie de la premi&#xE8;re ligne de la lutte contre le virus (soignants, services d&#x2019;urgence,
-                    approvisionnement en &#xE9;nergie, nourriture, m&#xE9;dicaments, mat&#xE9;riel, ...) ?
+                <source>Vous faites partie de la premi&#xE8;re ligne de la lutte contre le virus (soignants, services
+                    d&#x2019;urgence, approvisionnement en &#xE9;nergie, nourriture, m&#xE9;dicaments, mat&#xE9;riel,
+                    ...) ?
                 </source>
                 <target>Are you an essential worker in the fight against Covid-19 (health workers, emergency services,
-                    energy supply, food, pharmaceuticals, equipment, etc)?
+                    food industries, transporters, etc)?
                 </target>
             </trans-unit>
             <trans-unit id="home.work-request" resname="home.work-request">
                 <source>Demandez de l'aide &#xE0; des volontaires proches de chez vous pour garder vos enfants ou faire
-                    vos courses.
+                    vos
+                    courses.
                 </source>
                 <target>Ask for help from volunteers in your area to look after your children or for groceries drop
                     off.
@@ -129,8 +117,8 @@
             </trans-unit>
             <trans-unit id="home.risk-intro" resname="home.risk-intro">
                 <source>Vous ou un de vos proches, de par l'&#xE2;ge, les ant&#xE9;c&#xE9;dents m&#xE9;dicaux ou les
-                    difficult&#xE9;s &#xE0; se d&#xE9;placer, a besoin d'aide pour faire les courses et faire face
-                    &#xE0; l'&#xE9;pid&#xE9;mie ?
+                    difficult&#xE9;s &#xE0; se
+                    d&#xE9;placer, a besoin d'aide pour faire les courses et faire face &#xE0; l'&#xE9;pid&#xE9;mie ?
                 </source>
                 <target>You, or someone you know, is a vulnerable person and needs help to get groceries and help stop
                     the spread
@@ -142,7 +130,8 @@
             </trans-unit>
             <trans-unit id="home.title" resname="home.title">
                 <source>Je peux aider les travailleurs en premi&#xE8;re ligne et les personnes faisant partie des
-                    populations &#xE0; risque
+                    populations
+                    &#xE0; risque
                 </source>
                 <target>I can help essential workers and vulnerable people</target>
             </trans-unit>
@@ -152,8 +141,9 @@
             </trans-unit>
             <trans-unit id="home.intro" resname="home.intro">
                 <source>Aidez un travailleur en premi&#xE8;re ligne ou une personne faisant partie des populations
-                    &#xE0; risque vivant proche de chez vous en gardant un enfant ou en faisant des courses, et
-                    engagez-vous dans la lutte contre l&#x2019;&#xE9;pid&#xE9;mie.
+                    &#xE0; risque
+                    vivant proche de chez vous en gardant un enfant ou en faisant des courses, et engagez-vous dans la
+                    lutte contre l&#x2019;&#xE9;pid&#xE9;mie.
                 </source>
                 <target>Help an essential worker or a vulnerable person in your area, by dropping off groceries or
                     looking after children, and help stop the spread
@@ -177,11 +167,14 @@
                     livrer mes courses le jour m&#xEA;me &#xE0; 13h.&lt;br /&gt;&lt;br /&gt;Je recommande &#xE0; tous
                     les travailleurs dans le besoin de s'inscrire, c'est gratuit et rapide !
                 </source>
-                <target>No translation</target>
+                <target>Wow, what a great idea. So nice to see the way the community have come together to help each
+                    other out during this difficult time.&lt;br /&gt;&lt;/br&gt;Knowing there's such a simple way for me
+                    to get help with my shopping has been really great.
+                </target>
             </trans-unit>
             <trans-unit id="home.testimonial-one-from" resname="home.testimonial-one-from">
                 <source>- Marion, infirmi&#xE8;re dans l'Ain</source>
-                <target>No translation</target>
+                <target>- Dianna, at risk in Hamilton</target>
             </trans-unit>
             <trans-unit id="home.testimonial-two" resname="home.testimonial-two">
                 <source>J'ai commenc&#xE9; mon confinement le vendredi 13 mars, avant la fermeture des bars et des lieux
@@ -194,11 +187,15 @@
                     elle sait que dans les prochains jours, quand la crise sanitaire aura pris encore plus d'ampleur,
                     elle pourra compter sur moi.
                 </source>
-                <target>No translation</target>
+                <target>I'm lucky to work in IT which means I can easily work from home and my job hasn't really been
+                    impacted very much. I'm also relatively young and healthy and there are only two people in my
+                    household so I'm not not really at risk.&lt;br /&gt;&lt;br /&gt;This seemed like such a great way
+                    for me to help people who are taking care of our community.
+                </target>
             </trans-unit>
             <trans-unit id="home.testimonial-two-from" resname="home.testimonial-two-from">
                 <source>- Alexandre, ing&#xE9;nieur dans le Nord</source>
-                <target>No translation</target>
+                <target>- Steve, programmer from Christchurch</target>
             </trans-unit>
             <trans-unit id="offer.intro-one" resname="offer.intro-one">
                 <source>Dans les prochaines semaines, de nombreuses personnes vont risquer leur sant&#xE9;, donner leur
@@ -208,7 +205,7 @@
                 </source>
                 <target>In the coming weeks, a lot of people will work hard although the country is in lockdown to
                     ensure we are all safe. Others are advised to strictly stay at home due to their physical
-                    conditions.&lt;strong&gt;Their efforts are aimed at keeping us all safe.&lt;/strong&gt;
+                    conditions.&lt;strong&gt; Their efforts are aimed at keeping us all safe.&lt;/strong&gt;
                 </target>
             </trans-unit>
             <trans-unit id="offer.intro-two" resname="offer.intro-two">
@@ -224,9 +221,9 @@
                     quelqu'un proche de chez vous a besoin d'aide, nous vous mettrons en relation par e-mail pour que
                     vous puissiez les aider au mieux.
                 </source>
-                <target>&lt;strong&gt;Help them, help stop the spread!&lt;/strong&gt; Fill in the form below to enrol as
-                    a helper. If someone in your area needs help, we will connect you via email so that you can discuss
-                    the details.
+                <target>&lt;strong&gt;Help them, and help stop the spread !&lt;/strong&gt; Fill in the form below to
+                    enrol as a helper. If someone in your area needs help, we will connect you via email so that you can
+                    discuss the details.
                 </target>
             </trans-unit>
             <trans-unit id="offer.intro-four" resname="offer.intro-four">
@@ -265,7 +262,8 @@
             </trans-unit>
             <trans-unit id="offer.registration-date" resname="offer.registration-date">
                 <source>Vous avez enregistr&#xE9; votre proposition d'aide le {when}. Nous vous recontacterons d&#xE8;s
-                    que quelqu'un aura besoin d'aide &#xE0; proximit&#xE9; de vous.
+                    que
+                    quelqu'un aura besoin d'aide &#xE0; proximit&#xE9; de vous.
                 </source>
                 <target>You have registered you help offer on the {when}. We will contact you as soon as someone in your
                     area asks for help.
@@ -285,7 +283,8 @@
             </trans-unit>
             <trans-unit id="offer.able-to-babysit" resname="offer.able-to-babysit">
                 <source>pouvoir garder un enfant proche de chez vous, avec un maximum de {max} enfant(s) en garde &#xE0;
-                    la fois.
+                    la
+                    fois.
                 </source>
                 <target>{max, plural, one {can look after one child in your area.} other {can look after up to #
                     children at a time in your area.}}
@@ -309,7 +308,8 @@
             </trans-unit>
             <trans-unit id="offer.remove-confirm" resname="offer.remove-confirm">
                 <source>Voulez-vous vraiment supprimer votre proposition et toutes les donn&#xE9;es associ&#xE9;es ?
-                    Cette op&#xE9;ration est irr&#xE9;versible.
+                    Cette
+                    op&#xE9;ration est irr&#xE9;versible.
                 </source>
                 <target>Do you really wish to delete this offer and all the associated data ? This cannot be reversed.
                 </target>
@@ -319,18 +319,20 @@
                 <target>Your offer has been deleted.</target>
             </trans-unit>
             <trans-unit id="request.intro-one" resname="request.intro-one">
-                <source>Vous faites partie de la premi&#xE8;re ligne de la lutte contre le virus (soignants, services d&#x2019;urgence,
-                    approvisionnement en &#xE9;nergie, nourriture, m&#xE9;dicaments, mat&#xE9;riel, ...) ?
+                <source>Vous faites partie de la premi&#xE8;re ligne de la lutte contre le virus (soignants, services
+                    d&#x2019;urgence, approvisionnement en &#xE9;nergie, nourriture, m&#xE9;dicaments, mat&#xE9;riel,
+                    ...) ?
                 </source>
                 <target>You are an essential worker?</target>
             </trans-unit>
             <trans-unit id="request.intro-two" resname="request.intro-two">
                 <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin
-                    d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez exprim&#xE9;,
-                    nous vous mettrons en relation par e-mail pour que vous puissiez &#xE9;changer et r&#xE9;gler les d&#xE9;tails
-                    logistiques.
+                    d'aide. Si quelqu'un proche de chez vous peut vous aider pour le type de besoin que vous avez
+                    exprim&#xE9;, nous vous mettrons en relation par e-mail pour que vous puissiez &#xE9;changer et r&#xE9;gler
+                    les
+                    d&#xE9;tails logistiques.
                 </source>
-                <target>Fill in the form below to register has someone who needs help. If someone in your area can offer
+                <target>Fill in the form below to register as someone who needs help. If someone in your area can offer
                     this type of service, we will connect you via email so that you can discuss the details.
                 </target>
             </trans-unit>
@@ -358,7 +360,8 @@
             </trans-unit>
             <trans-unit id="request.registration-date" resname="request.registration-date">
                 <source>Vous avez enregistr&#xE9; votre demande d'aide le {when}. Nous vous recontacterons d&#xE8;s que
-                    quelqu'un sera disponible &#xE0; proximit&#xE9; de vous.
+                    quelqu'un
+                    sera disponible &#xE0; proximit&#xE9; de vous.
                 </source>
                 <target>You have registered you request for help on the {when}. We will contact you as soon as someone
                     in your area can help.
@@ -366,8 +369,10 @@
             </trans-unit>
             <trans-unit id="request.details" resname="request.details">
                 <source>Les lignes suivantes correspondent &#xE0; vos diff&#xE9;rents besoins et pourront &#xEA;tre
-                    adress&#xE9;es par diff&#xE9;rents volontaires. Vous serez bien s&#xFB;r ma&#xEE;tre de qui vous
-                    aide ou non : enpremiereligne.fr aide simplement &#xE0; la mise en relation.
+                    adress&#xE9;es par
+                    diff&#xE9;rents volontaires. Vous serez bien s&#xFB;r ma&#xEE;tre de qui vous aide ou non :
+                    enpremiereligne.fr aide
+                    simplement &#xE0; la mise en relation.
                 </source>
                 <target>The following lines correspond to your needs, and can be addressed by different volunteers. You
                     are of course in control of who helps you or not: we only help you to connect.
@@ -400,7 +405,8 @@
             </trans-unit>
             <trans-unit id="request.remove-confirm" resname="request.remove-confirm">
                 <source>Voulez-vous vraiment supprimer votre demande et toutes les donn&#xE9;es associ&#xE9;es ? Cette
-                    op&#xE9;ration est irr&#xE9;versible.
+                    op&#xE9;ration
+                    est irr&#xE9;versible.
                 </source>
                 <target>Do you really wish to delete your request and all the associated data ? This cannot be
                     reversed.
@@ -416,8 +422,8 @@
             </trans-unit>
             <trans-unit id="request.vulnerable-intro-one" resname="request.vulnerable-intro-one">
                 <source>Vous ou un de vos proches, de par l'&#xE2;ge, les ant&#xE9;c&#xE9;dents m&#xE9;dicaux ou les
-                    difficult&#xE9;s &#xE0; se d&#xE9;placer, a besoin d'aide pour faire les courses et faire face
-                    &#xE0; l'&#xE9;pid&#xE9;mie ?
+                    difficult&#xE9;s &#xE0; se
+                    d&#xE9;placer, a besoin d'aide pour faire les courses et faire face &#xE0; l'&#xE9;pid&#xE9;mie ?
                 </source>
                 <target>You, or someone you know, is a vulnerable person and needs help to get groceries and help stop
                     the spread ?
@@ -433,8 +439,10 @@
             </trans-unit>
             <trans-unit id="request.vulnerable-intro-three" resname="request.vulnerable-intro-three">
                 <source>Si quelqu'un pr&#xE8;s de chez vous, ou de chez votre proche, peut aider pour faire vos courses
-                    &#xE0; votre place, nous vous mettrons en relation par e-mail pour que vous puissiez &#xE9;changer
-                    et r&#xE9;gler les d&#xE9;tails logistiques.
+                    &#xE0;
+                    votre place, nous vous mettrons en relation par e-mail pour que vous puissiez &#xE9;changer et r&#xE9;gler
+                    les
+                    d&#xE9;tails logistiques.
                 </source>
                 <target>If someone in your area can offer this type of service, we will connect you via email so that
                     you can discuss the details.
@@ -482,7 +490,8 @@
             </trans-unit>
             <trans-unit id="help.postcode" resname="help.postcode">
                 <source>Utilis&#xE9; pour trouver des personnes proches de vous. Nous ne travaillons que sur le
-                    territoire fran&#xE7;ais pour le moment.
+                    territoire
+                    fran&#xE7;ais pour le moment.
                 </source>
                 <target>Used to find people in your area. We only operate in New Zealand.</target>
             </trans-unit>
@@ -511,8 +520,8 @@
             </trans-unit>
             <trans-unit id="help.can-buy-groceries" resname="help.can-buy-groceries">
                 <source>Vous pourrez &#xEA;tre mis en relation avec des personnes ayant besoin d'&#xEA;tre livr&#xE9;es
-                    en courses. Cette mise en relation n'est pas un engagement mais le d&#xE9;but d'une discussion
-                    d'entraide.
+                    en courses.
+                    Cette mise en relation n'est pas un engagement mais le d&#xE9;but d'une discussion d'entraide.
                 </source>
                 <target>You can be connected with people who need groceries dropped off. This is not a commitment but
                     the start of a discussion around mutual help.
@@ -520,15 +529,15 @@
             </trans-unit>
             <trans-unit id="label.accept-vulnerable" resname="label.accept-vulnerable">
                 <source>Je peux acheter et livrer des courses pour les personnes faisant partie des populations &#xE0;
-                    risque (de par l'&#xE2;ge, les ant&#xE9;c&#xE9;dents m&#xE9;dicaux ou les difficult&#xE9;s &#xE0; se
-                    d&#xE9;placer))
+                    risque
+                    (de par l'&#xE2;ge, les ant&#xE9;c&#xE9;dents m&#xE9;dicaux ou les difficult&#xE9;s &#xE0; se d&#xE9;placer))
                 </source>
                 <target>I can shop and drop off groceries for vulnerable people</target>
             </trans-unit>
             <trans-unit id="help.accept-vulnerable" resname="help.accept-vulnerable">
                 <source>Vous pourrez &#xEA;tre mis en relation avec des personnes ayant besoin d'&#xEA;tre livr&#xE9;es
-                    en courses. Cette mise en relation n'est pas un engagement mais le d&#xE9;but d'une discussion
-                    d'entraide.
+                    en courses.
+                    Cette mise en relation n'est pas un engagement mais le d&#xE9;but d'une discussion d'entraide.
                 </source>
                 <target>You can be connected with people who need groceries dropped off. This is not a commitment but
                     the start of a discussion around mutual help.
@@ -540,7 +549,8 @@
             </trans-unit>
             <trans-unit id="help.can-babysit" resname="help.can-babysit">
                 <source>Vous pourrez &#xEA;tre mis en relation avec des parents ayant besoin de garder leur enfant.
-                    Cette mise en relation n'est pas un engagement mais le d&#xE9;but d'une discussion d'entraide.
+                    Cette
+                    mise en relation n'est pas un engagement mais le d&#xE9;but d'une discussion d'entraide.
                 </source>
                 <target>You can be connected with people who need their children looked after. This is not a commitment
                     but the start of a discussion around mutual help.
@@ -581,47 +591,47 @@
             </trans-unit>
             <trans-unit id="label.between-0-1" resname="label.between-0-1">
                 <source>Entre 0 et 1 an</source>
-                <target>Between 0 and 1 yo</target>
+                <target>Between 0 and 1 years old</target>
             </trans-unit>
             <trans-unit id="label.between-1-2" resname="label.between-1-2">
                 <source>Entre 1 et 2 ans</source>
-                <target>Between 1 and 2 yo</target>
+                <target>Between 1 and 2 years old</target>
             </trans-unit>
             <trans-unit id="label.between-3-5" resname="label.between-3-5">
                 <source>Entre 3 et 5 ans</source>
-                <target>Between 3 and 5 yo</target>
+                <target>Between 3 and 5 years old</target>
             </trans-unit>
             <trans-unit id="label.between-6-9" resname="label.between-6-9">
                 <source>Entre 6 et 9 ans</source>
-                <target>Between 6 and 9 yo</target>
+                <target>Between 6 and 9 years old</target>
             </trans-unit>
             <trans-unit id="label.between-10-12" resname="label.between-10-12">
                 <source>Entre 10 et 12 ans</source>
-                <target>Between 10 and 12 yo</target>
+                <target>Between 10 and 12 years old</target>
             </trans-unit>
             <trans-unit id="label.13-and-over" resname="label.13-and-over">
                 <source>13 ans et plus</source>
-                <target>13 years and above</target>
+                <target>13 years old and above</target>
             </trans-unit>
             <trans-unit id="label.age-0-1" resname="label.age-0-1">
                 <source>0 &#xE0; 1 an</source>
-                <target>0 to 1 years</target>
+                <target>0 to 1 years old</target>
             </trans-unit>
             <trans-unit id="label.age-1-2" resname="label.age-1-2">
                 <source>1 &#xE0; 2 ans</source>
-                <target>1 to 2 years</target>
+                <target>1 to 2 years old</target>
             </trans-unit>
             <trans-unit id="label.age-3-5" resname="label.age-3-5">
                 <source>3 &#xE0; 5 ans</source>
-                <target>3 to 5 years</target>
+                <target>3 to 5 years old</target>
             </trans-unit>
             <trans-unit id="label.age-6-9" resname="label.age-6-9">
                 <source>6 &#xE0; 9 ans</source>
-                <target>6 to 9 years</target>
+                <target>6 to 9 years old</target>
             </trans-unit>
             <trans-unit id="label.age-10-12" resname="label.age-10-12">
                 <source>10 &#xE0; 12 ans</source>
-                <target>10 to 12 years</target>
+                <target>10 to 12 years old</target>
             </trans-unit>
             <trans-unit id="label.confirm" resname="label.confirm">
                 <source>J'ai lu et j'accepte la Politique de confidentialit&#xE9; et les Conditions d'utilisation
@@ -632,7 +642,8 @@
             </trans-unit>
             <trans-unit id="help.confirm" resname="help.confirm">
                 <source>Il est notamment tr&#xE8;s important que vous soyez vigilants &#xE0; bien suivre les
-                    recommandations sanitaires &#xE0; tout moment.
+                    recommandations
+                    sanitaires &#xE0; tout moment.
                 </source>
                 <target>It is particularly important to be careful and to respect the health advice at all times.
                 </target>
@@ -683,7 +694,8 @@
             </trans-unit>
             <trans-unit id="help.field-of-work" resname="help.field-of-work">
                 <source>Dans un premier temps, nous r&#xE9;servons l'usage de notre plateforme aux personnes qui
-                    travaillent en premi&#xE8;re ligne contre l&#x2019;&#xE9;pid&#xE9;mie
+                    travaillent
+                    en premi&#xE8;re ligne contre l&#x2019;&#xE9;pid&#xE9;mie
                 </source>
                 <target>We currently restrict the use of the platform to people who are essential workers</target>
             </trans-unit>
@@ -843,10 +855,6 @@
                 <source>L'&#xE9;quipe d'En Premi&#xE8;re Ligne</source>
                 <target>The Community Wave team</target>
             </trans-unit>
-            <trans-unit id="email.match-subject" resname="email.match-subject">
-                <source>[En Première Ligne] Bonne nouvelle !</source>
-                <target>[The Community Wave] Good news!</target>
-            </trans-unit>
             <trans-unit id="email.offer-thanks-subject" resname="email.offer-thanks-subject">
                 <source>Merci de vous &#xEA;tre port&#xE9;(e) volontaire sur En Premi&#xE8;re Ligne !</source>
                 <target>Thank you for volunteering on the mutual assistance platform The Community Wave, to help
@@ -855,8 +863,8 @@
             </trans-unit>
             <trans-unit id="email.offer-thanks" resname="email.offer-thanks">
                 <source>Merci de vous &#xEA;tre port&#xE9;(e) volontaire sur le r&#xE9;seau d'entraide En Premi&#xE8;re
-                    Ligne pour aider les travailleurs mobilis&#xE9;s contre le COVID-19 au quotidien et les populations
-                    &#xE0; risque.
+                    Ligne pour aider les
+                    travailleurs mobilis&#xE9;s contre le COVID-19 au quotidien et les populations &#xE0; risque.
                 </source>
                 <target>Thank you for offering to help with the mutual assistance platform The Common Wave, yo help our
                     essential workers and vulnerable persons.
@@ -864,7 +872,8 @@
             </trans-unit>
             <trans-unit id="email.offer-saved" resname="email.offer-saved">
                 <source>Votre proposition d'aide a bien &#xE9;t&#xE9; enregistr&#xE9;e. Vous pouvez la consulter et la
-                    supprimer en cliquant sur le lien suivant :
+                    supprimer en
+                    cliquant sur le lien suivant :
                 </source>
                 <target>Your help offer has been registered. You can check it and delete it at this link :</target>
             </trans-unit>
@@ -875,16 +884,20 @@
             </trans-unit>
             <trans-unit id="email.offer-notified" resname="email.offer-notified">
                 <source>Vous serez notifi&#xE9;(e) par mail d&#xE8;s qu'un travailleur mobilis&#xE9; en premi&#xE8;re
-                    ligne ou une personne faisant partie des populations &#xE0; risque de votre zone se manifestera.
-                    Vous pourrez ensuite entrer directement en contact avec cette personne pour vous organiser.
+                    ligne ou une personne
+                    faisant partie des populations &#xE0; risque de votre zone se manifestera. Vous pourrez ensuite
+                    entrer
+                    directement en contact avec cette personne pour vous organiser.
                 </source>
                 <target>You will be notified by an email as soon as an essential worker or a vulnerable person in your
                     area asks for help. You can contact them directly to discuss the details.
                 </target>
             </trans-unit>
             <trans-unit id="email.offer-commitment" resname="email.offer-commitment">
-                <source>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons l'&#xE9;pid&#xE9;mie.</source>
-                <target>Thank you for your commitment ! Mutual help will defeat the spread.</target>
+                <source>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons
+                    l'&#xE9;pid&#xE9;mie.
+                </source>
+                <target>Thank you for your commitment ! Mutual help will help defeat the spread.</target>
             </trans-unit>
             <trans-unit id="email.request-subject" resname="email.request-subject">
                 <source>Nous avons bien re&#xE7;u votre demande sur En Premi&#xE8;re Ligne</source>
@@ -892,7 +905,8 @@
             </trans-unit>
             <trans-unit id="email.request-thanks" resname="email.request-thanks">
                 <source>Merci pour votre inscription sur le r&#xE9;seau d&#x2019;entraide En Premi&#xE8;re Ligne et pour
-                    votre engagement quotidien dans la lutte contre le COVID-19.
+                    votre engagement
+                    quotidien dans la lutte contre le COVID-19.
                 </source>
                 <target>Thank you for your registration on The Community Wave and for your daily commitment in the fight
                     against Covid-19.
@@ -900,7 +914,8 @@
             </trans-unit>
             <trans-unit id="email.request-saved" resname="email.request-saved">
                 <source>Votre demande d'aide a bien &#xE9;t&#xE9; enregistr&#xE9;e. Vous pouvez la consulter et la
-                    supprimer en cliquant sur le lien suivant :
+                    supprimer en
+                    cliquant sur le lien suivant :
                 </source>
                 <target>Your help request has been registered. You can check it and delete it at this link :</target>
             </trans-unit>
@@ -911,7 +926,8 @@
             <trans-unit id="email.request-notified" resname="email.request-notified">
                 <source>Vous serez notifi&#xE9;(e) par mail d&#xE8;s qu'un volontaire de votre zone proposera une aide
                     correspondante &#xE0; vos crit&#xE8;res. Vous pourrez ensuite entrer directement en contact avec le
-                    volontaire pour vous organiser.
+                    volontaire
+                    pour vous organiser.
                 </source>
                 <target>You will be notified by an email as soon as a volunteer in your area offers to help. You can
                     contact them directly to discuss the details.
@@ -940,14 +956,15 @@
             </trans-unit>
             <trans-unit id="error.occurred-alerted" resname="error.occurred-alerted">
                 <source>Une erreur s'est produite. Nous avons &#xE9;t&#xE9; alert&#xE9; du probl&#xE8;me et allons faire
-                    notre possible pour le r&#xE9;soudre.
+                    notre possible pour
+                    le r&#xE9;soudre.
                 </source>
                 <target>An error occurred. We have been notified of the issue and will investigate it to solve it.
                 </target>
             </trans-unit>
             <trans-unit id="site.url" resname="site.url">
                 <source>https://enpremiereligne.fr</source>
-                <target>https://thecommonwave.nz</target>
+                <target>https://thecommunitywave.nz</target>
             </trans-unit>
             <trans-unit id="label.groceries" resname="label.groceries">
                 <source>courses</source>
@@ -1051,16 +1068,20 @@
             </trans-unit>
             <trans-unit id="email.postcode-match-vulnerable" resname="email.postcode-match-vulnerable">
                 <source>{ requester } et { helper } r&#xE9;sident tous les deux dans la m&#xEA;me zone g&#xE9;ographique
-                    (proche du code postal : { zipcode }).
+                    (proche du
+                    code postal : { zipcode }).
                 </source>
                 <target>{ requester } and { helper } both reside in the same area (around postcode : { zipcode }).
                 </target>
             </trans-unit>
             <trans-unit id="email.baysit" resname="email.baysit">
                 <source>{count, plural, one {{requester} nous a indiqu&#xE9; avoir besoin de garder un enfant de {ages},
-                    et {helper} nous a indiqu&#xE9; &#xEA;tre en capacit&#xE9; de garder des enfants de cet &#xE2;ge.}
-                    other {{requester} nous a indiqu&#xE9; avoir besoin de garder enfants de {ages}, et {helper} nous a
-                    indiqu&#xE9; &#xEA;tre en capacit&#xE9; de garder des enfants de cet &#xE2;ge.}}
+                    et
+                    {helper} nous a indiqu&#xE9; &#xEA;tre en capacit&#xE9; de garder des enfants de cet &#xE2;ge.}
+                    other {{requester} nous
+                    a indiqu&#xE9; avoir besoin de garder enfants de {ages}, et {helper} nous a indiqu&#xE9; &#xEA;tre
+                    en capacit&#xE9; de
+                    garder des enfants de cet &#xE2;ge.}}
                 </source>
                 <target>{count, plural, one {{requester} told us they need to find care for a child of age {ages}, and
                     {helper} told us they can look after children of that age.} other {{requester} told us they need to
@@ -1070,7 +1091,8 @@
             </trans-unit>
             <trans-unit id="email.groceries" resname="email.groceries">
                 <source>{ requester } nous a indiqu&#xE9; avoir besoin de quelqu'un pour faire ses courses, et { helper
-                    } nous a indiqu&#xE9; &#xEA;tre en capacit&#xE9; de le faire.
+                    }
+                    nous a indiqu&#xE9; &#xEA;tre en capacit&#xE9; de le faire.
                 </source>
                 <target>{ requester } told us they need someone to get groceries, and { helper } told us they could do
                     it.
@@ -1091,7 +1113,7 @@
             </trans-unit>
             <trans-unit id="email.also-parent" resname="email.also-parent">
                 <source>et est aussi parent</source>
-                <target>is also a parent</target>
+                <target>and is also a parent</target>
             </trans-unit>
             <trans-unit id="email.up-to-you" resname="email.up-to-you">
                 <source>A partir de maintenant, c'est &#xE0; vous de jouer !</source>
@@ -1109,11 +1131,15 @@
             </trans-unit>
             <trans-unit id="email.both-copied" resname="email.both-copied">
                 <source>Vous &#xEA;tes tous deux en copie de cet e-mail : prenez contact entre vous pour vous organiser
-                    et vous assurer que cette entraide est effectivement faisable. Nous vous invitons &#xE0; &#xE9;changer
-                    par t&#xE9;l&#xE9;phone ou par Skype une premi&#xE8;re fois pour apprendre &#xE0; vous faire
-                    confiance, et pour r&#xE9;gler les d&#xE9;tails logistiques si tout se passe bien. Comme indiqu&#xE9;
-                    dans l'article 4 de nos conditions d'utilisations, les personnes mises en relation sont seules
-                    responsables des discussions et entraides r&#xE9;alis&#xE9;es et de leurs cons&#xE9;quences.
+                    et
+                    vous assurer que cette entraide est effectivement faisable. Nous vous invitons &#xE0; &#xE9;changer
+                    par
+                    t&#xE9;l&#xE9;phone ou par Skype une premi&#xE8;re fois pour apprendre &#xE0; vous faire confiance,
+                    et pour r&#xE9;gler les
+                    d&#xE9;tails logistiques si tout se passe bien. Comme indiqu&#xE9; dans l'article 4 de nos
+                    conditions
+                    d'utilisations, les personnes mises en relation sont seules responsables des discussions et
+                    entraides r&#xE9;alis&#xE9;es et de leurs cons&#xE9;quences.
                 </source>
                 <target>You are both receiving this email: contact each other to organise yourselves and make sure the
                     mutual assistance can take place. We invite you to talk on the phone or via a video call for the
@@ -1124,11 +1150,15 @@
             </trans-unit>
             <trans-unit id="email.three-copied" resname="email.three-copied">
                 <source>Vous &#xEA;tes tous trois en copie de cet e-mail : prenez contact entre vous pour vous organiser
-                    et vous assurer que cette entraide est effectivement faisable. Nous vous invitons &#xE0; &#xE9;changer
-                    par t&#xE9;l&#xE9;phone ou par Skype une premi&#xE8;re fois pour apprendre &#xE0; vous faire
-                    confiance, et pour r&#xE9;gler les d&#xE9;tails logistiques si tout se passe bien. Comme indiqu&#xE9;
-                    dans l'article 4 de nos conditions d'utilisations, les personnes mises en relation sont seules
-                    responsables des discussions et entraides r&#xE9;alis&#xE9;es et de leurs cons&#xE9;quences.
+                    et
+                    vous assurer que cette entraide est effectivement faisable. Nous vous invitons &#xE0; &#xE9;changer
+                    par
+                    t&#xE9;l&#xE9;phone ou par Skype une premi&#xE8;re fois pour apprendre &#xE0; vous faire confiance,
+                    et pour r&#xE9;gler les
+                    d&#xE9;tails logistiques si tout se passe bien. Comme indiqu&#xE9; dans l'article 4 de nos
+                    conditions
+                    d'utilisations, les personnes mises en relation sont seules responsables des discussions et
+                    entraides r&#xE9;alis&#xE9;es et de leurs cons&#xE9;quences.
                 </source>
                 <target>The three of you are in copy of this email : contact each other to organize yourselves and make
                     sure the mutual assistance can take place. We invite you to exchange on the phone or via a video
@@ -1139,8 +1169,9 @@
             </trans-unit>
             <trans-unit id="email.show-id" resname="email.show-id">
                 <source>Nous vous conseillons aussi de vous montrer vos cartes d&#x2019;identit&#xE9; par visioconf&#xE9;rence
-                    avant de vous rencontrer, ou de vous les montrer sans contact lors de votre premi&#xE8;re rencontre
-                    pour vous assurer mutuellement de vos identit&#xE9;s.
+                    avant de
+                    vous rencontrer, ou de vous les montrer sans contact lors de votre premi&#xE8;re rencontre pour vous
+                    assurer mutuellement de vos identit&#xE9;s.
                 </source>
                 <target>We advise that you show each other some form of photo ID on a video call prior to the first
                     meeting, or show them to each other without any physical contact on your first meeting, so that you
@@ -1149,16 +1180,18 @@
             </trans-unit>
             <trans-unit id="email.travel-certificate" resname="email.travel-certificate">
                 <source>Depuis le 16 Mars 2020, vous devez poss&#xE9;der une "ATTESTATION DE D&#xC9;PLACEMENT D&#xC9;ROGATOIRE"
-                    pour vous d&#xE9;placer. La garde d'enfant correspond &#xE0; l'exception 4. Vous retrouverez un mod&#xE8;le
-                    de document &#xE0; imprimer ou reproduire &#xE0; la main &#xE0; l'adresse suivante :
+                    pour
+                    vous d&#xE9;placer. La garde d'enfant correspond &#xE0; l'exception 4. Vous retrouverez un mod&#xE8;le
+                    de document
+                    &#xE0; imprimer ou reproduire &#xE0; la main &#xE0; l'adresse suivante :
                 </source>
-                <target>No translation</target>
+                <target/>
             </trans-unit>
             <trans-unit id="email.travel-certificate-link" resname="email.travel-certificate-link">
                 <source>&lt;a
                     href="https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf"&gt;https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf&lt;/a&gt;
                 </source>
-                <target>No translation</target>
+                <target/>
             </trans-unit>
             <trans-unit id="email.other-things" resname="email.other-things">
                 <source>Pour la suite des choses avec nous :</source>
@@ -1166,9 +1199,10 @@
             </trans-unit>
             <trans-unit id="email.please-reply" resname="email.please-reply">
                 <source>Si la mise en relation vous convient, faites-le nous savoir en r&#xE9;pondant &#xE0; cet e-mail
-                    afin que nous supprimions les donn&#xE9;es de notre c&#xF4;t&#xE9;. De plus, si cette mise en
-                    relation vous convient, vous ne pourrez aider que ces personnes afin de limiter les risques
-                    sanitaires.
+                    afin que
+                    nous supprimions les donn&#xE9;es de notre c&#xF4;t&#xE9;. De plus, si cette mise en relation vous
+                    convient, vous
+                    ne pourrez aider que ces personnes afin de limiter les risques sanitaires.
                 </source>
                 <target>If you are satisfied with the connection, let us know by responding to this email so that we
                     delete your personal data. Note that if you are satisfied with this connection you can only help
@@ -1177,8 +1211,10 @@
             </trans-unit>
             <trans-unit id="email.no-match" resname="email.no-match">
                 <source>Si &#xE0; l'inverse cette mise en relation ne vous convient pas, aucun probl&#xE8;me ! Dans ce
-                    cas, dites-le nous l&#xE0; aussi en r&#xE9;pondant &#xE0; cet e-mail afin de que nous r&#xE9;activions
-                    votre demande et votre proposition.
+                    cas,
+                    dites-le nous l&#xE0; aussi en r&#xE9;pondant &#xE0; cet e-mail afin de que nous r&#xE9;activions
+                    votre demande et votre
+                    proposition.
                 </source>
                 <target>On the other hand if you are not satisfied with this connection, no worries! In that case,
                     please let us know by replying to this email so that we keep your request/offer live.
@@ -1221,8 +1257,9 @@
             </trans-unit>
             <trans-unit id="email.share-link" resname="email.share-link">
                 <source>Nous vous rappelons qu'En Premi&#xE8;re Ligne est un r&#xE9;seau d'entraide gratuit. C'est en
-                    nous soutenant que nous vaincrons le virus ! N'h&#xE9;sitez pas &#xE0; partager &#xE0; vos proches
-                    le lien du site :
+                    nous
+                    soutenant que nous vaincrons le virus ! N'h&#xE9;sitez pas &#xE0; partager &#xE0; vos proches le
+                    lien du site :
                 </source>
                 <target>The Community Wave is a free mutual assistance platform. It is by uniting and supporting each
                     other that we will stop the spread ! Feel free to share the link with your friends :
@@ -1242,7 +1279,7 @@
                     disposition !
                 </source>
                 <target>PS : if our platform has helped you, feel free to let us know at &lt;a
-                    href="mailto:team@enpremiereligne.fr"&gt;team@enpremiereligne.fr&lt;/a&gt;. We are here for you !
+                    href="mailto:team@thecommunitywave.nz"&gt;team@thecommunitywave.nz&lt;/a&gt;. We are here for you !
                 </target>
             </trans-unit>
             <trans-unit id="email.avoid-contact" resname="email.avoid-contact">
@@ -1274,9 +1311,10 @@
             </trans-unit>
             <trans-unit id="email.apply-barriers" resname="email.apply-barriers">
                 <source>Les gestes barri&#xE8;res (se laver tr&#xE8;s r&#xE9;guli&#xE8;rement les mains, tousser ou
-                    &#xE9;ternuer dans son coude ou dans un mouchoir, utiliser un mouchoir &#xE0; usage unique et le
-                    jeter, saluer sans se serrer la main et sans embrassades) doivent &#xEA;tre appliqu&#xE9;s en
-                    permanence ;
+                    &#xE9;ternuer dans son coude
+                    ou dans un mouchoir, utiliser un mouchoir &#xE0; usage unique et le jeter, saluer sans se serrer la
+                    main
+                    et sans embrassades) doivent &#xEA;tre appliqu&#xE9;s en permanence ;
                 </source>
                 <target>The sanitary precautions (regular hand washing, cough/sneeze in elbow or disposable disposable
                     tissue, use of disposable tissues, avoid contact) must be used at all times;
@@ -1290,7 +1328,8 @@
             </trans-unit>
             <trans-unit id="email.deliver-and-advise" resname="email.deliver-and-advise">
                 <source>Lors de la livraison des courses, le volontaire d&#xE9;pose les sacs devant la porte et pr&#xE9;vient
-                    la personne aid&#xE9;e de son arriv&#xE9;e (en frappant ou en sonnant avec son coude, ou en appelant
+                    la
+                    personne aid&#xE9;e de son arriv&#xE9;e (en frappant ou en sonnant avec son coude, ou en appelant
                     avant) ;
                 </source>
                 <target>Drop the groceries at the door, and notify the person of your arrival (call in advance, or
@@ -1299,7 +1338,8 @@
             </trans-unit>
             <trans-unit id="email.move-away" resname="email.move-away">
                 <source>Le volontaire part imm&#xE9;diatement ou s'&#xE9;carte d'une distance de minimum 2 m&#xE8;tres
-                    de la porte, avant ouverture de la porte. L'objectif est de ne pas se croiser.
+                    de la porte,
+                    avant ouverture de la porte. L'objectif est de ne pas se croiser.
                 </source>
                 <target>The volunteer steps back 2m from the door.</target>
             </trans-unit>
@@ -1328,7 +1368,8 @@
             </trans-unit>
             <trans-unit id="email.price-range" resname="email.price-range">
                 <source>Pr&#xE9;cisez la gamme de prix que vous voulez (basse, moyenne, haute), cela permettra &#xE0;
-                    votre aidant de ma&#xEE;triser votre budget au mieux.
+                    votre aidant
+                    de ma&#xEE;triser votre budget au mieux.
                 </source>
                 <target>If possible, advise on the budget range that you want (low, average, high) so that the helper
                     sticks to your budget as well as they can.
@@ -1344,7 +1385,8 @@
             </trans-unit>
             <trans-unit id="site.description" resname="site.description">
                 <source>Face &#xE0; l&#x2019;&#xE9;pid&#xE9;mie de Covid-19, certains d\'entre nous sont en premi&#xE8;re
-                    ligne de la lutte pour sauver des vies et assurer les fonctions vitales de notre pays.
+                    ligne de la lutte pour
+                    sauver des vies et assurer les fonctions vitales de notre pays.
                 </source>
                 <target>In the face of the Covid-19 epidemic, some of us are at the forefront of the fight to save lives
                     and ensure the vital functions of our country.
@@ -1381,6 +1423,40 @@
             <trans-unit id="admin.return" resname="admin.return">
                 <source>Retour</source>
                 <target>Return</target>
+            </trans-unit>
+            <trans-unit id="header.international" resname="header.international">
+                <source>International</source>
+                <target>International</target>
+            </trans-unit>
+            <trans-unit id="header.contact_us" resname="header.contact_us">
+                <source>Nous contacter</source>
+                <target>Contact Us</target>
+            </trans-unit>
+            <trans-unit id="social.find-linkedin" resname="social.find-linkedin">
+                <source>Nous retrouver sur LinkedIn</source>
+                <target>Find us on LinkedIn</target>
+            </trans-unit>
+            <trans-unit id="email.match-subject" resname="email.match-subject">
+                <source>[En Premi&#xE8;re Ligne] Bonne nouvelle !</source>
+                <target>[The Community Wave] Good news!</target>
+            </trans-unit>
+            <trans-unit id="email.travel-certificate-babysit" resname="email.travel-certificate-babysit">
+                <source>Depuis le 16 Mars 2020, vous devez poss&#xE9;der une "ATTESTATION DE D&#xC9;PLACEMENT D&#xC9;ROGATOIRE"
+                    pour
+                    vous d&#xE9;placer. La garde d'enfant correspond &#xE0; l'exception 4.
+                    Vous retrouverez un mod&#xE8;le de document &#xE0; imprimer ou reproduire &#xE0; la main &#xE0;
+                    l'adresse suivante :
+                </source>
+                <target/>
+            </trans-unit>
+            <trans-unit id="email.travel-certificate-groceries" resname="email.travel-certificate-groceries">
+                <source>Depuis le 16 Mars 2020, vous devez poss&#xE9;der une "ATTESTATION DE D&#xC9;PLACEMENT D&#xC9;ROGATOIRE"
+                    pour
+                    vous d&#xE9;placer. L'achat de courses alimentaires correspond &#xE0; l'exception 2.
+                    Vous retrouverez un mod&#xE8;le de document &#xE0; imprimer ou reproduire &#xE0; la main &#xE0;
+                    l'adresse suivante :
+                </source>
+                <target/>
             </trans-unit>
         </body>
     </file>
