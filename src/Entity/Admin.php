@@ -50,6 +50,13 @@ class Admin implements UserInterface
         return (string) $this->username;
     }
 
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
     /**
      * @see UserInterface
      */
