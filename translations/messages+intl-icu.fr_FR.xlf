@@ -1104,14 +1104,28 @@
                     assurer mutuellement de vos identités.
                 </target>
             </trans-unit>
-            <trans-unit id="email.travel-certificate" resname="email.travel-certificate">
-                <source>Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
-                    vous déplacer. La garde d'enfant correspond à l'exception 4. Vous retrouverez un modèle de document
-                    à imprimer ou reproduire à la main à l'adresse suivante :
+            <trans-unit id="email.travel-certificate-babysit" resname="email.travel-certificate-babysit">
+                <source>
+                    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
+                    vous déplacer. La garde d'enfant correspond à l'exception 4.
+                    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
                 </source>
-                <target>Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
-                    vous déplacer. La garde d'enfant correspond à l'exception 4. Vous retrouverez un modèle de document
-                    à imprimer ou reproduire à la main à l'adresse suivante :
+                <target>
+                    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
+                    vous déplacer. La garde d'enfant correspond à l'exception 4.
+                    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
+                </target>
+            </trans-unit>
+            <trans-unit id="email.travel-certificate-groceries" resname="email.travel-certificate-groceries">
+                <source>
+                    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
+                    vous déplacer. L'achat de courses alimentaires correspond à l'exception 2.
+                    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
+                </source>
+                <target>
+                    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
+                    vous déplacer. L'achat de courses alimentaires correspond à l'exception 2.
+                    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
                 </target>
             </trans-unit>
             <trans-unit id="email.travel-certificate-link" resname="email.travel-certificate-link">

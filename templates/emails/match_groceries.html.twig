@@ -19,18 +19,8 @@
     {% trans %}email.both-copied{% endtrans %}
 </p>
 
-{% include 'emails/match_guidelines.html.twig' %}
+{{ include('emails/_include/guidelines_global.html.twig', { type: 'groceries' }) }}
 
-<p>
-    {% trans %}email.avoid-contact{% endtrans %}
-</p>
+{{ include('emails/_include/guidelines_groceries.html.twig') }}
 
-<ul>
-    {% include 'emails/groceries-guidelines-helper.html.twig' %}
-    <li>
-        {% trans %}email.front-line{% endtrans %}
-        {% include 'emails/groceries-guidelines-recipient.html.twig' %}
-    </li>
-</ul>
-
-{% include 'emails/match-footer.html.twig' %}
+{{ include('emails/_include/footer.html.twig') }}

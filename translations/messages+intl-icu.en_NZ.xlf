@@ -1150,6 +1150,26 @@
                 </source>
                 <target>No translation</target>
             </trans-unit>
+            <trans-unit id="email.travel-certificate-babysit" resname="email.travel-certificate-babysit">
+                <source>
+                    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
+                    vous déplacer. La garde d'enfant correspond à l'exception 4.
+                    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
+                </source>
+                <target>
+                    No translation
+                </target>
+            </trans-unit>
+            <trans-unit id="email.travel-certificate-groceries" resname="email.travel-certificate-groceries">
+                <source>
+                    Depuis le 16 Mars 2020, vous devez posséder une "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE" pour
+                    vous déplacer. L'achat de courses alimentaires correspond à l'exception 2.
+                    Vous retrouverez un modèle de document à imprimer ou reproduire à la main à l'adresse suivante :
+                </source>
+                <target>
+                    No translation
+                </target>
+            </trans-unit>
             <trans-unit id="email.travel-certificate-link" resname="email.travel-certificate-link">
                 <source>&lt;a
                     href="https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf"&gt;https://www.interieur.gouv.fr/content/download/121787/977785/version/1/file/attestation-deplacement-fr.pdf&lt;/a&gt;
