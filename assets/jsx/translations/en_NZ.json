@@ -9,7 +9,7 @@
     "request.babysit.already_parent.help": "We may still offer you a connection to someone who isn't a parent if no other options have been found after 48 hours.",
 
     "request.babysit.ages.label": "How old are your children",
-    "request.babysit.ages.child": "Child to mind no ",
+    "request.babysit.ages.child": "Child no ",
     "request.babysit.ages.add": "Add another child",
     "request.babysit.ages.help": "This will allow a connection with someone able to look after them.",
 
