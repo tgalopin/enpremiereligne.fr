@@ -22,12 +22,14 @@ class MatchResendCommand extends Command
     private TranslatorInterface $translator;
     private string $sender;
 
-    public function __construct(HelpRequestRepository $repository, MailerInterface $mailer)
+    public function __construct(HelpRequestRepository $repository, MailerInterface $mailer, TranslatorInterface $translator, string $sender)
     {
         parent::__construct();
 
         $this->repository = $repository;
         $this->mailer = $mailer;
+        $this->translator = $translator;
+        $this->sender = $sender;
     }
 
     protected function configure()
