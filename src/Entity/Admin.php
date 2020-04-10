@@ -30,6 +30,8 @@ class Admin implements UserInterface
      */
     private ?string $password;
 
+    private ?string $plainPassword;
+
     public function __toString()
     {
         return $this->username;
@@ -48,6 +50,13 @@ class Admin implements UserInterface
     public function getUsername(): string
     {
         return (string) $this->username;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
     }
 
     /**
@@ -83,5 +92,28 @@ class Admin implements UserInterface
      */
     public function eraseCredentials()
     {
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function getPlainPassword(): string
+    {
+        if (empty($this->plainPassword)) {
+            return '';
+        }
+
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword(?string $plainPassword): self
+    {
+        $this->plainPassword = $plainPassword;
+
+        return $this;
     }
 }
