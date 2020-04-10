@@ -11,6 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class MatchResendCommand extends Command
 {
@@ -18,13 +19,17 @@ class MatchResendCommand extends Command
 
     private HelpRequestRepository $repository;
     private MailerInterface $mailer;
+    private TranslatorInterface $translator;
+    private string $sender;
 
-    public function __construct(HelpRequestRepository $repository, MailerInterface $mailer)
+    public function __construct(HelpRequestRepository $repository, MailerInterface $mailer, TranslatorInterface $translator, string $sender)
     {
         parent::__construct();
 
         $this->repository = $repository;
         $this->mailer = $mailer;
+        $this->translator = $translator;
+        $this->sender = $sender;
     }
 
     protected function configure()
@@ -62,9 +67,9 @@ class MatchResendCommand extends Command
                 }
 
                 $email = (new TemplatedEmail())
-                    ->from('team@enpremiereligne.fr')
+                    ->from($this->sender)
                     ->to(...$to)
-                    ->subject('[En Première Ligne] Bonne nouvelle !')
+                    ->subject($this->translator->trans('email.match-subject'))
                     ->htmlTemplate('emails/match_'.$template.'.html.twig')
                     ->context([
                         'requester' => $requests[0],

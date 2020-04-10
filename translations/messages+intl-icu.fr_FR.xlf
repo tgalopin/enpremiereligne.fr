@@ -956,6 +956,10 @@
                 <source>L'équipe d'En Première Ligne</source>
                 <target>L'équipe d'En Première Ligne</target>
             </trans-unit>
+            <trans-unit id="email.match-subject" resname="email.match-subject">
+                <source>[En Première Ligne] Bonne nouvelle !</source>
+                <target>[En Première Ligne] Bonne nouvelle !</target>
+            </trans-unit>
             <trans-unit id="email.offer-thanks-subject" resname="email.offer-thanks-subject">
                 <source>Merci de vous être porté(e) volontaire sur En Première Ligne !</source>
                 <target>Merci de vous être porté(e) volontaire sur En Première Ligne !</target>
