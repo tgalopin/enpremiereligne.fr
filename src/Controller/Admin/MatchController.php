@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/admin")
@@ -44,7 +45,7 @@ class MatchController extends AbstractController
     /**
      * @Route("/match/close/{type}/{ownerUuid}/{id}", defaults={"id"=null}, name="admin_match_close")
      */
-    public function close(MailerInterface $mailer, HelpRequestRepository $repository, string $type, string $ownerUuid, ?Helper $helper, Request $request): Response
+    public function close(MailerInterface $mailer, HelpRequestRepository $repository, string $type, string $ownerUuid, ?Helper $helper, Request $request, string $sender, TranslatorInterface $translator): Response
     {
         $requests = $repository->findBy(['ownerUuid' => $ownerUuid, 'finished' => false]);
         if (!$requests) {
@@ -69,9 +70,9 @@ class MatchController extends AbstractController
             $repository->closeRequestsOf($ownerUuid, $helper, $type);
 
             $email = (new TemplatedEmail())
-                ->from('team@enpremiereligne.fr')
+                ->from($sender)
                 ->to(...$to)
-                ->subject('[En Première Ligne] Bonne nouvelle !')
+                ->subject($translator->trans('email.match-subject'))
                 ->htmlTemplate('emails/match_'.$template.'.html.twig')
                 ->context([
                     'requester' => $requests[0],

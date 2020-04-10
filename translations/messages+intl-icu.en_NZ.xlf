@@ -843,6 +843,10 @@
                 <source>L'&#xE9;quipe d'En Premi&#xE8;re Ligne</source>
                 <target>The Community Wave team</target>
             </trans-unit>
+            <trans-unit id="email.match-subject" resname="email.match-subject">
+                <source>[En Première Ligne] Bonne nouvelle !</source>
+                <target>[The Community Wave] Good news!</target>
+            </trans-unit>
             <trans-unit id="email.offer-thanks-subject" resname="email.offer-thanks-subject">
                 <source>Merci de vous &#xEA;tre port&#xE9;(e) volontaire sur En Premi&#xE8;re Ligne !</source>
                 <target>Thank you for volunteering on the mutual assistance platform The Community Wave, to help

@@ -30,7 +30,7 @@
     <meta name="theme-color" content="#0077cc">
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="En première ligne" />
+    <meta property="og:site_name" content="{% trans %}site.name{% endtrans %}" />
     <meta property="og:url" content="{{ block('meta_canonical') }}" />
     <meta property="og:title" content="{{ block('title') }}" />
     <meta property="og:description" content="{{ block('meta_description') }}" />
@@ -70,7 +70,7 @@
                     m=f.getElementsByTagName('script')[0];
                 o.async=1; o.src=t; o.id='fathom-script';
                 m.parentNode.insertBefore(o,m)
-            })(document, window, '//a.enpremiereligne.fr/tracker.js', 'fathom');
+            })(document, window, '//{{ analytics_server }}/tracker.js', 'fathom');
             fathom('set', 'siteId', 'AIIIL');
             fathom('trackPageview');
         </script>
