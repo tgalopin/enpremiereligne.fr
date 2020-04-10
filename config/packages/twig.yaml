@@ -3,3 +3,4 @@ twig:
     form_themes: ['bootstrap_4_layout.html.twig']
     globals:
         analytics_server: '%env(ANALYTICS_SERVER)%'
+        team_email: '%env(SENDER_ADDRESS)%'
