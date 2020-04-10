@@ -1044,7 +1044,7 @@
                     quelqu'un pour faire ses courses, et { helper } nous a indiqué être en capacité de le faire.
                 </target>
             </trans-unit>
-            <trans-unit id="email.helper-age" resname="helper-age">
+            <trans-unit id="email.helper-age" resname="email.helper-age">
                 <source>{helper} a {age} ans</source>
                 <target>{helper} a {age} ans</target>
             </trans-unit>
