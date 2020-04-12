@@ -174,7 +174,7 @@
             </trans-unit>
             <trans-unit id="home.testimonial-one-from" resname="home.testimonial-one-from">
                 <source>- Marion, infirmi&#xE8;re dans l'Ain</source>
-                <target>- Dianna, at risk in Hamilton</target>
+                <target>- Anna, at risk in Hamilton</target>
             </trans-unit>
             <trans-unit id="home.testimonial-two" resname="home.testimonial-two">
                 <source>J'ai commenc&#xE9; mon confinement le vendredi 13 mars, avant la fermeture des bars et des lieux
@@ -857,17 +857,15 @@
             </trans-unit>
             <trans-unit id="email.offer-thanks-subject" resname="email.offer-thanks-subject">
                 <source>Merci de vous &#xEA;tre port&#xE9;(e) volontaire sur En Premi&#xE8;re Ligne !</source>
-                <target>Thank you for volunteering on the mutual assistance platform The Community Wave, to help
-                    essential workers and vulnerable people in the daily fight against Covid-19
-                </target>
+                <target>Thank you for volunteering on The Community Wave!</target>
             </trans-unit>
             <trans-unit id="email.offer-thanks" resname="email.offer-thanks">
                 <source>Merci de vous &#xEA;tre port&#xE9;(e) volontaire sur le r&#xE9;seau d'entraide En Premi&#xE8;re
                     Ligne pour aider les
                     travailleurs mobilis&#xE9;s contre le COVID-19 au quotidien et les populations &#xE0; risque.
                 </source>
-                <target>Thank you for offering to help with the mutual assistance platform The Common Wave, yo help our
-                    essential workers and vulnerable persons.
+                <target>Thank you for offering to help with the mutual assistance platform The Community Wave, to help
+                    our essential workers and vulnerable persons.
                 </target>
             </trans-unit>
             <trans-unit id="email.offer-saved" resname="email.offer-saved">
@@ -901,7 +899,7 @@
             </trans-unit>
             <trans-unit id="email.request-subject" resname="email.request-subject">
                 <source>Nous avons bien re&#xE7;u votre demande sur En Premi&#xE8;re Ligne</source>
-                <target>We have received request on The Community Wave</target>
+                <target>We have received your request on The Community Wave</target>
             </trans-unit>
             <trans-unit id="email.request-thanks" resname="email.request-thanks">
                 <source>Merci pour votre inscription sur le r&#xE9;seau d&#x2019;entraide En Premi&#xE8;re Ligne et pour
@@ -1389,7 +1387,8 @@
                     sauver des vies et assurer les fonctions vitales de notre pays.
                 </source>
                 <target>In the face of the Covid-19 epidemic, some of us are at the forefront of the fight to save lives
-                    and ensure the vital functions of our country.
+                    and ensure the vital functions of the country. Others are particularly vulnerable. They need our
+                    help !
                 </target>
             </trans-unit>
             <trans-unit id="label.need" resname="label.need">
