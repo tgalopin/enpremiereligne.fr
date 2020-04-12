@@ -108,6 +108,51 @@
                 <target>Nous retrouver sur Github</target>
             </trans-unit>
 
+            <trans-unit id="social.invite-button" resname="social.invite-button">
+                <source>Inviter un proche</source>
+                <target>Inviter un proche</target>
+            </trans-unit>
+            <trans-unit id="social.invite-intro" resname="social.invite-intro">
+                <source>J'invite un proche à découvrir l'initiative</source>
+                <target>J'invite un proche à découvrir l'initiative</target>
+            </trans-unit>
+            <trans-unit id="social.invite-desc" resname="social.invite-desc">
+                <source>Invitez l'un de vos proches à découvrir En Première Ligne pour l'aider dans son quotidien !</source>
+                <target>Invitez l'un de vos proches à découvrir En Première Ligne pour l'aider dans son quotidien !</target>
+            </trans-unit>
+            <trans-unit id="social.invite-success" resname="social.invite-success">
+                <source>Votre invitation a bien été envoyée !</source>
+                <target>Votre invitation a bien été envoyée !</target>
+            </trans-unit>
+            <trans-unit id="social.invite-firstname" resname="social.invite-firstname">
+                <source>Votre prénom</source>
+                <target>Votre prénom</target>
+            </trans-unit>
+            <trans-unit id="social.invite-email" resname="social.invite-email">
+                <source>Adresse e-mail de votre proche</source>
+                <target>Adresse e-mail de votre proche</target>
+            </trans-unit>
+            <trans-unit id="social.invite-zipcode" resname="social.invite-zipcode">
+                <source>Son code postal (facultatif)</source>
+                <target>Son code postal (facultatif)</target>
+            </trans-unit>
+            <trans-unit id="social.invite-zipcode-help" resname="social.invite-zipcode-help">
+                <source>Cela nous permettra d'indiquer à votre proche si des volontaires sont disponibles à proximité.</source>
+                <target>Cela nous permettra d'indiquer à votre proche si des volontaires sont disponibles à proximité.</target>
+            </trans-unit>
+            <trans-unit id="social.invite-submit" resname="social.invite-submit">
+                <source>Inviter</source>
+                <target>Inviter</target>
+            </trans-unit>
+            <trans-unit id="social.invite-submit-long" resname="social.invite-submit-long">
+                <source>Envoyer l'invitation</source>
+                <target>Envoyer l'invitation</target>
+            </trans-unit>
+            <trans-unit id="social.invite-data" resname="social.invite-data">
+                <source>Aucune donnée personnelle n'est stockée au cours de cette invitation, conformément à notre engagement de protection des données</source>
+                <target>Aucune donnée personnelle n'est stockée au cours de cette invitation, conformément à notre engagement de protection des données</target>
+            </trans-unit>
+
 
             <trans-unit id="home.byline" resname="home.byline">
                 <source>Réseau d'entraide dans la lutte contre l'épidémie de Covid-19.</source>

@@ -128,6 +128,14 @@
                                 {% trans %}label.offer-help{% endtrans %}
                             </a>
                         </div>
+                        {% if app.request.locale == 'fr_FR' %}
+                        <div class="col-12 col-xl-auto">
+                            <a href="#invite"
+                               class="btn btn-info btn-lg border-white border mr-xl-3 mt-3 mt-xl-0">
+                                {{ 'social.invite-button'|trans }}
+                            </a>
+                        </div>
+                        {% endif %}
                         <div class="col-12 col-xl-auto">
                             <a href="{{ path('content_how') }}"
                                class="btn btn-link btn-lg text-white mt-3 mt-xl-0">
@@ -139,7 +147,7 @@
             </div>
         </div>
 
-        <div class="home-ecosystem p-4 p-lg-5">
+        <div class="home-ecosystem p-4 p-lg-5" id="invite">
             <div class="home-share text-center mb-5">
                 <div class="text-muted mb-2">
                     {% trans %}social.share-intro{% endtrans %}
@@ -158,6 +166,50 @@
                     {{ include('_icons/whatsapp.html.twig') }}
                 </a>
             </div>
+
+            {% if app.request.locale == 'fr_FR' %}
+                <div class="home-invite text-center mb-5">
+                    <div class="text-muted text-uppercase mb-2">
+                        {{ 'social.invite-intro'|trans }}
+                    </div>
+
+                    <div class="mb-3">
+                        <small>
+                            {{ 'social.invite-desc'|trans }}
+                        </small>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-12 col-lg-10 col-xl-8">
+                            <form method="post" action="{{ path('invite') }}">
+                                <div class="form-row">
+                                    <div class="col-12 col-md-3 mb-2">
+                                        {{ form_widget(inviteForm.firstName, {'attr': {'placeholder': 'social.invite-firstname'|trans}}) }}
+                                    </div>
+                                    <div class="col-12 col-md-4 mb-2">
+                                        {{ form_widget(inviteForm.email, {'attr': {'placeholder': 'social.invite-email'|trans}}) }}
+                                    </div>
+                                    <div class="col-12 col-md-3 mb-2">
+                                        {{ form_widget(inviteForm.zipCode, {'attr': {'placeholder': 'social.invite-zipcode'|trans}}) }}
+                                    </div>
+                                    <div class="col-12 col-md-2 mb-2 text-left">
+                                        <button type="submit" class="btn btn-outline-primary btn-block">
+                                            <div class="d-inline-flex align-items-center">
+                                                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM48 96h416c8.8 0 16 7.2 16 16v41.4c-21.9 18.5-53.2 44-150.6 121.3-16.9 13.4-50.2 45.7-73.4 45.3-23.2.4-56.6-31.9-73.4-45.3C85.2 197.4 53.9 171.9 32 153.4V112c0-8.8 7.2-16 16-16zm416 320H48c-8.8 0-16-7.2-16-16V195c22.8 18.7 58.8 47.6 130.7 104.7 20.5 16.4 56.7 52.5 93.3 52.3 36.4.3 72.3-35.5 93.3-52.3 71.9-57.1 107.9-86 130.7-104.7v205c0 8.8-7.2 16-16 16z"></path></svg>
+                                                <span class="ml-2">{{ 'social.invite-submit'|trans }}</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <small class="text-muted">{{ 'social.invite-data'|trans }}</small>
+                    </div>
+                </div>
+            {% endif %}
 
             <div class="home-ecosystem-feedbacks mb-5">
                 <h5 class="font-weight-normal mb-5 p-4">
