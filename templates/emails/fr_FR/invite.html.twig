@@ -1,0 +1,31 @@
+<p>
+    Bonjour,
+</p>
+
+<p>
+    La situation actuelle est difficile pour tout le monde, mais vous êtes dans un
+    cas particulier : vous êtes particulièrement exposé(e) au virus.
+    C’est la raison pour laquelle {{ invite.firstName }} a pensé à vous.
+</p>
+
+<p>
+    Sur <a href="https://enpremiereligne.fr">enpremiereligne.fr</a>,
+    vous pourrez trouver plus de {{ countTotalHelpers|number_format(0, ',', ' ') }}
+    volontaires prêts à vous aider gratuitement.
+</p>
+
+{% if countZipCodeHelpers > 1 %}
+    <p>
+        Dans votre code postal ou aux alentours, cela correspond à {{ countZipCodeHelpers|number_format(0, ',', ' ') }}
+        personnes capables de faire vos courses ou de garder vos enfants, si vous en avez.
+    </p>
+{% endif %}
+
+<p>
+    Vous avez besoin d’aide ? Rendez-vous sur <a href="https://enpremiereligne.fr">enpremiereligne.fr</a> !
+</p>
+
+<p>
+    En vous souhaitant beaucoup de courage pour les prochaines semaines,<br />
+    L’équipe d’En Première Ligne.
+</p>

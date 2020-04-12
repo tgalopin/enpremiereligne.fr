@@ -2,6 +2,7 @@
 
 namespace App\Statistics;
 
+use App\MatchFinder\ZipCode;
 use Doctrine\DBAL\Driver\Connection;
 
 class StatisticsAggregator
@@ -100,5 +101,18 @@ class StatisticsAggregator
             GROUP BY department 
             ORDER BY nb DESC
         ')->fetchAll();
+    }
+
+    public function countZipCodeHelpers(string $locale, string $zipCode): int
+    {
+        $zipCodes = array_merge([$zipCode], ZipCode::CLOSEST[$locale][$zipCode]);
+
+        $sql = 'SELECT COUNT(*) FROM helpers WHERE zip_code IN (';
+        $sql .= str_repeat('?,', count($zipCodes) - 1).'?)';
+
+        $query = $this->db->prepare($sql);
+        $query->execute($zipCodes);
+
+        return $query->fetchColumn();
     }
 }

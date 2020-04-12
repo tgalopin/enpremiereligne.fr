@@ -161,7 +161,7 @@ blockquote {
     }
 
     &-share {
-        font-size: 14px;
+        font-size: 18px;
         color: #666;
         text-transform: uppercase;
 
@@ -177,7 +177,16 @@ blockquote {
         }
 
         svg {
-            height: 18px;
+            height: 20px;
+        }
+    }
+
+    &-invite {
+        font-size: 18px;
+        color: #666;
+
+        svg {
+            height: 14px;
         }
     }
 
