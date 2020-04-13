@@ -50,8 +50,8 @@ class AdminCreateCommand extends Command
             }
             $username = $this->verifyUserDoesntExist($input->getArgument('username'));
 
-            $user = (new Admin())
-                ->setUsername($username);
+            $user = new Admin();
+            $user->username = $username;
             $user->setPassword(
                 $this->passwordEncoder->encodePassword($user, $password)
             );
