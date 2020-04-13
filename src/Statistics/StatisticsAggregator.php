@@ -71,6 +71,15 @@ class StatisticsAggregator
         ')->fetchAll();
     }
 
+    public function countDepartmentHelpers(string $department): int
+    {
+        return $this->db->query('
+            SELECT COUNT(*) as nb 
+            FROM helpers 
+            WHERE zip_code LIKE '.$this->db->quote($department.'%').'
+        ')->fetchColumn();
+    }
+
     public function countGroceriesNeeds(): int
     {
         return $this->db->query('SELECT COUNT(*) FROM help_requests WHERE help_type = \'groceries\'')->fetchColumn();

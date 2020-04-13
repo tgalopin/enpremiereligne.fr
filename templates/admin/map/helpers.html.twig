@@ -1,0 +1,22 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title 'Helpers by department maps' %}
+{% block content_footer_wrapper '' %}
+
+{% block main %}
+    <div class="p-3">
+        <div class="row">
+            {% for row in departments %}
+                <div class="col-12 col-md-6 col-lg-3 mb-4 text-center">
+                    <a href="{{ path('admin_map_helpers_department', {'number': row.department}) }}"
+                       class="d-block p-3" target="_blank">
+                        <h4 class="font-weight-bold mb-2">
+                            {{ row.department }}
+                        </h4>
+                        <span class="text-muted">{{ row.nb }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

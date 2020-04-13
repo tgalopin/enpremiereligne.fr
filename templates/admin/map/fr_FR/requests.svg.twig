@@ -42,7 +42,11 @@
 }
 
 /* Colorising departements */
-{{ dynamicStyle }}
+{% for departmentCount in departmentCounts %}
+    .departement{{ departmentCount.department }} {
+        fill: #a6dedd;
+    }
+{% endfor %}
 </style>
 
   <g id="complete_map">
