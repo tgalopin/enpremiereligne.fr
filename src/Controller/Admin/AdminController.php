@@ -17,15 +17,13 @@ class AdminController extends EasyAdminController
 
     protected function createNewAdminEntity(): admin
     {
-        return (new Admin())
-            ->setId(1)
-            ->setUsername('');
+        return Admin::createForEasyAdminAdd();
     }
 
     protected function persistAdminEntity(Admin $admin): void
     {
         $admin->setPassword(
-            $this->passwordEncoder->encodePassword($admin, $admin->getPlainPassword())
+            $this->passwordEncoder->encodePassword($admin, $admin->plain_password)
         );
         parent::persistEntity($admin);
     }
@@ -33,7 +31,7 @@ class AdminController extends EasyAdminController
     protected function updateAdminEntity(Admin $admin): void
     {
         $admin->setPassword(
-            $this->passwordEncoder->encodePassword($admin, $admin->getPlainPassword())
+            $this->passwordEncoder->encodePassword($admin, $admin->plain_password)
         );
         parent::updateEntity($admin);
     }
