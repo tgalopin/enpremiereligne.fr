@@ -54,7 +54,7 @@ class HomeController extends AbstractController
                 $email = (new TemplatedEmail())
                     ->from('team@enpremiereligne.fr')
                     ->to($invite->email)
-                    ->subject($invite->firstName.' pense que En Première Ligne peut vous aider dans la situation actuelle')
+                    ->subject($invite->firstName.' pense qu\'En Première Ligne peut vous aider !')
                     ->htmlTemplate('emails/fr_FR/invite.html.twig')
                     ->context([
                         'invite' => $invite,
