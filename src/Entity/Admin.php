@@ -95,11 +95,4 @@ class Admin implements UserInterface
     public function eraseCredentials()
     {
     }
-
-    public function setId(int $id): self
-    {
-        $this->id = $id;
-
-        return $this;
-    }
 }
