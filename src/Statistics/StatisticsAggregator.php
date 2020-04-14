@@ -112,8 +112,12 @@ class StatisticsAggregator
         ')->fetchAll();
     }
 
-    public function countZipCodeHelpers(string $locale, string $zipCode): int
+    public function countZipCodeHelpers(string $locale, string $zipCode = null): int
     {
+        if (!$zipCode) {
+            return 0;
+        }
+
         $zipCodes = array_merge([$zipCode], ZipCode::CLOSEST[$locale][$zipCode]);
 
         $sql = 'SELECT COUNT(*) FROM helpers WHERE zip_code IN (';
