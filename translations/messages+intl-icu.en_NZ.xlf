@@ -8,7 +8,7 @@
             </trans-unit>
             <trans-unit id="site.title" resname="site.title">
                 <source>Soyons pr&#xE9;sents pour ceux en premi&#xE8;re ligne</source>
-                <target>Let's stop the spread together!</target>
+                <target>Let's help our essential workers end vulnerable community members!</target>
             </trans-unit>
             <trans-unit id="footer.why" resname="footer.why">
                 <source>Pourquoi enpremiereligne.fr&#xA0;?</source>
@@ -46,7 +46,7 @@
                 </source>
                 <target>You have access, rectification, deletion and portability rights on your data, as well as the
                     right to oppose or limit the use of your personal data. You can exercise your rights by contacting
-                    us at the following address : &lt;a href="mailto:emmanuel@thecommunitywave.nz"&gt;emmanuel@thecommunitywave.nz&lt;/a&gt;.
+                    us at the following address: &lt;a href="mailto:emmanuel@thecommunitywave.nz"&gt;emmanuel@thecommunitywave.nz&lt;/a&gt;.
                 </target>
             </trans-unit>
             <trans-unit id="social.share-intro" resname="social.share-intro">
@@ -120,9 +120,7 @@
                     difficult&#xE9;s &#xE0; se
                     d&#xE9;placer, a besoin d'aide pour faire les courses et faire face &#xE0; l'&#xE9;pid&#xE9;mie ?
                 </source>
-                <target>You, or someone you know, is a vulnerable person and needs help to get groceries and help stop
-                    the spread
-                </target>
+                <target>You, or someone you know, is a vulnerable person and needs help to get groceries?</target>
             </trans-unit>
             <trans-unit id="home.risk-request" resname="home.risk-request">
                 <source>Demandez de l'aide &#xE0; des volontaires proches de chez vous.</source>
@@ -146,7 +144,7 @@
                     lutte contre l&#x2019;&#xE9;pid&#xE9;mie.
                 </source>
                 <target>Help an essential worker or a vulnerable person in your area, by dropping off groceries or
-                    looking after children, and help stop the spread
+                    looking after children.
                 </target>
             </trans-unit>
             <trans-unit id="home.number-volunteers" resname="home.number-volunteers">
@@ -221,7 +219,7 @@
                     quelqu'un proche de chez vous a besoin d'aide, nous vous mettrons en relation par e-mail pour que
                     vous puissiez les aider au mieux.
                 </source>
-                <target>&lt;strong&gt;Help them, and help stop the spread !&lt;/strong&gt; Fill in the form below to
+                <target>&lt;strong&gt;Help them, and help face the crisis!&lt;/strong&gt; Fill in the form below to
                     enrol as a helper. If someone in your area needs help, we will connect you via email so that you can
                     discuss the details.
                 </target>
@@ -311,7 +309,7 @@
                     Cette
                     op&#xE9;ration est irr&#xE9;versible.
                 </source>
-                <target>Do you really wish to delete this offer and all the associated data ? This cannot be reversed.
+                <target>Do you really wish to delete this offer and all the associated data? This cannot be reversed.
                 </target>
             </trans-unit>
             <trans-unit id="offer.removed" resname="offer.removed">
@@ -408,7 +406,7 @@
                     op&#xE9;ration
                     est irr&#xE9;versible.
                 </source>
-                <target>Do you really wish to delete your request and all the associated data ? This cannot be
+                <target>Do you really wish to delete your request and all the associated data? This cannot be
                     reversed.
                 </target>
             </trans-unit>
@@ -425,9 +423,7 @@
                     difficult&#xE9;s &#xE0; se
                     d&#xE9;placer, a besoin d'aide pour faire les courses et faire face &#xE0; l'&#xE9;pid&#xE9;mie ?
                 </source>
-                <target>You, or someone you know, is a vulnerable person and needs help to get groceries and help stop
-                    the spread ?
-                </target>
+                <target>You, or someone you know, is a vulnerable person and needs help to get groceries?</target>
             </trans-unit>
             <trans-unit id="request.vulnerable-intro-two" resname="request.vulnerable-intro-two">
                 <source>Remplissez le formulaire ci-dessous pour vous enregistrer en tant que personne ayant besoin
@@ -558,7 +554,7 @@
             </trans-unit>
             <trans-unit id="label.have-children" resname="label.have-children">
                 <source>Avez-vous ou avez-vous eu des enfants vous-m&#xEA;me ?</source>
-                <target>Have you had children yourself ?</target>
+                <target>Have you had children yourself?</target>
             </trans-unit>
             <trans-unit id="help.have-children" resname="help.have-children">
                 <source>Il est plus rassurant pour des parents que vous soyez d&#xE9;j&#xE0; parents vous-m&#xEA;mes.
@@ -567,7 +563,7 @@
             </trans-unit>
             <trans-unit id="label.babysit-max-children" resname="label.babysit-max-children">
                 <source>Combien d'enfants au maximum pouvez-vous garder &#xE0; la fois ?</source>
-                <target>How many children maximum can you look after ?</target>
+                <target>How many children maximum can you look after?</target>
             </trans-unit>
             <trans-unit id="label.only-one" resname="label.only-one">
                 <source>Un seul</source>
@@ -587,7 +583,7 @@
             </trans-unit>
             <trans-unit id="label.babysit-ages" resname="label.babysit-ages">
                 <source>Quelle(s) tranche(s) d'&#xE2;ge d'enfants vous sentez-vous &#xE0; l'aise de garder ?</source>
-                <target>Which age range are you comfortable looking after ?</target>
+                <target>Which age range are you comfortable looking after?</target>
             </trans-unit>
             <trans-unit id="label.between-0-1" resname="label.between-0-1">
                 <source>Entre 0 et 1 an</source>
@@ -690,7 +686,7 @@
             </trans-unit>
             <trans-unit id="label.field-of-work-required" resname="label.field-of-work-required">
                 <source>Dans quel domaine travaillez-vous ? (requis)</source>
-                <target>In which field do you work ?</target>
+                <target>In which field do you work?</target>
             </trans-unit>
             <trans-unit id="help.field-of-work" resname="help.field-of-work">
                 <source>Dans un premier temps, nous r&#xE9;servons l'usage de notre plateforme aux personnes qui
@@ -733,7 +729,7 @@
             </trans-unit>
             <trans-unit id="label.needs" resname="label.needs">
                 <source>Quels sont vos besoins ?</source>
-                <target>What are your needs ?</target>
+                <target>What are your needs?</target>
             </trans-unit>
             <trans-unit id="label.babysitting" resname="label.babysitting">
                 <source>Garder un enfant</source>
@@ -845,7 +841,7 @@
             </trans-unit>
             <trans-unit id="admin.accepts-ages" resname="admin.accepts-ages">
                 <source>Ages accept&#xE9;s :</source>
-                <target>Ages accepted :</target>
+                <target>Ages accepted:</target>
             </trans-unit>
             <trans-unit id="email.greeting" resname="email.greeting">
                 <source>Bonjour {name}</source>
@@ -865,7 +861,7 @@
                     travailleurs mobilis&#xE9;s contre le COVID-19 au quotidien et les populations &#xE0; risque.
                 </source>
                 <target>Thank you for offering to help with the mutual assistance platform The Community Wave, to help
-                    our essential workers and vulnerable persons.
+                    our essential workers and vulnerable Kiwis.
                 </target>
             </trans-unit>
             <trans-unit id="email.offer-saved" resname="email.offer-saved">
@@ -873,7 +869,7 @@
                     supprimer en
                     cliquant sur le lien suivant :
                 </source>
-                <target>Your help offer has been registered. You can check it and delete it at this link :</target>
+                <target>Your help offer has been registered. You can check it and delete it at this link:</target>
             </trans-unit>
             <trans-unit id="email.offer-edit" resname="email.offer-edit">
                 <source>&lt;a href="https://enpremiereligne.fr{url}"&gt;G&#xE9;rer ma proposition d'aide&lt;/a&gt;
@@ -895,7 +891,7 @@
                 <source>Bravo pour votre engagement, c'est en nous soutenant mutuellement que nous vaincrons
                     l'&#xE9;pid&#xE9;mie.
                 </source>
-                <target>Thank you for your commitment ! Mutual help will help defeat the spread.</target>
+                <target>Thank you for your commitment!</target>
             </trans-unit>
             <trans-unit id="email.request-subject" resname="email.request-subject">
                 <source>Nous avons bien re&#xE7;u votre demande sur En Premi&#xE8;re Ligne</source>
@@ -915,7 +911,7 @@
                     supprimer en
                     cliquant sur le lien suivant :
                 </source>
-                <target>Your help request has been registered. You can check it and delete it at this link :</target>
+                <target>Your help request has been registered. You can check it and delete it at this link:</target>
             </trans-unit>
             <trans-unit id="email.request-edit" resname="email.request-edit">
                 <source>&lt;a href="https://enpremiereligne.fr{url}"&gt;G&#xE9;rer ma demande d'aide&lt;/a&gt;</source>
@@ -933,7 +929,7 @@
             </trans-unit>
             <trans-unit id="email.request-commitment" resname="email.request-commitment">
                 <source>Bon courage pour les prochaines semaines, nous comptons sur vous !</source>
-                <target>Good luck for the coming weeks, we count on you ! Be safe.</target>
+                <target>Good luck for the coming weeks, we count on you! Be safe.</target>
             </trans-unit>
             <trans-unit id="email.request-vulnerable-thanks" resname="email.request-vulnerable-thanks">
                 <source>Merci pour votre inscription sur le r&#xE9;seau d&#x2019;entraide En Premi&#xE8;re Ligne.
@@ -986,20 +982,20 @@
             </trans-unit>
             <trans-unit id="admin.delete-volunteer-profile" resname="admin.delete-volunteer-profile">
                 <source>Et supprimer le profil du volontaire en m&#xEA;me temps ?</source>
-                <target>Delete the volunteer's profile at the same time ?</target>
+                <target>Delete the volunteer's profile at the same time?</target>
             </trans-unit>
             <trans-unit id="admin.delete-request" resname="admin.delete-request">
                 <source>Et supprimer le besoin de la demande d'aide en m&#xEA;me temps ?</source>
-                <target>And delete the request need at the same time ?</target>
+                <target>And delete the request need at the same time?</target>
             </trans-unit>
             <trans-unit id="admin.cancel-link" resname="admin.cancel-link">
                 <source>Annuler la mise en relation de { type } de { given } {family} ?</source>
-                <target>Cancel the connection for { type } of { given } {family} ?</target>
+                <target>Cancel the connection for { type } of { given } {family}?</target>
             </trans-unit>
             <trans-unit id="admin.send-link" resname="admin.send-link">
                 <source>Envoyer l'email de mise en relation et fermer le besoin de { type } de { given } {family} ?
                 </source>
-                <target>Send the connection email and close the request for { type } from { given } {family} ?</target>
+                <target>Send the connection email and close the request for { type } from { given } {family}?</target>
             </trans-unit>
             <trans-unit id="admin.cancel-match" resname="admin.cancel-match">
                 <source>Annuler le match</source>
@@ -1069,7 +1065,7 @@
                     (proche du
                     code postal : { zipcode }).
                 </source>
-                <target>{ requester } and { helper } both reside in the same area (around postcode : { zipcode }).
+                <target>{ requester } and { helper } both reside in the same area (around postcode: { zipcode }).
                 </target>
             </trans-unit>
             <trans-unit id="email.baysit" resname="email.baysit">
@@ -1158,7 +1154,7 @@
                     d'utilisations, les personnes mises en relation sont seules responsables des discussions et
                     entraides r&#xE9;alis&#xE9;es et de leurs cons&#xE9;quences.
                 </source>
-                <target>The three of you are in copy of this email : contact each other to organize yourselves and make
+                <target>The three of you are in copy of this email: contact each other to organize yourselves and make
                     sure the mutual assistance can take place. We invite you to exchange on the phone or via a video
                     call for the first time to help building trust, and to sort the details if all goes well. As
                     indicated in the section 4 of our terms of use, the connected persons are the only responsible for
@@ -1226,7 +1222,7 @@
                 </source>
                 <target>We also remind you that people can have the virus without showing symptoms: if you accept to
                     help someone or to be helped, please be particularly careful in your daily lives, and follow all the
-                    relevant government's sanitary advice : (&lt;a href="https://covid19.govt.nz/how-were-uniting/"&gt;https://covid19.govt.nz/how-were-uniting/&lt;/a&gt;).
+                    relevant government's sanitary advice: (&lt;a href="https://covid19.govt.nz/how-were-uniting/"&gt;https://covid19.govt.nz/how-were-uniting/&lt;/a&gt;).
                 </target>
             </trans-unit>
             <trans-unit id="email.reminders" resname="email.reminders">
@@ -1260,7 +1256,7 @@
                     lien du site :
                 </source>
                 <target>The Community Wave is a free mutual assistance platform. It is by uniting and supporting each
-                    other that we will stop the spread ! Feel free to share the link with your friends :
+                    other that we will stop the spread! Feel free to share the link with your friends:
                 </target>
             </trans-unit>
             <trans-unit id="email.good-luck" resname="email.good-luck">
@@ -1268,7 +1264,7 @@
                     contre le COVID-19.
                 </source>
                 <target>Good luck for the coming weeks and thank you again for your commitment in the fight against the
-                    spread !
+                    spread!
                 </target>
             </trans-unit>
             <trans-unit id="email.site-helped" resname="email.site-helped">
@@ -1276,8 +1272,8 @@
                     href="mailto:team@enpremiereligne.fr"&gt;team@enpremiereligne.fr&lt;/a&gt;. Nous sommes &#xE0; votre
                     disposition !
                 </source>
-                <target>PS : if our platform has helped you, feel free to let us know at &lt;a
-                    href="mailto:team@thecommunitywave.nz"&gt;team@thecommunitywave.nz&lt;/a&gt;. We are here for you !
+                <target>PS: if our platform has helped you, feel free to let us know at &lt;a
+                    href="mailto:team@thecommunitywave.nz"&gt;team@thecommunitywave.nz&lt;/a&gt;. We are here for you!
                 </target>
             </trans-unit>
             <trans-unit id="email.avoid-contact" resname="email.avoid-contact">
@@ -1456,6 +1452,58 @@
                     l'adresse suivante :
                 </source>
                 <target/>
+            </trans-unit>
+            <trans-unit id="social.invite-button" resname="social.invite-button">
+                <source>Inviter un proche</source>
+                <target>Invite a loved one</target>
+            </trans-unit>
+            <trans-unit id="social.invite-intro" resname="social.invite-intro">
+                <source>J'invite un proche &#xE0; d&#xE9;couvrir l'initiative</source>
+                <target>Invite a loved one to join</target>
+            </trans-unit>
+            <trans-unit id="social.invite-desc" resname="social.invite-desc">
+                <source>Invitez l'un de vos proches &#xE0; d&#xE9;couvrir En Premi&#xE8;re Ligne pour l'aider dans son
+                    quotidien !
+                </source>
+                <target>Invite someone to The Community Wave to help them in their daily life!</target>
+            </trans-unit>
+            <trans-unit id="social.invite-success" resname="social.invite-success">
+                <source>Votre invitation a bien &#xE9;t&#xE9; envoy&#xE9;e !</source>
+                <target>Your invitation has been sent</target>
+            </trans-unit>
+            <trans-unit id="social.invite-firstname" resname="social.invite-firstname">
+                <source>Votre pr&#xE9;nom</source>
+                <target>Your first name</target>
+            </trans-unit>
+            <trans-unit id="social.invite-email" resname="social.invite-email">
+                <source>Adresse e-mail de votre proche</source>
+                <target>Your loved one's email address</target>
+            </trans-unit>
+            <trans-unit id="social.invite-zipcode" resname="social.invite-zipcode">
+                <source>Son code postal (facultatif)</source>
+                <target>Postcode (optional)</target>
+            </trans-unit>
+            <trans-unit id="social.invite-zipcode-help" resname="social.invite-zipcode-help">
+                <source>Cela nous permettra d'indiquer &#xE0; votre proche si des volontaires sont disponibles &#xE0;
+                    proximit&#xE9;.
+                </source>
+                <target>This will allow us to tell your loved one if volunteers are available nearby.</target>
+            </trans-unit>
+            <trans-unit id="social.invite-submit" resname="social.invite-submit">
+                <source>Inviter</source>
+                <target>Invite</target>
+            </trans-unit>
+            <trans-unit id="social.invite-submit-long" resname="social.invite-submit-long">
+                <source>Envoyer l'invitation</source>
+                <target>Send invitation</target>
+            </trans-unit>
+            <trans-unit id="social.invite-data" resname="social.invite-data">
+                <source>Aucune donn&#xE9;e personnelle n'est stock&#xE9;e au cours de cette invitation, conform&#xE9;ment
+                    &#xE0; notre engagement de protection des donn&#xE9;es
+                </source>
+                <target>No personal data is stored during this invitation in accordance with our data protection
+                    commitment.
+                </target>
             </trans-unit>
         </body>
     </file>
