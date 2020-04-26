@@ -43,7 +43,7 @@ class MatchFinder
             }
 
             $department = str_pad(substr($match->getRequester()->zipCode, 0, 2), 2, '0', STR_PAD_LEFT);
-            if ('97' === $department && 'fr' === $this->locale) {
+            if ('97' === $department && 'fr_FR' === $this->locale) {
                 $department = substr($match->getRequester()->zipCode, 0, 3);
             }
 
