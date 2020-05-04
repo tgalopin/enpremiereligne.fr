@@ -101,4 +101,14 @@ class ContentController extends AbstractController
     {
         return $this->render('content/'.$this->folder.'links.html.twig');
     }
+
+    /**
+     * @Route({
+     *     "fr_FR": "/presse"
+     * }, name="content_press")
+     */
+    public function press()
+    {
+        return $this->render('content/'.$this->folder.'press.html.twig');
+    }
 }
