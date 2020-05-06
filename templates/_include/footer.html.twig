@@ -10,6 +10,9 @@
             {% trans %}footer.why{% endtrans %}</a>
         <a href="{{ path('content_who') }}">
             {% trans %}footer.who{% endtrans %}</a>
+        {% if app.request.locale == 'fr_FR' %}
+            <a href="{{ path('content_press') }}">Presse</a>
+        {% endif %}
         <a href="{{ path('content_international') }}">
             {% trans %}footer.international{% endtrans %}</a>
         <a href="{{ path('content_links') }}">
