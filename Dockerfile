@@ -1,4 +1,4 @@
-FROM composer:1.9
+FROM composer:2
 FROM php:7.4-fpm-alpine
 
 ENV APCU_VERSION=5.1.18 \

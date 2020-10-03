@@ -23,13 +23,13 @@ jobs:
             - name: Build assets
               run: yarn install && yarn build
             - name: Install dependencies
-              run: composer install --prefer-dist --no-interaction --no-ansi --no-progress --no-suggest
+              run: composer self-update --preview && composer install --prefer-dist --no-interaction --no-ansi --no-progress --no-suggest
             - name: Start services
               run: docker-compose up -d && sleep 3
             - name: Prepare database
               run: symfony console doctrine:migrations:migrate -n && symfony console doctrine:fixtures:load -n
             - name: PHPUnit
-              run: symfony run phpunit
+              run: symfony run bin/phpunit
 
     release:
         runs-on: ubuntu-latest
