@@ -108,6 +108,9 @@
     "doctrine/reflection": {
         "version": "v1.1.0"
     },
+    "doctrine/sql-formatter": {
+        "version": "1.1.1"
+    },
     "easycorp/easyadmin-bundle": {
         "version": "2.0",
         "recipe": {
@@ -265,6 +268,9 @@
             "config/packages/sentry.yaml"
         ]
     },
+    "symfony/amqp-messenger": {
+        "version": "v5.1.6"
+    },
     "symfony/asset": {
         "version": "v5.0.5"
     },
@@ -299,8 +305,14 @@
     "symfony/dependency-injection": {
         "version": "v5.0.5"
     },
+    "symfony/deprecation-contracts": {
+        "version": "v2.2.0"
+    },
     "symfony/doctrine-bridge": {
         "version": "v5.0.5"
+    },
+    "symfony/doctrine-messenger": {
+        "version": "v5.1.6"
     },
     "symfony/dom-crawler": {
         "version": "v5.0.5"
@@ -361,13 +373,16 @@
             "src/Kernel.php"
         ]
     },
+    "symfony/http-client": {
+        "version": "v5.0.11"
+    },
+    "symfony/http-client-contracts": {
+        "version": "v2.2.0"
+    },
     "symfony/http-foundation": {
         "version": "v5.0.5"
     },
     "symfony/http-kernel": {
-        "version": "v5.0.5"
-    },
-    "symfony/inflector": {
         "version": "v5.0.5"
     },
     "symfony/intl": {
@@ -444,17 +459,26 @@
             "tests/bootstrap.php"
         ]
     },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.18.1"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.14.0"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.14.0"
     },
+    "symfony/polyfill-intl-normalizer": {
+        "version": "v1.18.1"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.14.0"
     },
     "symfony/polyfill-php73": {
         "version": "v1.14.0"
+    },
+    "symfony/polyfill-php80": {
+        "version": "v1.18.1"
     },
     "symfony/polyfill-uuid": {
         "version": "v1.14.0"
@@ -470,6 +494,12 @@
     },
     "symfony/property-access": {
         "version": "v5.0.5"
+    },
+    "symfony/property-info": {
+        "version": "v5.1.6"
+    },
+    "symfony/redis-messenger": {
+        "version": "v5.1.6"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -514,6 +544,9 @@
     },
     "symfony/stopwatch": {
         "version": "v5.0.5"
+    },
+    "symfony/string": {
+        "version": "v5.1.6"
     },
     "symfony/translation": {
         "version": "3.3",
