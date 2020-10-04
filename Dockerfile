@@ -14,7 +14,6 @@ RUN apk add --no-cache --virtual .persistent-deps \
         nano \
         nginx \
         postgresql-client \
-        python \
         py-pip \
         zlib
 
@@ -68,7 +67,7 @@ COPY . /app
 ENV APP_ENV=prod \
     APP_DEBUG=0 \
     DATABASE_URL="postgresql://main:main@127.0.0.1:5432/main?serverVersion=12&charset=utf8" \
-    SENTRY_DSN="https://xxx@sentry.io/xxx"
+    SENTRY_DSN="https://xxx@xxx.ingest.sentry.io/111"
 
 RUN mkdir -p var && \
     composer install --prefer-dist --no-interaction --no-ansi --no-autoloader --no-scripts --no-progress --no-suggest && \
