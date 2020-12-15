@@ -26,6 +26,9 @@ easy_admin:
             - { route: 'admin_export_helpers_by_zip_code', label: 'Export zip codes', icon: 'cloud-download', target: '_blank' }
             - { route: 'admin_export_unmatched', label: 'Export unmatched', icon: 'cloud-download', target: '_blank' }
 
+            - { label: 'Administration' }
+            - { entity: 'Admin', label: 'Administrators', icon: 'users' }
+
     entities:
         Helper:
             class: App\Entity\Helper
@@ -78,3 +81,21 @@ easy_admin:
                     - { property: 'helper.firstName', label: 'Helper first name' }
                     - { property: 'helper.lastName', label: 'Helper last name' }
                     - { property: 'createdAt', label: 'Date' }
+
+        Admin:
+            class: App\Entity\Admin
+            controller: App\Controller\Admin\AdminController
+            list:
+                title: Site administrators
+                max_results: 10
+                sort: ['username', 'ASC']
+                fields:
+                    - { property: 'username', label: 'Administrator' }
+            form:
+                title: 'Add administrator'
+                help: "We're not going to check, but please ensure you use a suitably secure password!"
+                fields:
+                    - { property: 'username', type: 'text', label: 'Username' }
+                    - { property: 'plain_password', type: 'repeated', type_options: { type: Symfony\Component\Form\Extension\Core\Type\PasswordType, invalid_message: 'Both passwords must match', first_options: { label: 'Password' }, second_options: { label: 'Confirm password' }, required: true } }
+            edit:
+                title: 'Edit administrator'

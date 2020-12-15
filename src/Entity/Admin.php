@@ -30,6 +30,17 @@ class Admin implements UserInterface
      */
     private ?string $password;
 
+    public ?string $plain_password = '';
+
+    public static function createForEasyAdminAdd(): self
+    {
+        $admin = new static();
+        $admin->id = 1;
+        $admin->username = '';
+
+        return $admin;
+    }
+
     public function __toString()
     {
         return $this->username;
