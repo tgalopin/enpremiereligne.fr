@@ -40,7 +40,7 @@ jobs:
             - name: Build assets
               run: yarn install && yarn build
             - name: Build and publish production image
-              uses: elgohr/Publish-Docker-Github-Action@master
+              uses: elgohr/Publish-Docker-Github-Action@v5
               with:
                   name: tgalopin/enpremiereligne.fr/website
                   username: ${{ secrets.GITHUB_DOCKER_USERNAME }}
